@@ -566,127 +566,7 @@
     }
   }
 
-  /* [PWA] Pulsanti Condividi e Installa App */
-  .pwa-actions {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: var(--inchiostro);
-    border-top: 1px solid var(--lino);
-    padding: 12px 28px;
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    z-index: 90;
-    animation: slideUp 0.3s ease-out;
-  }
-
-  @keyframes slideUp {
-    from { transform: translateY(100%); }
-    to { transform: translateY(0); }
-  }
-
-  .pwa-btn {
-    padding: 10px 16px;
-    background: var(--smeraldo);
-    color: var(--carta);
-    border: none;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.15s;
-  }
-
-  .pwa-btn:hover {
-    background: var(--salvia);
-    transform: scale(1.02);
-  }
-
-  .pwa-btn:active {
-    transform: scale(0.98);
-  }
-
-  #pwa-install-btn {
-    display: none;
-  }
-
-  /* Modale Installa App */
-  .pwa-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 200;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .pwa-modal.show {
-    display: flex;
-  }
-
-  .pwa-modal-content {
-    background: var(--carta);
-    border-radius: 8px;
-    padding: 32px;
-    max-width: 400px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-  }
-
-  .pwa-modal-close {
-    float: right;
-    font-size: 24px;
-    font-weight: bold;
-    color: var(--grigio);
-    cursor: pointer;
-    line-height: 1;
-  }
-
-  .pwa-modal-close:hover {
-    color: var(--smeraldo);
-  }
-
-  .pwa-modal h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
-    color: var(--smeraldo);
-    margin: 16px 0 12px;
-  }
-
-  .pwa-modal p {
-    font-size: 0.9rem;
-    color: var(--seppia);
-    line-height: 1.7;
-    margin-bottom: 20px;
-  }
-
-  .pwa-modal-instructions {
-    background: var(--avorio);
-    padding: 12px;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    color: var(--grigio);
-    margin-bottom: 16px;
-  }
-
-  @media (max-width: 640px) {
-    .pwa-actions {
-      padding: 10px 16px;
-      gap: 8px;
-    }
-
-    .pwa-btn {
-      flex: 1;
-      padding: 9px 12px;
-      font-size: 0.7rem;
-    }
+  
 
     .pwa-modal-content {
       margin: 16px;
@@ -783,6 +663,339 @@
     .gdpr-btn {
       flex: 1;
       padding: 8px 10px;
+      font-size: 0.65rem;
+    }
+  }
+
+  /* [F1] Barra azioni fissa — 4 pulsanti responsive */
+  .gv-action-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(27, 94, 75, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--lino);
+    padding: 12px 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  .gv-action-btn {
+    padding: 10px 14px;
+    background: var(--smeraldo);
+    color: var(--carta);
+    border: none;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+    white-space: nowrap;
+    flex: 1 1 calc(50% - 4px);
+    max-width: 140px;
+  }
+
+  .gv-action-btn:hover {
+    background: var(--salvia);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(27, 94, 75, 0.3);
+  }
+
+  .gv-action-btn:active {
+    transform: scale(0.97);
+  }
+
+  /* [F2] Modali — overlay responsive */
+  .gv-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+
+  .gv-modal.show {
+    display: flex;
+  }
+
+  .gv-modal-content {
+    background: var(--carta);
+    border-radius: 12px;
+    padding: 32px 24px;
+    max-width: 420px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  @keyframes slideUp {
+    from { transform: translateY(40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  .gv-modal-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--smeraldo);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .gv-modal-text {
+    font-size: 0.95rem;
+    color: var(--seppia);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  .gv-modal-url {
+    background: var(--avorio);
+    padding: 12px;
+    border-radius: 6px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--grigio);
+    word-break: break-all;
+    margin-bottom: 16px;
+  }
+
+  .gv-modal-button {
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--smeraldo);
+    color: var(--carta);
+    border: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: 10px;
+  }
+
+  .gv-modal-button:hover {
+    background: var(--salvia);
+    transform: translateY(-2px);
+  }
+
+  .gv-modal-button:active {
+    transform: scale(0.98);
+  }
+
+  .gv-modal-button-secondary {
+    background: transparent;
+    border: 1px solid var(--salvia);
+    color: var(--salvia);
+  }
+
+  .gv-modal-button-secondary:hover {
+    background: rgba(143, 175, 159, 0.1);
+  }
+
+  .gv-modal-close {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--grigio);
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+  }
+
+  .gv-modal-close:hover {
+    color: var(--smeraldo);
+  }
+
+  .gv-install-section {
+    margin-bottom: 20px;
+  }
+
+  .gv-install-platform {
+    font-weight: 600;
+    color: var(--smeraldo);
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+  }
+
+  .gv-install-divider {
+    height: 2px;
+    background: var(--smeraldo);
+    margin-bottom: 12px;
+  }
+
+  .gv-install-steps {
+    font-size: 0.9rem;
+    color: var(--seppia);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .gv-install-steps ol {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  .gv-install-steps li {
+    margin-bottom: 8px;
+  }
+
+  /* [F3] Pulsante Esci — solo standalone */
+  .gv-exit-btn {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background: transparent;
+    border: 1px solid var(--salvia);
+    color: var(--salvia);
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+    z-index: 9998;
+    display: none;
+  }
+
+  .gv-exit-btn:hover {
+    background: rgba(143, 175, 159, 0.15);
+    transform: translateX(-50%) translateY(-2px);
+  }
+
+  .gv-exit-btn:active {
+    transform: translateX(-50%) scale(0.98);
+  }
+
+  /* Responsive — tablet */
+  @media (max-width: 768px) {
+    .gv-action-bar {
+      padding: 10px 12px;
+      gap: 6px;
+    }
+
+    .gv-action-btn {
+      padding: 9px 12px;
+      font-size: 0.7rem;
+      flex: 1 1 calc(50% - 3px);
+      max-width: 120px;
+    }
+
+    .gv-modal-content {
+      padding: 24px 16px;
+      max-width: 100%;
+    }
+
+    .gv-modal-title {
+      font-size: 1.5rem;
+    }
+
+    .gv-modal-text {
+      font-size: 0.9rem;
+    }
+
+    .gv-install-platform {
+      font-size: 0.9rem;
+    }
+
+    .gv-install-steps {
+      font-size: 0.85rem;
+    }
+  }
+
+  /* Responsive — mobile */
+  @media (max-width: 480px) {
+    .gv-action-bar {
+      padding: 8px 10px;
+      gap: 5px;
+    }
+
+    .gv-action-btn {
+      padding: 8px 10px;
+      font-size: 0.65rem;
+      flex: 1 1 calc(50% - 2.5px);
+      max-width: 100px;
+    }
+
+    .gv-modal-content {
+      padding: 20px 14px;
+      border-radius: 10px;
+    }
+
+    .gv-modal-title {
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+    }
+
+    .gv-modal-text {
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .gv-modal-url {
+      padding: 10px;
+      font-size: 0.75rem;
+    }
+
+    .gv-modal-button {
+      padding: 10px 14px;
+      font-size: 0.8rem;
+    }
+
+    .gv-install-platform {
+      font-size: 0.85rem;
+    }
+
+    .gv-install-steps {
+      font-size: 0.8rem;
+      line-height: 1.6;
+    }
+
+    .gv-exit-btn {
+      bottom: 20px;
+      padding: 9px 16px;
+      font-size: 0.7rem;
+    }
+  }
+
+  /* Landscape mode */
+  @media (max-height: 500px) and (orientation: landscape) {
+    .gv-action-bar {
+      padding: 6px 12px;
+    }
+
+    .gv-action-btn {
+      padding: 6px 10px;
+      font-size: 0.65rem;
+    }
+
+    .gv-modal-content {
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 16px;
+    }
+
+    .gv-exit-btn {
+      bottom: 12px;
+      padding: 6px 12px;
       font-size: 0.65rem;
     }
   }
@@ -1063,34 +1276,8 @@
   </div>
   <span class="footer-legal">© 2026 Raffaella Pisani · Sensi di Strati · P.IVA 05581330262 · <a href="#" class="footer-link">Privacy Policy</a></span>
 
-<!-- [PWA] Pulsanti Condividi e Installa App -->
-<div class="pwa-actions">
-  <button id="pwa-share-btn" class="pwa-btn" title="Condividi questa pagina">📤 Condividi</button>
-  <button id="pwa-install-btn" class="pwa-btn" title="Installa come app">⬇️ Installa App</button>
-</div>
 
-<!-- [PWA] Modale Installa App -->
-<div id="pwa-install-modal" class="pwa-modal">
-  <div class="pwa-modal-content">
-    <span id="close-install-modal" class="pwa-modal-close">&times;</span>
-    <h3>Installa l'app</h3>
-    <p>Aggiungi Raffaella Pisani — Cultura Olfattiva alla tua schermata Home per un accesso rapido.</p>
-    <div class="pwa-modal-instructions">
-      <strong>iPhone:</strong> Tocca Condividi → Aggiungi al
-<!-- [GDPR] Cookie Bar -->
-<div id="gdpr-cookie-bar">
-  <p class="gdpr-text">
-    Questo sito utilizza cookie per migliorare l'esperienza di navigazione. 
-    Continuando a navigare, accetti l'uso dei cookie. 
-    <a href="#" title="Leggi la privacy policy">Privacy Policy</a>
-  </p>
-  <div class="gdpr-buttons">
-    <button id="gdpr-accept-btn" class="gdpr-btn">Accetta</button>
-    <button id="gdpr-reject-btn" class="gdpr-btn">Rifiuta</button>
-  </div>
-</div>
 
-<script src="/pwa-actions.js"></script>
 la schermata Home<br>
       <strong>Android:</strong> Tocca il menu ⋮ → Installa app
     </div>
@@ -1102,8 +1289,7 @@ la schermata Home<br>
 <script>
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobs<script src="/gdpr-cookies.js"></script>
-erve(e.target); }
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
@@ -1119,6 +1305,68 @@ if ('serviceWorker' in navigator) {
   });
 }
 </script>
+
+
+<!-- [F4] Barra azioni GV PWA — 4 pulsanti -->
+<div class="gv-action-bar">
+  <bu<script src="/pwa-action-bar.js"></script>
+tton id="gv-share-btn" class="gv-action-btn" title="Condividi">📤 Condividi</button>
+  <button id="gv-website-btn" class="gv-action-btn" title="Sito Web">🌐 Sito Web</button>
+  <button id="gv-refresh-btn" class="gv-action-btn" title="Aggiorna">🔄 Refresh</button>
+  <button id="gv-install-btn" class="gv-action-btn" title="Installa App">⬇️ Installa</button>
+</div>
+
+<!-- [F5] Modale Condivisione -->
+<div id="gv-share-modal" class="gv-modal">
+  <div class="gv-modal-content">
+    <span id="gv-close-share-btn" class="gv-modal-close">&times;</span>
+    <h3 class="gv-modal-title">Condividi</h3>
+    <div class="gv-modal-url" id="gv-share-url">https://raffaellapisani.it</div>
+    <button id="gv-copy-link-btn" class="gv-modal-button">Copia Link</button>
+    <button id="gv-whatsapp-btn" class="gv-modal-button" style="background: #25D366;">Invia su WhatsApp</button>
+    <button class="gv-modal-button gv-modal-button-secondary" onclick="document.getElementById('gv-share-modal').style.display='none'">Chiudi</button>
+  </div>
+</div>
+
+<!-- [F6] Modale Installazione -->
+<div id="gv-install-modal" class="gv-modal">
+  <div class="gv-modal-content">
+    <span id="gv-close-install-btn" class="gv-modal-close">&times;</span>
+    <h3 class="gv-modal-title">Installa l'App</h3>
+    
+    <div class="gv-install-section">
+      <div class="gv-install-platform">Per iPhone/iPad (Safari):</div>
+      <div class="gv-install-divider"></div>
+      <div class="gv-install-steps">
+        <ol>
+          <li>Tocca il quadrato con la freccia che vedi al centro, sotto sulla base del tuo iPhone</li>
+          <li>Scorri e tocca "Aggiungi a Home"</li>
+          <li>Tocca "Aggiungi" in alto a destra</li>
+          <li>L'app apparirà nella schermata Home!</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="gv-install-section">
+      <div class="gv-install-platform">Per Android (Chrome):</div>
+      <div class="gv-install-divider"></div>
+      <div class="gv-install-steps">
+        <ol>
+          <li>Tocca i tre puntini in alto a destra</li>
+          <li>Tocca "Aggiungi a schermata Home" oppure "Installa app"</li>
+          <li>Conferma toccando "Aggiungi"</li>
+          <li>L'app apparirà nella schermata Home!</li>
+        </ol>
+      </div>
+    </div>
+
+    <button id="gv-install-prompt-btn" class="gv-modal-button">Installa Ora</button>
+    <button class="gv-modal-button gv-modal-button-secondary" onclick="document.getElementById('gv-install-modal').style.display='none'">Chiudi</button>
+  </div>
+</div>
+
+<!-- [F3] Pulsante Esci — solo standalone -->
+<button class="gv-exit-btn" id="gv-exit-btn">Esci</button>
 
 </body>
 </html>
