@@ -476,7 +476,9 @@
   </a>
   <ul class="nav-links">
     <li><a href="#chi-sono">Chi sono</a></li>
+    <li><a href="#visione">Visione</a></li>
     <li><a href="#servizi">Servizi</a></li>
+    <li><a href="#collaborazioni">Collaborazioni</a></li>
     <li><a href="#contatti">Contatti</a></li>
   </ul>
 </nav>
@@ -606,9 +608,9 @@
   </div>
   <div class="contatti-info fade-in">
     <p class="contatti-info-label">Email</p>
-    <p class="contatti-info-val">[ email@placeholder.it ]</p>
+    <p class="contatti-info-val">raffaellapisani71@gmail.com</p>
     <p class="contatti-info-label">Social</p>
-    <p class="contatti-info-val">[ Instagram · LinkedIn ]</p>
+    <p class="contatti-info-val">Instagram · LinkedIn</p>
   </div>
 </section>
 
@@ -617,7 +619,24 @@
   <div class="footer-wrap">
     <span class="footer-brand">Raffaella Pisani</span>
   </div>
-  <span class="footer-legal">© 2026 · P.IVA [ placeholder ] · Privacy Policy</span>
+  <div class="footer-cols">
+    <div class="footer-col">
+      <p class="footer-label">Contatti</p>
+      <a href="mailto:raffaellapisani71@gmail.com" class="footer-link">raffaellapisani71@gmail.com</a>
+      <a href="tel:+393385734333" class="footer-link">338 573 4333</a>
+    </div>
+    <div class="footer-col">
+      <p class="footer-label">Area</p>
+      <p class="footer-text">Nord Italia</p>
+      <p class="footer-text">Via Po 14/A — Fontane di Villorba (TV)</p>
+    </div>
+    <div class="footer-col">
+      <p class="footer-label">Ragione sociale</p>
+      <p class="footer-text">Sensi di Strati di Pisani Raffaella</p>
+      <p class="footer-text">P.IVA 05581330262</p>
+    </div>
+  </div>
+  <span class="footer-legal">© 2026 Raffaella Pisani · Sensi di Strati · P.IVA 05581330262 · <a href="#" class="footer-link">Privacy Policy</a></span>
 </footer>
 
 <!-- [F19] Script IntersectionObserver — fade-in -->
@@ -631,3 +650,38 @@
 </script>
 </body>
 </html>
+
+  .footer-cols {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 18px 0 14px;
+  }
+
+  .footer-col { display: flex; flex-direction: column; gap: 4px; }
+
+  .footer-label {
+    font-size: 0.56rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--salvia);
+    margin-bottom: 2px;
+  }
+
+  .footer-text {
+    font-size: 0.75rem;
+    color: var(--grigio);
+    line-height: 1.6;
+  }
+
+  .footer-link {
+    font-size: 0.75rem;
+    color: var(--salvia);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-link:hover { color: var(--carta); }
+
+  @media (min-width: 640px) {
+    .footer-cols { flex-direction: row; gap: 48px; margin: 22px 0 16px; }
+  }
