@@ -682,87 +682,73 @@
     }
   }
 
-  
-
-    body {
-      padding-bottom: 50px;
-    }
-  }
-
-  /* ============================================================
-     [F_PWA] Barra azioni GV PWA — FIXED BOTTOM (sempre visibile)
-     REGOLA CRITICA: position:fixed + bottom:0 + z-index:9999
-     I pulsanti devono essere SEMPRE visibili durante lo scroll.
-     ============================================================ */
+  /* [F1] Barra azioni fissa in basso — 3 pulsanti responsive */
   .gv-action-bar-bottom {
-    position: fixed !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    z-index: 9999 !important;
-    background: rgba(27, 94, 75, 0.97);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(201, 169, 97, 0.3);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(27, 94, 75, 0.95);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid var(--lino);
     padding: 14px 16px;
-    display: flex !important;
+    display: flex;
     gap: 10px;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+    z-index: 9999;
   }
 
   .gv-action-btn-bottom {
-    border: 1.5px solid rgba(224, 217, 206, 0.7);
+    padding: 11px 16px;
+    border: 1.5px solid var(--smeraldo);
     background: transparent;
-    color: var(--carta, #F5F0E8);
-    padding: 10px 18px;
-    border-radius: 4px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.72rem;
+    color: var(--smeraldo);
+    border-radius: 6px;
+    font-size: 0.75rem;
     font-weight: 600;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     cursor: pointer;
     transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
     white-space: nowrap;
-    flex: 1;
-    max-width: 160px;
+    flex: 1 1 auto;
+    max-width: 140px;
   }
 
   .gv-action-btn-bottom:hover {
-    background: rgba(224, 217, 206, 0.1);
-    transform: translateY(-1px);
+    background: rgba(27, 94, 75, 0.3);
+    transform: translateY(-2px);
   }
 
-  /* Pulsante Installa App — accent oro */
+  .gv-action-btn-bottom:active {
+    transform: scale(0.97);
+  }
+
   #gv-install-btn-bottom {
-    background: var(--oro, #C9A961) !important;
-    border-color: var(--oro, #C9A961) !important;
-    color: var(--inchiostro, #1A1A1A) !important;
-    font-weight: 700;
+    background: #C9A961;
+    border-color: #C9A961;
+    color: var(--inchiostro);
   }
 
   #gv-install-btn-bottom:hover {
-    background: #b8943d !important;
-    border-color: #b8943d !important;
-    transform: translateY(-1px);
+    background: #B89450;
+    border-color: #B89450;
   }
 
-  /* Padding body per non coprire il contenuto */
-  body {
-    padding-bottom: 70px !important;
-  }
-
-  /* Modali PWA */
+  /* [F2] Modali */
   .gv-modal-bottom {
     display: none;
     position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
     z-index: 10000;
     align-items: center;
     justify-content: center;
+    padding: 16px;
   }
 
   .gv-modal-bottom.show {
@@ -770,123 +756,195 @@
   }
 
   .gv-modal-content-bottom {
-    background: #fff;
+    background: var(--carta);
     border-radius: 12px;
-    padding: 28px 24px;
-    max-width: 340px;
-    width: 90%;
-    position: relative;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    padding: 32px 24px;
+    max-width: 420px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
   .gv-modal-title-bottom {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.4rem;
-    color: var(--smeraldo, #1B5E4B);
-    text-align: center;
-    margin-bottom: 16px;
+    font-size: 1.8rem;
     font-weight: 600;
+    color: var(--smeraldo);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .gv-modal-text-bottom {
+    font-size: 0.95rem;
+    color: var(--seppia);
+    line-height: 1.8;
+    margin-bottom: 16px;
   }
 
   .gv-modal-url-bottom {
-    background: #f5f5f5;
+    background: var(--avorio);
+    padding: 12px;
     border-radius: 6px;
-    padding: 10px 14px;
-    font-size: 0.8rem;
-    color: #555;
-    text-align: center;
-    margin-bottom: 14px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--grigio);
     word-break: break-all;
+    margin-bottom: 16px;
   }
 
   .gv-modal-button-bottom {
-    display: block;
     width: 100%;
-    padding: 12px;
-    margin-bottom: 10px;
+    padding: 12px 16px;
+    background: var(--smeraldo);
+    color: var(--carta);
+    border: none;
     border-radius: 6px;
-    border: 1.5px solid var(--smeraldo, #1B5E4B);
-    background: var(--smeraldo, #1B5E4B);
-    color: #fff;
-    font-family: 'Cormorant Garamond', serif;
     font-size: 0.85rem;
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.2s;
+    margin-bottom: 10px;
   }
 
   .gv-modal-button-bottom:hover {
-    background: #154a3a;
-    border-color: #154a3a;
+    background: var(--salvia);
+    transform: translateY(-2px);
+  }
+
+  .gv-modal-button-bottom:active {
+    transform: scale(0.98);
   }
 
   .gv-modal-button-secondary-bottom {
-    background: #f0f0f0 !important;
-    border-color: #ccc !important;
-    color: #666 !important;
+    background: transparent;
+    border: 1px solid var(--salvia);
+    color: var(--salvia);
+  }
+
+  .gv-modal-button-secondary-bottom:hover {
+    background: rgba(143, 175, 159, 0.1);
   }
 
   .gv-modal-close-bottom {
-    position: absolute;
-    top: 12px;
-    right: 16px;
-    font-size: 1.4rem;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--grigio);
     cursor: pointer;
-    color: #999;
     line-height: 1;
+    transition: color 0.2s;
   }
 
-  .gv-modal-close-bottom:hover { color: #333; }
-
-  .gv-install-section-title {
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--smeraldo, #1B5E4B);
-    margin: 14px 0 6px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+  .gv-modal-close-bottom:hover {
+    color: var(--smeraldo);
   }
 
-  .gv-install-divider {
-    border: none;
-    border-top: 1.5px solid var(--smeraldo, #1B5E4B);
-    margin-bottom: 10px;
-    opacity: 0.3;
+  .gv-install-section-bottom {
+    margin-bottom: 20px;
   }
 
-  .gv-install-steps {
-    font-size: 0.82rem;
-    color: #444;
+  .gv-install-platform-bottom {
+    font-weight: 600;
+    color: var(--smeraldo);
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+  }
+
+  .gv-install-divider-bottom {
+    height: 2px;
+    background: var(--smeraldo);
+    margin-bottom: 12px;
+  }
+
+  .gv-install-steps-bottom {
+    font-size: 0.9rem;
+    color: var(--seppia);
     line-height: 1.7;
-    padding-left: 18px;
-    margin: 0 0 10px;
+    margin-bottom: 16px;
   }
 
-  /* Responsive */
+  .gv-install-steps-bottom ol {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  .gv-install-steps-bottom li {
+    margin-bottom: 8px;
+  }
+
+  body {
+    padding-bottom: 70px;
+  }
+
+  @media (max-width: 768px) {
+    .gv-action-bar-bottom {
+      padding: 12px 12px;
+      gap: 8px;
+    }
+
+    .gv-action-btn-bottom {
+      padding: 10px 12px;
+      font-size: 0.7rem;
+      max-width: 120px;
+    }
+
+    .gv-modal-content-bottom {
+      padding: 24px 16px;
+      max-width: 100%;
+    }
+
+    .gv-modal-title-bottom {
+      font-size: 1.5rem;
+    }
+
+    body {
+      padding-bottom: 65px;
+    }
+  }
+
   @media (max-width: 480px) {
     .gv-action-bar-bottom {
-      padding: 12px 10px;
-      gap: 7px;
+      padding: 10px 10px;
+      gap: 6px;
     }
+
     .gv-action-btn-bottom {
-      font-size: 0.65rem;
       padding: 9px 10px;
-      letter-spacing: 0.1em;
+      font-size: 0.65rem;
+      max-width: 100px;
     }
+
+    .gv-modal-content-bottom {
+      padding: 20px 14px;
+      border-radius: 10px;
+    }
+
+    .gv-modal-title-bottom {
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+    }
+
     body {
-      padding-bottom: 62px !important;
+      padding-bottom: 60px;
     }
   }
 
-  @media (max-width: 360px) {
+  @media (max-height: 500px) and (orientation: landscape) {
+    .gv-action-bar-bottom {
+      padding: 6px 12px;
+    }
+
     .gv-action-btn-bottom {
-      font-size: 0.6rem;
-      padding: 8px 8px;
+      padding: 6px 10px;
+      font-size: 0.65rem;
+    }
+
+    body {
+      padding-bottom: 50px;
     }
   }
-
 </style>
 </head>
 <body>
