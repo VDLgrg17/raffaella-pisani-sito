@@ -1,0 +1,503 @@
+<!-- [F0] Meta, font, :root, reset globale — blog.html -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Archivio divulgativo di Raffaella Pisani — articoli su cultura olfattiva, molecole, storia, letteratura, neuroscienza, mito e filosofia del profumo.">
+<meta name="keywords" content="cultura olfattiva, divulgazione profumi, ricercatrice olfattiva, narratrice olfattiva, scrittura olfattiva, profumeria artistica, psicologia del profumo, sinestesia olfattiva">
+<title>Archivio — Raffaella Pisani</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+/* [F1] Reset, variabili colore, tipografia base — ereditate da index.html */
+:root {
+  --carta:         #FAF7F2;
+  --avorio:        #F2EDE4;
+  --lino:          #E0D9CE;
+  --smeraldo:      #1B5E4B;
+  --salvia:        #8FAF9F;
+  --salvia-light:  #C8DDD6;
+  --oro:           #A8895A;
+  --inchiostro:    #1A2420;
+  --grigio:        #6B7B75;
+  --zafferano:     #C8860A;
+  --terracotta:    #B5603A;
+  --viola-incenso: #7B5EA7;
+  --salvia-bg:     #E8EDE6;
+  --seppia:        #3D2B1F;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  background: var(--carta);
+  color: var(--inchiostro);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* [F2] Nav — identica a index.html */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 48px;
+  background: rgba(250,247,242,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(224,217,206,0.5);
+  transition: padding 0.4s ease;
+}
+
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--smeraldo);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--inchiostro);
+  text-decoration: none;
+  transition: color 0.4s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active { color: var(--smeraldo); }
+
+/* [F3] Layout pagina archivio */
+.archivio-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 160px 48px 120px;
+}
+
+.archivio-header {
+  margin-bottom: 72px;
+}
+
+.archivio-eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--grigio);
+  margin-bottom: 18px;
+}
+
+.archivio-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--smeraldo);
+  margin-bottom: 24px;
+}
+
+.archivio-intro {
+  font-size: 0.95rem;
+  color: var(--seppia);
+  max-width: 560px;
+  line-height: 1.85;
+}
+
+/* [F4] Filtri categorie */
+.categorie-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 64px;
+}
+
+.cat-btn {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 7px 16px;
+  border: 1px solid var(--lino);
+  background: transparent;
+  color: var(--grigio);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 0;
+}
+
+.cat-btn:hover,
+.cat-btn.active {
+  background: var(--smeraldo);
+  border-color: var(--smeraldo);
+  color: var(--carta);
+}
+
+/* Colori identificativi per categoria */
+.cat-btn[data-cat="molecole"].active   { background: var(--zafferano); border-color: var(--zafferano); }
+.cat-btn[data-cat="storia"].active     { background: var(--terracotta); border-color: var(--terracotta); }
+.cat-btn[data-cat="letteratura"].active { background: var(--viola-incenso); border-color: var(--viola-incenso); }
+.cat-btn[data-cat="neuroscienza"].active { background: var(--smeraldo); border-color: var(--smeraldo); }
+.cat-btn[data-cat="mito"].active       { background: var(--oro); border-color: var(--oro); }
+.cat-btn[data-cat="filosofia"].active  { background: var(--seppia); border-color: var(--seppia); }
+
+/* [F5] Griglia articoli — stile rivista */
+.articoli-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 56px 40px;
+}
+
+.articolo-card {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.articolo-card:hover { opacity: 0.75; }
+
+.articolo-cat-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  display: inline-block;
+  margin-bottom: 16px;
+  color: var(--carta);
+}
+
+.tag-molecole    { background: var(--zafferano); }
+.tag-storia      { background: var(--terracotta); }
+.tag-letteratura { background: var(--viola-incenso); }
+.tag-neuroscienza { background: var(--smeraldo); }
+.tag-mito        { background: var(--oro); }
+.tag-filosofia   { background: var(--seppia); }
+
+.articolo-titolo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--inchiostro);
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+.articolo-estratto {
+  font-size: 0.82rem;
+  color: var(--grigio);
+  line-height: 1.85;
+  flex: 1;
+  margin-bottom: 16px;
+}
+
+.articolo-meta {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--lino);
+  text-transform: uppercase;
+}
+
+.articolo-divider {
+  width: 32px;
+  height: 1px;
+  background: var(--lino);
+  margin-bottom: 20px;
+}
+
+/* [F6] Sezione Ti Odoro — rubrica in evidenza */
+.ti-odoro-banner {
+  margin: 80px 0;
+  padding: 56px;
+  background: var(--avorio);
+  border-left: 3px solid var(--smeraldo);
+}
+
+.ti-odoro-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--smeraldo);
+  margin-bottom: 16px;
+}
+
+.ti-odoro-titolo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--inchiostro);
+  margin-bottom: 16px;
+}
+
+.ti-odoro-desc {
+  font-size: 0.88rem;
+  color: var(--seppia);
+  max-width: 520px;
+  line-height: 1.9;
+}
+
+/* [F7] Footer — identico a index.html */
+footer {
+  background: var(--inchiostro);
+  color: rgba(250,247,242,0.7);
+  padding: 64px 48px 40px;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(250,247,242,0.1);
+}
+
+.footer-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: var(--carta);
+  margin-bottom: 12px;
+}
+
+.footer-tagline {
+  font-size: 0.78rem;
+  line-height: 1.7;
+  color: rgba(250,247,242,0.5);
+}
+
+.footer-col-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--salvia);
+  margin-bottom: 16px;
+}
+
+.footer-col p, .footer-col a {
+  font-size: 0.78rem;
+  color: rgba(250,247,242,0.6);
+  text-decoration: none;
+  line-height: 2;
+  display: block;
+}
+
+.footer-col a:hover { color: var(--carta); }
+
+.footer-bottom {
+  max-width: 1100px;
+  margin: 28px auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.7rem;
+  color: rgba(250,247,242,0.3);
+}
+
+/* [F8] Responsive */
+@media (max-width: 900px) {
+  .archivio-wrapper { padding: 140px 28px 80px; }
+  .articoli-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 28px; }
+  .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+}
+
+@media (max-width: 600px) {
+  nav { padding: 18px 24px; }
+  .nav-links { gap: 20px; }
+  .nav-links a { font-size: 0.7rem; }
+  .articoli-grid { grid-template-columns: 1fr; }
+  .ti-odoro-banner { padding: 36px 24px; }
+}
+
+/* [F9] Fade-in animazione */
+.fade-in {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.8s cubic-bezier(0.23,1,0.32,1), transform 0.8s cubic-bezier(0.23,1,0.32,1);
+}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+</style>
+</head>
+<body>
+
+<!-- [F10] Markup NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Raffaella Pisani</a>
+  <ul class="nav-links">
+    <li><a href="index.html#chi-sono">Chi sono</a></li>
+    <li><a href="index.html#visione">Visione</a></li>
+    <li><a href="index.html#servizi">Servizi</a></li>
+    <li><a href="index.html#credibilita">Collaborazioni</a></li>
+    <li><a href="blog.html" class="active">Archivio</a></li>
+    <li><a href="index.html#contatti">Contatti</a></li>
+  </ul>
+</nav>
+
+<!-- [F11] Markup ARCHIVIO — header + filtri + griglia -->
+<main class="archivio-wrapper">
+
+  <header class="archivio-header fade-in">
+    <p class="archivio-eyebrow">Archivio divulgativo</p>
+    <h1 class="archivio-title">Il profumo<br>come linguaggio.</h1>
+    <p class="archivio-intro">Articoli, riflessioni e approfondimenti sull'olfatto come strumento di cultura, memoria e narrazione. Ogni testo è un invito a leggere il profumo oltre la sua superficie.</p>
+  </header>
+
+  <!-- [F12] Filtri categorie -->
+  <div class="categorie-bar fade-in">
+    <button class="cat-btn active" data-cat="tutti">Tutti</button>
+    <button class="cat-btn" data-cat="molecole">Molecole</button>
+    <button class="cat-btn" data-cat="storia">Storia</button>
+    <button class="cat-btn" data-cat="letteratura">Letteratura</button>
+    <button class="cat-btn" data-cat="neuroscienza">Neuroscienza</button>
+    <button class="cat-btn" data-cat="mito">Mito</button>
+    <button class="cat-btn" data-cat="filosofia">Filosofia</button>
+  </div>
+
+  <!-- [F13] Griglia articoli -->
+  <div class="articoli-grid" id="articoli-grid">
+
+    <article class="articolo-card fade-in" data-categoria="neuroscienza">
+      <span class="articolo-cat-tag tag-neuroscienza">Neuroscienza</span>
+      <div class="articolo-divider"></div>
+      <h2 class="articolo-titolo">Il naso ricorda ciò che la mente dimentica</h2>
+      <p class="articolo-estratto">L'olfatto è l'unico senso che raggiunge il sistema limbico senza passare per il talamo. Questo spiega perché un profumo può riportarci in un momento preciso della nostra vita con una nitidezza che nessuna fotografia riesce a eguagliare.</p>
+      <span class="articolo-meta">Rubrica Ti Odoro · Treviso Città e Storie</span>
+    </article>
+
+    <article class="articolo-card fade-in" data-categoria="storia">
+      <span class="articolo-cat-tag tag-storia">Storia</span>
+      <div class="articolo-divider"></div>
+      <h2 class="articolo-titolo">Cinisca e il profumo delle Olimpiadi</h2>
+      <p class="articolo-estratto">Dalla collaborazione con Temacultura è nata una riflessione sul profumo nell'antica Grecia. Cinisca, prima donna a vincere alle Olimpiadi, portava con sé un'identità olfattiva che la storia ha quasi dimenticato.</p>
+      <span class="articolo-meta">Collaborazione Temacultura · Pubblicazione universitaria</span>
+    </article>
+
+    <article class="articolo-card fade-in" data-categoria="letteratura">
+      <span class="articolo-cat-tag tag-letteratura">Letteratura</span>
+      <div class="articolo-divider"></div>
+      <h2 class="articolo-titolo">Leggere il profumo come un testo letterario</h2>
+      <p class="articolo-estratto">Ogni fragranza ha una struttura narrativa: un inizio, uno sviluppo, una conclusione. Imparare a leggerla significa acquisire un nuovo alfabeto sensoriale, capace di raccontare luoghi, persone e memorie con una precisione inaspettata.</p>
+      <span class="articolo-meta">Scrittura olfattiva · Divulgazione culturale</span>
+    </article>
+
+    <article class="articolo-card fade-in" data-categoria="molecole">
+      <span class="articolo-cat-tag tag-molecole">Molecole</span>
+      <div class="articolo-divider"></div>
+      <h2 class="articolo-titolo">Ambroxan: la molecola che non finisce mai</h2>
+      <p class="articolo-estratto">Sintetica ma ispirata all'ambra grigia, l'ambroxan è diventata la firma invisibile di un'intera generazione di profumi. La sua persistenza sulla pelle è quasi un paradosso: più la cerchi, meno la trovi.</p>
+      <span class="articolo-meta">Chimica molecolare · Profumeria artistica</span>
+    </article>
+
+    <article class="articolo-card fade-in" data-categoria="mito">
+      <span class="articolo-cat-tag tag-mito">Mito</span>
+      <div class="articolo-divider"></div>
+      <h2 class="articolo-titolo">L'incenso e il sacro: quando il profumo era preghiera</h2>
+      <p class="articolo-estratto">In ogni tradizione religiosa il fumo dell'incenso ha svolto una funzione di mediazione tra il visibile e l'invisibile. Non era decorazione: era linguaggio. Un codice olfattivo condiviso tra uomini e dei.</p>
+      <span class="articolo-meta">Sinestesia olfattiva · Installazioni artistiche</span>
+    </article>
+
+    <article class="articolo-card fade-in" data-categoria="filosofia">
+      <span class="articolo-cat-tag tag-filosofia">Filosofia</span>
+      <div class="articolo-divider"></div>
+      <h2 class="articolo-titolo">Oltre la tecnica: la dignità intellettuale del profumo</h2>
+      <p class="articolo-estratto">Per troppo tempo il profumo è stato trattato come accessorio. Eppure la sua capacità di evocare, connettere e trasformare lo colloca tra le forme più sofisticate di comunicazione umana. È tempo di restituirgli la dignità che merita.</p>
+      <span class="articolo-meta">Consulenza concettuale · Comunicazione identitaria</span>
+    </article>
+
+  </div>
+
+  <!-- [F14] Banner rubrica Ti Odoro -->
+  <div class="ti-odoro-banner fade-in">
+    <p class="ti-odoro-label">Rubrica bimestrale</p>
+    <h2 class="ti-odoro-titolo">Ti Odoro</h2>
+    <p class="ti-odoro-desc">Ogni due mesi su <em>Treviso Città e Storie</em>, una riflessione sull'olfatto, l'odore e le fragranze in continua relazione con la cultura, le neuroscienze e l'emozione poetica. Un invito a fermarsi e annusare il mondo con occhi nuovi.</p>
+  </div>
+
+</main>
+
+<!-- [F15] Markup FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <p class="footer-brand">Raffaella Pisani</p>
+      <p class="footer-tagline">Ricercatrice e divulgatrice<br>di cultura olfattiva.<br>Nord Italia.</p>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-title">Contatti</p>
+      <a href="mailto:raffaellapisani71@gmail.com">raffaellapisani71@gmail.com</a>
+      <a href="tel:+393385734333">+39 338 573 4333</a>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-title">Pagine</p>
+      <a href="index.html">Home</a>
+      <a href="blog.html">Archivio</a>
+      <a href="index.html#contatti">Contatti</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Sensi di Strati di Pisani Raffaella — P.IVA 05581330262</span>
+    <span>Via Po 14/a · 31020 Fontane di Villorba (TV)</span>
+  </div>
+</footer>
+
+<!-- [F16] Script — filtro categorie + fade-in -->
+<script>
+// [1] IntersectionObserver per fade-in
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// [2] Filtro categorie
+const catBtns = document.querySelectorAll('.cat-btn');
+const cards   = document.querySelectorAll('.articolo-card');
+
+catBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    catBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat = btn.dataset.cat;
+    cards.forEach(card => {
+      if (cat === 'tutti' || card.dataset.categoria === cat) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+</script>
+
+</body>
+</html>
