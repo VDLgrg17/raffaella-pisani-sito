@@ -1,25 +1,20 @@
-// [GV-PWA] Action Bar — Barra azioni standard Giorgio Vidali
-// Fully responsive con Condividi, Sito Web, Refresh, Installa App, Esci
+// [GV-PWA] Action Bar Bottom — Barra azioni standard Giorgio Vidali (bottom)
 
 (function() {
   'use strict';
 
   let deferredPrompt = null;
-  const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
 
-  // Cattura l'evento beforeinstallprompt
   window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferredPrompt = e;
   });
 
-  // Condividi
   function handleShare() {
-    const modal = document.getElementById('gv-share-modal');
-    if (modal) modal.style.display = 'flex';
+    const modal = document.getElementById('gv-share-modal-bottom');
+    if (modal) modal.classList.add('show');
   }
 
-  // Copia Link
   function handleCopyLink() {
     const url = window.location.href;
     if (navigator.clipboard) {
@@ -41,7 +36,6 @@
     alert('✓ Link copiato negli appunti');
   }
 
-  // WhatsApp
   function handleWhatsApp() {
     const title = 'Raffaella Pisani — Cultura Olfattiva';
     const url = window.location.href;
@@ -49,13 +43,11 @@
     window.open(`https://wa.me/?text=${text}`, '_blank');
   }
 
-  // Installa App
   function handleInstall() {
-    const modal = document.getElementById('gv-install-modal');
-    if (modal) modal.style.display = 'flex';
+    const modal = document.getElementById('gv-install-modal-bottom');
+    if (modal) modal.classList.add('show');
   }
 
-  // Refresh
   function handleRefresh() {
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.getRegistrations().then(registrations => {
@@ -65,22 +57,6 @@
     window.location.reload(true);
   }
 
-  // Esci (solo in standalone)
-  function handleExit() {
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.getRegistrations().then(registrations => {
-        registrations.forEach(reg => reg.unregister());
-      });
-    }
-    window.location.href = 'https://www.google.com';
-  }
-
-  // Sito Web
-  function handleWebsite() {
-    window.open('https://raffaellapisani.it', '_blank');
-  }
-
-  // Installa App (prompt nativo)
   function handleInstallPrompt() {
     if (deferredPrompt) {
       deferredPrompt.prompt();
@@ -93,65 +69,49 @@
     }
   }
 
-  // Chiudi modali
   function closeModal(modalId) {
     const modal = document.getElementById(modalId);
-    if (modal) modal.style.display = 'none';
+    if (modal) modal.classList.remove('show');
   }
 
-  // Event listeners
   document.addEventListener('DOMContentLoaded', () => {
-    // Barra azioni
-    const shareBtn = document.getElementById('gv-share-btn');
-    const websiteBtn = document.getElementById('gv-website-btn');
-    const refreshBtn = document.getElementById('gv-refresh-btn');
-    const installBtn = document.getElementById('gv-install-btn');
-    const exitBtn = document.getElementById('gv-exit-btn');
+    // Barra azioni bottom
+    const shareBtn = document.getElementById('gv-share-btn-bottom');
+    const refreshBtn = document.getElementById('gv-refresh-btn-bottom');
+    const installBtn = document.getElementById('gv-install-btn-bottom');
 
     if (shareBtn) shareBtn.addEventListener('click', handleShare);
-    if (websiteBtn) websiteBtn.addEventListener('click', handleWebsite);
     if (refreshBtn) refreshBtn.addEventListener('click', handleRefresh);
     if (installBtn) installBtn.addEventListener('click', handleInstall);
-    if (exitBtn) exitBtn.addEventListener('click', handleExit);
 
     // Modale Condivisione
-    const copyLinkBtn = document.getElementById('gv-copy-link-btn');
-    const whatsappBtn = document.getElementById('gv-whatsapp-btn');
-    const closeShareBtn = document.getElementById('gv-close-share-btn');
-    const shareModal = document.getElementById('gv-share-modal');
+    const copyLinkBtn = document.getElementById('gv-copy-link-btn-bottom');
+    const whatsappBtn = document.getElementById('gv-whatsapp-btn-bottom');
+    const closeShareBtn = document.getElementById('gv-close-share-btn-bottom');
+    const shareModal = document.getElementById('gv-share-modal-bottom');
 
     if (copyLinkBtn) copyLinkBtn.addEventListener('click', handleCopyLink);
     if (whatsappBtn) whatsappBtn.addEventListener('click', handleWhatsApp);
-    if (closeShareBtn) closeShareBtn.addEventListener('click', () => closeModal('gv-share-modal'));
+    if (closeShareBtn) closeShareBtn.addEventListener('click', () => closeModal('gv-share-modal-bottom'));
 
     if (shareModal) {
       shareModal.addEventListener('click', (e) => {
-        if (e.target === shareModal) closeModal('gv-share-modal');
+        if (e.target === shareModal) closeModal('gv-share-modal-bottom');
       });
     }
 
     // Modale Installazione
-    const installPromptBtn = document.getElementById('gv-install-prompt-btn');
-    const closeInstallBtn = document.getElementById('gv-close-install-btn');
-    const installModal = document.getElementById('gv-install-modal');
+    const installPromptBtn = document.getElementById('gv-install-prompt-btn-bottom');
+    const closeInstallBtn = document.getElementById('gv-close-install-btn-bottom');
+    const installModal = document.getElementById('gv-install-modal-bottom');
 
     if (installPromptBtn) installPromptBtn.addEventListener('click', handleInstallPrompt);
-    if (closeInstallBtn) closeInstallBtn.addEventListener('click', () => closeModal('gv-install-modal'));
+    if (closeInstallBtn) closeInstallBtn.addEventListener('click', () => closeModal('gv-install-modal-bottom'));
 
     if (installModal) {
       installModal.addEventListener('click', (e) => {
-        if (e.target === installModal) closeModal('gv-install-modal');
+        if (e.target === installModal) closeModal('gv-install-modal-bottom');
       });
-    }
-
-    // Mostra/nascondi pulsante ESCI
-    if (exitBtn) {
-      exitBtn.style.display = isStandalone ? 'block' : 'none';
-    }
-
-    // Nascondi modale installazione se già installata
-    if (isStandalone && installBtn) {
-      installBtn.style.display = 'none';
     }
   });
 })();

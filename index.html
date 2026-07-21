@@ -667,29 +667,43 @@
     }
   }
 
-  /* [F1] Barra azioni fissa — 4 pulsanti responsive */
-  .gv-action-bar {
+  
+
+    .gv-modal-content {
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 16px;
+    }
+
+    .gv-exit-btn {
+      bottom: 12px;
+      padding: 6px 12px;
+      font-size: 0.65rem;
+    }
+  }
+
+  /* [F1] Barra azioni fissa in basso — 3 pulsanti responsive */
+  .gv-action-bar-bottom {
     position: fixed;
-    top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
     background: rgba(27, 94, 75, 0.95);
     backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--lino);
-    padding: 12px 16px;
+    border-top: 1px solid var(--lino);
+    padding: 14px 16px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px;
     justify-content: center;
     align-items: center;
     z-index: 9999;
   }
 
-  .gv-action-btn {
-    padding: 10px 14px;
-    background: var(--smeraldo);
-    color: var(--carta);
-    border: none;
+  .gv-action-btn-bottom {
+    padding: 11px 16px;
+    border: 1.5px solid var(--smeraldo);
+    background: transparent;
+    color: var(--smeraldo);
     border-radius: 6px;
     font-size: 0.75rem;
     font-weight: 600;
@@ -698,22 +712,32 @@
     cursor: pointer;
     transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
     white-space: nowrap;
-    flex: 1 1 calc(50% - 4px);
+    flex: 1 1 auto;
     max-width: 140px;
   }
 
-  .gv-action-btn:hover {
-    background: var(--salvia);
+  .gv-action-btn-bottom:hover {
+    background: rgba(27, 94, 75, 0.3);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(27, 94, 75, 0.3);
   }
 
-  .gv-action-btn:active {
+  .gv-action-btn-bottom:active {
     transform: scale(0.97);
   }
 
-  /* [F2] Modali — overlay responsive */
-  .gv-modal {
+  #gv-install-btn-bottom {
+    background: #C9A961;
+    border-color: #C9A961;
+    color: var(--inchiostro);
+  }
+
+  #gv-install-btn-bottom:hover {
+    background: #B89450;
+    border-color: #B89450;
+  }
+
+  /* [F2] Modali */
+  .gv-modal-bottom {
     display: none;
     position: fixed;
     top: 0;
@@ -727,11 +751,11 @@
     padding: 16px;
   }
 
-  .gv-modal.show {
+  .gv-modal-bottom.show {
     display: flex;
   }
 
-  .gv-modal-content {
+  .gv-modal-content-bottom {
     background: var(--carta);
     border-radius: 12px;
     padding: 32px 24px;
@@ -741,12 +765,7 @@
     animation: slideUp 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
-  @keyframes slideUp {
-    from { transform: translateY(40px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-  }
-
-  .gv-modal-title {
+  .gv-modal-title-bottom {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.8rem;
     font-weight: 600;
@@ -755,14 +774,14 @@
     margin-bottom: 20px;
   }
 
-  .gv-modal-text {
+  .gv-modal-text-bottom {
     font-size: 0.95rem;
     color: var(--seppia);
     line-height: 1.8;
     margin-bottom: 16px;
   }
 
-  .gv-modal-url {
+  .gv-modal-url-bottom {
     background: var(--avorio);
     padding: 12px;
     border-radius: 6px;
@@ -773,7 +792,7 @@
     margin-bottom: 16px;
   }
 
-  .gv-modal-button {
+  .gv-modal-button-bottom {
     width: 100%;
     padding: 12px 16px;
     background: var(--smeraldo);
@@ -789,26 +808,26 @@
     margin-bottom: 10px;
   }
 
-  .gv-modal-button:hover {
+  .gv-modal-button-bottom:hover {
     background: var(--salvia);
     transform: translateY(-2px);
   }
 
-  .gv-modal-button:active {
+  .gv-modal-button-bottom:active {
     transform: scale(0.98);
   }
 
-  .gv-modal-button-secondary {
+  .gv-modal-button-secondary-bottom {
     background: transparent;
     border: 1px solid var(--salvia);
     color: var(--salvia);
   }
 
-  .gv-modal-button-secondary:hover {
+  .gv-modal-button-secondary-bottom:hover {
     background: rgba(143, 175, 159, 0.1);
   }
 
-  .gv-modal-close {
+  .gv-modal-close-bottom {
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -818,185 +837,112 @@
     transition: color 0.2s;
   }
 
-  .gv-modal-close:hover {
+  .gv-modal-close-bottom:hover {
     color: var(--smeraldo);
   }
 
-  .gv-install-section {
+  .gv-install-section-bottom {
     margin-bottom: 20px;
   }
 
-  .gv-install-platform {
+  .gv-install-platform-bottom {
     font-weight: 600;
     color: var(--smeraldo);
     font-size: 0.95rem;
     margin-bottom: 8px;
   }
 
-  .gv-install-divider {
+  .gv-install-divider-bottom {
     height: 2px;
     background: var(--smeraldo);
     margin-bottom: 12px;
   }
 
-  .gv-install-steps {
+  .gv-install-steps-bottom {
     font-size: 0.9rem;
     color: var(--seppia);
     line-height: 1.7;
     margin-bottom: 16px;
   }
 
-  .gv-install-steps ol {
+  .gv-install-steps-bottom ol {
     margin: 0;
     padding-left: 20px;
   }
 
-  .gv-install-steps li {
+  .gv-install-steps-bottom li {
     margin-bottom: 8px;
   }
 
-  /* [F3] Pulsante Esci — solo standalone */
-  .gv-exit-btn {
-    position: fixed;
-    bottom: 24px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px 20px;
-    background: transparent;
-    border: 1px solid var(--salvia);
-    color: var(--salvia);
-    border-radius: 6px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.2s;
-    z-index: 9998;
-    display: none;
+  body {
+    padding-bottom: 70px;
   }
 
-  .gv-exit-btn:hover {
-    background: rgba(143, 175, 159, 0.15);
-    transform: translateX(-50%) translateY(-2px);
-  }
-
-  .gv-exit-btn:active {
-    transform: translateX(-50%) scale(0.98);
-  }
-
-  /* Responsive — tablet */
   @media (max-width: 768px) {
-    .gv-action-bar {
-      padding: 10px 12px;
-      gap: 6px;
+    .gv-action-bar-bottom {
+      padding: 12px 12px;
+      gap: 8px;
     }
 
-    .gv-action-btn {
-      padding: 9px 12px;
+    .gv-action-btn-bottom {
+      padding: 10px 12px;
       font-size: 0.7rem;
-      flex: 1 1 calc(50% - 3px);
       max-width: 120px;
     }
 
-    .gv-modal-content {
+    .gv-modal-content-bottom {
       padding: 24px 16px;
       max-width: 100%;
     }
 
-    .gv-modal-title {
+    .gv-modal-title-bottom {
       font-size: 1.5rem;
     }
 
-    .gv-modal-text {
-      font-size: 0.9rem;
-    }
-
-    .gv-install-platform {
-      font-size: 0.9rem;
-    }
-
-    .gv-install-steps {
-      font-size: 0.85rem;
+    body {
+      padding-bottom: 65px;
     }
   }
 
-  /* Responsive — mobile */
   @media (max-width: 480px) {
-    .gv-action-bar {
-      padding: 8px 10px;
-      gap: 5px;
+    .gv-action-bar-bottom {
+      padding: 10px 10px;
+      gap: 6px;
     }
 
-    .gv-action-btn {
-      padding: 8px 10px;
+    .gv-action-btn-bottom {
+      padding: 9px 10px;
       font-size: 0.65rem;
-      flex: 1 1 calc(50% - 2.5px);
       max-width: 100px;
     }
 
-    .gv-modal-content {
+    .gv-modal-content-bottom {
       padding: 20px 14px;
       border-radius: 10px;
     }
 
-    .gv-modal-title {
+    .gv-modal-title-bottom {
       font-size: 1.3rem;
       margin-bottom: 16px;
     }
 
-    .gv-modal-text {
-      font-size: 0.85rem;
-      line-height: 1.6;
-    }
-
-    .gv-modal-url {
-      padding: 10px;
-      font-size: 0.75rem;
-    }
-
-    .gv-modal-button {
-      padding: 10px 14px;
-      font-size: 0.8rem;
-    }
-
-    .gv-install-platform {
-      font-size: 0.85rem;
-    }
-
-    .gv-install-steps {
-      font-size: 0.8rem;
-      line-height: 1.6;
-    }
-
-    .gv-exit-btn {
-      bottom: 20px;
-      padding: 9px 16px;
-      font-size: 0.7rem;
+    body {
+      padding-bottom: 60px;
     }
   }
 
-  /* Landscape mode */
   @media (max-height: 500px) and (orientation: landscape) {
-    .gv-action-bar {
+    .gv-action-bar-bottom {
       padding: 6px 12px;
     }
 
-    .gv-action-btn {
+    .gv-action-btn-bottom {
       padding: 6px 10px;
       font-size: 0.65rem;
     }
 
-    .gv-modal-content {
-      max-height: 90vh;
-      overflow-y: auto;
-      padding: 16px;
-    }
-
-    .gv-exit-btn {
-      bottom: 12px;
-      padding: 6px 12px;
-      font-size: 0.65rem;
+    body {
+      padding-bottom: 50px;
     }
   }
 </style>
@@ -1307,37 +1253,39 @@ if ('serviceWorker' in navigator) {
 </script>
 
 
-<!-- [F4] Barra azioni GV PWA — 4 pulsanti -->
-<div class="gv-action-bar">
-  <bu<script src="/pwa-action-bar.js"></script>
-tton id="gv-share-btn" class="gv-action-btn" title="Condividi">📤 Condividi</button>
-  <button id="gv-website-btn" class="gv-action-btn" title="Sito Web">🌐 Sito Web</button>
-  <button id="gv-refresh-btn" class="gv-action-btn" title="Aggiorna">🔄 Refresh</button>
-  <button id="gv-install-btn" class="gv-action-btn" title="Installa App">⬇️ Installa</button>
+
+
+<script src="/pwa-action-bar.js"></script>
+
+<!-- [F4] Barra azioni GV PWA — 3 pulsanti in basso -->
+<div class="gv-action-bar-bottom">
+  <button id="gv-share-btn-bottom" class="gv-action-btn-bottom" title="Condividi">Condividi</button>
+  <button id="gv-install-btn-bottom" class="gv-action-btn-bottom" title="Installa App">Installa App</button>
+  <button id="gv-refresh-btn-bottom" class="gv-action-btn-bottom" title="Aggiorna">Refresh</button>
 </div>
 
 <!-- [F5] Modale Condivisione -->
-<div id="gv-share-modal" class="gv-modal">
-  <div class="gv-modal-content">
-    <span id="gv-close-share-btn" class="gv-modal-close">&times;</span>
-    <h3 class="gv-modal-title">Condividi</h3>
-    <div class="gv-modal-url" id="gv-share-url">https://raffaellapisani.it</div>
-    <button id="gv-copy-link-btn" class="gv-modal-button">Copia Link</button>
-    <button id="gv-whatsapp-btn" class="gv-modal-button" style="background: #25D366;">Invia su WhatsApp</button>
-    <button class="gv-modal-button gv-modal-button-secondary" onclick="document.getElementById('gv-share-modal').style.display='none'">Chiudi</button>
+<div id="gv-share-modal-bottom" class="gv-modal-bottom">
+  <div class="gv-modal-content-bottom">
+    <span id="gv-close-share-btn-bottom" class="gv-modal-close-bottom">&times;</span>
+    <h3 class="gv-modal-title-bottom">Condividi</h3>
+    <div class="gv-modal-url-bottom" id="gv-share-url-bottom">https://raffaellapisani.it</div>
+    <button id="gv-copy-link-btn-bottom" class="gv-modal-button-bottom">Copia Link</button>
+    <button id="gv-whatsapp-btn-bottom" class="gv-modal-button-bottom" style="background: #25D366; border-color: #25D366;">Invia su WhatsApp</button>
+    <button class="gv-modal-button-secondary-bottom gv-modal-button-bottom" onclick="document.getElementById('gv-share-modal-bottom').classList.remove('show')">Chiudi</button>
   </div>
 </div>
 
 <!-- [F6] Modale Installazione -->
-<div id="gv-install-modal" class="gv-modal">
-  <div class="gv-modal-content">
-    <span id="gv-close-install-btn" class="gv-modal-close">&times;</span>
-    <h3 class="gv-modal-title">Installa l'App</h3>
+<div id="gv-install-modal-bottom" class="gv-modal-bottom">
+  <div class="gv-modal-content-bottom">
+    <span id="gv-close-install-btn-bottom" class="gv-modal-close-bottom">&times;</span>
+    <h3 class="gv-modal-title-bottom">Installa l'App</h3>
     
-    <div class="gv-install-section">
-      <div class="gv-install-platform">Per iPhone/iPad (Safari):</div>
-      <div class="gv-install-divider"></div>
-      <div class="gv-install-steps">
+    <div class="gv-install-section-bottom">
+      <div class="gv-install-platform-bottom">Per iPhone/iPad (Safari):</div>
+      <div class="gv-install-divider-bottom"></div>
+      <div class="gv-install-steps-bottom">
         <ol>
           <li>Tocca il quadrato con la freccia che vedi al centro, sotto sulla base del tuo iPhone</li>
           <li>Scorri e tocca "Aggiungi a Home"</li>
@@ -1347,10 +1295,10 @@ tton id="gv-share-btn" class="gv-action-btn" title="Condividi">📤 Condividi</b
       </div>
     </div>
 
-    <div class="gv-install-section">
-      <div class="gv-install-platform">Per Android (Chrome):</div>
-      <div class="gv-install-divider"></div>
-      <div class="gv-install-steps">
+    <div class="gv-install-section-bottom">
+      <div class="gv-install-platform-bottom">Per Android (Chrome):</div>
+      <div class="gv-install-divider-bottom"></div>
+      <div class="gv-install-steps-bottom">
         <ol>
           <li>Tocca i tre puntini in alto a destra</li>
           <li>Tocca "Aggiungi a schermata Home" oppure "Installa app"</li>
@@ -1360,13 +1308,10 @@ tton id="gv-share-btn" class="gv-action-btn" title="Condividi">📤 Condividi</b
       </div>
     </div>
 
-    <button id="gv-install-prompt-btn" class="gv-modal-button">Installa Ora</button>
-    <button class="gv-modal-button gv-modal-button-secondary" onclick="document.getElementById('gv-install-modal').style.display='none'">Chiudi</button>
+    <button id="gv-install-prompt-btn-bottom" class="gv-modal-button-bottom">Installa Ora</button>
+    <button class="gv-modal-button-secondary-bottom gv-modal-button-bottom" onclick="document.getElementById('gv-install-modal-bottom').classList.remove('show')">Chiudi</button>
   </div>
 </div>
-
-<!-- [F3] Pulsante Esci — solo standalone -->
-<button class="gv-exit-btn" id="gv-exit-btn">Esci</button>
 
 </body>
 </html>
