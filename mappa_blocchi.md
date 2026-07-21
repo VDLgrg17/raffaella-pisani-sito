@@ -1,79 +1,121 @@
-# Mappa Blocchi F — Raffaella Pisani · Cultura Olfattiva
+# Mappa Blocchi F — Raffaella Pisani (Cultura Olfattiva)
 
-> Protocollo Blocchi F v2.0 attivo. Ogni modifica al codice deve dichiarare i blocchi coinvolti.
-> File principale: `index.html` · File sperimentale: `hero-archivio.html`
-> Ultimo aggiornamento: 2026-07-14
+**Fonte di verità per la numerazione project-wide univoca.**
+Protocollo: `blocchi-f-operativo` v2.0 | Aggiornato: 2026-07-21
 
-## Blocchi CSS (in `<style>` di index.html)
+---
 
-| Blocco | Responsabilità | Dipende da | Status | Last modified |
-|--------|----------------|------------|--------|---------------|
-| F0 | Meta, font Google, variabili CSS `:root`, reset globale | nessuno | STABLE | 2026-07-14 |
-| F1 | Reset, variabili colore, tipografia base | F0 | STABLE | 2026-07-14 |
-| F2 | CSS Nav: navigazione, logo mirino SVG, menu links | F0, F1 | STABLE | 2026-07-14 |
-| F3 | CSS Hero: layout split, colonna foto, colonna testo, scia SVG | F0, F1 | STABLE | 2026-07-14 |
-| F4 | CSS Chi Sono: sezione identità, testo, foto | F0, F1 | STABLE | 2026-07-14 |
-| F5 | CSS Visione: tre parole, card Accoglienza/Cultura/Ascolto | F0, F1 | STABLE | 2026-07-14 |
-| F6 | CSS Servizi: card Divulgazione, Direzione Narrativa, Sinestesie | F0, F1 | STABLE | 2026-07-14 |
-| F7 | CSS Credibilità: collaborazioni, voci, citazioni | F0, F1 | STABLE | 2026-07-14 |
-| F8 | CSS Contatti: form, CTA, percorso olfattivo | F0, F1 | STABLE | 2026-07-14 |
-| F9 | CSS Footer: logo, info, copyright | F0, F1 | STABLE | 2026-07-14 |
-| F10 | CSS Responsive: media queries mobile/tablet per tutti i blocchi | F2–F9 | STABLE | 2026-07-14 |
+## Blocchi CSS (index.html, tag `<style>`)
 
-## Blocchi HTML (nel `<body>` di index.html)
+| Blocco | File | Riga | Responsabilità | Dipende da | Status | Last modified |
+|--------|------|------|-----------------|-----------|--------|---------------|
+| **F0** | index.html | 1-30 | Meta tag, PWA manifest, fonts, canonical | nessuno | STABLE | 2026-07-21 |
+| **F1** | index.html | 32 | Reset, variabili CSS, tipografia base | F0 | STABLE | 2026-07-21 |
+| **F2** | index.html | 65 | CSS Nav — navigazione, logo, menu | F1 | STABLE | 2026-07-21 |
+| **F3** | index.html | 103 | CSS Hero — layout split, foto, testo | F1 | STABLE | 2026-07-21 |
+| **F4** | index.html | 241 | CSS Chi Sono — identità, testo, foto 1-2 | F1 | STABLE | 2026-07-21 |
+| **F5** | index.html | 259 | CSS Visione — tre parole, card, foto 3 | F1 | STABLE | 2026-07-21 |
+| **F6** | index.html | 293 | CSS Servizi — 3 card, foto 4-5 | F1 | STABLE | 2026-07-21 |
+| **F7** | index.html | 447 | CSS Collaborazioni — griglia narrativa | F1 | STABLE | 2026-07-21 |
+| **F8** | index.html | 517 | CSS Footer — logo, info, copyright | F1 | STABLE | 2026-07-21 |
+| **F9** | index.html | 540 | CSS Responsive — media queries mobile/tablet | F1-F8 | STABLE | 2026-07-21 |
 
-| Blocco | Nome breve | Contenuto | Dipende da | Status | Last modified |
-|--------|-----------|-----------|------------|--------|---------------|
-| F11 | Nav | Logo mirino SVG, nome, menu Chi Sono/Servizi/Contatti | F0, F2 | STABLE | 2026-07-14 |
-| F12 | Hero | Foto AI, pannello verde, nome, claim, citazione, CTA Scrivimi | F0, F3 | STABLE | 2026-07-14 |
-| F13 | Chi Sono | "Da cultrice della parola, disegno l'intangibile." | F0, F4 | STABLE | 2026-07-14 |
-| F14 | Visione | "Tre parole. Un metodo." — Accoglienza, Cultura, Ascolto | F0, F5 | STABLE | 2026-07-14 |
-| F15 | Servizi | 3 card: Divulgazione Culturale, Direzione Narrativa, Sinestesie | F0, F6 | STABLE | 2026-07-14 |
-| F16 | Credibilità | Collaborazioni e voci di chi ha percorso il cammino | F0, F7 | STABLE | 2026-07-14 |
-| F17 | Contatti | Form/CTA "Inizia il tuo percorso olfattivo" | F0, F8 | STABLE | 2026-07-14 |
-| F18 | Footer | Footer con logo, copyright, link | F0, F9 | STABLE | 2026-07-14 |
+---
 
-## Grafo delle dipendenze
+## Blocchi PWA
+
+| Blocco | File | Riga | Responsabilità | Dipende da | Status | Last modified |
+|--------|------|------|-----------------|-----------|--------|---------------|
+| **F10** | index.html | 664 | CSS Barra azioni fissa bottom — 3 pulsanti | F1 | STABLE | 2026-07-21 |
+| **F11** | index.html | 718 | CSS Modali PWA (Condividi, Installa) | F1, F10 | STABLE | 2026-07-21 |
+| **F12** | pwa-action-bar.js | — | JS Logica pulsanti PWA | F10, F11 | STABLE | 2026-07-21 |
+| **F13** | index.html | 569 | CSS Cookie Bar GDPR | F1 | STABLE | 2026-07-21 |
+| **F14** | gdpr-cookies.js | — | JS Logica cookie consent | F13 | STABLE | 2026-07-21 |
+
+---
+
+## Blocchi Metadata e Service Worker
+
+| Blocco | File | Responsabilità | Dipende da | Status | Last modified |
+|--------|------|-----------------|-----------|--------|---------------|
+| **F15** | manifest.json | PWA Manifest — configurazione app | F0 | STABLE | 2026-07-21 |
+| **F16** | sw.js | Service Worker — caching offline | F15 | STABLE | 2026-07-21 |
+| **F17** | index.html | 945 | Registrazione Service Worker | F16 | STABLE | 2026-07-21 |
+
+---
+
+## Blocchi HTML (Sezioni)
+
+| Blocco | File | Riga | Responsabilità | Dipende da | Status | Last modified |
+|--------|------|------|-----------------|-----------|--------|---------------|
+| **F18** | index.html | 948 | Sezione Hero — foto + testo smeraldo | F3 | STABLE | 2026-07-21 |
+| **F19** | index.html | 966 | Sezione Chi Sono — identità + foto 1-2 | F4 | STABLE | 2026-07-21 |
+| **F20** | index.html | 991 | Sezione Visione — 3 valori + foto 3 | F5 | STABLE | 2026-07-21 |
+| **F21** | index.html | 1019 | Sezione Servizi — 3 card + foto 4-5 | F6 | STABLE | 2026-07-21 |
+| **F22** | index.html | 1051 | Sezione Credibilità — collaborazioni + foto 6 | F7 | STABLE | 2026-07-21 |
+| **F23** | index.html | 1130 | Sezione Galleria — 8 immagini (deprecated) | — | TODO | 2026-07-21 |
+| **F24** | index.html | 1164 | Sezione Contatti — form + foto 7-8 | F6 | STABLE | 2026-07-21 |
+| **F25** | index.html | 1200+ | Footer — logo, info, copyright | F8 | STABLE | 2026-07-21 |
+
+---
+
+## Grafo Dipendenze (Completo)
 
 ```
-F0 (config globale)
-├── F1 (CSS base) → F2 · F3 · F4 · F5 · F6 · F7 · F8 · F9
-│                   F10 (responsive) → dipende da F2–F9
-├── F11 (HTML nav) → CSS: F2
-├── F12 (HTML hero) → CSS: F3
-├── F13 (HTML chi sono) → CSS: F4
-├── F14 (HTML visione) → CSS: F5
-├── F15 (HTML servizi) → CSS: F6
-├── F16 (HTML credibilità) → CSS: F7
-├── F17 (HTML contatti) → CSS: F8
-└── F18 (HTML footer) → CSS: F9
+F0 (Meta, Fonts, Canonical)
+│
+F1 (Reset, Variabili CSS)
+├── F2 (Nav)
+├── F3 (Hero) → F18 (HTML Hero)
+├── F4 (Chi Sono) → F19 (HTML Chi Sono)
+├── F5 (Visione) → F20 (HTML Visione)
+├── F6 (Servizi) → F21 (HTML Servizi)
+├── F7 (Collaborazioni) → F22 (HTML Credibilità)
+├── F8 (Footer) → F25 (HTML Footer)
+└── F9 (Responsive) → tutti F2-F8
+
+F10 (Barra PWA)
+├── F11 (Modali PWA)
+├── F12 (JS PWA)
+└── F9 (Responsive)
+
+F13 (Cookie Bar)
+├── F14 (JS Cookie)
+└── F9 (Responsive)
+
+F15 (Manifest)
+├── F16 (Service Worker)
+└── F17 (Registrazione SW)
 ```
 
-## Vocabolario condiviso
+---
+
+## Regole di Modifica (blocchi-f-operativo)
+
+1. **Numerazione univoca** — nessun numero può ripetersi
+2. **Dipendenze** — sempre dichiarare i blocchi da cui dipende
+3. **Status** — aggiornare a ogni modifica (STABLE → WIP → STABLE)
+4. **Last modified** — data ISO (YYYY-MM-DD)
+5. **Comunicazione** — Giorgio dice "F18 riga 45", Manus legge solo F18
+6. **Header strutturato** — ogni blocco deve avere commento con ID, responsabilità, dipendenze, status
+
+---
+
+## Vocabolario Condiviso
 
 | Dici | Intendi | Blocco |
 |------|---------|--------|
-| "Nav" o "menu" | Menu in alto con logo e link | F11 + F2 |
-| "Hero" | Sezione principale con foto e pannello verde | F12 + F3 |
-| "Chi Sono" | Prima sezione sotto la hero | F13 + F4 |
-| "Visione" | Sezione Accoglienza/Cultura/Ascolto | F14 + F5 |
-| "Servizi" | Le 3 card dei servizi | F15 + F6 |
-| "Credibilità" | Sezione collaborazioni | F16 + F7 |
-| "Contatti" | Form e CTA finale | F17 + F8 |
-| "Footer" | Piè di pagina | F18 + F9 |
+| "Nav" o "menu" | Menu in alto con logo e link | F2 + F18 |
+| "Hero" | Sezione principale con foto e pannello verde | F3 + F18 |
+| "Chi Sono" | Prima sezione sotto la hero | F4 + F19 |
+| "Visione" | Sezione Accoglienza/Cultura/Ascolto | F5 + F20 |
+| "Servizi" | Le 3 card dei servizi | F6 + F21 |
+| "Credibilità" | Sezione collaborazioni | F7 + F22 |
+| "Contatti" | Form e CTA finale | F24 |
+| "Footer" | Piè di pagina | F8 + F25 |
+| "PWA" | Pulsanti Condividi/Installa/Refresh | F10-F12 |
+| "Cookie" | Cookie bar GDPR | F13-F14 |
 
-## Note operative
+---
 
-- Il logo mirino SVG è presente in F11 (nav), F12 (hero), F18 (footer) — rimozione indipendente per ciascuno
-- La foto hero è embedded come base64 in F12
-- F10 gestisce il responsive di tutti i blocchi F11–F18
-- Inviare screenshot con freccia/cerchio per identificare il blocco da modificare
-
-## Aggiornamento — 2026-07-21
-| Blocco | Responsabilità | Dipende da | Status | Last modified |
-|--------|----------------|------------|--------|---------------|
-| F7b | CSS Galleria Fotografica: griglia 2col mobile / 4col desktop, hover zoom | F0, F1 | STABLE | 2026-07-21 |
-| F16b | Markup GALLERIA FOTOGRAFICA: 8 immagini editoriali botanico-olfattive | F0, F7b | STABLE | 2026-07-21 |
-
-## Correzioni SEO — 2026-07-21
-- F0: rimosso canonical https://raffaellapisani.it/ (dominio non ancora attivo) — da ripristinare quando il dominio sarà registrato
+**Ultimo aggiornamento:** 2026-07-21 | **Versione:** 2.0 (blocchi-f-operativo compliant)
