@@ -68,3 +68,12 @@ F0 (config globale)
 - La foto hero è embedded come base64 in F12
 - F10 gestisce il responsive di tutti i blocchi F11–F18
 - Inviare screenshot con freccia/cerchio per identificare il blocco da modificare
+
+## Aggiornamento — 2026-07-21
+| Blocco | Responsabilità | Dipende da | Status | Last modified |
+|--------|----------------|------------|--------|---------------|
+| F7b | CSS Galleria Fotografica: griglia 2col mobile / 4col desktop, hover zoom | F0, F1 | STABLE | 2026-07-21 |
+| F16b | Markup GALLERIA FOTOGRAFICA: 8 immagini editoriali botanico-olfattive | F0, F7b | STABLE | 2026-07-21 |
+
+## Correzioni SEO — 2026-07-21
+- F0: rimosso canonical https://raffaellapisani.it/ (dominio non ancora attivo) — da ripristinare quando il dominio sarà registrato

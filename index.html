@@ -13,7 +13,7 @@
 <meta property="og:description" content="Ricercatrice e narratrice di cultura olfattiva. Divulgazione, direzione narrativa, percorsi sensoriali.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="it_IT">
-<link rel="canonical" href="https://raffaellapisani.it/">
+<!-- canonical: aggiungere quando il dominio sarà attivo -->
 <title>Raffaella Pisani — Cultura Olfattiva</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -467,6 +467,41 @@
   @media (min-width: 640px) {
     .collab-grid { grid-template-columns: repeat(2, 1fr); gap: 0 80px; }
   }
+  /* [F7b] CSS Galleria Fotografica — griglia editoriale 8 immagini */
+  #galleria {
+    padding: 120px 28px;
+    background: var(--inchiostro);
+  }
+  .galleria-grid {
+    margin-top: 56px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .galleria-item {
+    overflow: hidden;
+    aspect-ratio: 3 / 2;
+    background: var(--seppia);
+  }
+  .galleria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.5s ease;
+    opacity: 0.88;
+  }
+  .galleria-item img:hover {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+  #galleria .section-eyebrow { color: var(--salvia); }
+  #galleria .section-title { color: var(--carta); }
+  #galleria .section-body { color: var(--salvia-light); }
+  @media (min-width: 640px) {
+    .galleria-grid { grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    #galleria { padding: 140px 72px; }
+  }
 
   /* [F9] CSS Footer — logo, info, copyright */
   /* FOOTER */
@@ -535,6 +570,7 @@
     <li><a href="#servizi">Servizi</a></li>
     <li><a href="#collaborazioni">Collaborazioni</a></li>
     <li><a href="#contatti">Contatti</a></li>
+    <li><a href="#galleria">Galleria</a></li>
   </ul>
 </nav>
 
@@ -707,6 +743,40 @@
   </div>
 </section>
 
+<!-- [F16b] Markup GALLERIA FOTOGRAFICA — 8 immagini editoriali botanico-olfattive -->
+<section id="galleria">
+  <div class="fade-in">
+    <p class="section-eyebrow">Immagini</p>
+    <h2 class="section-title">L'universo olfattivo<br>in forma visiva.</h2>
+    <p class="section-body">Botanica, materie prime, resine e spezie — la cultura dell'olfatto raccontata per immagini.</p>
+  </div>
+  <div class="galleria-grid fade-in">
+    <div class="galleria-item">
+      <img src="galleria-fotografica/galleria-01.jpg" alt="Composizione botanica editoriale — spezie e fiori secchi su carta pergamena" loading="lazy">
+    </div>
+    <div class="galleria-item">
+      <img src="galleria-fotografica/galleria-02.jpg" alt="Elementi olfattivi naturali — resine e botanica su superficie scura" loading="lazy">
+    </div>
+    <div class="galleria-item">
+      <img src="galleria-fotografica/galleria-03.jpg" alt="Materie prime profumerie — botanica e spezie, luce naturale" loading="lazy">
+    </div>
+    <div class="galleria-item">
+      <img src="galleria-fotografica/galleria-04.jpg" alt="Flat lay botanico — anice stellato, cardamomo, petali di rosa, cannella, zafferano" loading="lazy">
+    </div>
+    <div class="galleria-item">
+      <img src="galleria-fotografica/galleria-05.jpg" alt="Botanica scura — rami secchi con licheni e resina su sfondo carbone" loading="lazy">
+    </div>
+    <div class="galleria-item">
+      <img src="galleria-fotografica/galleria-06.jpg" alt="Botanica nordica — fiori secchi bianchi e graminacee su superficie pietra" loading="lazy">
+    </div>
+    <div class="galleria-item">
+      <img src="galleria-fotografica/galleria-07.jpg" alt="Materie prime olfattive — frammenti di incenso, benzoe e mirra su marmo bianco" loading="lazy">
+    </div>
+    <div class="galleria-item">
+      <img src="galleria-fotografica/galleria-08.jpg" alt="Petali di rosa essiccati su lino — lavanda e camomilla, luce calda laterale" loading="lazy">
+    </div>
+  </div>
+</section>
 <!-- [F17] Markup CONTATTI — form/CTA percorso olfattivo -->
 <section id="contatti">
   <div class="fade-in">
