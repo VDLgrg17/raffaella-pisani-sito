@@ -15,6 +15,17 @@
 <meta property="og:locale" content="it_IT">
 <!-- canonical: aggiungere quando il dominio sarà attivo -->
 <title>Raffaella Pisani — Cultura Olfattiva</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/assets/icons/icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/icon-192x192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Raffaella Pisani">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="Raffaella Pisani">
+<meta name="msapplication-config" content="none">
+<meta name="msapplication-TileColor" content="#1B5E4B">
+<meta name="msapplication-TileImage" content="/assets/icons/icon-144x144.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -554,6 +565,227 @@
       border-left: 3px solid var(--oro);
     }
   }
+
+  /* [PWA] Pulsanti Condividi e Installa App */
+  .pwa-actions {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--inchiostro);
+    border-top: 1px solid var(--lino);
+    padding: 12px 28px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    z-index: 90;
+    animation: slideUp 0.3s ease-out;
+  }
+
+  @keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+
+  .pwa-btn {
+    padding: 10px 16px;
+    background: var(--smeraldo);
+    color: var(--carta);
+    border: none;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .pwa-btn:hover {
+    background: var(--salvia);
+    transform: scale(1.02);
+  }
+
+  .pwa-btn:active {
+    transform: scale(0.98);
+  }
+
+  #pwa-install-btn {
+    display: none;
+  }
+
+  /* Modale Installa App */
+  .pwa-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pwa-modal.show {
+    display: flex;
+  }
+
+  .pwa-modal-content {
+    background: var(--carta);
+    border-radius: 8px;
+    padding: 32px;
+    max-width: 400px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  .pwa-modal-close {
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--grigio);
+    cursor: pointer;
+    line-height: 1;
+  }
+
+  .pwa-modal-close:hover {
+    color: var(--smeraldo);
+  }
+
+  .pwa-modal h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    color: var(--smeraldo);
+    margin: 16px 0 12px;
+  }
+
+  .pwa-modal p {
+    font-size: 0.9rem;
+    color: var(--seppia);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .pwa-modal-instructions {
+    background: var(--avorio);
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: var(--grigio);
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: 640px) {
+    .pwa-actions {
+      padding: 10px 16px;
+      gap: 8px;
+    }
+
+    .pwa-btn {
+      flex: 1;
+      padding: 9px 12px;
+      font-size: 0.7rem;
+    }
+
+    .pwa-modal-content {
+      margin: 16px;
+      max-width: none;
+    }
+  }
+
+  /* [GDPR] Cookie Bar */
+  #gdpr-cookie-bar {
+    position: fixed;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    background: var(--inchiostro);
+    border-top: 1px solid var(--lino);
+    padding: 16px 28px;
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 85;
+    animation: slideUp 0.3s ease-out;
+  }
+
+  #gdpr-cookie-bar.show {
+    display: flex;
+  }
+
+  .gdpr-text {
+    font-size: 0.85rem;
+    color: var(--salvia);
+    line-height: 1.6;
+  }
+
+  .gdpr-text a {
+    color: var(--salvia-light);
+    text-decoration: underline;
+  }
+
+  .gdpr-buttons {
+    display: flex;
+    gap: 10px;
+  }
+
+  .gdpr-btn {
+    padding: 9px 14px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  #gdpr-accept-btn {
+    background: var(--smeraldo);
+    color: var(--carta);
+  }
+
+  #gdpr-accept-btn:hover {
+    background: var(--salvia);
+  }
+
+  #gdpr-reject-btn {
+    background: transparent;
+    border: 1px solid var(--salvia);
+    color: var(--salvia);
+  }
+
+  #gdpr-reject-btn:hover {
+    background: rgba(143, 175, 159, 0.1);
+  }
+
+  .gdpr-btn:active {
+    transform: scale(0.98);
+  }
+
+  @media (max-width: 640px) {
+    #gdpr-cookie-bar {
+      padding: 12px 16px;
+      gap: 10px;
+      bottom: 50px;
+    }
+
+    .gdpr-text {
+      font-size: 0.8rem;
+    }
+
+    .gdpr-buttons {
+      gap: 8px;
+    }
+
+    .gdpr-btn {
+      flex: 1;
+      padding: 8px 10px;
+      font-size: 0.65rem;
+    }
+  }
 </style>
 </head>
 <body>
@@ -830,17 +1062,64 @@
     </div>
   </div>
   <span class="footer-legal">© 2026 Raffaella Pisani · Sensi di Strati · P.IVA 05581330262 · <a href="#" class="footer-link">Privacy Policy</a></span>
+
+<!-- [PWA] Pulsanti Condividi e Installa App -->
+<div class="pwa-actions">
+  <button id="pwa-share-btn" class="pwa-btn" title="Condividi questa pagina">📤 Condividi</button>
+  <button id="pwa-install-btn" class="pwa-btn" title="Installa come app">⬇️ Installa App</button>
+</div>
+
+<!-- [PWA] Modale Installa App -->
+<div id="pwa-install-modal" class="pwa-modal">
+  <div class="pwa-modal-content">
+    <span id="close-install-modal" class="pwa-modal-close">&times;</span>
+    <h3>Installa l'app</h3>
+    <p>Aggiungi Raffaella Pisani — Cultura Olfattiva alla tua schermata Home per un accesso rapido.</p>
+    <div class="pwa-modal-instructions">
+      <strong>iPhone:</strong> Tocca Condividi → Aggiungi al
+<!-- [GDPR] Cookie Bar -->
+<div id="gdpr-cookie-bar">
+  <p class="gdpr-text">
+    Questo sito utilizza cookie per migliorare l'esperienza di navigazione. 
+    Continuando a navigare, accetti l'uso dei cookie. 
+    <a href="#" title="Leggi la privacy policy">Privacy Policy</a>
+  </p>
+  <div class="gdpr-buttons">
+    <button id="gdpr-accept-btn" class="gdpr-btn">Accetta</button>
+    <button id="gdpr-reject-btn" class="gdpr-btn">Rifiuta</button>
+  </div>
+</div>
+
+<script src="/pwa-actions.js"></script>
+la schermata Home<br>
+      <strong>Android:</strong> Tocca il menu ⋮ → Installa app
+    </div>
+  </div>
+</div>
 </footer>
 
 <!-- [F19] Script IntersectionObserver — fade-in -->
 <script>
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobs<script src="/gdpr-cookies.js"></script>
+erve(e.target); }
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
+
+<!-- [PWA] Service Worker Registration -->
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(reg => console.log('✓ Service Worker registrato'))
+      .catch(err => console.log('✗ Service Worker error:', err));
+  });
+}
+</script>
+
 </body>
 </html>
 
