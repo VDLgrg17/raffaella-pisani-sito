@@ -8,7 +8,7 @@
 <meta name="description" content="Raffaella Pisani — Divulgatrice e Ricercatrice di Cultura Olfattiva.">
 <title>Raffaella Pisani — Cultura Olfattiva</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   /* [F1] Reset, variabili colore, tipografia base */
   :root {
@@ -22,6 +22,12 @@
     --oro-chiaro:   #C4A97A;
     --inchiostro:   #1A2420;
     --grigio:       #6B7B75;
+    /* Pigmenti naturali — FASE A */
+    --zafferano:     #C8860A;
+    --terracotta:    #B5603A;
+    --viola-incenso: #7B5EA7;
+    --salvia-bg:     #E8EDE6;
+    --seppia:        #3D2B1F;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -71,7 +77,7 @@
     text-transform: uppercase;
     color: var(--grigio);
     text-decoration: none;
-    transition: color 0.2s;
+    transition: color 0.4s ease;
   }
   .nav-links a:hover { color: var(--smeraldo); }
 
@@ -185,7 +191,7 @@
   }
 
   /* SEZIONI COMUNI */
-  section { padding: 80px 28px; }
+  section { padding: 120px 28px; }
 
   .section-eyebrow {
     font-size: 0.62rem;
@@ -271,8 +277,8 @@
   .servizi-lista { margin-top: 48px; }
 
   .servizio-item {
-    border-top: 1px solid var(--lino);
-    padding: 34px 0;
+    border-top: 1px solid rgba(224,217,206,0.5);
+    padding: 52px 0;
   }
   .servizio-item:last-child { border-bottom: 1px solid var(--lino); }
 
@@ -286,28 +292,33 @@
 
   .servizio-nome {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
-    font-weight: 400;
+    font-size: 1.75rem;
+    font-weight: 300;
+    font-style: italic;
     color: var(--smeraldo);
     line-height: 1.2;
+    letter-spacing: 0.02em;
   }
 
   .servizio-tag {
-    font-size: 0.6rem;
-    letter-spacing: 0.12em;
+    font-size: 0.58rem;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--oro);
-    border: 1px solid var(--oro);
-    padding: 3px 8px;
+    color: var(--zafferano);
+    border: none;
+    border-bottom: 1px solid var(--zafferano);
+    padding: 2px 0;
     white-space: nowrap;
-    margin-top: 4px;
+    margin-top: 6px;
     flex-shrink: 0;
+    opacity: 0.8;
   }
 
   .servizio-desc {
-    font-size: 0.9rem;
-    color: var(--grigio);
-    line-height: 1.82;
+    font-size: 0.92rem;
+    color: var(--seppia);
+    line-height: 2.0;
+    max-width: 580px;
   }
 
   /* CREDIBILITÀ */
@@ -440,8 +451,8 @@
   /* FADE IN */
   .fade-in {
     opacity: 0;
-    transform: translateY(18px);
-    transition: opacity 0.65s ease, transform 0.65s ease;
+    transform: translateY(24px);
+    transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1), transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
   }
   .fade-in.visible { opacity: 1; transform: none; }
 
@@ -451,7 +462,7 @@
 
   @media (min-width: 640px) {
     nav { padding: 18px 48px; }
-    section { padding: 96px 48px; }
+    section { padding: 140px 72px; }
     footer { padding: 24px 48px; flex-direction: row; justify-content: space-between; align-items: center; }
     .chi-sono-grid { grid-template-columns: 1fr 1.7fr; align-items: start; }
     .valori-grid { grid-template-columns: repeat(3, 1fr); gap: 0 48px; }
@@ -678,7 +689,7 @@
     font-size: 0.75rem;
     color: var(--salvia);
     text-decoration: none;
-    transition: color 0.2s;
+    transition: color 0.4s ease;
   }
   .footer-link:hover { color: var(--carta); }
 
