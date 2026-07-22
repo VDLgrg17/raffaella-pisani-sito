@@ -74,6 +74,34 @@
     if (modal) modal.classList.remove('show');
   }
 
+  // [F_CACHE.1] Listen for Service Worker updates
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.addEventListener('message', (event) => {
+      if (event.data.type === 'SW_UPDATED') {
+        console.log(`[PWA] Service Worker updated to v${event.data.version}`);
+        // Mostra notifica all'utente
+        const notification = document.createElement('div');
+        notification.style.cssText = `
+          position: fixed;
+          top: 20px;
+          left: 20px;
+          right: 20px;
+          background: #1B5E4B;
+          color: #FAF7F2;
+          padding: 16px 20px;
+          border-radius: 8px;
+          font-size: 0.9rem;
+          z-index: 9998;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+          animation: slideDown 0.3s ease-out;
+        `;
+        notification.textContent = '✓ Aggiornamento disponibile — Ricarica la pagina';
+        document.body.appendChild(notification);
+        setTimeout(() => notification.remove(), 5000);
+      }
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     // Barra azioni bottom
     const shareBtn = document.getElementById('gv-share-btn-bottom');
