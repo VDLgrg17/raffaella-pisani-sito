@@ -469,15 +469,86 @@
   }
 
   .collab-desc {
-    font-size: 0.9rem;
-    color: var(--seppia);
-    line-height: 1.95;
-    max-width: 640px;
-  }
+  font-size: 0.9rem;
+  color: var(--seppia);
+  line-height: 1.95;
+  max-width: 640px;
+}
 
   @media (min-width: 640px) {
     .collab-grid { grid-template-columns: repeat(2, 1fr); gap: 0 80px; }
   }
+
+  /* [F7-ext] CSS Testimonianze — card citazioni, grid 2 colonne */
+  /* Dipende da: F1 | Status: STABLE */
+  #testimonianze {
+    background: var(--avorio);
+  }
+
+  .testi-grid {
+    margin-top: 64px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .testi-card {
+    background: var(--carta);
+    border: 1px solid var(--lino);
+    padding: 36px 32px;
+    position: relative;
+    transition: transform 0.25s cubic-bezier(0.23, 1, 0.32, 1),
+                box-shadow 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .testi-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(27, 94, 75, 0.08);
+  }
+
+  .testi-virgolette {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 0.6;
+    color: var(--oro-chiaro);
+    margin-bottom: 16px;
+    display: block;
+    user-select: none;
+  }
+
+  .testi-citazione {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--seppia);
+    line-height: 1.75;
+    margin-bottom: 24px;
+  }
+
+  .testi-nome {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--oro);
+  }
+
+  .testi-linea {
+    width: 24px;
+    height: 1px;
+    background: var(--oro-chiaro);
+    margin-bottom: 12px;
+  }
+
+  @media (min-width: 640px) {
+    .testi-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  }
+
+  @media (min-width: 1024px) {
+    .testi-grid { grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  }
+
   /* [F7b] CSS Galleria Fotografica — griglia editoriale 8 immagini */
   #galleria {
     padding: 120px 28px;
@@ -1140,10 +1211,125 @@
   <div style="margin-top: 60px;" class="fade-in">
     <img src="/galleria-fotografica/galleria-07.jpg" alt="Storie e narrativa di collaborazioni" style="width: 100%; max-width: 560px; aspect-ratio: 3/2; object-fit: cover; border: 1px solid var(--lino); margin: 0 auto; display: block;">
   </div>
+  <!-- [F_FOTO.3b] Foto 6 distribuite in credibilità -->
+  <div style="margin-top: 60px;" class="fade-in">
+    <img src="/galleria-fotografica/galleria-06.jpg" alt="Botanica nordica" style="width: 100%; max-width: 560px; aspect-ratio: 3/2; object-fit: cover; border: 1px solid var(--lino); margin: 0 auto; display: block;">
+  </div>
 </section>
 
 
 <!-- [F17] Markup CONTATTI — form/CTA percorso olfattivo -->
+<!-- [F26] Sezione DICONO DI ME — 12 testimonianze in grid -->
+<!-- Dipende da: F7-ext | Status: STABLE | Last modified: 2026-07-23 -->
+<section id="testimonianze">
+  <div class="fade-in">
+    <p class="section-eyebrow">Dicono di me</p>
+    <h2 class="section-title">Voci che raccontano<br>l'esperienza.</h2>
+    <div class="divider"></div>
+    <p class="section-body">Trentasette persone. Una sola essenza.</p>
+  </div>
+
+  <div class="testi-grid">
+
+    <!-- Card 1 -->
+    <div class="testi-card fade-in">
+      <span class="testi-virgolette">"</span>
+      <p class="testi-citazione">Quella sera ho imparato che un profumo non si sente solo con l'olfatto ma anche con la mente e con l'anima.</p>
+      <div class="testi-linea"></div>
+      <p class="testi-nome">Rosa Parolise</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="testi-card fade-in">
+      <span class="testi-virgolette">"</span>
+      <p class="testi-citazione">Raffaella non vende profumi… Raffaella fa sognare. Farsi raccontare un profumo da lei è un'esperienza sensoriale.</p>
+      <div class="testi-linea"></div>
+      <p class="testi-nome">Novella Re</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="testi-card fade-in">
+      <span class="testi-virgolette">"</span>
+      <p class="testi-citazione">Raffaella incanta con le parole, inebria con i profumi. Ascoltarla è un'esperienza sensoriale che investe corpo e anima.</p>
+      <div class="testi-linea"></div>
+      <p class="testi-nome">Patrizia Giagnotti</p>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="testi-card fade-in">
+      <span class="testi-virgolette">"</span>
+      <p class="testi-citazione">Sai vedere oltre le apparenze, sai ascoltare anche le cose non dette, riesci a cogliere l'essenza delle persone.</p>
+      <div class="testi-linea"></div>
+      <p class="testi-nome">Sandra Coos</p>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="testi-card fade-in">
+      <span class="testi-virgolette">"</span>
+      <p class="testi-citazione">Dalle essenze all'essenza con passione e coraggio. Così mi è parsa Raffaella sin dal primo incontro.</p>
+      <div class="testi-linea"></div>
+      <p class="testi-nome">Silvia Piccolotto</p>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="testi-card fade-in">
+      <span class="testi-virgolette">"</span>
+      <p class="testi-citazione">Il suo potere è quello di rendere visibile la nostra anima anche a noi stessi.</p>
+      <div class="testi-linea"></div>
+      <p class="testi-nome">Serena Sagui</p>
+    </div>
+
+    <!-- Card 7 -->
+    <div class="testi-card fade-in">
+      <span class="testi-virgolette">"</span>
+      <p class="testi-citazione">Dietro ogni profumo che consigli c'è la tua professionalità nel capire il nostro stato d'animo e di cosa quindi abbiamo bisogno.</p>
+      <div class="testi-linea"></div>
+      <p class="testi-nome">Nino Cacciaglia</p>
+    </div>
+
+    <!-- Card 8 -->
+    <div class="testi-card fade-in">
+      <span class="testi-virgolette">"</span>
+      <p class="testi-citazione">Con te il profumo smette di essere un oggetto e diventa un viaggio umano, culturale e sensibile.</p>
+      <div class="testi-linea"></div>
+      <p class="testi-nome">Giorgio Demagistris</p>
+    </div>
+
+    <!-- Card 9 -->
+    <div class="testi-card fade-in">
+      <span class="testi-virgolette">"</span>
+      <p class="testi-citazione">Ogni cosa ha una voce, serve sentirla e il profumo è l'aria che la urla.</p>
+      <div class="testi-linea"></div>
+      <p class="testi-nome">Camilla C.</p>
+    </div>
+
+    <!-- Card 10 -->
+    <div class="testi-card fade-in">
+      <span class="testi-virgolette">"</span>
+      <p class="testi-citazione">Ti porta dove tu non sapevi di voler andare, e in quel posto, dentro di te, ti accompagna con dolcezza.</p>
+      <div class="testi-linea"></div>
+      <p class="testi-nome">Chiara Biscaro</p>
+    </div>
+
+    <!-- Card 11 -->
+    <div class="testi-card fade-in">
+      <span class="testi-virgolette">"</span>
+      <p class="testi-citazione">La speciale capacità di Raffaella di descrivere raccontando è la stessa magia che fa il profumo alle nostre narici. Nomina le cose e le fa esistere, annusandole.</p>
+      <div class="testi-linea"></div>
+      <p class="testi-nome">Paola De Paolis</p>
+    </div>
+
+    <!-- Card 12 -->
+    <div class="testi-card fade-in">
+      <span class="testi-virgolette">"</span>
+      <p class="testi-citazione">Note di testa sincere e sorridenti, note di cuore colte e retrò, note di fondo sicuramente l'amore e l'emozione che riesce a diffondere in ogni cosa che fa.</p>
+      <div class="testi-linea"></div>
+      <p class="testi-nome">Cristina De Piccoli</p>
+    </div>
+
+  </div>
+</section>
+
 <section id="contatti">
   <div class="fade-in">
     <p class="section-eyebrow">Contatti</p>

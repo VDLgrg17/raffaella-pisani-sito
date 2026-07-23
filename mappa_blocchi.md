@@ -17,6 +17,7 @@ Protocollo: `blocchi-f-operativo` v2.0 | Aggiornato: 2026-07-21
 | **F5** | index.html | 259 | CSS Visione — tre parole, card, foto 3 | F1 | STABLE | 2026-07-21 |
 | **F6** | index.html | 293 | CSS Servizi — 3 card, foto 4-5 | F1 | STABLE | 2026-07-21 |
 | **F7** | index.html | 447 | CSS Collaborazioni — griglia narrativa | F1 | STABLE | 2026-07-21 |
+| **F7-ext** | index.html | 488 | CSS Testimonianze — card citazioni, grid 2-3 colonne | F1 | STABLE | 2026-07-23 |
 | **F8** | index.html | 517 | CSS Footer — logo, info, copyright | F1 | STABLE | 2026-07-21 |
 | **F9** | index.html | 540 | CSS Responsive — media queries mobile/tablet | F1-F8 | STABLE | 2026-07-21 |
 
@@ -54,7 +55,8 @@ Protocollo: `blocchi-f-operativo` v2.0 | Aggiornato: 2026-07-21
 | **F21** | index.html | 1019 | Sezione Servizi — 3 card + foto 4-5 | F6 | STABLE | 2026-07-21 |
 | **F22** | index.html | 1051 | Sezione Credibilità — collaborazioni + foto 6 | F7 | STABLE | 2026-07-21 |
 | **F23** | index.html | 1130 | Sezione Galleria — 8 immagini (deprecated) | — | TODO | 2026-07-21 |
-| **F24** | index.html | 1164 | Sezione Contatti — form + foto 7-8 | F6 | STABLE | 2026-07-21 |
+| **F26** | index.html | 1224 | Sezione Dicono di Me — 12 testimonianze in grid | F7-ext | STABLE | 2026-07-23 |
+| **F24** | index.html | 1333 | Sezione Contatti — form + foto 7-8 | F6 | STABLE | 2026-07-23 |
 | **F25** | index.html | 1200+ | Footer — logo, info, copyright | F8 | STABLE | 2026-07-21 |
 
 ---
@@ -71,6 +73,7 @@ F1 (Reset, Variabili CSS)
 ├── F5 (Visione) → F20 (HTML Visione)
 ├── F6 (Servizi) → F21 (HTML Servizi)
 ├── F7 (Collaborazioni) → F22 (HTML Credibilità)
+├── F7-ext (Testimonianze CSS) → F26 (HTML Dicono di Me)
 ├── F8 (Footer) → F25 (HTML Footer)
 └── F9 (Responsive) → tutti F2-F8
 
@@ -111,6 +114,7 @@ F15 (Manifest)
 | "Visione" | Sezione Accoglienza/Cultura/Ascolto | F5 + F20 |
 | "Servizi" | Le 3 card dei servizi | F6 + F21 |
 | "Credibilità" | Sezione collaborazioni | F7 + F22 |
+| "Dicono di me" | Sezione testimonianze 12 card | F7-ext + F26 |
 | "Contatti" | Form e CTA finale | F24 |
 | "Footer" | Piè di pagina | F8 + F25 |
 | "PWA" | Pulsanti Condividi/Installa/Refresh | F10-F12 |
@@ -118,4 +122,4 @@ F15 (Manifest)
 
 ---
 
-**Ultimo aggiornamento:** 2026-07-21 | **Versione:** 2.0 (blocchi-f-operativo compliant)
+**Ultimo aggiornamento:** 2026-07-23 | **Versione:** 2.1 (F26 Testimonianze aggiunto)
