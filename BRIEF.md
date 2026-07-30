@@ -143,3 +143,34 @@ non nero puro (troppo freddo/tech), ma un **marrone scuro caldo** o **grigio ant
 - Estetica "spa/wellness" — bilanciare verde salvia con momenti a nero pieno
 
 ---
+## 9. Task operativi — da documento strategico B2B (collaboratore)
+
+*Fonte: `RiflessionestrategicasulposizionamentoB2BdiRaffaellaPisani.pdf`*
+
+### PRIORITÀ 1 — Proposta di valore esplicita
+- [ ] **T13** — Inserire nell'hero o subito sotto una **frase di posizionamento B2B chiara**: "Raffaella Pisani aiuta i brand di profumeria artistica a rafforzare la propria narrazione attraverso cultura olfattiva, eventi, formazione e contenuti."
+- [ ] **T14** — La frase deve essere leggibile in 5 secondi da un decision maker — non solo evocativa
+
+### PRIORITÀ 2 — Servizi riconoscibili
+- [ ] **T15** — Rendere visibili le **aree di intervento** in modo esplicito: ambassador, consulenza culturale/narrativa, eventi olfattivi, formazione team/boutique/reti vendita, contenuti editoriali, percorsi esperienziali, collaborazioni con brand/luoghi culturali/hospitality
+- [ ] **T16** — Ogni servizio deve rispondere alla domanda: "Cosa può fare Raffaella per il mio brand?"
+
+### PRIORITÀ 3 — Credenziali concrete
+- [ ] **T17** — Trasformare l'elenco testuale di collaborazioni in elementi visivi solidi (loghi + breve descrizione del ruolo svolto)
+- [ ] **T18** — Aggiungere almeno una **mini case history**: contesto → cosa ha fatto Raffaella → valore generato
+
+### PRIORITÀ 4 — Differenziazione esplicita
+- [ ] **T19** — Dichiarare con forza la differenziazione: "sguardo culturale, interdisciplinare e metodologico che collega profumo, memoria, percezione, botanica, arte e narrazione" — non solo "racconto il profumo in modo poetico"
+
+### PRIORITÀ 5 — Tono: da ricerca aperta a competenza autorevole
+- [ ] **T20** — Rivedere i testi che suonano come "sto cercando un linguaggio" → riscrivere come "ho costruito un metodo per aiutare i brand"
+- [ ] **T21** — Mantenere voce poetica ma aggiungere autorevolezza — non appiattire, non rendere aziendale
+
+### PRIORITÀ 6 — Sezione Community
+- [ ] **T22** — Rinominare "Dicono di Me" → "Community"
+- [ ] **T23** — Riscrivere come comunità di interesse attorno alla cultura olfattiva, non lista di apprezzamenti personali
+- [ ] **T24** — Aggiungere CTA per iscriversi/essere aggiornati sulle prossime attività
+- [ ] **T25** — Le testimonianze restano come supporto laterale, non come centro del posizionamento
+- [ ] **T26** — Evitare tono troppo affettivo/personale — deve sembrare partecipazione, non amicizia
+
+---
