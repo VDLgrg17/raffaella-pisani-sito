@@ -110,3 +110,36 @@ non nero puro (troppo freddo/tech), ma un **marrone scuro caldo** o **grigio ant
 
 ---
 *Aggiornare questo file ad ogni nuova decisione o materiale ricevuto.*
+## 8. Task operativi — da analisi Perplexity (30 luglio 2026)
+
+*Fonte: `AnalisiPercezione_Redesign_RaffaellaPisani.pdf`*
+*Riferimento primario: Meo Fusciuni — Riferimento secondario: Fischer Sund*
+
+### PRIORITÀ 1 — Bug tecnici (da correggere prima di qualsiasi intervento estetico)
+- [ ] **T01** — Correggere link "Galleria" nel menu: punta a `#galleria` inesistente nel DOM
+- [ ] **T02** — Rimuovere CSS grezzo esposto come testo nel footer (errore di build)
+- [ ] **T03** — Rimuovere o ridisegnare widget PWA flottanti ("CONDIVIDI", "INSTALLA APP", "REFRESH") — stonano con il tono curato del sito
+
+### PRIORITÀ 2 — Palette e colori
+- [ ] **T04** — Introdurre almeno una sezione a **fondo nero pieno** `#0D0D0B` con testo bianco — per i momenti manifesto (citazione d'apertura, sezione Visione) — da Fischer Sund
+- [ ] **T05** — Aggiungere **accenti oro/ambra più decisi sul nero** (non solo sul beige) — da Meo Fusciuni
+- [ ] **T06** — Mantenere palette botanica esistente (salvia/carta/oro) nelle sezioni di testo — già ok
+
+### PRIORITÀ 3 — Credibilità visiva
+- [ ] **T07** — Trasformare l'elenco testuale di collaborazioni in una **barra loghi** (stile press wall Fischer Sund) — impatto istituzionale immediato
+- [ ] **T08** — Raccogliere loghi delle collaborazioni reali (Puntoettore, Deha–Pitti, Cerasa–Salone del Mobile, Semenzato, Monom, MCZ Group, Rotary)
+
+### PRIORITÀ 4 — Fotografia
+- [ ] **T09** — Introdurre **ritratto di Raffaella in bianco e nero ad alto contrasto** (stile caravaggesco, come Meo Fusciuni) per la sezione "Chi Sono" — usare le foto in `foto-raffaella/`
+- [ ] **T10** — Mantenere fotografia botanica a colori esistente nelle altre sezioni — già ok
+
+### PRIORITÀ 5 — Tipografia
+- [ ] **T11** — Mantenere contrasto serif/sans già presente — già ok, non toccare
+- [ ] **T12** — Verificare che serif elegante sia usato solo per citazioni/manifesto (non per testo corrente)
+
+### DA EVITARE
+- Griglie prodotto, badge prezzo, tipografia sans-serif senza contrappunto serif (da Monom — non adatto)
+- Widget decorativi non necessari
+- Estetica "spa/wellness" — bilanciare verde salvia con momenti a nero pieno
+
+---
