@@ -94,6 +94,12 @@
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
   text-align: justify;
+  opacity: 0;
+  animation: pageReveal 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  }
+  @keyframes pageReveal {
+    from { opacity: 0; }
+    to   { opacity: 1; }
   }
 
   /* [F2] CSS Nav — navigazione, logo, menu */
