@@ -1011,7 +1011,6 @@
     <li><a href="#servizi">Servizi</a></li>
     <li><a href="#collaborazioni">Collaborazioni</a></li>
     <li><a href="#contatti">Contatti</a></li>
-    <li><a href="#galleria">Galleria</a></li>
   </ul>
 </nav>
 
@@ -1392,11 +1391,6 @@
 
 
 
-la schermata Home<br>
-      <strong>Android:</strong> Tocca il menu ⋮ → Installa app
-    </div>
-  </div>
-</div>
 </footer>
 
 <!-- [F19] Script IntersectionObserver — fade-in -->
@@ -1421,100 +1415,5 @@ if ('serviceWorker' in navigator) {
 </script>
 
 
-
-
-<script src="/pwa-action-bar.js"></script>
-
-<!-- [F4] Barra azioni GV PWA — 3 pulsanti in basso -->
-<div class="gv-action-bar-bottom">
-  <button id="gv-share-btn-bottom" class="gv-action-btn-bottom" title="Condividi">Condividi</button>
-  <button id="gv-install-btn-bottom" class="gv-action-btn-bottom" title="Installa App">Installa App</button>
-  <button id="gv-refresh-btn-bottom" class="gv-action-btn-bottom" title="Aggiorna">Refresh</button>
-</div>
-
-<!-- [F5] Modale Condivisione -->
-<div id="gv-share-modal-bottom" class="gv-modal-bottom">
-  <div class="gv-modal-content-bottom">
-    <span id="gv-close-share-btn-bottom" class="gv-modal-close-bottom">&times;</span>
-    <h3 class="gv-modal-title-bottom">Condividi</h3>
-    <div class="gv-modal-url-bottom" id="gv-share-url-bottom">https://raffaellapisani.it</div>
-    <button id="gv-copy-link-btn-bottom" class="gv-modal-button-bottom">Copia Link</button>
-    <button id="gv-whatsapp-btn-bottom" class="gv-modal-button-bottom" style="background: #25D366; border-color: #25D366;">Invia su WhatsApp</button>
-    <button class="gv-modal-button-secondary-bottom gv-modal-button-bottom" onclick="document.getElementById('gv-share-modal-bottom').classList.remove('show')">Chiudi</button>
-  </div>
-</div>
-
-<!-- [F6] Modale Installazione -->
-<div id="gv-install-modal-bottom" class="gv-modal-bottom">
-  <div class="gv-modal-content-bottom">
-    <span id="gv-close-install-btn-bottom" class="gv-modal-close-bottom">&times;</span>
-    <h3 class="gv-modal-title-bottom">Installa l'App</h3>
-    
-    <div class="gv-install-section-bottom">
-      <div class="gv-install-platform-bottom">Per iPhone/iPad (Safari):</div>
-      <div class="gv-install-divider-bottom"></div>
-      <div class="gv-install-steps-bottom">
-        <ol>
-          <li>Tocca il quadrato con la freccia che vedi al centro, sotto sulla base del tuo iPhone</li>
-          <li>Scorri e tocca "Aggiungi a Home"</li>
-          <li>Tocca "Aggiungi" in alto a destra</li>
-          <li>L'app apparirà nella schermata Home!</li>
-        </ol>
-      </div>
-    </div>
-
-    <div class="gv-install-section-bottom">
-      <div class="gv-install-platform-bottom">Per Android (Chrome):</div>
-      <div class="gv-install-divider-bottom"></div>
-      <div class="gv-install-steps-bottom">
-        <ol>
-          <li>Tocca i tre puntini in alto a destra</li>
-          <li>Tocca "Aggiungi a schermata Home" oppure "Installa app"</li>
-          <li>Conferma toccando "Aggiungi"</li>
-          <li>L'app apparirà nella schermata Home!</li>
-        </ol>
-      </div>
-    </div>
-
-    <button id="gv-install-prompt-btn-bottom" class="gv-modal-button-bottom">Installa Ora</button>
-    <button class="gv-modal-button-secondary-bottom gv-modal-button-bottom" onclick="document.getElementById('gv-install-modal-bottom').classList.remove('show')">Chiudi</button>
-  </div>
-</div>
-
 </body>
 </html>
-
-  .footer-cols {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin: 18px 0 14px;
-  }
-
-  .footer-col { display: flex; flex-direction: column; gap: 4px; }
-
-  .footer-label {
-    font-size: 0.56rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--salvia);
-    margin-bottom: 2px;
-  }
-
-  .footer-text {
-    font-size: 0.75rem;
-    color: var(--grigio);
-    line-height: 1.6;
-  }
-
-  .footer-link {
-    font-size: 0.75rem;
-    color: var(--salvia);
-    text-decoration: none;
-    transition: color 0.4s ease;
-  }
-  .footer-link:hover { color: var(--carta); }
-
-  @media (min-width: 640px) {
-    .footer-cols { flex-direction: row; gap: 48px; margin: 22px 0 16px; }
-  }
