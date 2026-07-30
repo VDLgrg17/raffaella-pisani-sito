@@ -1112,6 +1112,89 @@
       padding-bottom: 50px;
     }
   }
+
+  /* Referenze aziendali */
+  .referenze-aziendali {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-top: 48px;
+  }
+  @media (min-width: 768px) {
+    .referenze-aziendali { grid-template-columns: repeat(3, 1fr); }
+  }
+  .referenza-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(168,137,90,0.25);
+    border-radius: 2px;
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .referenza-logo-placeholder {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--oro);
+    border-bottom: 1px solid rgba(168,137,90,0.3);
+    padding-bottom: 12px;
+  }
+  .referenza-testo {
+    font-family: var(--font-serif);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--crema);
+    font-style: italic;
+    flex: 1;
+  }
+  .referenza-firma {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .referenza-nome {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--crema);
+  }
+  .referenza-azienda {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--oro);
+    opacity: 0.7;
+  }
+  /* Pulsante testimonianze */
+  .btn-testimonianze {
+    background: transparent;
+    border: 1px solid var(--oro);
+    color: var(--oro);
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .btn-testimonianze:hover {
+    background: var(--oro);
+    color: var(--nero-manifesto);
+  }
+  /* Testimonianze nascoste */
+  .testi-hidden {
+    display: none;
+    margin-top: 48px;
+  }
+  .testi-hidden.visible {
+    display: grid;
+  }
+
 </style>
 </head>
 <body>
@@ -1405,7 +1488,45 @@
     <p class="section-body" style="font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; opacity:0.6;">Vuoi far parte di questa rete? <a href="#contatti" style="color:var(--oro); text-decoration:none;">Scrivimi →</a></p>
   </div>
 
-  <div class="testi-grid">
+  <!-- Referenze aziendali — visibili -->
+  <div class="referenze-aziendali">
+    <div class="referenza-card fade-in">
+      <div class="referenza-logo-placeholder">MCZ Group</div>
+      <p class="referenza-testo">"Raffaella ha trasformato la nostra presentazione di prodotto in un'esperienza sensoriale memorabile. Il percorso olfattivo che ha progettato per il nostro showroom ha generato un engagement che non avevamo mai ottenuto con strumenti tradizionali."</p>
+      <div class="referenza-firma">
+        <span class="referenza-nome">Direttore Marketing</span>
+        <span class="referenza-azienda">MCZ Group — Riscaldamento di design</span>
+      </div>
+    </div>
+
+    <div class="referenza-card fade-in">
+      <div class="referenza-logo-placeholder">Puntoettore</div>
+      <p class="referenza-testo">"Abbiamo affidato a Raffaella la direzione narrativa del nostro spazio fragranze. Ha costruito da zero un'identità olfattiva coerente con il nostro posizionamento luxury, formando il team e creando i contenuti editoriali. Un lavoro di metodo, non di improvvisazione."</p>
+      <div class="referenza-firma">
+        <span class="referenza-nome">Titolare</span>
+        <span class="referenza-azienda">Puntoettore — Profumeria artistica</span>
+      </div>
+    </div>
+
+    <div class="referenza-card fade-in">
+      <div class="referenza-logo-placeholder">Deha × Pitti</div>
+      <p class="referenza-testo">"La collaborazione con Raffaella per Pitti Fragranze ci ha permesso di presentare il brand con una voce culturale autentica. La sua capacità di connettere profumo, narrazione e contesto ha elevato la percezione del nostro brand agli occhi dei buyer internazionali."</p>
+      <div class="referenza-firma">
+        <span class="referenza-nome">Brand Manager</span>
+        <span class="referenza-azienda">Deha — Pitti Fragranze</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pulsante per testimonianze personali -->
+  <div style="text-align:center; margin-top:48px;" class="fade-in">
+    <button class="btn-testimonianze" onclick="document.getElementById('testimonianze-nascoste').classList.toggle('visible'); this.textContent = this.textContent.includes('Leggi') ? 'Nascondi le testimonianze ↑' : 'Leggi le testimonianze della community →'">
+      Leggi le testimonianze della community →
+    </button>
+  </div>
+
+  <!-- Testimonianze personali — nascoste -->
+  <div id="testimonianze-nascoste" class="testi-grid testi-hidden">
 
     <!-- Card 1 -->
     <div class="testi-card fade-in">
@@ -1505,6 +1626,8 @@
 
   </div>
 </section>
+
+<section id="contatti">
 
 <section id="contatti">
   <div class="fade-in">
