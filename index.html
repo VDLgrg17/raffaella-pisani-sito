@@ -29,7 +29,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  /* [F1] Reset, variabili colore, tipografia base */
+  /* +--------------------------------------------------+
+   | [F1] - Reset, variabili colore, tipografia base    |
+   | Dipende da: F0                                      |
+   | Status: STABLE | Last modified: 2026-07-31      |
+   +--------------------------------------------------+ */
   :root {
     --carta:        #D8D2C8;
     --avorio:       #CEC8BC;
@@ -102,7 +106,11 @@
     to   { opacity: 1; }
   }
 
-  /* [F2] CSS Nav — navigazione, logo, menu */
+  /* +--------------------------------------------------+
+   | [F2] - CSS Nav — navigazione, logo, menu           |
+   | Dipende da: F1                                      |
+   | Status: STABLE | Last modified: 2026-07-31      |
+   +--------------------------------------------------+ */
   /* NAV */
   nav {
     position: fixed;
@@ -140,7 +148,11 @@
   }
   .nav-links a:hover { color: var(--smeraldo); }
 
-  /* [F3] CSS Hero — layout split, foto, testo, scia SVG */
+  /* +--------------------------------------------------+
+   | [F3] - CSS Hero — layout split, foto, testo        |
+   | Dipende da: F1                                      |
+   | Status: STABLE | Last modified: 2026-07-31      |
+   +--------------------------------------------------+ */
   /* HERO — foto 65% + blocco testo tortora 35% */
   #hero {
     min-height: 100svh;
@@ -363,7 +375,11 @@
 
   .divider { width: 36px; height: 1px; background: var(--oro); margin: 26px 0; }
 
-  /* [F4] CSS Chi Sono — identità, testo, foto */
+  /* +--------------------------------------------------+
+   | [F4] - CSS Chi Sono — identità, testo, foto        |
+   | Dipende da: F1                                      |
+   | Status: STABLE | Last modified: 2026-07-31      |
+   +--------------------------------------------------+ */
   /* CHI SONO */
   #chi-sono { background: var(--avorio); }
 
@@ -381,7 +397,11 @@
     object-position: center top;
   }
 
-  /* [F5] CSS Visione — tre parole, card */
+  /* +--------------------------------------------------+
+   | [F5] - CSS Visione — tre valori, card              |
+   | Dipende da: F1                                      |
+   | Status: STABLE | Last modified: 2026-07-31      |
+   +--------------------------------------------------+ */
   /* VISIONE */
   #visione { background: var(--smeraldo); }
   #visione { background: url('assets/profumo-sfondo-verde.png') center center / cover no-repeat; }
@@ -417,7 +437,11 @@
     text-align: justify;
   }
 
-  /* [F6] CSS Servizi — 3 card */
+  /* +--------------------------------------------------+
+   | [F6] - CSS Servizi — 3 card                        |
+   | Dipende da: F1                                      |
+   | Status: STABLE | Last modified: 2026-07-31      |
+   +--------------------------------------------------+ */
   /* SERVIZI */
   #servizi { background: var(--carta); }
   .servizi-lista { margin-top: 48px; }
@@ -486,7 +510,11 @@
     font-style: italic;
   }
 
-  /* [F8] CSS Contatti — form, CTA */
+  /* +--------------------------------------------------+
+   | [F8] - CSS Contatti — form, CTA                    |
+   | Dipende da: F1                                      |
+   | Status: STABLE | Last modified: 2026-07-31      |
+   +--------------------------------------------------+ */
   /* CONTATTI */
   #contatti { background: var(--smeraldo); }
   #contatti { background: url('assets/profumo-sfondo-verde.png') center center / cover no-repeat; }
@@ -574,7 +602,11 @@
   .contatti-info-val a { color: #ffffff; text-decoration: none; }
 
 
-  /* [F7] CSS Collaborazioni — griglia narrativa */
+  /* +--------------------------------------------------+
+   | [F7] - CSS Collaborazioni — griglia narrativa      |
+   | Dipende da: F1                                      |
+   | Status: STABLE | Last modified: 2026-07-31      |
+   +--------------------------------------------------+ */
   .collab-grid {
     margin-top: 56px;
     display: grid;
@@ -609,7 +641,11 @@
     .collab-grid { grid-template-columns: repeat(2, 1fr); gap: 0 80px; }
   }
 
-  /* [F7-ext] CSS Testimonianze — card citazioni, grid 2 colonne */
+  /* +--------------------------------------------------+
+   | [F7-ext] - CSS Testimonianze — card citazioni, grid    |
+   | Dipende da: F1                                      |
+   | Status: STABLE | Last modified: 2026-07-31      |
+   +--------------------------------------------------+ */
   /* Dipende da: F1 | Status: STABLE */
   #testimonianze {
     background: var(--avorio);
@@ -679,7 +715,11 @@
     .testi-grid { grid-template-columns: repeat(3, 1fr); gap: 32px; }
   }
 
-  /* [F7b] CSS Galleria Fotografica — griglia editoriale 8 immagini */
+  /* +--------------------------------------------------+
+   | [F7b] - CSS Galleria Fotografica — griglia          |
+   | Dipende da: F1                                      |
+   | Status: STABLE | Last modified: 2026-07-31      |
+   +--------------------------------------------------+ */
   #galleria {
     padding: 120px 28px;
     background: var(--inchiostro);
@@ -715,7 +755,11 @@
     #galleria { padding: 140px 72px; }
   }
 
-  /* [F9] CSS Footer — logo, info, copyright */
+  /* +--------------------------------------------------+
+   | [F9] - CSS Footer — logo, info, copyright          |
+   | Dipende da: F1                                      |
+   | Status: STABLE | Last modified: 2026-07-31      |
+   +--------------------------------------------------+ */
   /* FOOTER */
   footer {
     background: var(--inchiostro);
@@ -740,7 +784,11 @@
   .footer-link { color: #ffffff; text-decoration: none; }
   .footer-link:hover { text-decoration: underline; }
 
-  /* [F10] CSS Responsive + animazioni */
+  /* +--------------------------------------------------+
+   | [F10] - CSS Responsive + animazioni + fade-in       |
+   | Dipende da: F1-F9                                   |
+   | Status: STABLE | Last modified: 2026-07-31      |
+   +--------------------------------------------------+ */
   /* FADE IN */
   .fade-in {
     opacity: 0;
@@ -1215,7 +1263,11 @@
 <body>
 
 <!-- NAV -->
-<!-- [F11] Markup NAV — logo, menu Chi Sono/Servizi/Contatti -->
+<!-- +--------------------------------------------------+
+     | [F11] - Markup NAV — logo, menu                    |
+     | Dipende da: F2                                     |
+     | Status: STABLE | Last modified: 2026-07-31     |
+     +--------------------------------------------------+ -->
 <nav>
   <a href="#hero" class="nav-logo-wrap">
     <span class="nav-logo-text">Raffaella Pisani</span>
@@ -1229,7 +1281,11 @@
   </ul>
 </nav>
 
-<!-- [F12] Markup HERO — foto, pannello verde, claim, CTA -->
+<!-- +--------------------------------------------------+
+     | [F12] - Markup HERO — foto, pannello verde, claim, CTA|
+     | Dipende da: F3                                     |
+     | Status: STABLE | Last modified: 2026-07-31     |
+     +--------------------------------------------------+ -->
 <section id="hero">
   <div class="hero-foto-wrap">
     <img class="hero-foto" alt="Raffaella Pisani — ricercatrice e narratrice di cultura olfattiva, profumeria artistica" src="assets/raffaella-hero.webp" alt="Cultura Olfattiva — Raffaella Pisani" loading="eager">
@@ -1248,7 +1304,11 @@
   </div>
 </section>
 
-<!-- [F13] Markup CHI SONO — identità, testo -->
+<!-- +--------------------------------------------------+
+     | [F13] - Markup CHI SONO — identità, testo, foto    |
+     | Dipende da: F4                                     |
+     | Status: STABLE | Last modified: 2026-07-31     |
+     +--------------------------------------------------+ -->
 <section id="chi-sono">
   <div class="fade-in">
     <p class="section-eyebrow">Chi sono</p>
@@ -1285,7 +1345,11 @@
   <div class="manifesto-linea" style="margin-top: 36px; margin-bottom: 0;"></div>
 </section>
 
-<!-- [F14] Markup VISIONE — Accoglienza, Cultura, Ascolto -->
+<!-- +--------------------------------------------------+
+     | [F14] - Markup VISIONE — Accoglienza, Cultura, Ascolto|
+     | Dipende da: F5                                     |
+     | Status: STABLE | Last modified: 2026-07-31     |
+     +--------------------------------------------------+ -->
 <section id="visione">
   <div class="fade-in">
     <p class="section-eyebrow">La visione</p>
@@ -1312,7 +1376,11 @@
 
 </section>
 
-<!-- [F15] Markup SERVIZI — 3 card servizi -->
+<!-- +--------------------------------------------------+
+     | [F15] - Markup SERVIZI — 3 card servizi            |
+     | Dipende da: F6                                     |
+     | Status: STABLE | Last modified: 2026-07-31     |
+     +--------------------------------------------------+ -->
 <section id="servizi">
   <div class="fade-in">
     <p class="section-eyebrow">Servizi</p>
@@ -1377,7 +1445,11 @@
 </section>
 
 <!-- CREDIBILITÀ -->
-<!-- [F16] Markup CREDIBILITÀ — collaborazioni, voci -->
+<!-- +--------------------------------------------------+
+     | [F16] - Markup CREDIBILITÀ — collaborazioni, voci  |
+     | Dipende da: F7                                     |
+     | Status: STABLE | Last modified: 2026-07-31     |
+     +--------------------------------------------------+ -->
 <section id="credibilita">
   <div class="fade-in">
     <p class="section-eyebrow">Collaborazioni</p>
@@ -1493,8 +1565,16 @@
 </section>
 
 
-<!-- [F17] Markup CONTATTI — form/CTA percorso olfattivo -->
-<!-- [F26] Sezione DICONO DI ME — 12 testimonianze in grid -->
+<!-- +--------------------------------------------------+
+     | [F17] - Markup CONTATTI — form/CTA percorso olfattivo|
+     | Dipende da: F8                                     |
+     | Status: STABLE | Last modified: 2026-07-31     |
+     +--------------------------------------------------+ -->
+<!-- +--------------------------------------------------+
+     | [F26] - Sezione DICONO DI ME — testimonianze grid  |
+     | Dipende da: F7-ext                                 |
+     | Status: STABLE | Last modified: 2026-07-31     |
+     +--------------------------------------------------+ -->
 <!-- Dipende da: F7-ext | Status: STABLE | Last modified: 2026-07-23 -->
     <p class="section-eyebrow">Community</p>
     <h2 class="section-title">Chi condivide<br>questa visione.</h2>
@@ -1678,7 +1758,11 @@
   </div>
 </section>
 
-<!-- [F18] Markup FOOTER — logo, copyright, link -->
+<!-- +--------------------------------------------------+
+     | [F18] - Markup FOOTER — placeholder dati           |
+     | Dipende da: F9                                     |
+     | Status: STABLE | Last modified: 2026-07-31     |
+     +--------------------------------------------------+ -->
 <footer>
   <span class="footer-legal">Dati del footer</span>
 
@@ -1686,7 +1770,11 @@
 
 </footer>
 
-<!-- [F19] Script IntersectionObserver — fade-in -->
+<!-- +--------------------------------------------------+
+     | [F19] - Script IntersectionObserver — fade-in      |
+     | Dipende da: F10                                    |
+     | Status: STABLE | Last modified: 2026-07-31     |
+     +--------------------------------------------------+ -->
 <script>
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
