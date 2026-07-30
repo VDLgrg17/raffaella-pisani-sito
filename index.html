@@ -49,6 +49,39 @@
     --seppia:        #3D2B1F;
   }
 
+  /* T04 — Sezione Manifesto nera (Fischer Sund / Meo Fusciuni) */
+  #manifesto {
+    background: #0D0D0B;
+    padding: 100px 28px;
+    text-align: center;
+  }
+  .manifesto-linea {
+    width: 1px;
+    height: 48px;
+    background: var(--oro);
+    margin: 0 auto 36px;
+  }
+  .manifesto-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1.3rem, 3.5vw, 2rem);
+    font-weight: 300;
+    color: #EDE8E0;
+    line-height: 1.65;
+    max-width: 680px;
+    margin: 0 auto 32px;
+    letter-spacing: 0.02em;
+  }
+  .manifesto-firma {
+    font-size: 0.6rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--oro);
+    margin-top: 28px;
+  }
+  /* T05 — Visione: nomi valori in oro sul verde */
+  #visione .valore-nome { color: var(--oro); }
+
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
 
@@ -1055,6 +1088,16 @@
     </div>
   </div>
 
+</section>
+
+<!-- [T04] Sezione Manifesto — fondo nero, citazione d'apertura -->
+<section id="manifesto">
+  <div class="manifesto-linea"></div>
+  <blockquote class="manifesto-quote fade-in">
+    "Il profumo è la soglia: un frammento di effimero capace di sconvolgere le sepolte o edulcorate memorie; non un accessorio vanaglorioso."
+  </blockquote>
+  <p class="manifesto-firma">Raffaella Pisani — Cultura Olfattiva</p>
+  <div class="manifesto-linea" style="margin-top: 36px; margin-bottom: 0;"></div>
 </section>
 
 <!-- [F14] Markup VISIONE — Accoglienza, Cultura, Ascolto -->
