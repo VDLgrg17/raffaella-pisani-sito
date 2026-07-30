@@ -458,6 +458,7 @@
   .servizio-item:last-child { border-bottom: 1px solid var(--lino); }
 
   .servizio-header {
+    flex-direction: column;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -475,6 +476,13 @@
     letter-spacing: 0.02em;
   }
 
+  .servizio-tags {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    margin-top: 14px;
+    flex-wrap: wrap;
+  }
   .servizio-tag {
     font-size: 0.58rem;
     letter-spacing: 0.16em;
@@ -1400,27 +1408,33 @@
     <div class="servizio-item fade-in">
       <div class="servizio-header">
         <h3 class="servizio-nome">Divulgazione Culturale</h3>
-        <span class="servizio-tag">Formazione</span>
-        <span class="servizio-tag">Workshop</span>
-        <span class="servizio-tag">Percorsi esperienziali</span>
+        <div class="servizio-tags">
+          <span class="servizio-tag">Formazione</span>
+          <span class="servizio-tag">Workshop</span>
+          <span class="servizio-tag">Percorsi esperienziali</span>
+        </div>
       </div>
       <p class="servizio-desc">Percorsi formativi per team, brand e istituzioni: dalla percezione olfattiva alla narrazione sensoriale. Strumenti critici per leggere il profumo come linguaggio culturale — non come prodotto.</p>
     </div>
     <div class="servizio-item fade-in">
       <div class="servizio-header">
         <h3 class="servizio-nome">Direzione Narrativa per Brand</h3>
-        <span class="servizio-tag">Consulenza B2B</span>
-        <span class="servizio-tag">Ambassador</span>
-        <span class="servizio-tag">Contenuti editoriali</span>
+        <div class="servizio-tags">
+          <span class="servizio-tag">Consulenza B2B</span>
+          <span class="servizio-tag">Ambassador</span>
+          <span class="servizio-tag">Contenuti editoriali</span>
+        </div>
       </div>
       <p class="servizio-desc">Consulenza strategica per brand che vogliono costruire un'identità olfattiva autentica: direzione editoriale, eventi, ambassador, contenuti. Una prospettiva culturale che rafforza il posizionamento e genera differenziazione.</p>
     </div>
     <div class="servizio-item fade-in">
       <div class="servizio-header">
         <h3 class="servizio-nome">Sinestesie e Installazioni</h3>
-        <span class="servizio-tag">Hospitality</span>
-        <span class="servizio-tag">Installazioni</span>
-        <span class="servizio-tag">Luxury retail</span>
+        <div class="servizio-tags">
+          <span class="servizio-tag">Hospitality</span>
+          <span class="servizio-tag">Installazioni</span>
+          <span class="servizio-tag">Luxury retail</span>
+        </div>
       </div>
       <p class="servizio-desc">Installazioni e percorsi esperienziali per hotel, spa, musei e spazi del lusso. Il profumo come elemento architettonico dell'esperienza: progettato, non improvvisato.</p>
     </div>
