@@ -448,32 +448,16 @@
    | Status: STABLE | Last modified: 2026-07-31      |
    +--------------------------------------------------+ */
   /* SERVIZI */
-  #servizi { background: var(--carta); }
-  .servizi-layout {
-    display: grid;
-    grid-template-columns: 1fr 380px;
-    gap: 80px;
-    align-items: start;
-    margin-top: 48px;
-  }
-  .servizi-lista { }
-  .servizi-foto {
-    position: sticky;
-    top: 120px;
-  }
-  .servizi-foto img {
-    width: 100%;
-    height: 560px;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-  }
+  #servizi { background: url('assets/blocchi-terracotta.png') center center / cover no-repeat; }
+  #servizi .section-title { color: var(--carta); }
+  #servizi .section-eyebrow { color: rgba(255,240,220,0.75); }
+  .servizi-lista { margin-top: 48px; }
 
   .servizio-item {
-    border-top: 1px solid rgba(224,217,206,0.5);
+    border-top: 1px solid rgba(255,240,220,0.25);
     padding: 52px 0;
   }
-  .servizio-item:last-child { border-bottom: 1px solid var(--lino); }
+  .servizio-item:last-child { border-bottom: 1px solid rgba(255,240,220,0.25); }
 
   .servizio-header {
     flex-direction: column;
@@ -489,7 +473,7 @@
     font-size: 1.75rem;
     font-weight: 300;
     font-style: italic;
-    color: var(--smeraldo);
+    color: var(--carta);
     line-height: 1.2;
     letter-spacing: 0.02em;
   }
@@ -505,9 +489,9 @@
     font-size: 0.58rem;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: #000000;
+    color: rgba(255,240,220,0.9);
     border: none;
-    border-bottom: 1px solid var(--inchiostro);
+    border-bottom: 1px solid rgba(255,240,220,0.5);
     padding: 2px 0;
     white-space: nowrap;
     margin-top: 6px;
@@ -517,7 +501,7 @@
 
   .servizio-desc {
     font-size: 0.92rem;
-    color: var(--seppia);
+    color: rgba(255,240,220,0.85);
     line-height: 2.0;
     max-width: 580px;
     text-align: justify;
@@ -1220,8 +1204,7 @@
     margin-top: 48px;
   }
   @media (max-width: 767px) {
-    .servizi-layout { grid-template-columns: 1fr; }
-    .servizi-foto { display: none; }
+
   }
   @media (min-width: 768px) {
     .referenze-aziendali { grid-template-columns: repeat(3, 1fr); }
@@ -1426,7 +1409,6 @@
     <p class="section-eyebrow">Servizi</p>
     <h2 class="section-title">Oltre la tecnica,<br>verso l'immaginazione.</h2>
   </div>
-  <div class="servizi-layout">
   <div class="servizi-lista">
     <div class="servizio-item fade-in">
       <div class="servizio-header">
@@ -1461,9 +1443,6 @@
       </div>
       <p class="servizio-desc">Installazioni e percorsi esperienziali per hotel, spa, musei e spazi del lusso. Il profumo come elemento architettonico dell'esperienza: progettato, non improvvisato.</p>
     </div>
-  </div>
-  <div class="servizi-foto fade-in">
-    <img src="assets/blocchi-terracotta.png" alt="Texture materica — cultura olfattiva">
   </div>
   </div>
   <!-- T15 — Aree di intervento esplicite -->
