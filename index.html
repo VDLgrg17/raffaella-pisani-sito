@@ -356,7 +356,40 @@
     border: 1px solid rgba(255,240,220,0.4);
     padding: 8px 14px;
     opacity: 1;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    transition: background 0.2s, border-color 0.2s;
   }
+  .area-item:hover {
+    background: rgba(255,240,220,0.08);
+    border-color: rgba(255,240,220,0.7);
+  }
+  .area-item.open {
+    background: rgba(255,240,220,0.12);
+    border-color: rgba(255,240,220,0.9);
+  }
+  .area-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    z-index: 100;
+    background: rgba(30,50,40,0.96);
+    border: 1px solid rgba(255,240,220,0.3);
+    padding: 12px 16px;
+    min-width: 240px;
+    max-width: 320px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    text-transform: none;
+    color: rgba(255,240,220,0.88);
+    line-height: 1.55;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  }
+  .area-item.open .area-dropdown { display: block; }
   /* T13 — Frase posizionamento B2B */
   .hero-b2b {
     font-size: 0.72rem;
@@ -1620,14 +1653,14 @@
   <div class="aree-intervento fade-in">
     <p class="section-eyebrow" style="margin-bottom: 24px;">Cosa posso fare per il tuo brand</p>
     <div class="aree-grid">
-      <div class="area-item">Ambassador olfattivo</div>
-      <div class="area-item">Consulenza strategica</div>
-      <div class="area-item">Formazione team</div>
-      <div class="area-item">Direzione narrativa</div>
-      <div class="area-item">Percorsi esperienziali</div>
-      <div class="area-item">Installazioni sensoriali</div>
-      <div class="area-item">Contenuti editoriali</div>
-      <div class="area-item">Hospitality &amp; spa</div>
+      <div class="area-item" onclick="toggleArea(this)">Ambassador olfattivo<div class="area-dropdown">Rappresentanza culturale del brand in eventi, fiere e media. Voce autorevole che connette il profumo alla narrativa del lusso.</div></div>
+      <div class="area-item" onclick="toggleArea(this)">Consulenza strategica<div class="area-dropdown">Analisi del posizionamento olfattivo, definizione dell'identità sensoriale e roadmap di comunicazione per brand e istituzioni.</div></div>
+      <div class="area-item" onclick="toggleArea(this)">Formazione team<div class="area-dropdown">Workshop e percorsi formativi per team interni: dalla percezione olfattiva agli strumenti narrativi per comunicare il profumo con autorevolezza.</div></div>
+      <div class="area-item" onclick="toggleArea(this)">Direzione narrativa<div class="area-dropdown">Costruzione dell'identità editoriale olfattiva: tono di voce, contenuti, campagne e storytelling per brand che vogliono differenziarsi.</div></div>
+      <div class="area-item" onclick="toggleArea(this)">Percorsi esperienziali<div class="area-dropdown">Esperienze olfattive guidate per pubblici diversi: dal grande evento alla sessione privata, dalla fiera al museo.</div></div>
+      <div class="area-item" onclick="toggleArea(this)">Installazioni sensoriali<div class="area-dropdown">Progettazione di ambienti olfattivi per hotel, spa, retail e spazi culturali. Il profumo come elemento architettonico dell'esperienza.</div></div>
+      <div class="area-item" onclick="toggleArea(this)">Contenuti editoriali<div class="area-dropdown">Articoli, guide, script e testi specializzati sulla cultura olfattiva per riviste, brand e piattaforme digitali.</div></div>
+      <div class="area-item" onclick="toggleArea(this)">Hospitality &amp; spa<div class="area-dropdown">Consulenza olfattiva per strutture ricettive e centri benessere: selezione fragranze, protocolli sensoriali e formazione del personale.</div></div>
     </div>
   </div>
 
@@ -2057,6 +2090,18 @@ if ('serviceWorker' in navigator) {
 
 <!-- Script PWA Action Bar -->
 <script src="pwa-action-bar.js"></script>
+<script>
+function toggleArea(el) {
+  var isOpen = el.classList.contains('open');
+  document.querySelectorAll('.area-item.open').forEach(function(i){ i.classList.remove('open'); });
+  if (!isOpen) el.classList.add('open');
+}
+document.addEventListener('click', function(e){
+  if (!e.target.closest('.area-item')) {
+    document.querySelectorAll('.area-item.open').forEach(function(i){ i.classList.remove('open'); });
+  }
+});
+</script>
 
 <!-- Script hamburger menu mobile -->
 <script>
