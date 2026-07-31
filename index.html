@@ -545,6 +545,44 @@
    | Dipende da: F1                                      |
    | Status: STABLE | Last modified: 2026-07-31      |
    +--------------------------------------------------+ */
+  /* [F_AFORISMA] Blocco aforisma Coco Chanel */
+  .aforisma-chanel {
+    background: url('assets/profumo-sfondo-verde.png') center center / 100% auto no-repeat;
+    position: relative;
+    padding: 80px 28px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .aforisma-chanel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 55, 40, 0.55);
+    pointer-events: none;
+  }
+  .aforisma-testo {
+    position: relative;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    color: var(--carta);
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+    max-width: 700px;
+    margin: 0 auto 20px;
+  }
+  .aforisma-firma {
+    position: relative;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,240,220,0.65);
+  }
+
   /* CONTATTI */
   #contatti { background: var(--smeraldo); }
   #contatti { background: url('assets/profumo-sfondo-verde.png') center center / cover no-repeat; }
