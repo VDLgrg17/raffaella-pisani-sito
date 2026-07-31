@@ -547,43 +547,37 @@
    +--------------------------------------------------+ */
   /* [F_AFORISMA] Blocco aforisma Coco Chanel */
   .aforisma-chanel {
-    background: url('assets/profumo-sfondo-verde.png') center center / 100% auto no-repeat;
-    position: relative;
+    background: var(--carta);
     padding: 80px 28px;
     text-align: center;
-    overflow: hidden;
-  }
-  .aforisma-chanel::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(20, 55, 40, 0.55);
-    pointer-events: none;
-    z-index: 0;
   }
   .aforisma-testo {
-    position: relative;
-    z-index: 1;
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
-    font-weight: 300;
-    font-size: clamp(1.4rem, 3vw, 2.2rem);
-    color: var(--carta);
+    font-weight: 600;
+    font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+    background: url('assets/texture-verde.png') center center / cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
     letter-spacing: 0.02em;
     line-height: 1.5;
     max-width: 700px;
     margin: 0 auto 20px;
   }
   .aforisma-firma {
-    position: relative;
-    z-index: 1;
     font-family: 'Cormorant Garamond', serif;
     font-style: normal;
     font-weight: 400;
     font-size: 0.85rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: rgba(255,240,220,0.65);
+    background: url('assets/texture-verde.png') center center / cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
   }
 
   /* CONTATTI */
