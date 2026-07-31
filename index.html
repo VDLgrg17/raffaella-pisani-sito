@@ -149,6 +149,68 @@
   .nav-links a:hover { color: var(--smeraldo); }
 
   /* +--------------------------------------------------+
+   | [F2b] - CSS Hamburger menu mobile                  |
+   | Dipende da: F1, F2                                 |
+   | Status: STABLE | Last modified: 2026-07-31        |
+   +--------------------------------------------------+ */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 200;
+  }
+  .hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--smeraldo);
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+  .nav-mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(216,210,200,0.98);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 150;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+  }
+  .nav-mobile-menu.open { display: flex; }
+  .nav-mobile-menu a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--smeraldo);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .nav-mobile-menu a:hover { opacity: 0.6; }
+  @media (max-width: 639px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+  }
+  @media (min-width: 640px) {
+    .hamburger { display: none; }
+    .nav-mobile-menu { display: none !important; }
+  }
+
+  /* +--------------------------------------------------+
    | [F3] - CSS Hero — layout split, foto, testo        |
    | Dipende da: F1                                      |
    | Status: STABLE | Last modified: 2026-07-31      |
@@ -888,6 +950,13 @@
     .fade-in { opacity: 1; transform: none; }
   }
 
+  /* [F10b] Hero invertita su mobile — verde sopra, foto sotto */
+  @media (max-width: 639px) {
+    #hero { flex-direction: column-reverse; }
+    .hero-testo { min-height: 55vw; padding: 32px 20px 28px; }
+    .hero-foto-wrap { min-height: 70vw; }
+  }
+
   @media (min-width: 640px) {
     nav { padding: 18px 48px; }
     section { padding: 140px 72px; }
@@ -1369,7 +1438,21 @@
     <li><a href="#collaborazioni">Collaborazioni</a></li>
     <li><a href="#contatti">Contatti</a></li>
   </ul>
+  <button class="hamburger" id="gv-hamburger-btn" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </nav>
+
+<!-- Menu mobile overlay -->
+<div class="nav-mobile-menu" id="gv-mobile-menu">
+  <a href="#chi-sono">Chi sono</a>
+  <a href="#visione">Visione</a>
+  <a href="#servizi">Servizi</a>
+  <a href="#collaborazioni">Collaborazioni</a>
+  <a href="#contatti">Contatti</a>
+</div>
 
 <!-- +--------------------------------------------------+
      | [F12] - Markup HERO — foto, pannello verde, claim, CTA|
@@ -1899,6 +1982,95 @@ if ('serviceWorker' in navigator) {
 }
 </script>
 
+<!-- +--------------------------------------------------+
+     | [F-PWA] - Markup Barra Azioni PWA                  |
+     | Dipende da: F2b, manifest.json, pwa-action-bar.js  |
+     | Status: STABLE | Last modified: 2026-07-31        |
+     +--------------------------------------------------+ -->
+
+<!-- Barra azioni fissa in basso -->
+<div class="gv-action-bar-bottom">
+  <button class="gv-action-btn-bottom" id="gv-share-btn-bottom">Condividi</button>
+  <button class="gv-action-btn-bottom" id="gv-install-btn-bottom">Installa App</button>
+  <button class="gv-action-btn-bottom" id="gv-sito-btn-bottom" onclick="window.open('https://raffaellapisani.netlify.app', '_blank')">Sito Web</button>
+  <button class="gv-action-btn-bottom" id="gv-esci-btn-bottom" style="display:none;" onclick="(function(){if('serviceWorker' in navigator){navigator.serviceWorker.getRegistrations().then(r=>r.forEach(reg=>reg.unregister()));}window.location.href='https://www.google.com';})()">Esci</button>
+</div>
+
+<!-- Modale Condivisione -->
+<div class="gv-modal-bottom" id="gv-share-modal-bottom">
+  <div class="gv-modal-content-bottom">
+    <span class="gv-modal-close-bottom" id="gv-close-share-btn-bottom">&times;</span>
+    <h3 class="gv-modal-title-bottom">Condividi</h3>
+    <div class="gv-modal-url-bottom" id="gv-share-url-bottom"></div>
+    <button class="gv-modal-button-bottom" id="gv-copy-link-btn-bottom">Copia Link</button>
+    <button class="gv-modal-button-bottom" id="gv-whatsapp-btn-bottom" style="background:#25D366;">Invia su WhatsApp</button>
+    <button class="gv-modal-button-bottom gv-modal-button-secondary-bottom">Chiudi</button>
+  </div>
+</div>
+
+<!-- Modale Installazione -->
+<div class="gv-modal-bottom" id="gv-install-modal-bottom">
+  <div class="gv-modal-content-bottom">
+    <span class="gv-modal-close-bottom" id="gv-close-install-btn-bottom">&times;</span>
+    <h3 class="gv-modal-title-bottom">Installa l'App</h3>
+    <div class="gv-install-section-bottom">
+      <p class="gv-install-platform-bottom">Per iPhone/iPad (Safari):</p>
+      <div class="gv-install-divider-bottom"></div>
+      <div class="gv-install-steps-bottom">
+        <ol>
+          <li>Tocca il quadrato con la freccia che vedi al centro, sotto sulla base del tuo iPhone</li>
+          <li>Scorri e tocca "Aggiungi a Home"</li>
+          <li>Tocca "Aggiungi" in alto a destra</li>
+          <li>L'app apparirà nella schermata Home!</li>
+        </ol>
+      </div>
+    </div>
+    <div class="gv-install-section-bottom">
+      <p class="gv-install-platform-bottom">Per Android (Chrome):</p>
+      <div class="gv-install-divider-bottom"></div>
+      <div class="gv-install-steps-bottom">
+        <ol>
+          <li>Tocca i tre puntini in alto a destra</li>
+          <li>Tocca "Aggiungi a schermata Home" oppure "Installa app"</li>
+          <li>Conferma toccando "Aggiungi"</li>
+          <li>L'app apparirà nella schermata Home!</li>
+        </ol>
+      </div>
+    </div>
+    <button class="gv-modal-button-bottom" id="gv-install-prompt-btn-bottom">Installa ora</button>
+    <button class="gv-modal-button-bottom gv-modal-button-secondary-bottom" id="gv-close-install-btn2-bottom" onclick="document.getElementById('gv-install-modal-bottom').classList.remove('show')">Chiudi</button>
+  </div>
+</div>
+
+<!-- Script PWA Action Bar -->
+<script src="pwa-action-bar.js"></script>
+
+<!-- Script hamburger menu mobile -->
+<script>
+(function() {
+  var btn = document.getElementById('gv-hamburger-btn');
+  var menu = document.getElementById('gv-mobile-menu');
+  if (!btn || !menu) return;
+  btn.addEventListener('click', function() {
+    btn.classList.toggle('open');
+    menu.classList.toggle('open');
+  });
+  menu.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      btn.classList.remove('open');
+      menu.classList.remove('open');
+    });
+  });
+  // Mostra pulsante Esci solo in standalone
+  var esciBtn = document.getElementById('gv-esci-btn-bottom');
+  if (esciBtn && window.matchMedia('(display-mode: standalone)').matches) {
+    esciBtn.style.display = 'block';
+  }
+  // Popola URL nella modale condivisione
+  var urlEl = document.getElementById('gv-share-url-bottom');
+  if (urlEl) urlEl.textContent = window.location.href;
+})();
+</script>
 
 </body>
 </html>
