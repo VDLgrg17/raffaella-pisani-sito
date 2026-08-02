@@ -1,9 +1,9 @@
 // [F16] Service Worker — Cache versioning + Auto-update + Client notification
-// Versione: 2 (incrementare ad ogni deploy importante)
+// Versione: 3 (incrementare ad ogni deploy importante)
 // Responsabilità: Caching offline, invalidazione cache stale, notifica aggiornamenti
 // Status: STABLE
 
-const CACHE_VERSION = '2';
+const CACHE_VERSION = '3';
 const CACHE_NAME = `raffaella-pisani-v${CACHE_VERSION}`;
 const ASSETS_TO_CACHE = [
   '/',
