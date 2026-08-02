@@ -1170,6 +1170,11 @@
     border-color: #B89450;
   }
 
+  /* Nascondi INSTALLA APP su mobile */
+  @media (max-width: 768px) {
+    #gv-install-btn-bottom { display: none !important; }
+  }
+
   /* [F2] Modali */
   .gv-modal-bottom {
     display: none;
@@ -1345,9 +1350,9 @@
     }
 
     .gv-action-btn-bottom {
-      padding: 9px 10px;
-      font-size: 0.65rem;
-      max-width: 100px;
+      padding: 7px 8px;
+      font-size: 0.6rem;
+      max-width: 90px;
     }
 
     .gv-modal-content-bottom {
@@ -2041,6 +2046,7 @@ if ('serviceWorker' in navigator) {
 <div class="gv-action-bar-bottom">
   <button class="gv-action-btn-bottom" id="gv-share-btn-bottom">Condividi</button>
   <button class="gv-action-btn-bottom" id="gv-install-btn-bottom">Installa App</button>
+  <button class="gv-action-btn-bottom" id="gv-refresh-btn-bottom" onclick="window.location.reload(true)">Refresh</button>
   <button class="gv-action-btn-bottom" id="gv-esci-btn-bottom" style="display:none;" onclick="(function(){if('serviceWorker' in navigator){navigator.serviceWorker.getRegistrations().then(r=>r.forEach(reg=>reg.unregister()));}window.location.href='https://www.google.com';})()">Esci</button>
 </div>
 
