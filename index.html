@@ -204,6 +204,9 @@
   @media (max-width: 639px) {
     .nav-links { display: none; }
     .hamburger { display: flex; }
+    nav {
+      padding-top: max(20px, env(safe-area-inset-top, 20px));
+    }
   }
   @media (min-width: 640px) {
     .hamburger { display: none; }
@@ -1284,8 +1287,8 @@
   }
 
   .gv-install-divider-bottom {
-    height: 2px;
-    background: var(--smeraldo);
+    height: 3px;
+    background: #1a1a1a;
     margin-bottom: 12px;
   }
 
