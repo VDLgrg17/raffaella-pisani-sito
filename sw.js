@@ -1,9 +1,9 @@
 // [F16] Service Worker — Cache versioning + Auto-update + Client notification
-// Versione: 3 (incrementare ad ogni deploy importante)
+// Versione: 4 (incrementare ad ogni deploy importante)
 // Responsabilità: Caching offline, invalidazione cache stale, notifica aggiornamenti
 // Status: STABLE
 
-const CACHE_VERSION = '3';
+const CACHE_VERSION = '4';
 const CACHE_NAME = `raffaella-pisani-v${CACHE_VERSION}`;
 const ASSETS_TO_CACHE = [
   '/',
@@ -64,7 +64,7 @@ self.addEventListener('activate', event => {
   );
 });
 
-// [F16.3] Fetch event — network first + cache fallback + version check
+// [F16.3] Fetch event — cache first per risorse statiche, network first per HTML
 self.addEventListener('fetch', event => {
   // Skip non-GET requests
   if (event.request.method !== 'GET') return;
@@ -75,25 +75,19 @@ self.addEventListener('fetch', event => {
   if (url.origin !== location.origin) return;
 
   event.respondWith(
-    fetch(event.request)
-      .then(response => {
-        // Clone the response
-        const clone = response.clone();
-        
-        // Cache successful responses (200-299)
-        if (response.status >= 200 && response.status < 300) {
-          caches.open(CACHE_NAME).then(cache => {
-            cache.put(event.request, clone);
-          });
+    caches.match(event.request).then(cached => {
+      // Aggiorna in background dalla rete (stale-while-revalidate)
+      const networkFetch = fetch(event.request).then(response => {
+        if (response && response.status >= 200 && response.status < 300) {
+          const clone = response.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
         }
-        
         return response;
-      })
-      .catch(() => {
-        // Fallback to cache on network error
-        return caches.match(event.request)
-          .then(cached => cached || new Response('Offline — contenuto non disponibile', { status: 503 }));
-      })
+      }).catch(() => null);
+
+      // Serve subito dalla cache se disponibile, altrimenti aspetta la rete
+      return cached || networkFetch;
+    })
   );
 });
 
