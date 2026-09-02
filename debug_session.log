@@ -253,3 +253,40 @@ Validazione Claude definitiva: APPROVATO; F26, mappa, README e task list coerent
 Vedetta post-modifica: catena d’impatto verificata integralmente e gate chiuso.
 Stato finale: STABLE.
 ---
+
+[TASK 8 — CONTROLLO INTEGRALE — 2026-09-02]
+Intento: verificare il sito su desktop, tablet e smartphone prima della consegna finale.
+Viewport verificate: 1280 × 800, 768 × 1024 e 390 × 844 pixel.
+Ancore del menu: PASS; sei destinazioni raggiunte senza contenuti coperti e senza overflow orizzontale.
+Struttura principale: PASS; nove sezioni presenti, sei servizi, otto modalità e dodici testimonianze.
+Navigazione e interazioni: PASS; menu desktop, hamburger, accordion, Community, call to action e modali PWA funzionanti.
+Asset del sito principale: PASS; dodici immagini caricate e nessuna richiesta interna fallita.
+Pagina Archivio: PASS per contenuti, immagini, responsive e collegamento Referenze; FAIL per richiesta `/favicon.ico` con stato 404.
+F30: BROKEN; mancano i metadati icona già disponibili in F0 e F28.
+Modulo Contatti: FAIL; F17 presenta tre campi visuali e un pulsante, ma non contiene un elemento form, nomi dei campi, vincoli required o una destinazione di invio.
+F17: BROKEN; il pulsante non può inviare alcun messaggio.
+Service worker: compatibile con la futura richiesta POST perché F29.3 intercetta esclusivamente le richieste GET.
+Controllo dell’offset: falso positivo escluso mediante misurazione nativa degli hash; nessuna modifica CSS necessaria.
+TENTATIVO 1: il primo diagnostico temporaneo ha usato un identificatore hamburger errato; strategia corretta leggendo il DOM reale.
+TENTATIVO 2: il clic fisico headless sul menu mobile non era riproducibile; Anti-Loop attivato e diagnosi sostituita con la misura nativa degli hash.
+TENTATIVO 3: il primo audit integrale si è interrotto perché presumeva l’esistenza del form; il controllo è stato reso tollerante e ha registrato il difetto reale senza interrompersi.
+Stato: BROKEN; in attesa del gate Vedetta per F17 e F30.
+---
+
+[TASK 8.1 — CORREZIONE F17 E F30 — 2026-09-02]
+Gate Vedetta: APERTURA AUTORIZZATA da Giorgio.
+Intento F17: rendere operativo il modulo Contatti mediante il rilevamento statico Netlify, preservando integralmente stile e testo visibile.
+Intento F30: eliminare la richiesta favicon mancante mediante il riuso dei metadati e degli asset icona già definiti in F0 e F28.
+Snapshot pre-modifica: copie integrali e impronte SHA-256 salvate in `/tmp`; il verificatore simbolico non analizza file HTML e ha rilevato zero file supportati.
+F17: WIP.
+F30: WIP.
+---
+
+[TASK 8.1 — VERIFICA POST-MODIFICA — 2026-09-02]
+Gate Vedetta autorizzato da Giorgio e modifica circoscritta ai blocchi F17 e F30. Il controllo deterministico ha superato tutti i criteri su struttura Netlify Forms, campi obbligatori, etichette accessibili, testo visibile invariato, CSS F8 invariato, icone esistenti e compatibilità del service worker con richieste POST. La verifica browser desktop e mobile non ha rilevato overflow o variazioni visuali del modulo e della pagina Archivio. Il Code Integrity Verifier ha restituito PASS senza regressioni deterministiche. Il revisore Cohere non era disponibile perché il relativo pacchetto non è installato e il protocollo considera questa indisponibilità non bloccante. Claude Sonnet 4.6 ha approvato il codice senza correzioni bloccanti; le osservazioni sulla pagina di ringraziamento e sul filtro antispam appartengono a eventuali gate futuri. La catena F8, F17, F28, F29, F30 e F31 è compatibile. La mappa e gli header sono aggiornati e lo stato finale dei blocchi è stabile.
+Validazione GV del testo documentale: exit code 0.
+Istruzioni atomiche aggiunte complessivamente: nove unità.
+Vedetta post-modifica: compatibilità della catena confermata.
+Stato finale dei blocchi modificati: stabile.
+Validazione Claude definitiva sul diff completo: approvata da Claude Sonnet 4.6. Risposta del validatore: nessuna correzione bloccante.
+---

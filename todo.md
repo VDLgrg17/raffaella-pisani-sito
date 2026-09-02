@@ -8,6 +8,8 @@
 - [x] Inserire la sezione Modalità di collaborazione.
 - [x] Predisporre la sezione Referenze senza contenuti inventati.
 - [x] Aggiornare la sezione Community olfattiva.
-- [ ] Verificare integralmente il sito su desktop e mobile.
-- [ ] Correggere nel controllo integrale l’offset delle ancore mobile rispetto al menu fisso.
-- [ ] Aggiornare il README e completare la certificazione finale.
+- [x] Verificare integralmente il sito su desktop e mobile.
+- [x] Verificare l’offset delle ancore mobile rispetto al menu fisso; nessuna correzione necessaria.
+- [x] Rendere operativo e validabile il modulo della sezione Contatti.
+- [x] Aggiungere i metadati icona mancanti alla pagina Archivio.
+- [x] Aggiornare il README e completare la certificazione finale.

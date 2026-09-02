@@ -1984,21 +1984,28 @@
     <h2 class="section-title">Inizia il tuo<br>percorso olfattivo.</h2>
     <p class="section-body">Sei un brand, un'istituzione culturale o uno spazio che vuole costruire un'esperienza olfattiva autentica? Scrivimi per avviare una conversazione professionale.</p>
   </div>
-  <div style="margin-top:36px" class="fade-in">
+  <!-- [1] Dichiara il modulo statico rilevabile da Netlify senza introdurre JavaScript. -->
+  <form name="contatti" method="POST" data-netlify="true" style="margin-top:36px" class="fade-in">
+    <!-- [2] Mantiene esplicita l’associazione tra il payload POST e il modulo Contatti. -->
+    <input type="hidden" name="form-name" value="contatti">
+    <!-- [3] Rende obbligatorio e accessibile il campo Nome. -->
     <div class="form-group">
-      <label>Nome</label>
-      <input type="text" placeholder="Il tuo nome">
+      <label for="contatti-nome">Nome</label>
+      <input id="contatti-nome" name="nome" type="text" autocomplete="name" placeholder="Il tuo nome" required>
     </div>
+    <!-- [4] Rende obbligatorio e accessibile il campo Email. -->
     <div class="form-group">
-      <label>Email</label>
-      <input type="email" placeholder="La tua email">
+      <label for="contatti-email">Email</label>
+      <input id="contatti-email" name="email" type="email" autocomplete="email" placeholder="La tua email" required>
     </div>
+    <!-- [5] Rende obbligatorio e accessibile il campo Messaggio. -->
     <div class="form-group">
-      <label>Messaggio</label>
-      <textarea placeholder="Raccontami di te e di cosa stai cercando…"></textarea>
+      <label for="contatti-messaggio">Messaggio</label>
+      <textarea id="contatti-messaggio" name="messaggio" placeholder="Raccontami di te e di cosa stai cercando…" required></textarea>
     </div>
-    <button class="form-submit">Invia il messaggio</button>
-  </div>
+    <!-- [6] Invia il modulo mediante il comportamento HTML standard. -->
+    <button type="submit" class="form-submit">Invia il messaggio</button>
+  </form>
 
   <!-- [F_FOTO.8] Foto 8 prima dei contatti info -->
   <div style="margin-top: 60px; margin-bottom: 40px;" class="fade-in">

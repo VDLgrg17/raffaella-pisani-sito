@@ -4,13 +4,13 @@
 
 Protocollo: `blocchi-f-operativo` con sorveglianza `blocchi-f-vedetta`
 Aggiornamento: 2026-09-02
-Versione: 3.2
+Versione: 3.3
 
 ## Stato del progetto
 
 Il sito pubblicato usa `index.html`, `pwa-action-bar.js`, `manifest.json` e `sw.js`. La pagina `blog.html` costituisce l’archivio separato. I file `hero-archivio.html` e `hero-nuova.html` sono prototipi non collegati alla navigazione pubblica; restano mappati per garantire l’unicità project-wide.
 
-I primi cinque task del README sono completati. La nuova sezione Modalità di collaborazione presenta otto forme di ingaggio e una call to action verso Contatti.
+Il codice dei primi otto interventi è completato e certificato. La nuova sezione Modalità di collaborazione presenta otto forme di ingaggio e una call to action verso Contatti.
 
 ## Sito principale
 
@@ -41,13 +41,13 @@ I primi cinque task del README sono completati. La nuova sezione Modalità di co
 | F15 | `index.html` | 1638–1687 | Markup della sezione Servizi | F3, F6, F19, F24 | STABLE | 2026-09-02 |
 | F16 | `index.html` | 1724–1848 | Introduzione, collaborazioni e case history della sezione Referenze | F3, F6, F7, F8, F19 | STABLE | 2026-09-02 |
 | F26 | `index.html` | 1848–1975 | Community olfattiva e testimonianze personali | F3, F6, F7-ext, F17, F19, F21b | STABLE | 2026-09-02 |
-| F17 | `index.html` | 1976–2014 | Markup della sezione Contatti | F8 | STABLE | 2026-09-02 |
-| F18 | `index.html` | 2015–2026 | Markup del footer | F9 | STABLE | 2026-07-31 |
-| F19 | `index.html` | 2027–2040 | Osservatore delle animazioni fade-in | F10 | STABLE | 2026-07-31 |
-| F22 | `index.html` | 2041–2051 | Registrazione del service worker | F28, F29 | STABLE | 2026-09-02 |
-| F23 | `index.html` | 2052–2113 | Markup della barra e delle modali PWA | F20, F21, F27, F28 | STABLE | 2026-09-02 |
-| F24 | `index.html` | 2114–2127 | Comportamento degli accordion Servizi | F6, F15 | STABLE | 2026-09-02 |
-| F25 | `index.html` | 2128–2156 | Comportamento del menu hamburger | F2b, F11 | STABLE | 2026-09-02 |
+| F17 | `index.html` | 1976–2021 | Markup della sezione Contatti | F8 | STABLE | 2026-09-02 |
+| F18 | `index.html` | 2022–2033 | Markup del footer | F9 | STABLE | 2026-07-31 |
+| F19 | `index.html` | 2034–2047 | Osservatore delle animazioni fade-in | F10 | STABLE | 2026-07-31 |
+| F22 | `index.html` | 2048–2058 | Registrazione del service worker | F28, F29 | STABLE | 2026-09-02 |
+| F23 | `index.html` | 2059–2120 | Markup della barra e delle modali PWA | F20, F21, F27, F28 | STABLE | 2026-09-02 |
+| F24 | `index.html` | 2121–2134 | Comportamento degli accordion Servizi | F6, F15 | STABLE | 2026-09-02 |
+| F25 | `index.html` | 2135–2163 | Comportamento del menu hamburger | F2b, F11 | STABLE | 2026-09-02 |
 | F27 | `pwa-action-bar.js` | 1–145 | Logica della barra azioni e delle modali PWA | F20, F21, F23, F29 | STABLE | 2026-09-02 |
 | F27.1 | `pwa-action-bar.js` | 77–103 | Ascolto degli aggiornamenti del service worker | F27, F29 | STABLE | 2026-09-02 |
 | F28 | `manifest.json` | 1–118 | Identità, icone, schermate e scorciatoie PWA | F0, F13, F15, F17 | STABLE | 2026-09-02 |
@@ -65,23 +65,23 @@ Il formato JSON non consente commenti: **F28** è identificato esclusivamente ne
 
 | Blocco | File | Righe | Responsabilità | Dipende da | Status | Last modified |
 |---|---|---:|---|---|---|---|
-| F30 | `blog.html` | 1–13 | Configurazione della pagina Archivio | nessuno | STABLE | 2026-09-02 |
-| F31 | `blog.html` | 14–42 | Reset, colori e tipografia Archivio | F30 | STABLE | 2026-09-02 |
-| F32 | `blog.html` | 43–86 | Stile della navigazione Archivio | F31 | STABLE | 2026-09-02 |
-| F33 | `blog.html` | 87–122 | Layout della pagina Archivio | F31 | STABLE | 2026-09-02 |
-| F34 | `blog.html` | 123–159 | Stile dei filtri | F31, F33 | STABLE | 2026-09-02 |
-| F35 | `blog.html` | 160–226 | Stile della griglia articoli | F31, F33 | STABLE | 2026-09-02 |
-| F36 | `blog.html` | 227–259 | Stile della rubrica Ti Odoro | F31, F33 | STABLE | 2026-09-02 |
-| F37 | `blog.html` | 260–320 | Stile del footer Archivio | F31 | STABLE | 2026-09-02 |
-| F38 | `blog.html` | 321–335 | Regole responsive Archivio | F32–F37 | STABLE | 2026-09-02 |
-| F39 | `blog.html` | 336–347 | Animazione fade-in Archivio | F31 | STABLE | 2026-09-02 |
-| F40 | `blog.html` | 348–361 | Markup della navigazione Archivio | F32, F11, F13–F17 | STABLE | 2026-09-02 |
-| F41 | `blog.html` | 361–369 | Markup della pagina Archivio | F33 | STABLE | 2026-09-02 |
-| F42 | `blog.html` | 370–380 | Markup dei filtri | F34, F46 | STABLE | 2026-09-02 |
-| F43 | `blog.html` | 381–433 | Markup della griglia articoli | F35, F46 | STABLE | 2026-09-02 |
-| F44 | `blog.html` | 434–442 | Markup della rubrica Ti Odoro | F36 | STABLE | 2026-09-02 |
-| F45 | `blog.html` | 443–467 | Markup del footer Archivio | F37 | STABLE | 2026-09-02 |
-| F46 | `blog.html` | 468–500 | Filtri e osservatore fade-in Archivio | F39, F42, F43 | STABLE | 2026-09-02 |
+| F30 | `blog.html` | 1–28 | Configurazione della pagina Archivio | F0, F28 | STABLE | 2026-09-02 |
+| F31 | `blog.html` | 29–57 | Reset, colori e tipografia Archivio | F30 | STABLE | 2026-09-02 |
+| F32 | `blog.html` | 58–101 | Stile della navigazione Archivio | F31 | STABLE | 2026-09-02 |
+| F33 | `blog.html` | 102–137 | Layout della pagina Archivio | F31 | STABLE | 2026-09-02 |
+| F34 | `blog.html` | 138–174 | Stile dei filtri | F31, F33 | STABLE | 2026-09-02 |
+| F35 | `blog.html` | 175–241 | Stile della griglia articoli | F31, F33 | STABLE | 2026-09-02 |
+| F36 | `blog.html` | 242–274 | Stile della rubrica Ti Odoro | F31, F33 | STABLE | 2026-09-02 |
+| F37 | `blog.html` | 275–335 | Stile del footer Archivio | F31 | STABLE | 2026-09-02 |
+| F38 | `blog.html` | 336–350 | Regole responsive Archivio | F32–F37 | STABLE | 2026-09-02 |
+| F39 | `blog.html` | 351–362 | Animazione fade-in Archivio | F31 | STABLE | 2026-09-02 |
+| F40 | `blog.html` | 363–376 | Markup della navigazione Archivio | F32, F11, F13–F17 | STABLE | 2026-09-02 |
+| F41 | `blog.html` | 377–385 | Markup della pagina Archivio | F33 | STABLE | 2026-09-02 |
+| F42 | `blog.html` | 386–396 | Markup dei filtri | F34, F46 | STABLE | 2026-09-02 |
+| F43 | `blog.html` | 397–449 | Markup della griglia articoli | F35, F46 | STABLE | 2026-09-02 |
+| F44 | `blog.html` | 450–458 | Markup della rubrica Ti Odoro | F36 | STABLE | 2026-09-02 |
+| F45 | `blog.html` | 459–483 | Markup del footer Archivio | F37 | STABLE | 2026-09-02 |
+| F46 | `blog.html` | 484–519 | Filtri e osservatore fade-in Archivio | F39, F42, F43 | STABLE | 2026-09-02 |
 
 ## Prototipi non pubblicati
 

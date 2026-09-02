@@ -14,6 +14,10 @@ Il sito è una pagina statica con CSS e JavaScript inline organizzati in Blocchi
 
 Sono state inoltre corrette le criticità di leggibilità segnalate nelle sezioni Contatti e Collaborazioni. I testi digitati nel form usano il bianco pieno, le etichette delle collaborazioni sono nere e la sezione Community possiede un contenitore con margini corretti. Le correzioni grammaticali già approvate includono la rimozione della virgola prima di “e”, la sostituzione delle forme parlate individuate e l’uso della minuscola dopo i due punti nelle etichette “intervento:” e “risultato:”.
 
+Il controllo integrale del 2 settembre 2026 ha verificato il sito a 1280 × 800, 768 × 1024 e 390 × 844 pixel. Navigazione, ancore, accordion, Community, immagini, barra PWA e responsive risultano conformi. Il controllo ha escluso il presunto difetto dell’offset mobile e ha individuato due problemi reali: il blocco F17 era soltanto visuale e il blocco F30 non dichiarava alcuna icona.
+
+Il modulo Contatti è ora un modulo HTML statico rilevabile da Netlify. I campi possiedono nomi, obbligatorietà, associazioni accessibili e validazione nativa, mentre stile e testo visibile restano invariati. La pagina Archivio riusa manifest e icone già disponibili nel progetto, eliminando la richiesta implicita della favicon mancante.
+
 Il checkpoint GitHub precedente al task Referenze è `9bc67f2`; gli stati successivi sono tracciati nella cronologia del branch `master`.
 
 ## Attività da svolgere in sequenza
@@ -27,11 +31,12 @@ Il checkpoint GitHub precedente al task Referenze è `9bc67f2`; gli stati succes
 | 5 | **Completato il 2 settembre 2026.** Sezione Modalità di collaborazione inserita con otto forme di ingaggio e call to action verso Contatti. |
 | 6 | **Completato il 2 settembre 2026.** Sezione Referenze predisposta con introduzione professionale e punto riservato alle future testimonianze autorizzate; rimosse le tre card aziendali provvisorie. |
 | 7 | **Completato il 2 settembre 2026.** Community olfattiva allineata al documento guida; dodici testimonianze, pulsante e call to action preservati. |
-| 8 | Collegare il dominio `sensidistrati.it` a Netlify soltanto dopo la disponibilità del nome di dominio attivo, degli screenshot della zona DNS, dei record esistenti e della verifica di eventuali caselle email. |
+| 8 | **Completato il 2 settembre 2026.** Il controllo integrale desktop e mobile ha confermato struttura, navigazione, immagini, PWA, accordion, ancore e responsive. I due difetti reali emersi sono stati corretti nei blocchi F17 e F30 senza variazioni al design approvato. |
+| 9 | Collegare il dominio `sensidistrati.it` a Netlify soltanto dopo la disponibilità del nome di dominio attivo, degli screenshot della zona DNS, dei record esistenti e della verifica di eventuali caselle email. |
 
 ## Dipendenze aperte
 
-Le referenze professionali devono essere fornite dal committente prima della loro pubblicazione. Il collegamento del dominio richiede l’accesso al pannello Register.it da parte della titolare e la verifica preventiva dei record DNS, con particolare attenzione ai record MX legati alla posta.
+Le referenze professionali devono essere fornite dal committente prima della loro pubblicazione. Il rilevamento Netlify Forms deve essere verificato dopo il deploy mediante il singolo invio tecnico fittizio autorizzato. Il collegamento del dominio richiede l’accesso al pannello Register.it da parte della titolare e la verifica preventiva dei record DNS, con particolare attenzione ai record MX legati alla posta.
 
 ## Protocollo obbligatorio per ogni attività futura
 
@@ -41,4 +46,4 @@ Se `mappa_blocchi.md` non è presente oppure non coincide con il codice reale, d
 
 ## Stato operativo
 
-I primi sette interventi sono completati. Il prossimo task riguarda il controllo integrale desktop e mobile, compresa la correzione dell’offset delle ancore rispetto al menu fisso; il codice resta congelato fino all’apertura del relativo gate Vedetta. Questo documento deve essere aggiornato dopo ogni attività completata, ogni nuova dipendenza emersa o ogni variazione della sequenza stabilita.
+Il codice dei primi otto interventi è completato e certificato. Resta la verifica successiva al deploy del rilevamento Netlify Forms, con un singolo invio tecnico fittizio autorizzato e la successiva eliminazione della submission di prova quando consentita. Il collegamento del dominio `sensidistrati.it` resta un intervento futuro e separato.
