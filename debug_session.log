@@ -75,3 +75,14 @@ Header F aggiornato: SÌ.
 Compatibilità della catena: CONFERMATA.
 Stato finale: STABLE.
 ---
+
+[TASK 3 — VISIONE — 2026-09-02]
+Intento: verificare l’allineamento della sezione Visione al documento guida.
+Blocco verificato: F14.
+Blocchi collegati verificati: F5, F10, F11, F19, F28 e F40.
+Controllo deterministico: PASS; titolo, ordine e testi dei tre pilastri coincidono integralmente con il documento guida.
+Istruzioni atomiche generate nel codice del sito: 0.
+Modifiche al sito: nessuna.
+Certificazione Claude Sonnet 4.6: APPROVATO.
+Stato finale: STABLE.
+---

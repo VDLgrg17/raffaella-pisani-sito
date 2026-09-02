@@ -22,7 +22,7 @@ Il commit GitHub di riferimento al momento della stesura è `7be4093`.
 |---|---|
 | 1 | **Completato il 2 settembre 2026.** Menu desktop, mobile e Archivio allineati alla voce Referenze e alla sezione professionale `#credibilita`. |
 | 2 | **Completato il 2 settembre 2026.** Sezione Chi sono integrata con il nuovo posizionamento strategico B2B del documento guida. |
-| 3 | Allineare la sezione Visione ai tre pilastri Accoglienza, Cultura e Ascolto. |
+| 3 | **Completato il 2 settembre 2026.** La sezione Visione risultava già integralmente allineata ai tre pilastri Accoglienza, Cultura e Ascolto; nessuna modifica al sito è stata necessaria. |
 | 4 | Riorganizzare la sezione Servizi nelle sei aree definite dal documento guida, aggiornando i contenuti degli accordion senza modificarne lo stile visivo. |
 | 5 | Inserire la sezione Modalità di collaborazione con le forme di ingaggio e la relativa call to action finale. |
 | 6 | Creare la sezione Referenze professionali dopo il ricevimento di testimonianze autorizzate e verificabili; nessuna referenza può essere inventata. |
@@ -41,4 +41,4 @@ Se `mappa_blocchi.md` non è presente oppure non coincide con il codice reale, d
 
 ## Stato operativo
 
-I primi due interventi sono completati. Il prossimo task riguarda la sezione Visione; il codice resta congelato fino all’apertura del relativo gate Vedetta. Questo documento deve essere aggiornato dopo ogni attività completata, ogni nuova dipendenza emersa o ogni variazione della sequenza stabilita.
+I primi tre interventi sono completati. Il prossimo task riguarda la sezione Servizi; il codice resta congelato fino all’apertura del relativo gate Vedetta. Questo documento deve essere aggiornato dopo ogni attività completata, ogni nuova dipendenza emersa o ogni variazione della sequenza stabilita.
