@@ -33,21 +33,21 @@ I primi cinque task del README sono completati. La nuova sezione Modalità di co
 | F10b | `index.html` | 1000–1117 | Ordine mobile della hero | F3, F10 | STABLE | 2026-07-31 |
 | F20 | `index.html` | 1118–1171 | Stile della barra azioni PWA | F1, F10 | STABLE | 2026-09-02 |
 | F21 | `index.html` | 1172–1380 | Stile delle modali PWA | F1, F20 | STABLE | 2026-09-02 |
-| F21b | `index.html` | 1382–1466 | Stile delle referenze aziendali | F1, F7-ext | STABLE | 2026-09-02 |
-| F11 | `index.html` | 1553–1588 | Markup del menu desktop e mobile | F2, F2b, F25 | STABLE | 2026-09-02 |
-| F12 | `index.html` | 1589–1613 | Markup della hero | F3, F10b | STABLE | 2026-07-31 |
-| F13 | `index.html` | 1614–1663 | Markup della sezione Chi sono | F3, F4, F10b, F19 | STABLE | 2026-09-02 |
-| F14 | `index.html` | 1664–1694 | Markup della sezione Visione | F5 | STABLE | 2026-07-31 |
-| F15 | `index.html` | 1695–1744 | Markup della sezione Servizi | F3, F6, F19, F24 | STABLE | 2026-09-02 |
-| F16 | `index.html` | 1780–1901 | Markup della sezione professionale Referenze | F7, F7b | STABLE | 2026-09-02 |
-| F26 | `index.html` | 1902–2054 | Markup di Community, referenze e testimonianze | F7-ext, F21b | STABLE | 2026-09-02 |
-| F17 | `index.html` | 2055–2093 | Markup della sezione Contatti | F8 | STABLE | 2026-09-02 |
-| F18 | `index.html` | 2094–2105 | Markup del footer | F9 | STABLE | 2026-07-31 |
-| F19 | `index.html` | 2106–2119 | Osservatore delle animazioni fade-in | F10 | STABLE | 2026-07-31 |
-| F22 | `index.html` | 2120–2130 | Registrazione del service worker | F28, F29 | STABLE | 2026-09-02 |
-| F23 | `index.html` | 2131–2192 | Markup della barra e delle modali PWA | F20, F21, F27, F28 | STABLE | 2026-09-02 |
-| F24 | `index.html` | 2193–2206 | Comportamento degli accordion Servizi | F6, F15 | STABLE | 2026-09-02 |
-| F25 | `index.html` | 2207–2235 | Comportamento del menu hamburger | F2b, F11 | STABLE | 2026-09-02 |
+| F21b | `index.html` | 1383–1410 | Pulsante e visibilità delle testimonianze Community | F1, F7-ext | STABLE | 2026-09-02 |
+| F11 | `index.html` | 1496–1531 | Markup del menu desktop e mobile | F2, F2b, F25 | STABLE | 2026-09-02 |
+| F12 | `index.html` | 1532–1556 | Markup della hero | F3, F10b | STABLE | 2026-07-31 |
+| F13 | `index.html` | 1557–1606 | Markup della sezione Chi sono | F3, F4, F10b, F19 | STABLE | 2026-09-02 |
+| F14 | `index.html` | 1607–1637 | Markup della sezione Visione | F5 | STABLE | 2026-07-31 |
+| F15 | `index.html` | 1638–1687 | Markup della sezione Servizi | F3, F6, F19, F24 | STABLE | 2026-09-02 |
+| F16 | `index.html` | 1724–1848 | Introduzione, collaborazioni e case history della sezione Referenze | F3, F6, F7, F8, F19 | STABLE | 2026-09-02 |
+| F26 | `index.html` | 1849–1972 | Community e testimonianze personali | F3, F6, F7-ext, F19, F21b | STABLE | 2026-09-02 |
+| F17 | `index.html` | 1973–2011 | Markup della sezione Contatti | F8 | STABLE | 2026-09-02 |
+| F18 | `index.html` | 2012–2023 | Markup del footer | F9 | STABLE | 2026-07-31 |
+| F19 | `index.html` | 2024–2036 | Osservatore delle animazioni fade-in | F10 | STABLE | 2026-07-31 |
+| F22 | `index.html` | 2037–2048 | Registrazione del service worker | F28, F29 | STABLE | 2026-09-02 |
+| F23 | `index.html` | 2049–2109 | Markup della barra e delle modali PWA | F20, F21, F27, F28 | STABLE | 2026-09-02 |
+| F24 | `index.html` | 2110–2123 | Comportamento degli accordion Servizi | F6, F15 | STABLE | 2026-09-02 |
+| F25 | `index.html` | 2124–2152 | Comportamento del menu hamburger | F2b, F11 | STABLE | 2026-09-02 |
 | F27 | `pwa-action-bar.js` | 1–145 | Logica della barra azioni e delle modali PWA | F20, F21, F23, F29 | STABLE | 2026-09-02 |
 | F27.1 | `pwa-action-bar.js` | 77–103 | Ascolto degli aggiornamenti del service worker | F27, F29 | STABLE | 2026-09-02 |
 | F28 | `manifest.json` | 1–118 | Identità, icone, schermate e scorciatoie PWA | F0, F13, F15, F17 | STABLE | 2026-09-02 |
@@ -56,8 +56,8 @@ I primi cinque task del README sono completati. La nuova sezione Modalità di co
 | F29.2 | `sw.js` | 31–64 | Attivazione e pulizia delle cache | F29 | STABLE | 2026-09-02 |
 | F29.3 | `sw.js` | 66–97 | Recupero network-first e fallback cache | F29 | STABLE | 2026-09-02 |
 | F29.4 | `sw.js` | 99–106 | Gestione dei messaggi del client | F29 | STABLE | 2026-09-02 |
-| F72 | `index.html` | 1468–1546 | Stile della sezione Modalità di collaborazione | F1, F3, F10 | STABLE | 2026-09-02 |
-| F73 | `index.html` | 1745–1779 | Markup della sezione Modalità di collaborazione | F3, F10, F17, F19, F72 | STABLE | 2026-09-02 |
+| F72 | `index.html` | 1411–1495 | Stile della sezione Modalità di collaborazione | F1, F3, F10 | STABLE | 2026-09-02 |
+| F73 | `index.html` | 1688–1723 | Markup della sezione Modalità di collaborazione | F3, F10, F17, F19, F72 | STABLE | 2026-09-02 |
 
 Il formato JSON non consente commenti: **F28** è identificato esclusivamente nella presente mappa.
 
@@ -124,8 +124,8 @@ F5 → F14
 F6 + F24 → F15
 F1 + F3 + F10 → F72
 F3 + F10 + F17 + F19 + F72 → F73
-F7 + F7b → F16
-F7-ext + F21b → F26
+F3 + F6 + F7 + F8 + F19 → F16
+F3 + F6 + F7-ext + F19 + F21b → F26
 F8 → F17
 F9 → F18
 F10 → F19
@@ -159,8 +159,8 @@ F65 → F66-F71
 | Visione | F5, F14 |
 | Servizi | F6, F15, F24 |
 | Collaborazioni e credibilità | F7, F7b, F16 |
-| Referenze professionali | F21b, F26 |
-| Community | F7-ext, F26 |
+| Referenze professionali | F3, F6, F7, F8, F16, F19 |
+| Community | F3, F6, F7-ext, F19, F21b, F26 |
 | Contatti | F8, F17 |
 | Footer | F9, F18 |
 | PWA | F20–F23, F27–F29 |

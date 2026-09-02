@@ -1380,65 +1380,7 @@
     }
   }
 
-  /* [F21b] - CSS Referenze aziendali | Dipende da: F1, F7-ext | Status: STABLE | Last modified: 2026-09-02 */
-  .referenze-aziendali {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 32px;
-    margin-top: 48px;
-  }
-  @media (max-width: 767px) {
-
-  }
-  @media (min-width: 768px) {
-    .referenze-aziendali { grid-template-columns: repeat(3, 1fr); }
-  }
-  .referenza-card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(168,137,90,0.25);
-    border-radius: 2px;
-    padding: 32px 28px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  .referenza-logo-placeholder {
-    font-family: var(--font-sans);
-    font-size: 0.65rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--oro);
-    border-bottom: 1px solid rgba(168,137,90,0.3);
-    padding-bottom: 12px;
-  }
-  .referenza-testo {
-    font-family: var(--font-serif);
-    font-size: 0.95rem;
-    line-height: 1.7;
-    color: var(--crema);
-    font-style: italic;
-    flex: 1;
-  }
-  .referenza-firma {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-  .referenza-nome {
-    font-family: var(--font-sans);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    color: var(--crema);
-  }
-  .referenza-azienda {
-    font-family: var(--font-sans);
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--oro);
-    opacity: 0.7;
-  }
+  /* [F21b] - CSS Testimonianze Community | Dipende da: F1, F7-ext | Status: STABLE | Last modified: 2026-09-02 */
   /* Pulsante testimonianze */
   .btn-testimonianze {
     background: transparent;
@@ -1779,15 +1721,19 @@
 
 <!-- CREDIBILITÀ -->
 <!-- +--------------------------------------------------+
-     | [F16] - Markup CREDIBILITÀ — collaborazioni, voci  |
-     | Dipende da: F7                                     |
-     | Status: STABLE | Last modified: 2026-09-02     |
+     | [F16] - Markup REFERENZE — introduzione, progetti  |
+     | Dipende da: F3, F6, F7, F8, F19                   |
+     | Status: STABLE | Last modified: 2026-09-02         |
      +--------------------------------------------------+ -->
 <section id="credibilita">
   <div class="fade-in">
-    <!-- [4] Presenta la sezione professionale con l’etichetta Referenze. -->
+    <!-- [24] Presenta le Referenze professionali con il testo guida validato. -->
     <p class="section-eyebrow">Referenze</p>
-    <h2 class="section-title">Voci di chi<br>ha percorso il cammino.</h2>
+    <h2 class="section-title">Voci qualificate<br>sul mio lavoro</h2>
+    <p class="section-body">In questa sezione raccolgo le testimonianze di brand, aziende, istituzioni e professionisti che hanno collaborato con me in progetti legati alla cultura olfattiva, alla narrazione, all’esperienza sensoriale e alla valorizzazione del profumo come linguaggio.</p>
+    <p class="section-body">Non sono semplici recensioni: sono referenze professionali che raccontano il mio modo di lavorare, la qualità della relazione costruita e il valore generato nei diversi contesti di collaborazione.</p>
+    <p class="section-body">Attraverso queste voci emerge un metodo: ascoltare l’identità del brand o del progetto, trasformare il profumo in racconto e creare esperienze capaci di lasciare una traccia riconoscibile.</p>
+    <!-- [25] Riserva questo punto esclusivamente alle future referenze reali e autorizzate. -->
   </div>
 
   <!-- T07+T08 — Barra loghi collaborazioni -->
@@ -1900,12 +1846,12 @@
 
 
 <!-- +--------------------------------------------------+
-     | [F26] - Markup COMMUNITY — referenze e testimonianze|
-     | Dipende da: F7-ext                                 |
-     | Status: STABLE | Last modified: 2026-09-02        |
+     | [F26] - Markup COMMUNITY — testimonianze personali |
+     | Dipende da: F3, F6, F7-ext, F19, F21b             |
+     | Status: STABLE | Last modified: 2026-09-02         |
      +--------------------------------------------------+ -->
 <section id="community">
-<!-- Dipende da: F7-ext | Status: STABLE | Last modified: 2026-07-31 -->
+<!-- Dipende da: F3, F6, F7-ext, F19, F21b | Status: STABLE | Last modified: 2026-09-02 -->
     <p class="section-eyebrow">Community</p>
     <h2 class="section-title">Chi condivide<br>questa visione.</h2>
     <p class="section-body">Attorno alla cultura olfattiva si è raccolta una comunità di professionisti, brand e istituzioni che riconoscono nel profumo un linguaggio strategico. Queste voci non descrivono un'esperienza piacevole: documentano un metodo al lavoro.</p>
@@ -1913,37 +1859,8 @@
     <p class="section-body" style="font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; opacity:0.6;">Vuoi far parte di questa rete? <a href="#contatti" style="color:var(--oro); text-decoration:none;">Scrivimi →</a></p>
   </div>
 
-  <!-- Referenze aziendali — visibili -->
-  <div class="referenze-aziendali">
-    <div class="referenza-card fade-in">
-      <div class="referenza-logo-placeholder">MCZ Group</div>
-      <p class="referenza-testo">"Raffaella ha trasformato la nostra presentazione di prodotto in un'esperienza sensoriale memorabile. Il percorso olfattivo che ha progettato per il nostro showroom ha generato un engagement che non avevamo mai ottenuto con strumenti tradizionali."</p>
-      <div class="referenza-firma">
-        <span class="referenza-nome">Direttore Marketing</span>
-        <span class="referenza-azienda">MCZ Group — Riscaldamento di design</span>
-      </div>
-    </div>
-
-    <div class="referenza-card fade-in">
-      <div class="referenza-logo-placeholder">Puntoettore</div>
-      <p class="referenza-testo">"Abbiamo affidato a Raffaella la direzione narrativa del nostro spazio fragranze. Ha costruito da zero un'identità olfattiva coerente con il nostro posizionamento luxury, formando il team e creando i contenuti editoriali. Un lavoro di metodo, non di improvvisazione."</p>
-      <div class="referenza-firma">
-        <span class="referenza-nome">Titolare</span>
-        <span class="referenza-azienda">Puntoettore — Profumeria artistica</span>
-      </div>
-    </div>
-
-    <div class="referenza-card fade-in">
-      <div class="referenza-logo-placeholder">Deha × Pitti</div>
-      <p class="referenza-testo">"La collaborazione con Raffaella per Pitti Fragranze ci ha permesso di presentare il brand con una voce culturale autentica. La sua capacità di connettere profumo, narrazione e contesto ha elevato la percezione del nostro brand agli occhi dei buyer internazionali."</p>
-      <div class="referenza-firma">
-        <span class="referenza-nome">Brand Manager</span>
-        <span class="referenza-azienda">Deha — Pitti Fragranze</span>
-      </div>
-    </div>
-  </div>
-
   <!-- Pulsante per testimonianze personali -->
+  <!-- [26] Mantiene nella Community soltanto le testimonianze personali esistenti. -->
   <div style="text-align:center; margin-top:48px;" class="fade-in">
     <button class="btn-testimonianze" onclick="document.getElementById('testimonianze-nascoste').classList.toggle('visible'); this.textContent = this.textContent.includes('Leggi') ? 'Nascondi le testimonianze ↑' : 'Leggi le testimonianze della community →'">
       Leggi le testimonianze della community →

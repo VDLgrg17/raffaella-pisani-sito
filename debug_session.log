@@ -148,3 +148,53 @@ Compatibilità della catena: CONFERMATA.
 Stato finale: STABLE.
 Codice certificato da Claude Sonnet 4.6: APPROVATO.
 ---
+
+[TASK 6 — REFERENZE — 2026-09-02]
+Intento: predisporre Referenze professionali con il testo guida e rimuovere le card aziendali provvisorie prive di attribuzione verificabile.
+Blocchi autorizzati: F16, F26 e F21b.
+Blocchi da verificare: F3, F6, F7, F7-ext, F8, F11, F19, F20, F23, F40 e F73.
+Dipendenza nascosta registrata: F8 applica il raggio globale alle fotografie della galleria contenute in F16.
+Validazione GV preventiva dei nuovi testi: exit code 0.
+Istruzioni atomiche generate: 3, numerate da [24] a [26].
+[TENTATIVO 1 — 2026-09-02]
+Errore: il patch aggregato non ha trovato il contesto dell’header F16.
+File: index.html, blocco F16.
+Correzione tentata: rilettura del blocco reale e separazione delle modifiche per responsabilità.
+Risposta validatore: patch non applicato a index.html; mappa e registro marcati WIP.
+---
+[TENTATIVO 2 — 2026-09-02]
+Errore: il secondo patch aggregato non ha trovato il commento delle referenze aziendali.
+File: index.html, blocco F26.
+Correzione tentata: abbandono del patch aggregato e applicazione chirurgica separata a F21b, F16 e F26 con contesto completo.
+Risposta validatore: correzione applicata; controlli deterministici e visivi successivi superati.
+---
+[TENTATIVO 3 — 2026-09-02]
+Errore: il comando di verifica finale ha richiamato un nome di script GV non esistente.
+File: pipeline temporanea di verifica; nessun file del sito coinvolto.
+Correzione tentata: rilettura della skill GV e ripetizione con `gv_validator.py` e i parametri ufficiali.
+Risposta validatore: controlli deterministici precedenti già superati; validazione GV da ripetere sullo stesso testo.
+---
+[TENTATIVO 4 — 2026-09-02]
+Errore: il patch aggregato di stabilizzazione ha trovato due header con la stessa riga di stato WIP.
+File: index.html, header F16 e F26.
+Correzione tentata: aggiunta del contesto completo di ciascun blocco e stabilizzazione separata degli header.
+Risposta validatore: correzione applicata; mappa e documentazione erano già state aggiornate senza errori.
+---
+Verifica deterministica iniziale: PASS; titolo e tre paragrafi presenti, card aziendali provvisorie assenti, tredici collaborazioni e dodici testimonianze personali preservate.
+Verifica integrità simboli JavaScript: PASS; nessuna regressione rilevata.
+Verifica visiva desktop: PASS; titolo, introduzione, barra dei nomi e contenuti professionali risultano leggibili e ordinati.
+Verifica DOM desktop: 0 card aziendali provvisorie, 13 collaborazioni professionali e 12 testimonianze personali.
+Verifica visiva mobile Referenze: PASS; titolo e tre paragrafi risultano leggibili, la barra dei nomi mantiene il flusso e la larghezza del documento coincide con la viewport di 390 pixel.
+Nota di test: la notifica di aggiornamento PWA visibile nella cattura appartiene alla scena locale e non modifica il contenuto della sezione.
+Verifica visiva mobile Community: PASS; le tre card aziendali provvisorie non compaiono e il pulsante delle testimonianze personali resta visibile.
+Verifica toggle Community: PASS; il clic reale apre la griglia e rende visibili tutte le dodici testimonianze personali preservate.
+Validazione Claude preliminare: APPROVATO; commento interno F26 disallineato rilevato e corretto.
+Validazione GV finale: exit code 0.
+Validazione Claude successiva alla correzione F26: APPROVATO.
+Controllo deterministico stabilizzato: PASS; stati e intervalli F21b, F16 e F26 allineati alla mappa.
+Verifica integrità stabilizzata: PASS; nessun simbolo JavaScript rimosso.
+Validazione GV del README aggiornato: exit code 0.
+Vedetta post-modifica: catena d’impatto verificata integralmente e gate chiuso.
+Dipendenza futura: le testimonianze professionali reali restano in attesa di contenuti autorizzati e costituiscono un task separato.
+Stato finale: STABLE.
+---
