@@ -198,3 +198,58 @@ Vedetta post-modifica: catena d’impatto verificata integralmente e gate chiuso
 Dipendenza futura: le testimonianze professionali reali restano in attesa di contenuti autorizzati e costituiscono un task separato.
 Stato finale: STABLE.
 ---
+
+[TASK 7 — COMMUNITY OLFATTIVA — 2026-09-02]
+Intento: allineare titolo e presentazione della Community al documento guida, preservando integralmente le dodici testimonianze personali.
+Blocco autorizzato: F26.
+Blocchi da verificare: F3, F6, F7-ext, F11, F17, F19, F20, F21b, F23 e F25.
+Dipendenza nascosta registrata: F26 consuma l’ancora Contatti fornita da F17.
+Correzione strutturale autorizzata: rimossa una chiusura div priva di elemento di apertura nel blocco F26.
+Validazione GV preventiva dei testi: exit code 0.
+Istruzioni atomiche generate: 2, numerate [27] e [28].
+[TENTATIVO 1 — 2026-09-02]
+Errore: il patch aggregato non ha trovato un punto univoco nel registro perché tre task terminavano con la stessa riga di stato.
+File: debug_session.log.
+Correzione tentata: inserimento del task dopo la dipendenza futura univoca del task Referenze.
+Risposta validatore: modifica al sito e alla mappa già applicata; registrazione ripetuta separatamente.
+---
+[TENTATIVO 2 — 2026-09-02]
+Errore: l’aggiornamento aggregato delle evidenze visuali ha trovato la task list modificata rispetto all’ultima lettura.
+File: todo.md; nessun file del sito coinvolto.
+Correzione tentata: rilettura automatica e inserimento separato del controllo sull’offset delle ancore.
+Risposta validatore: evidenze salvate nel registro; task list riallineata separatamente.
+---
+[TENTATIVO 3 — 2026-09-02]
+Errore: lo snapshot d’integrità è stato richiamato con opzioni non supportate e il verificatore semantico temporaneo non possiede una modalità di confronto.
+File: nessun file del sito coinvolto.
+Correzione tentata: rilettura delle interfacce reali e uso del comando ufficiale `snapshot.py diff`; il contenuto HTML intenzionalmente modificato resta coperto dal controllo specifico Community.
+Risposta validatore: controllo Community e `git diff --check` già superati; confronto dei simboli JavaScript da ripetere con la sintassi corretta.
+---
+[TENTATIVO 4 — 2026-09-02]
+Errore: il file temporaneo `/tmp/community_pre.json` non era più disponibile dopo la compattazione del contesto.
+File: nessun file del sito coinvolto.
+Correzione tentata: ricostruzione dello snapshot pre-modifica dal checkpoint Git `HEAD` mediante le stesse funzioni del verificatore ufficiale.
+Risposta validatore: PASS; nessun simbolo JavaScript rimosso o modificato.
+---
+[TENTATIVO 5 — 2026-09-02]
+Errore: il precedente comando semantico con opzione non supportata aveva creato nel repository un rapporto temporaneo denominato `--compare`.
+File: rapporto temporaneo estraneo al progetto; nessun file del sito coinvolto.
+Correzione tentata: rimozione del rapporto prima dello staging e nuova verifica dello stato Git.
+Risposta validatore: repository privo di file non tracciati; restano soltanto i cinque file autorizzati del task Community.
+---
+Nota diagnostica: l’origine locale 8768 serviva una copia precedente tramite service worker; il controllo è proseguito sull’origine isolata 8769.
+Verifica desktop iniziale: PASS; titolo, quattro paragrafi, call to action e pulsante risultano leggibili e ordinati, senza overflow orizzontale.
+Verifica mobile del contenuto: PASS; quattro paragrafi leggibili, documento largo quanto la viewport e barra PWA invariata.
+Verifica mobile dell’ancoraggio: da diagnosticare; la cattura con la sezione allineata in alto mostra il titolo parzialmente coperto dal menu fisso.
+Verifica mobile della call to action: PASS; collegamento leggibile, separato dal contenuto successivo e non coperto dalla barra PWA.
+Verifica mobile delle testimonianze aperte: PASS; dodici card preservate, griglia a una colonna leggibile, nessun overflow e barra PWA invariata.
+Verifica navigazione della call to action: PASS; il clic reale raggiunge correttamente `#contatti` senza modificare menu o PWA.
+Decisione Vedetta: il difetto dell’offset è preesistente, riguarda tutte le ancore con menu fisso e sarà trattato nel controllo integrale; F26 non viene esteso oltre il gate autorizzato.
+Validazione Claude preliminare: APPROVATO; nessun problema bloccante rilevato.
+Controllo deterministico stabilizzato: PASS; F26 e gli intervalli successivi risultano allineati alla mappa.
+Verifica integrità stabilizzata: PASS; nessun simbolo JavaScript rimosso.
+Validazione GV finale: exit code 0.
+Validazione Claude definitiva: APPROVATO; F26, mappa, README e task list coerenti.
+Vedetta post-modifica: catena d’impatto verificata integralmente e gate chiuso.
+Stato finale: STABLE.
+---

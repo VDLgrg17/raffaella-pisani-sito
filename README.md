@@ -26,7 +26,7 @@ Il checkpoint GitHub precedente al task Referenze è `9bc67f2`; gli stati succes
 | 4 | **Completato il 2 settembre 2026.** Sezione Servizi riorganizzata nelle sei aree ufficiali; stile e comportamento degli accordion preservati. |
 | 5 | **Completato il 2 settembre 2026.** Sezione Modalità di collaborazione inserita con otto forme di ingaggio e call to action verso Contatti. |
 | 6 | **Completato il 2 settembre 2026.** Sezione Referenze predisposta con introduzione professionale e punto riservato alle future testimonianze autorizzate; rimosse le tre card aziendali provvisorie. |
-| 7 | Aggiornare la sezione Community olfattiva, preservando i box esistenti e riscrivendo la presentazione della community. |
+| 7 | **Completato il 2 settembre 2026.** Community olfattiva allineata al documento guida; dodici testimonianze, pulsante e call to action preservati. |
 | 8 | Collegare il dominio `sensidistrati.it` a Netlify soltanto dopo la disponibilità del nome di dominio attivo, degli screenshot della zona DNS, dei record esistenti e della verifica di eventuali caselle email. |
 
 ## Dipendenze aperte
@@ -41,4 +41,4 @@ Se `mappa_blocchi.md` non è presente oppure non coincide con il codice reale, d
 
 ## Stato operativo
 
-I primi sei interventi sono completati. Il prossimo task riguarda l’aggiornamento della Community olfattiva; il codice resta congelato fino all’apertura del relativo gate Vedetta. Questo documento deve essere aggiornato dopo ogni attività completata, ogni nuova dipendenza emersa o ogni variazione della sequenza stabilita.
+I primi sette interventi sono completati. Il prossimo task riguarda il controllo integrale desktop e mobile, compresa la correzione dell’offset delle ancore rispetto al menu fisso; il codice resta congelato fino all’apertura del relativo gate Vedetta. Questo documento deve essere aggiornato dopo ogni attività completata, ogni nuova dipendenza emersa o ogni variazione della sequenza stabilita.

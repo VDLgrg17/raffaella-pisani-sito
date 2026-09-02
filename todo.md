@@ -7,6 +7,7 @@
 - [x] Riorganizzare la sezione Servizi e i relativi accordion.
 - [x] Inserire la sezione Modalità di collaborazione.
 - [x] Predisporre la sezione Referenze senza contenuti inventati.
-- [ ] Aggiornare la sezione Community olfattiva.
+- [x] Aggiornare la sezione Community olfattiva.
 - [ ] Verificare integralmente il sito su desktop e mobile.
+- [ ] Correggere nel controllo integrale l’offset delle ancore mobile rispetto al menu fisso.
 - [ ] Aggiornare il README e completare la certificazione finale.

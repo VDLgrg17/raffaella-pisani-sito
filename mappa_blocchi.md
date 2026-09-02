@@ -40,14 +40,14 @@ I primi cinque task del README sono completati. La nuova sezione Modalità di co
 | F14 | `index.html` | 1607–1637 | Markup della sezione Visione | F5 | STABLE | 2026-07-31 |
 | F15 | `index.html` | 1638–1687 | Markup della sezione Servizi | F3, F6, F19, F24 | STABLE | 2026-09-02 |
 | F16 | `index.html` | 1724–1848 | Introduzione, collaborazioni e case history della sezione Referenze | F3, F6, F7, F8, F19 | STABLE | 2026-09-02 |
-| F26 | `index.html` | 1849–1972 | Community e testimonianze personali | F3, F6, F7-ext, F19, F21b | STABLE | 2026-09-02 |
-| F17 | `index.html` | 1973–2011 | Markup della sezione Contatti | F8 | STABLE | 2026-09-02 |
-| F18 | `index.html` | 2012–2023 | Markup del footer | F9 | STABLE | 2026-07-31 |
-| F19 | `index.html` | 2024–2036 | Osservatore delle animazioni fade-in | F10 | STABLE | 2026-07-31 |
-| F22 | `index.html` | 2037–2048 | Registrazione del service worker | F28, F29 | STABLE | 2026-09-02 |
-| F23 | `index.html` | 2049–2109 | Markup della barra e delle modali PWA | F20, F21, F27, F28 | STABLE | 2026-09-02 |
-| F24 | `index.html` | 2110–2123 | Comportamento degli accordion Servizi | F6, F15 | STABLE | 2026-09-02 |
-| F25 | `index.html` | 2124–2152 | Comportamento del menu hamburger | F2b, F11 | STABLE | 2026-09-02 |
+| F26 | `index.html` | 1848–1975 | Community olfattiva e testimonianze personali | F3, F6, F7-ext, F17, F19, F21b | STABLE | 2026-09-02 |
+| F17 | `index.html` | 1976–2014 | Markup della sezione Contatti | F8 | STABLE | 2026-09-02 |
+| F18 | `index.html` | 2015–2026 | Markup del footer | F9 | STABLE | 2026-07-31 |
+| F19 | `index.html` | 2027–2040 | Osservatore delle animazioni fade-in | F10 | STABLE | 2026-07-31 |
+| F22 | `index.html` | 2041–2051 | Registrazione del service worker | F28, F29 | STABLE | 2026-09-02 |
+| F23 | `index.html` | 2052–2113 | Markup della barra e delle modali PWA | F20, F21, F27, F28 | STABLE | 2026-09-02 |
+| F24 | `index.html` | 2114–2127 | Comportamento degli accordion Servizi | F6, F15 | STABLE | 2026-09-02 |
+| F25 | `index.html` | 2128–2156 | Comportamento del menu hamburger | F2b, F11 | STABLE | 2026-09-02 |
 | F27 | `pwa-action-bar.js` | 1–145 | Logica della barra azioni e delle modali PWA | F20, F21, F23, F29 | STABLE | 2026-09-02 |
 | F27.1 | `pwa-action-bar.js` | 77–103 | Ascolto degli aggiornamenti del service worker | F27, F29 | STABLE | 2026-09-02 |
 | F28 | `manifest.json` | 1–118 | Identità, icone, schermate e scorciatoie PWA | F0, F13, F15, F17 | STABLE | 2026-09-02 |
@@ -125,7 +125,7 @@ F6 + F24 → F15
 F1 + F3 + F10 → F72
 F3 + F10 + F17 + F19 + F72 → F73
 F3 + F6 + F7 + F8 + F19 → F16
-F3 + F6 + F7-ext + F19 + F21b → F26
+F3 + F6 + F7-ext + F17 + F19 + F21b → F26
 F8 → F17
 F9 → F18
 F10 → F19
