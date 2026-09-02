@@ -20,7 +20,7 @@ Il commit GitHub di riferimento al momento della stesura è `7be4093`.
 
 | Ordine | Intervento previsto |
 |---|---|
-| 1 | Allineare il menu di testa al documento guida, definendo la distinzione tra Referenze e Collaborazioni. |
+| 1 | **Completato il 2 settembre 2026.** Menu desktop, mobile e Archivio allineati alla voce Referenze e alla sezione professionale `#credibilita`. |
 | 2 | Riscrivere la sezione Chi sono con il posizionamento B2B, il metodo maturato sul campo e il valore generato per brand e istituzioni. |
 | 3 | Allineare la sezione Visione ai tre pilastri Accoglienza, Cultura e Ascolto. |
 | 4 | Riorganizzare la sezione Servizi nelle sei aree definite dal documento guida, aggiornando i contenuti degli accordion senza modificarne lo stile visivo. |
@@ -31,7 +31,7 @@ Il commit GitHub di riferimento al momento della stesura è `7be4093`.
 
 ## Dipendenze aperte
 
-Le referenze professionali devono essere fornite dal committente prima della loro pubblicazione. La distinzione definitiva nel menu fra Referenze e Collaborazioni richiede conferma di Giorgio. Il collegamento del dominio richiede l’accesso al pannello Register.it da parte della titolare e la verifica preventiva dei record DNS, con particolare attenzione ai record MX legati alla posta.
+Le referenze professionali devono essere fornite dal committente prima della loro pubblicazione. Il collegamento del dominio richiede l’accesso al pannello Register.it da parte della titolare e la verifica preventiva dei record DNS, con particolare attenzione ai record MX legati alla posta.
 
 ## Protocollo obbligatorio per ogni attività futura
 
@@ -41,4 +41,4 @@ Se `mappa_blocchi.md` non è presente oppure non coincide con il codice reale, d
 
 ## Stato operativo
 
-Il codice rimane congelato finché Giorgio non autorizza il prossimo intervento. Questo documento deve essere aggiornato dopo ogni attività completata, ogni nuova dipendenza emersa o ogni variazione della sequenza stabilita.
+Il primo intervento è completato. Il prossimo task riguarda la sezione Chi sono; il codice resta congelato fino all’apertura del relativo gate Vedetta. Questo documento deve essere aggiornato dopo ogni attività completata, ogni nuova dipendenza emersa o ogni variazione della sequenza stabilita.

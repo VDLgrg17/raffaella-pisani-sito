@@ -27,3 +27,28 @@ Controllo ripetuto dopo la rimozione di due spazi finali nella mappa.
 Regressioni plausibili: nessuna.
 Autorizzazione al commit: confermata.
 ---
+
+[TASK 1 — MENU REFERENZE — 2026-09-02]
+Intento: sostituire l’etichetta Collaborazioni con Referenze e collegare i menu alla sezione professionale reale #credibilita.
+Blocchi autorizzati: F6, F11, F16 e F40.
+Istruzioni atomiche generate: 5.
+Verifica collegamenti: PASS; tutte le ancore dei menu principali corrispondono a identificatori reali.
+Verifica coerenza: PASS; desktop, mobile e Archivio usano Referenze -> #credibilita.
+Verifica integrità: PASS; nessun simbolo JavaScript rimosso.
+Validazione GV: exit code 0 sul contesto visibile modificato.
+Certificazione Claude: APPROVATO con due raccomandazioni non bloccanti.
+Verifica visiva desktop: PASS; la voce Referenze è leggibile e conduce alla sezione #credibilita, la cui etichetta appare nera sul fondo avorio.
+Verifica visiva mobile: PASS; hamburger visibile, hero e barra PWA invariati, voce Referenze presente nel menu mobile verificato dal contratto DOM.
+Verifica visiva Archivio: PASS; la voce Referenze appare nel menu e punta a index.html#credibilita.
+Nota Claude non applicata: la rinomina descrittiva di F7 resta fuori dal gate autorizzato e non modifica il contratto funzionale.
+VEDETTA — POST-MODIFICA
+Blocchi modificati: F6, F11, F16 e F40.
+Blocchi verificati senza modifica: F2, F2b, F25, F26 e F28.
+Contratti controllati: ancore desktop e mobile, chiusura hamburger, menu Archivio, selettore CSS ed etichetta della sezione professionale.
+Nuove dipendenze rilevate: nessuna.
+Mappa blocchi aggiornata: SÌ.
+Header F aggiornati: SÌ.
+Compatibilità della catena: CONFERMATA.
+Stato finale: STABLE.
+Codice certificato da Claude Sonnet 4.6: APPROVATO.
+---

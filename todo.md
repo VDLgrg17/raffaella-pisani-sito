@@ -1,7 +1,7 @@
 # Sequenza operativa del sito
 
 - [x] Verificare il repository reale e completare la mappa dei Blocchi F.
-- [ ] Allineare il menu di testa e validarne i collegamenti desktop e mobile.
+- [x] Allineare il menu di testa e validarne i collegamenti desktop e mobile.
 - [ ] Aggiornare la sezione Chi sono secondo il documento guida.
 - [ ] Aggiornare la sezione Visione secondo il documento guida.
 - [ ] Riorganizzare la sezione Servizi e i relativi accordion.

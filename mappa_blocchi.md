@@ -10,7 +10,7 @@ Versione: 3.0
 
 Il sito pubblicato usa `index.html`, `pwa-action-bar.js`, `manifest.json` e `sw.js`. La pagina `blog.html` costituisce l’archivio separato. I file `hero-archivio.html` e `hero-nuova.html` sono prototipi non collegati alla navigazione pubblica; restano mappati per garantire l’unicità project-wide.
 
-Il blocco **F11** è marcato `BROKEN` perché contiene il collegamento `#collaborazioni`, mentre la sezione reale usa `id="credibilita"`. La correzione appartiene al primo task del README e non è stata eseguita durante la risincronizzazione.
+Il primo task del README è completato: F6, F11, F16 e F40 allineano la voce Referenze alla sezione professionale reale `id="credibilita"`.
 
 ## Sito principale
 
@@ -23,7 +23,7 @@ Il blocco **F11** è marcato `BROKEN` perché contiene il collegamento `#collabo
 | F3 | `index.html` | 216–475 | Stile della hero | F1 | STABLE | 2026-07-31 |
 | F4 | `index.html` | 476–498 | Stile della sezione Chi sono | F1 | STABLE | 2026-07-31 |
 | F5 | `index.html` | 499–544 | Stile della sezione Visione | F1 | STABLE | 2026-07-31 |
-| F6 | `index.html` | 545–642 | Stile della sezione Servizi e degli accordion | F1 | STABLE | 2026-07-31 |
+| F6 | `index.html` | 545–643 | Stile della sezione Servizi, degli accordion e dell’etichetta Referenze | F1 | STABLE | 2026-09-02 |
 | F8 | `index.html` | 643–801 | Stile della sezione Contatti | F1 | STABLE | 2026-07-31 |
 | F7 | `index.html` | 802–840 | Stile della sezione Collaborazioni | F1 | STABLE | 2026-07-31 |
 | F7-ext | `index.html` | 841–914 | Stile di testimonianze e Community | F1 | STABLE | 2026-07-31 |
@@ -34,12 +34,12 @@ Il blocco **F11** è marcato `BROKEN` perché contiene il collegamento `#collabo
 | F20 | `index.html` | 1118–1171 | Stile della barra azioni PWA | F1, F10 | STABLE | 2026-09-02 |
 | F21 | `index.html` | 1172–1380 | Stile delle modali PWA | F1, F20 | STABLE | 2026-09-02 |
 | F21b | `index.html` | 1382–1466 | Stile delle referenze aziendali | F1, F7-ext | STABLE | 2026-09-02 |
-| F11 | `index.html` | 1473–1506 | Markup del menu desktop e mobile | F2, F2b, F25 | BROKEN | 2026-09-02 |
+| F11 | `index.html` | 1474–1509 | Markup del menu desktop e mobile | F2, F2b, F25 | STABLE | 2026-09-02 |
 | F12 | `index.html` | 1507–1531 | Markup della hero | F3, F10b | STABLE | 2026-07-31 |
 | F13 | `index.html` | 1532–1577 | Markup della sezione Chi sono | F4 | STABLE | 2026-07-31 |
 | F14 | `index.html` | 1578–1608 | Markup della sezione Visione | F5 | STABLE | 2026-07-31 |
 | F15 | `index.html` | 1609–1684 | Markup della sezione Servizi | F6, F24 | STABLE | 2026-07-31 |
-| F16 | `index.html` | 1685–1804 | Markup di collaborazioni e credibilità | F7, F7b | STABLE | 2026-07-31 |
+| F16 | `index.html` | 1688–1808 | Markup della sezione professionale Referenze | F7, F7b | STABLE | 2026-09-02 |
 | F26 | `index.html` | 1805–1957 | Markup di Community, referenze e testimonianze | F7-ext, F21b | STABLE | 2026-09-02 |
 | F17 | `index.html` | 1958–1996 | Markup della sezione Contatti | F8 | STABLE | 2026-09-02 |
 | F18 | `index.html` | 1997–2008 | Markup del footer | F9 | STABLE | 2026-07-31 |
@@ -73,7 +73,7 @@ Il formato JSON non consente commenti: **F28** è identificato esclusivamente ne
 | F37 | `blog.html` | 260–320 | Stile del footer Archivio | F31 | STABLE | 2026-09-02 |
 | F38 | `blog.html` | 321–335 | Regole responsive Archivio | F32–F37 | STABLE | 2026-09-02 |
 | F39 | `blog.html` | 336–347 | Animazione fade-in Archivio | F31 | STABLE | 2026-09-02 |
-| F40 | `blog.html` | 348–360 | Markup della navigazione Archivio | F32, F11, F13–F17 | STABLE | 2026-09-02 |
+| F40 | `blog.html` | 348–361 | Markup della navigazione Archivio | F32, F11, F13–F17 | STABLE | 2026-09-02 |
 | F41 | `blog.html` | 361–369 | Markup della pagina Archivio | F33 | STABLE | 2026-09-02 |
 | F42 | `blog.html` | 370–380 | Markup dei filtri | F34, F46 | STABLE | 2026-09-02 |
 | F43 | `blog.html` | 381–433 | Markup della griglia articoli | F35, F46 | STABLE | 2026-09-02 |

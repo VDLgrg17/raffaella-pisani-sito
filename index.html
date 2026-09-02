@@ -544,7 +544,7 @@
   /* +--------------------------------------------------+
    | [F6] - CSS Servizi — 3 card                        |
    | Dipende da: F1                                      |
-   | Status: STABLE | Last modified: 2026-07-31      |
+   | Status: STABLE | Last modified: 2026-09-02      |
    +--------------------------------------------------+ */
   /* SERVIZI */
   #servizi {
@@ -621,7 +621,8 @@
 
   /* CREDIBILITÀ */
 #credibilita { background: var(--avorio); }
-  #collaborazioni .section-eyebrow { color: #1a1a1a; }
+  /* [1] Allinea il selettore dell’etichetta alla sezione professionale reale. */
+  #credibilita .section-eyebrow { color: #1a1a1a; }
   #community { background: var(--avorio); }
 
   .placeholder-box {
@@ -1472,7 +1473,7 @@
 <!-- +--------------------------------------------------+
      | [F11] - Markup NAV — logo, menu                    |
      | Dipende da: F2, F2b, F25                           |
-     | Status: BROKEN | Last modified: 2026-09-02        |
+     | Status: STABLE | Last modified: 2026-09-02        |
      +--------------------------------------------------+ -->
 <nav>
   <a href="#hero" class="nav-logo-wrap">
@@ -1482,7 +1483,8 @@
       <li><a href="#chi-sono">Chi sono</a></li>
       <li><a href="#visione">Visione</a></li>
       <li><a href="#servizi">Servizi</a></li>
-      <li><a href="#collaborazioni">Collaborazioni</a></li>
+      <!-- [2] Collega la voce Referenze alla sezione professionale esistente. -->
+      <li><a href="#credibilita">Referenze</a></li>
       <li><a href="#community">Community</a></li>
       <li><a href="#contatti">Contatti</a></li>
     </ul>
@@ -1498,7 +1500,8 @@
   <a href="#chi-sono">Chi sono</a>
   <a href="#visione">Visione</a>
   <a href="#servizi">Servizi</a>
-  <a href="#collaborazioni">Collaborazioni</a>
+  <!-- [3] Replica sul menu mobile il contratto della voce Referenze. -->
+  <a href="#credibilita">Referenze</a>
   <a href="#community">Community</a>
   <a href="#contatti">Contatti</a>
 </div>
@@ -1684,11 +1687,12 @@
 <!-- +--------------------------------------------------+
      | [F16] - Markup CREDIBILITÀ — collaborazioni, voci  |
      | Dipende da: F7                                     |
-     | Status: STABLE | Last modified: 2026-07-31     |
+     | Status: STABLE | Last modified: 2026-09-02     |
      +--------------------------------------------------+ -->
 <section id="credibilita">
   <div class="fade-in">
-    <p class="section-eyebrow">Collaborazioni</p>
+    <!-- [4] Presenta la sezione professionale con l’etichetta Referenze. -->
+    <p class="section-eyebrow">Referenze</p>
     <h2 class="section-title">Voci di chi<br>ha percorso il cammino.</h2>
   </div>
 
