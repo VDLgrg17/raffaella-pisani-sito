@@ -16,3 +16,6 @@
 - [x] Allineare README e registro al flusso GitHub-Netlify senza verifiche manuali nel pannello.
 - [x] Verificare il deploy pubblico automatico del commit `4b6b89a`.
 - [x] Salvare e pubblicare il checkpoint documentale conclusivo su `github/master`.
+- [x] Ricostruire il materiale e le richieste fornite oggi.
+- [x] Confrontare ogni voce con il codice e la documentazione pubblicati.
+- [x] Consegnare la tabella completa con l’esito di ogni integrazione.
