@@ -13,3 +13,6 @@
 - [x] Rendere operativo e validabile il modulo della sezione Contatti.
 - [x] Aggiungere i metadati icona mancanti alla pagina Archivio.
 - [x] Aggiornare il README e completare la certificazione finale.
+- [x] Allineare README e registro al flusso GitHub-Netlify senza verifiche manuali nel pannello.
+- [x] Verificare il deploy pubblico automatico del commit `4b6b89a`.
+- [x] Salvare e pubblicare il checkpoint documentale conclusivo su `github/master`.

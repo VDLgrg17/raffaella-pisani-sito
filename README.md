@@ -36,7 +36,7 @@ Il checkpoint GitHub precedente al task Referenze è `9bc67f2`; gli stati succes
 
 ## Dipendenze aperte
 
-Le referenze professionali devono essere fornite dal committente prima della loro pubblicazione. Il rilevamento Netlify Forms deve essere verificato dopo il deploy mediante il singolo invio tecnico fittizio autorizzato. Il collegamento del dominio richiede l’accesso al pannello Register.it da parte della titolare e la verifica preventiva dei record DNS, con particolare attenzione ai record MX legati alla posta.
+Le referenze professionali devono essere fornite dal committente prima della loro pubblicazione. Il funzionamento del modulo Contatti è affidato al deploy automatico Netlify derivato dal branch `master`, senza accessi manuali al pannello. Il collegamento del dominio richiede l’accesso al pannello Register.it da parte della titolare e la verifica preventiva dei record DNS, con particolare attenzione ai record MX legati alla posta.
 
 ## Protocollo obbligatorio per ogni attività futura
 
@@ -46,4 +46,4 @@ Se `mappa_blocchi.md` non è presente oppure non coincide con il codice reale, d
 
 ## Stato operativo
 
-Il codice dei primi otto interventi è completato e certificato. Resta la verifica successiva al deploy del rilevamento Netlify Forms, con un singolo invio tecnico fittizio autorizzato e la successiva eliminazione della submission di prova quando consentita. Il collegamento del dominio `sensidistrati.it` resta un intervento futuro e separato.
+Il codice dei primi otto interventi è completato, certificato e pubblicato nel commit `4b6b89a`. GitHub resta la fonte di verità e Netlify aggiorna automaticamente il sito dal branch `master`. Il collegamento del dominio `sensidistrati.it` resta un intervento futuro e separato.

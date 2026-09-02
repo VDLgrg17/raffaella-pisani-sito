@@ -290,3 +290,10 @@ Vedetta post-modifica: compatibilità della catena confermata.
 Stato finale dei blocchi modificati: stabile.
 Validazione Claude definitiva sul diff completo: approvata da Claude Sonnet 4.6. Risposta del validatore: nessuna correzione bloccante.
 ---
+
+[TASK 8.2 — FLUSSO GITHUB-NETLIFY — 2026-09-03]
+Decisione operativa di Giorgio: nessun accesso manuale al pannello Netlify e nessuna submission tecnica di prova. Il flusso vincolante resta sviluppo nel repository reale, verifica locale, commit, push su `github/master` e deploy automatico Netlify. Il commit `4b6b89a` contiene i fix F17 e F30, mentre il sito pubblico restituisce correttamente le pagine aggiornate. Nessuna variabile aggiuntiva è stata introdotta nel progetto.
+Validazione GV del testo documentale: exit code 0.
+Verifica pubblica del deploy automatico: superata. Il sito Netlify contiene il modulo `contatti` con struttura POST, nomi dei campi, vincoli obbligatori e pulsante di invio. La pagina Archivio contiene manifest e favicon dichiarati, mentre l’icona e il manifest restituiscono stato HTTP 200. La verifica è stata eseguita sul sito pubblico senza accedere al pannello Netlify e senza creare submission di prova.
+Validazione GV della verifica pubblica: exit code 0.
+---
