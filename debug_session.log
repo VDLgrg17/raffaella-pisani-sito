@@ -86,3 +86,38 @@ Modifiche al sito: nessuna.
 Certificazione Claude Sonnet 4.6: APPROVATO.
 Stato finale: STABLE.
 ---
+
+[TASK 4 — SERVIZI — 2026-09-02]
+Intento: sostituire le tre card e gli otto pulsanti con introduzione e sei servizi ufficiali del documento guida, preservando stile e comportamento degli accordion.
+Blocchi autorizzati: F6 e F15.
+Blocchi da verificare: F1, F3, F11, F19, F24, F28, F29 e F40.
+Validazione GV preventiva dei testi: exit code 0.
+Istruzioni atomiche generate: 7, numerate da [8] a [14].
+Verifica deterministica: PASS; sei servizi presenti nell’ordine previsto, tre card obsolete rimosse, CSS attivo e JavaScript invariati.
+Verifica integrità: PASS; nessun simbolo JavaScript rimosso.
+Verifica origine senza cache: PASS; titolo, introduzione e sei etichette aggiornati risultano nel documento reale.
+Nota diagnostica: la precedente origine locale 8765 serviva una copia obsoleta tramite service worker; la verifica è proseguita sull’origine nuova 8766 senza cache.
+Verifica visiva desktop, titolo e introduzione: PASS; contrasto, giustificazione e gerarchia restano coerenti con lo sfondo terracotta.
+Verifica mobile iniziale: INCONCLUDENTE; lo scorrimento fluido ha fermato la cattura prima della griglia Servizi. Il controllo viene ripetuto disattivando lo scorrimento fluido soltanto nella sessione di test.
+Verifica visiva desktop, griglia chiusa: PASS; sei pulsanti conservano bordo, colore, spaziatura e gerarchia precedenti.
+Verifica visiva mobile, griglia chiusa: PASS; i sei pulsanti vanno a capo senza uscire dalla viewport.
+Diagnosi accordion: PASS; il clic aggiunge la classe `open` e lo stile computato del menu passa a `display: block`. La cattura precedente non mostrava il menu perché la viewport non era centrata sul pulsante.
+Verifica visiva accordion aperto: da correggere; le descrizioni iniziali sono troppo lunghe per il menu a tendina esistente e si sovrappongono ai pulsanti successivi.
+Decisione: mantenere intatto lo stile approvato e ridurre esclusivamente le sei descrizioni secondo la richiesta di contenuto breve.
+Seconda verifica desktop e mobile: comportamento PASS; il menu si apre correttamente, ma la prima sintesi occupa quattro righe e copre due pulsanti sottostanti.
+Decisione finale: comprimere ogni descrizione in una sola frase essenziale, senza modificare posizione, colori, bordi, dimensioni o logica del menu.
+Verifica visiva finale desktop: PASS; descrizione ridotta, leggibile e coerente con il menu a tendina originale.
+Verifica visiva finale mobile: PASS; descrizione contenuta nella viewport, pulsanti integri e barra PWA invariata.
+Verifica comportamento desktop e mobile: PASS; classe `open` applicata e menu computato come `display: block`.
+Certificazione Claude Sonnet 4.6: APPROVATO.
+VEDETTA — POST-MODIFICA
+Blocchi modificati: F6 e F15.
+Blocchi verificati senza modifica: F1, F3, F11, F19, F24, F28, F29 e F40.
+Contratti controllati: sei servizi, introduzione, stile accordion, apertura e chiusura, ancora, navigazione, fotografie e PWA.
+Nuove dipendenze rilevate: nessuna.
+Mappa blocchi aggiornata: SÌ.
+Header F aggiornati: SÌ.
+Compatibilità della catena: CONFERMATA.
+Stato finale: STABLE.
+Codice certificato da Claude Sonnet 4.6: APPROVATO.
+---

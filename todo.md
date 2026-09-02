@@ -4,7 +4,7 @@
 - [x] Allineare il menu di testa e validarne i collegamenti desktop e mobile.
 - [x] Aggiornare la sezione Chi sono secondo il documento guida.
 - [x] Verificare e confermare la conformità della sezione Visione al documento guida.
-- [ ] Riorganizzare la sezione Servizi e i relativi accordion.
+- [x] Riorganizzare la sezione Servizi e i relativi accordion.
 - [ ] Inserire la sezione Modalità di collaborazione.
 - [ ] Predisporre la sezione Referenze senza contenuti inventati.
 - [ ] Aggiornare la sezione Community olfattiva.
