@@ -1,0 +1,29 @@
+[SESSIONE 2026-09-02]
+Obiettivo: risincronizzare gli identificatori dei Blocchi F e la mappa project-wide senza alterare contenuto eseguibile, testi visibili, stile o comportamento.
+Errori precedenti: nessuno.
+Stato: analisi preventiva completata; autorizzazione utente ricevuta.
+---
+
+[VERIFICA DETERMINISTICA — 2026-09-02]
+Contenuto eseguibile: invariato; impronte semantiche identiche prima e dopo.
+Simboli JavaScript: PASS; nessuna regressione rilevata.
+Blocchi F: PASS; 78 identificatori univoci e completamente mappati.
+Relazioni nuove rilevate: F21b per lo stile delle referenze aziendali.
+Stato: verifica deterministica completata.
+---
+
+[VALIDAZIONE CLAUDE — 2026-09-02]
+Modello: anthropic/claude-sonnet-4-6.
+Esito: APPROVATO.
+Motivazione: le variazioni riguardano soltanto commenti strutturali e documentazione; nessuna regola CSS, struttura HTML o funzione JavaScript è stata alterata.
+Anomalia preesistente confermata: F11 è BROKEN perché il collegamento #collaborazioni non corrisponde alla sezione reale #credibilita.
+Correzioni richieste prima del commit: nessuna.
+---
+
+[VALIDAZIONE CLAUDE DEFINITIVA — 2026-09-02]
+Modello: anthropic/claude-sonnet-4-6.
+Esito: APPROVATO.
+Controllo ripetuto dopo la rimozione di due spazi finali nella mappa.
+Regressioni plausibili: nessuna.
+Autorizzazione al commit: confermata.
+---

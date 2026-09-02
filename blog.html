@@ -1,4 +1,4 @@
-<!-- [F0] Meta, font, :root, reset globale — blog.html -->
+<!-- [F30] - Configurazione pagina Archivio | Dipende da: nessuno | Status: STABLE | Last modified: 2026-09-02 -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 
-/* [F1] Reset, variabili colore, tipografia base — ereditate da index.html */
+/* [F31] - Reset, colori e tipografia Archivio | Dipende da: F30 | Status: STABLE | Last modified: 2026-09-02 */
 :root {
   --carta:         #FAF7F2;
   --avorio:        #F2EDE4;
@@ -40,7 +40,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* [F2] Nav — identica a index.html */
+/* [F32] - CSS navigazione Archivio | Dipende da: F31 | Status: STABLE | Last modified: 2026-09-02 */
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -84,7 +84,7 @@ nav {
 .nav-links a:hover,
 .nav-links a.active { color: var(--smeraldo); }
 
-/* [F3] Layout pagina archivio */
+/* [F33] - Layout pagina Archivio | Dipende da: F31 | Status: STABLE | Last modified: 2026-09-02 */
 .archivio-wrapper {
   max-width: 1100px;
   margin: 0 auto;
@@ -120,7 +120,7 @@ nav {
   line-height: 1.85;
 }
 
-/* [F4] Filtri categorie */
+/* [F34] - CSS filtri categorie | Dipende da: F31, F33 | Status: STABLE | Last modified: 2026-09-02 */
 .categorie-bar {
   display: flex;
   flex-wrap: wrap;
@@ -157,7 +157,7 @@ nav {
 .cat-btn[data-cat="mito"].active       { background: var(--oro); border-color: var(--oro); }
 .cat-btn[data-cat="filosofia"].active  { background: var(--seppia); border-color: var(--seppia); }
 
-/* [F5] Griglia articoli — stile rivista */
+/* [F35] - CSS griglia articoli | Dipende da: F31, F33 | Status: STABLE | Last modified: 2026-09-02 */
 .articoli-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -224,7 +224,7 @@ nav {
   margin-bottom: 20px;
 }
 
-/* [F6] Sezione Ti Odoro — rubrica in evidenza */
+/* [F36] - CSS rubrica Ti Odoro | Dipende da: F31, F33 | Status: STABLE | Last modified: 2026-09-02 */
 .ti-odoro-banner {
   margin: 80px 0;
   padding: 56px;
@@ -257,7 +257,7 @@ nav {
   line-height: 1.9;
 }
 
-/* [F7] Footer — identico a index.html */
+/* [F37] - CSS footer Archivio | Dipende da: F31 | Status: STABLE | Last modified: 2026-09-02 */
 footer {
   background: var(--inchiostro);
   color: rgba(250,247,242,0.7);
@@ -318,7 +318,7 @@ footer {
   color: rgba(250,247,242,0.3);
 }
 
-/* [F8] Responsive */
+/* [F38] - CSS responsive Archivio | Dipende da: F32-F37 | Status: STABLE | Last modified: 2026-09-02 */
 @media (max-width: 900px) {
   .archivio-wrapper { padding: 140px 28px 80px; }
   .articoli-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 28px; }
@@ -333,7 +333,7 @@ footer {
   .ti-odoro-banner { padding: 36px 24px; }
 }
 
-/* [F9] Fade-in animazione */
+/* [F39] - CSS animazione fade-in | Dipende da: F31 | Status: STABLE | Last modified: 2026-09-02 */
 .fade-in {
   opacity: 0;
   transform: translateY(18px);
@@ -345,7 +345,7 @@ footer {
 </head>
 <body>
 
-<!-- [F10] Markup NAV -->
+<!-- [F40] - Markup navigazione Archivio | Dipende da: F32 | Status: STABLE | Last modified: 2026-09-02 -->
 <nav>
   <a href="index.html" class="nav-logo">Raffaella Pisani</a>
   <ul class="nav-links">
@@ -358,7 +358,7 @@ footer {
   </ul>
 </nav>
 
-<!-- [F11] Markup ARCHIVIO — header + filtri + griglia -->
+<!-- [F41] - Markup pagina Archivio | Dipende da: F33 | Status: STABLE | Last modified: 2026-09-02 -->
 <main class="archivio-wrapper">
 
   <header class="archivio-header fade-in">
@@ -367,7 +367,7 @@ footer {
     <p class="archivio-intro">Articoli, riflessioni e approfondimenti sull'olfatto come strumento di cultura, memoria e narrazione. Ogni testo è un invito a leggere il profumo oltre la sua superficie.</p>
   </header>
 
-  <!-- [F12] Filtri categorie -->
+  <!-- [F42] - Markup filtri categorie | Dipende da: F34, F46 | Status: STABLE | Last modified: 2026-09-02 -->
   <div class="categorie-bar fade-in">
     <button class="cat-btn active" data-cat="tutti">Tutti</button>
     <button class="cat-btn" data-cat="molecole">Molecole</button>
@@ -378,7 +378,7 @@ footer {
     <button class="cat-btn" data-cat="filosofia">Filosofia</button>
   </div>
 
-  <!-- [F13] Griglia articoli -->
+  <!-- [F43] - Markup griglia articoli | Dipende da: F35, F46 | Status: STABLE | Last modified: 2026-09-02 -->
   <div class="articoli-grid" id="articoli-grid">
 
     <article class="articolo-card fade-in" data-categoria="neuroscienza">
@@ -431,7 +431,7 @@ footer {
 
   </div>
 
-  <!-- [F14] Banner rubrica Ti Odoro -->
+  <!-- [F44] - Markup rubrica Ti Odoro | Dipende da: F36 | Status: STABLE | Last modified: 2026-09-02 -->
   <div class="ti-odoro-banner fade-in">
     <p class="ti-odoro-label">Rubrica bimestrale</p>
     <h2 class="ti-odoro-titolo">Ti Odoro</h2>
@@ -440,7 +440,7 @@ footer {
 
 </main>
 
-<!-- [F15] Markup FOOTER -->
+<!-- [F45] - Markup footer Archivio | Dipende da: F37 | Status: STABLE | Last modified: 2026-09-02 -->
 <footer>
   <div class="footer-inner">
     <div>
@@ -465,7 +465,7 @@ footer {
   </div>
 </footer>
 
-<!-- [F16] Script — filtro categorie + fade-in -->
+<!-- [F46] - Script filtri e fade-in Archivio | Dipende da: F39, F42, F43 | Status: STABLE | Last modified: 2026-09-02 -->
 <script>
 // [1] IntersectionObserver per fade-in
 const observer = new IntersectionObserver((entries) => {

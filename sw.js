@@ -1,7 +1,6 @@
-// [F16] Service Worker — Cache versioning + Auto-update + Client notification
+// [F29] - Service Worker | Dipende da: F28 | Status: STABLE | Last modified: 2026-09-02
 // Versione: 2 (incrementare ad ogni deploy importante)
 // Responsabilità: Caching offline, invalidazione cache stale, notifica aggiornamenti
-// Status: STABLE
 
 const CACHE_VERSION = '2';
 const CACHE_NAME = `raffaella-pisani-v${CACHE_VERSION}`;
@@ -13,7 +12,7 @@ const ASSETS_TO_CACHE = [
   '/assets/icons/icon-512x512.png'
 ];
 
-// [F16.1] Install event — cache assets + force activation
+// [F29.1] Installazione e precache | Dipende da: F29
 self.addEventListener('install', event => {
   console.log(`[SW] Installing Service Worker v${CACHE_VERSION}`);
   event.waitUntil(
@@ -29,7 +28,7 @@ self.addEventListener('install', event => {
   );
 });
 
-// [F16.2] Activate event — clean old caches + claim clients
+// [F29.2] Attivazione e pulizia cache | Dipende da: F29
 self.addEventListener('activate', event => {
   console.log(`[SW] Activating Service Worker v${CACHE_VERSION}`);
   event.waitUntil(
@@ -64,7 +63,7 @@ self.addEventListener('activate', event => {
   );
 });
 
-// [F16.3] Fetch event — network first + cache fallback + version check
+// [F29.3] Fetch network-first e fallback cache | Dipende da: F29
 self.addEventListener('fetch', event => {
   // Skip non-GET requests
   if (event.request.method !== 'GET') return;
@@ -97,7 +96,7 @@ self.addEventListener('fetch', event => {
   );
 });
 
-// [F16.4] Message handler — respond to client requests
+// [F29.4] Gestione messaggi client | Dipende da: F29
 self.addEventListener('message', event => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
     console.log(`[SW] Received SKIP_WAITING message`);

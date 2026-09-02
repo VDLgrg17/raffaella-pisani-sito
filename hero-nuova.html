@@ -1,3 +1,4 @@
+<!-- [F65] - Config globale Hero Nuova | Dipende da: nessuno | Status: STABLE | Last modified: 2026-09-02 -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -28,7 +29,7 @@
       min-height: 100vh;
     }
 
-    /* === HERO NUOVA === */
+    /* [F66] - Layout e colonna foto Hero Nuova | Dipende da: F65 | Status: STABLE | Last modified: 2026-09-02 */
     #hero-nuova {
       min-height: 100svh;
       display: grid;
@@ -80,7 +81,7 @@
       z-index: 1;
     }
 
-    /* Colonna destra — testo su carta porosa */
+    /* [F67] - Colonna testo Hero Nuova | Dipende da: F65, F66 | Status: STABLE | Last modified: 2026-09-02 */
     .hn-testo-col {
       position: relative;
       overflow: hidden;
@@ -115,7 +116,7 @@
 
     .hn-testo-col > * { position: relative; z-index: 1; }
 
-    /* Parole-segno calligrafiche */
+    /* [F68] - Motivi grafici Hero Nuova | Dipende da: F65, F67 | Status: STABLE | Last modified: 2026-09-02 */
     .hn-parole {
       position: absolute;
       inset: 0;
@@ -145,7 +146,7 @@
       overflow: hidden;
     }
 
-    /* Eyebrow */
+    /* [F69] - Identità, testi e azioni Hero Nuova | Dipende da: F65, F67, F68 | Status: STABLE | Last modified: 2026-09-02 */
     .hn-eyebrow {
       font-size: 0.6rem;
       letter-spacing: 0.35em;
@@ -276,7 +277,7 @@
       50% { opacity: 1; transform: scaleY(1.1); }
     }
 
-    /* Mobile */
+    /* [F70] - Responsive Hero Nuova | Dipende da: F66-F69 | Status: STABLE | Last modified: 2026-09-02 */
     @media (max-width: 768px) {
       #hero-nuova {
         grid-template-columns: 1fr;
@@ -290,6 +291,7 @@
 </head>
 <body>
 
+<!-- [F71] - Markup Hero Nuova | Dipende da: F65-F70 | Status: STABLE | Last modified: 2026-09-02 -->
 <section id="hero-nuova">
 
   <!-- Colonna foto -->

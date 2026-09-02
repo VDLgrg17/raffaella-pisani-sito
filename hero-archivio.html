@@ -1,4 +1,4 @@
-<!-- [F0] - Config Globale | Meta, font, variabili CSS :root, reset | Dipende da: nessuno | Status: STABLE | 2026-07-13 -->
+<!-- [F50] - Config globale Hero Archivio | Dipende da: nessuno | Status: STABLE | Last modified: 2026-09-02 -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -30,7 +30,7 @@
       overflow-x: hidden;
     }
 
-    /* [F1] - Layout Hero Grid | Layout grid principale 52/48% | Dipende da: F0 | Status: STABLE | 2026-07-13 */
+    /* [F51] - Layout Hero Archivio | Dipende da: F50 | Status: STABLE | Last modified: 2026-09-02 */
     #hero-archivio {
       min-height: 100svh;
       display: grid;
@@ -39,7 +39,7 @@
       overflow: hidden;
     }
 
-    /* [F2] - Colonna Foto | Cover, filtro, velo ambra, etichette archivio | Dipende da: F0, F1 | Status: STABLE | 2026-07-13 */
+    /* [F52] - Colonna foto Hero Archivio | Dipende da: F50, F51 | Status: STABLE | Last modified: 2026-09-02 */
     .ha-foto-col {
       position: relative;
       overflow: hidden;
@@ -94,7 +94,7 @@
       z-index: 2;
     }
 
-    /* [F3] - Colonna Testo | Sfondo avorio, texture carta porosa, calore radiale | Dipende da: F0, F1 | Status: STABLE | 2026-07-13 */
+    /* [F53] - Colonna testo Hero Archivio | Dipende da: F50, F51 | Status: STABLE | Last modified: 2026-09-02 */
     .ha-testo-col {
       position: relative;
       overflow: hidden;
@@ -129,7 +129,7 @@
 
     .ha-testo-col > * { position: relative; z-index: 1; }
 
-    /* [F4] - Scia SVG Globale | Linea sinuosa con gocce che attraversa hero | Dipende da: F0, F1 | Status: STABLE | 2026-07-13 */
+    /* [F54] - Scia grafica Hero Archivio | Dipende da: F50, F51 | Status: STABLE | Last modified: 2026-09-02 */
     .ha-scia-global {
       position: absolute;
       inset: 0;
@@ -138,7 +138,7 @@
       overflow: hidden;
     }
 
-    /* [F5] - Parole-Segno Calligrafiche | Ambra/iris/resina/memoria semi-trasparenti | Dipende da: F0, F3 | Status: STABLE | 2026-07-13 */
+    /* [F55] - Parole-segno Hero Archivio | Dipende da: F50, F53 | Status: STABLE | Last modified: 2026-09-02 */
     .ha-parole {
       position: absolute;
       inset: 0;
@@ -158,7 +158,7 @@
       user-select: none;
     }
 
-    /* [F6] - Intestazione Archivio | Label + linea ambra + logo SVG | Dipende da: F0, F3 | Status: STABLE | 2026-07-13 */
+    /* [F56] - Intestazione Hero Archivio | Dipende da: F50, F53 | Status: STABLE | Last modified: 2026-09-02 */
     .ha-intestazione {
       display: flex;
       align-items: center;
@@ -181,7 +181,7 @@
       white-space: nowrap;
     }
 
-    /* [F7] - Nome e Sottotitolo | Serif grande + sottotitolo Ambassador | Dipende da: F0, F3 | Status: STABLE | 2026-07-13 */
+    /* [F57] - Nome e sottotitolo Hero Archivio | Dipende da: F50, F53 | Status: STABLE | Last modified: 2026-09-02 */
     .ha-nome {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2.4rem, 5vw, 3.8rem);
@@ -211,7 +211,7 @@
       margin-bottom: 32px;
     }
 
-    /* [F8] - Divisore con Goccia | Linea ambra + goccia decorativa | Dipende da: F0, F3 | Status: STABLE | 2026-07-13 */
+    /* [F58] - Divisore Hero Archivio | Dipende da: F50, F53 | Status: STABLE | Last modified: 2026-09-02 */
     .ha-divisore {
       display: flex;
       align-items: center;
@@ -233,7 +233,7 @@
       opacity: 0.6;
     }
 
-    /* [F9] - Frase Strategica | Testo posizionamento brand director | Dipende da: F0, F3 | Status: STABLE | 2026-07-13 */
+    /* [F59] - Frase strategica Hero Archivio | Dipende da: F50, F53 | Status: STABLE | Last modified: 2026-09-02 */
     .ha-strategica {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(0.78rem, 1.3vw, 0.88rem);
@@ -245,7 +245,7 @@
       letter-spacing: 0.02em;
     }
 
-    /* [F10] - Nota di Laboratorio | Citazione con parentesi graffa e firma R.P. | Dipende da: F0, F3 | Status: STABLE | 2026-07-13 */
+    /* [F60] - Nota di laboratorio Hero Archivio | Dipende da: F50, F53 | Status: STABLE | Last modified: 2026-09-02 */
     .ha-nota {
       position: relative;
       margin-bottom: 40px;
@@ -285,7 +285,7 @@
       opacity: 0.6;
     }
 
-    /* [F11] - CTA Freccia-Linea | Link Scrivimi con linea espandibile | Dipende da: F0, F3 | Status: STABLE | 2026-07-13 */
+    /* [F61] - Collegamento Scrivimi Hero Archivio | Dipende da: F50, F53 | Status: STABLE | Last modified: 2026-09-02 */
     .ha-cta {
       display: inline-flex;
       align-items: center;
@@ -313,7 +313,7 @@
     .ha-cta:hover .ha-cta-linea { width: 52px; }
     .ha-cta:hover .ha-cta-testo { color: var(--ambra); }
 
-    /* [F12] - Scroll Indicator | Linea animata + label verticale | Dipende da: F0, F3 | Status: STABLE | 2026-07-13 */
+    /* [F62] - Indicatore scorrimento Hero Archivio | Dipende da: F50, F53 | Status: STABLE | Last modified: 2026-09-02 */
     .ha-scroll {
       position: absolute;
       bottom: 36px;
@@ -346,7 +346,7 @@
       50% { opacity: 0.9; transform: scaleY(1.08); }
     }
 
-    /* [F13] - Responsive Mobile | Stacking verticale ≤768px | Dipende da: F1–F12 | Status: STABLE | 2026-07-13 */
+    /* [F63] - Responsive Hero Archivio | Dipende da: F51-F62 | Status: STABLE | Last modified: 2026-09-02 */
     @media (max-width: 768px) {
       #hero-archivio {
         grid-template-columns: 1fr;
@@ -361,7 +361,7 @@
 </head>
 <body>
 
-<!-- [F14] - HTML Hero Archivio | Struttura DOM completa della hero | Dipende da: F0 | Status: STABLE | 2026-07-13 -->
+<!-- [F64] - Markup Hero Archivio | Dipende da: F50-F63 | Status: STABLE | Last modified: 2026-09-02 -->
 <section id="hero-archivio">
 
   <!-- SCIA GLOBALE che attraversa tutto -->

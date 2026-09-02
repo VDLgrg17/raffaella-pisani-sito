@@ -1,4 +1,4 @@
-// [GV-PWA] Action Bar Bottom — Barra azioni standard Giorgio Vidali (bottom)
+// [F27] - Logica barra azioni PWA | Dipende da: F20, F21, F23, F29 | Status: STABLE | Last modified: 2026-09-02
 
 (function() {
   'use strict';
@@ -74,7 +74,7 @@
     if (modal) modal.classList.remove('show');
   }
 
-  // [F_CACHE.1] Listen for Service Worker updates
+  // [F27.1] Ascolto aggiornamenti Service Worker | Dipende da: F29
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.addEventListener('message', (event) => {
       if (event.data.type === 'SW_UPDATED') {

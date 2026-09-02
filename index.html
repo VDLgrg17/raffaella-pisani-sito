@@ -1115,7 +1115,7 @@
 
 
 
-  /* [F1] Barra azioni fissa in basso — 3 pulsanti responsive */
+  /* [F20] - CSS Barra azioni PWA | Dipende da: F1, F10 | Status: STABLE | Last modified: 2026-09-02 */
   .gv-action-bar-bottom {
     position: fixed;
     bottom: 0;
@@ -1169,7 +1169,7 @@
     border-color: #B89450;
   }
 
-  /* [F2] Modali */
+  /* [F21] - CSS Modali PWA | Dipende da: F1, F20 | Status: STABLE | Last modified: 2026-09-02 */
   .gv-modal-bottom {
     display: none;
     position: fixed;
@@ -1379,7 +1379,7 @@
     }
   }
 
-  /* Referenze aziendali */
+  /* [F21b] - CSS Referenze aziendali | Dipende da: F1, F7-ext | Status: STABLE | Last modified: 2026-09-02 */
   .referenze-aziendali {
     display: grid;
     grid-template-columns: 1fr;
@@ -1471,8 +1471,8 @@
 <!-- NAV -->
 <!-- +--------------------------------------------------+
      | [F11] - Markup NAV — logo, menu                    |
-     | Dipende da: F2                                     |
-     | Status: STABLE | Last modified: 2026-07-31     |
+     | Dipende da: F2, F2b, F25                           |
+     | Status: BROKEN | Last modified: 2026-09-02        |
      +--------------------------------------------------+ -->
 <nav>
   <a href="#hero" class="nav-logo-wrap">
@@ -1802,14 +1802,9 @@
 
 
 <!-- +--------------------------------------------------+
-     | [F17] - Markup CONTATTI — form/CTA percorso olfattivo|
-     | Dipende da: F8                                     |
-     | Status: STABLE | Last modified: 2026-07-31     |
-     +--------------------------------------------------+ -->
-<!-- +--------------------------------------------------+
-     | [F26] - Sezione DICONO DI ME — testimonianze grid  |
+     | [F26] - Markup COMMUNITY — referenze e testimonianze|
      | Dipende da: F7-ext                                 |
-     | Status: STABLE | Last modified: 2026-07-31     |
+     | Status: STABLE | Last modified: 2026-09-02        |
      +--------------------------------------------------+ -->
 <section id="community">
 <!-- Dipende da: F7-ext | Status: STABLE | Last modified: 2026-07-31 -->
@@ -1959,6 +1954,11 @@
   </div>
 </section>
 
+<!-- +--------------------------------------------------+
+     | [F17] - Markup CONTATTI — form/CTA percorso olfattivo|
+     | Dipende da: F8                                     |
+     | Status: STABLE | Last modified: 2026-09-02        |
+     +--------------------------------------------------+ -->
 <section id="contatti">
   <div class="fade-in">
     <p class="section-eyebrow">Contatti</p>
@@ -2019,7 +2019,7 @@
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
 
-<!-- [PWA] Service Worker Registration -->
+<!-- [F22] - Registrazione Service Worker | Dipende da: F28, F29 | Status: STABLE | Last modified: 2026-09-02 -->
 <script>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
@@ -2031,9 +2031,9 @@ if ('serviceWorker' in navigator) {
 </script>
 
 <!-- +--------------------------------------------------+
-     | [F-PWA] - Markup Barra Azioni PWA                  |
-     | Dipende da: F2b, manifest.json, pwa-action-bar.js  |
-     | Status: STABLE | Last modified: 2026-07-31        |
+     | [F23] - Markup Barra Azioni e modali PWA           |
+     | Dipende da: F20, F21, F27, F28                     |
+     | Status: STABLE | Last modified: 2026-09-02        |
      +--------------------------------------------------+ -->
 
 <!-- Barra azioni fissa in basso -->
@@ -2090,8 +2090,9 @@ if ('serviceWorker' in navigator) {
   </div>
 </div>
 
-<!-- Script PWA Action Bar -->
+<!-- Collegamento al blocco F27 — logica esterna della barra PWA -->
 <script src="pwa-action-bar.js"></script>
+<!-- [F24] - Script accordion Servizi | Dipende da: F6, F15 | Status: STABLE | Last modified: 2026-09-02 -->
 <script>
 function toggleArea(el) {
   var isOpen = el.classList.contains('open');
@@ -2105,7 +2106,7 @@ document.addEventListener('click', function(e){
 });
 </script>
 
-<!-- Script hamburger menu mobile -->
+<!-- [F25] - Script menu hamburger | Dipende da: F2b, F11 | Status: STABLE | Last modified: 2026-09-02 -->
 <script>
 (function() {
   var btn = document.getElementById('gv-hamburger-btn');
