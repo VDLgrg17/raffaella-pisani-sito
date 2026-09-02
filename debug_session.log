@@ -297,3 +297,23 @@ Validazione GV del testo documentale: exit code 0.
 Verifica pubblica del deploy automatico: superata. Il sito Netlify contiene il modulo `contatti` con struttura POST, nomi dei campi, vincoli obbligatori e pulsante di invio. La pagina Archivio contiene manifest e favicon dichiarati, mentre l’icona e il manifest restituiscono stato HTTP 200. La verifica è stata eseguita sul sito pubblico senza accedere al pannello Netlify e senza creare submission di prova.
 Validazione GV della verifica pubblica: exit code 0.
 ---
+
+[TASK 9.1 — Hero senza fiori — 2026-09-03]
+Gate Vedetta: apertura autorizzata da Giorgio.
+Intento: escludere dalla hero la fascia superiore con fiori e flaconi mediante un ritaglio geometrico dell’immagine esistente, senza modificare i pixel, Raffaella, la poltrona o il pannello testuale.
+I blocchi da modificare sono F3 e F12.
+I blocchi da verificare sono F1, F10b, F11, F17, F20, F23, F27 e F29.
+Dipendenze nascoste rilevate: il ritaglio dipende dalla geometria interna dell’immagine sorgente verticale e deve restare stabile nei contenitori desktop e mobile.
+Relazioni irrisolte: nessuna relazione resta irrisolta.
+Chiusura ricorsiva completata: sì, la chiusura è stata completata.
+Stato iniziale dei blocchi autorizzati: lavorazione in corso.
+---
+
+[TASK 9.1 — Verifica post-modifica — 2026-09-03]
+Il ritaglio geometrico della hero ha escluso la fascia superiore con fiori e flaconi senza modificare l’immagine sorgente. Raffaella, la poltrona, il pavimento, l’ambiente utile e il pannello testuale restano invariati.
+La verifica desktop ha confermato l’assenza della fascia floreale e la corretta composizione laterale. La verifica mobile a 390 × 844 pixel ha confermato il pannello verde sopra, la fotografia sotto e l’assenza di overflow orizzontale.
+Il controllo deterministico e il Code Integrity Verifier hanno restituito esito positivo senza regressioni. Claude Sonnet 4.6 ha approvato il diff reale senza correzioni bloccanti.
+Le istruzioni atomiche aggiunte sono due unità, identificate con i numeri 29 e 30.
+Vedetta post-modifica: la catena F1, F3, F10b, F11, F12, F17, F20, F23, F27 e F29 è compatibile.
+Lo stato finale dei blocchi F3 e F12 è stabile.
+---

@@ -215,7 +215,7 @@
   /* +--------------------------------------------------+
    | [F3] - CSS Hero — layout split, foto, testo        |
    | Dipende da: F1                                      |
-   | Status: STABLE | Last modified: 2026-07-31      |
+   | Status: STABLE | Last modified: 2026-09-03      |
    +--------------------------------------------------+ */
   /* HERO — foto 65% + blocco testo tortora 35% */
   #hero {
@@ -231,12 +231,12 @@
     overflow: hidden;
   }
 
+  /* [29] Mantiene il ritaglio SVG esteso all’intera colonna fotografica. */
   .hero-foto {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center 15%;
     display: block;
+    overflow: hidden;
   }
 
   /* striscia oro laterale */
@@ -1531,11 +1531,14 @@
 <!-- +--------------------------------------------------+
      | [F12] - Markup HERO — foto, pannello verde, claim, CTA|
      | Dipende da: F3                                     |
-     | Status: STABLE | Last modified: 2026-07-31     |
+     | Status: STABLE | Last modified: 2026-09-03     |
      +--------------------------------------------------+ -->
 <section id="hero">
   <div class="hero-foto-wrap">
-    <img class="hero-foto" alt="Raffaella Pisani — ricercatrice e narratrice di cultura olfattiva, profumeria artistica" src="assets/raffaella-hero.webp" alt="Cultura Olfattiva — Raffaella Pisani" loading="eager">
+    <!-- [30] Esclude geometricamente la fascia superiore con fiori e flaconi, preservando l’immagine sorgente. -->
+    <svg class="hero-foto" viewBox="0 365 1536 1683" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Raffaella Pisani — ricercatrice e narratrice di cultura olfattiva">
+      <image href="assets/raffaella-hero.webp" width="1536" height="2048"></image>
+    </svg>
   </div>
   <div class="hero-testo">
     <div class="hero-logo-block">
