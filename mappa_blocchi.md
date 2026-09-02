@@ -36,7 +36,7 @@ Il primo task del README è completato: F6, F11, F16 e F40 allineano la voce Ref
 | F21b | `index.html` | 1382–1466 | Stile delle referenze aziendali | F1, F7-ext | STABLE | 2026-09-02 |
 | F11 | `index.html` | 1474–1509 | Markup del menu desktop e mobile | F2, F2b, F25 | STABLE | 2026-09-02 |
 | F12 | `index.html` | 1507–1531 | Markup della hero | F3, F10b | STABLE | 2026-07-31 |
-| F13 | `index.html` | 1532–1577 | Markup della sezione Chi sono | F4 | STABLE | 2026-07-31 |
+| F13 | `index.html` | 1534–1584 | Markup della sezione Chi sono | F3, F4, F10b, F19 | STABLE | 2026-09-02 |
 | F14 | `index.html` | 1578–1608 | Markup della sezione Visione | F5 | STABLE | 2026-07-31 |
 | F15 | `index.html` | 1609–1684 | Markup della sezione Servizi | F6, F24 | STABLE | 2026-07-31 |
 | F16 | `index.html` | 1688–1808 | Markup della sezione professionale Referenze | F7, F7b | STABLE | 2026-09-02 |
@@ -50,7 +50,7 @@ Il primo task del README è completato: F6, F11, F16 e F40 allineano la voce Ref
 | F25 | `index.html` | 2109–2136 | Comportamento del menu hamburger | F2b, F11 | STABLE | 2026-09-02 |
 | F27 | `pwa-action-bar.js` | 1–145 | Logica della barra azioni e delle modali PWA | F20, F21, F23, F29 | STABLE | 2026-09-02 |
 | F27.1 | `pwa-action-bar.js` | 77–103 | Ascolto degli aggiornamenti del service worker | F27, F29 | STABLE | 2026-09-02 |
-| F28 | `manifest.json` | 1–118 | Identità, icone, schermate e scorciatoie PWA | F0 | STABLE | 2026-09-02 |
+| F28 | `manifest.json` | 1–118 | Identità, icone, schermate e scorciatoie PWA | F0, F13, F15, F17 | STABLE | 2026-09-02 |
 | F29 | `sw.js` | 1–106 | Cache, aggiornamento e fallback offline | F28 | STABLE | 2026-09-02 |
 | F29.1 | `sw.js` | 15–29 | Installazione e precache | F29 | STABLE | 2026-09-02 |
 | F29.2 | `sw.js` | 31–64 | Attivazione e pulizia delle cache | F29 | STABLE | 2026-09-02 |

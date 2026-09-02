@@ -52,3 +52,26 @@ Compatibilità della catena: CONFERMATA.
 Stato finale: STABLE.
 Codice certificato da Claude Sonnet 4.6: APPROVATO.
 ---
+
+[TASK 2 — CHI SONO — 2026-09-02]
+Intento: inserire il posizionamento strategico B2B previsto dal documento guida senza modificare immagini, CSS, impaginazione o testi già approvati.
+Blocco autorizzato: F13.
+Blocchi da verificare: F3, F4, F10b, F11, F19, F28 e F40.
+Validazione GV preventiva: exit code 0.
+Istruzioni atomiche generate: 2, numerate [6] e [7].
+Verifica deterministica: PASS; nuovo testo presente, quattro testi precedenti preservati, titolo e fotografie invariati.
+Verifica integrità: PASS; nessun simbolo JavaScript rimosso.
+Verifica visiva desktop: PASS; paragrafo leggibile nella colonna testuale e separazione grafica coerente.
+Verifica visiva mobile, struttura superiore: PASS; titolo e due fotografie restano ordinati, proporzionati e senza sovrapposizioni.
+Verifica visiva mobile, testo: PASS; paragrafo giustificato, leggibile e separato correttamente dai testi preesistenti.
+Certificazione Claude Sonnet 4.6: APPROVATO.
+VEDETTA — POST-MODIFICA
+Blocco modificato: F13.
+Blocchi verificati senza modifica: F3, F4, F10b, F11, F19, F28 e F40.
+Contratti controllati: testo guida, titolo, fotografie, griglia desktop, ordine mobile, fade-in, ancore e scorciatoia PWA.
+Nuova dipendenza documentata: F28 dipende dalle ancore F13, F15 e F17.
+Mappa blocchi aggiornata: SÌ.
+Header F aggiornato: SÌ.
+Compatibilità della catena: CONFERMATA.
+Stato finale: STABLE.
+---
