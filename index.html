@@ -1465,6 +1465,86 @@
     display: grid;
   }
 
+  /* +--------------------------------------------------+
+   | [F72] - CSS Modalità di collaborazione              |
+   | Dipende da: F1, F3, F10                             |
+   | Status: STABLE | Last modified: 2026-09-02          |
+   +--------------------------------------------------+ */
+  /* [15] Definisce il fondo e la gerarchia cromatica della nuova sezione. */
+  #collaborazione { background: var(--smeraldo); }
+  #collaborazione .section-eyebrow { color: var(--oro); }
+  #collaborazione .section-title { color: var(--carta); }
+  #collaborazione .section-body { color: var(--salvia-light); }
+
+  /* [16] Organizza le modalità in una lista lineare sullo smartphone. */
+  .modalita-list {
+    list-style: none;
+    counter-reset: modalita;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin: 48px 0 0;
+    padding: 0;
+    border-top: 1px solid rgba(168,137,90,0.45);
+  }
+  .modalita-item {
+    counter-increment: modalita;
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(168,137,90,0.45);
+    color: var(--carta);
+    font-size: 0.72rem;
+    line-height: 1.55;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* [17] Numera ogni modalità senza aggiungere contenuto visibile al markup. */
+  .modalita-item::before {
+    content: counter(modalita, decimal-leading-zero);
+    color: var(--oro);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    letter-spacing: 0;
+  }
+
+  /* [18] Separa la conclusione e mantiene la call to action nel linguaggio visivo esistente. */
+  .modalita-closing {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    margin-top: 44px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(168,137,90,0.45);
+  }
+  .modalita-cta-copy {
+    max-width: 620px;
+    margin: 0;
+    color: var(--carta);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
+    font-weight: 300;
+    line-height: 1.35;
+  }
+  #collaborazione .btn-primary {
+    color: var(--carta);
+    border-color: var(--oro);
+  }
+  #collaborazione .btn-primary:hover {
+    color: var(--smeraldo);
+    background: var(--carta);
+    border-color: var(--carta);
+  }
+
+  /* [19] Distribuisce le otto modalità su due colonne soltanto nel desktop. */
+  @media (min-width: 768px) {
+    .modalita-list { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 48px; }
+  }
+
 </style>
 </head>
 <body>
@@ -1661,6 +1741,41 @@
   <div style="margin-top: 40px; margin-bottom: 60px; background: var(--carta); position: relative; z-index: 2;" class="fade-in">
     <img src="/galleria-fotografica/galleria-05.jpg" alt="Sinestesie olfattive e performance" style="width: 100%; max-width: 560px; aspect-ratio: 3/2; object-fit: cover; border: 1px solid var(--lino); margin: 0 auto; display: block;">
   </div>
+
+<!-- +--------------------------------------------------+
+     | [F73] - Markup MODALITÀ DI COLLABORAZIONE         |
+     | Dipende da: F3, F10, F17, F19, F72                |
+     | Status: STABLE | Last modified: 2026-09-02        |
+     +--------------------------------------------------+ -->
+<section id="collaborazione">
+  <!-- [20] Introduce il principio della collaborazione costruita su misura. -->
+  <div class="fade-in">
+    <p class="section-eyebrow">Modalità di collaborazione</p>
+    <h2 class="section-title">Una forma adatta<br>al tuo progetto.</h2>
+    <p class="section-body">Ogni progetto viene costruito su misura a partire dal contesto, dal pubblico e dall’obiettivo.</p>
+    <p class="section-body" style="margin-top:16px;">La collaborazione può assumere forme diverse.</p>
+  </div>
+
+  <!-- [21] Presenta le otto modalità previste dal documento guida. -->
+  <ol class="modalita-list fade-in" role="list">
+    <li class="modalita-item" role="listitem">Intervento singolo</li>
+    <li class="modalita-item" role="listitem">Evento</li>
+    <li class="modalita-item" role="listitem">Workshop</li>
+    <li class="modalita-item" role="listitem">Percorso formativo</li>
+    <li class="modalita-item" role="listitem">Consulenza narrativa</li>
+    <li class="modalita-item" role="listitem">Progetto editoriale</li>
+    <li class="modalita-item" role="listitem">Collaborazione continuativa</li>
+    <li class="modalita-item" role="listitem">Ruolo ambassador</li>
+  </ol>
+
+  <!-- [22] Spiega il primo passaggio del percorso professionale. -->
+  <div class="modalita-closing fade-in">
+    <p class="section-body">Il primo passo è una conversazione esplorativa per comprendere il bisogno, valutare le opportunità e definire il formato più adatto.</p>
+    <!-- [23] Collega la proposta alla sezione Contatti già esistente. -->
+    <p class="modalita-cta-copy">Hai un brand, uno spazio o un progetto legato al mondo olfattivo?</p>
+    <a href="#contatti" class="btn-primary">Scrivimi per costruire una collaborazione</a>
+  </div>
+</section>
 
 <!-- CREDIBILITÀ -->
 <!-- +--------------------------------------------------+

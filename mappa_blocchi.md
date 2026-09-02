@@ -4,13 +4,13 @@
 
 Protocollo: `blocchi-f-operativo` con sorveglianza `blocchi-f-vedetta`
 Aggiornamento: 2026-09-02
-Versione: 3.1
+Versione: 3.2
 
 ## Stato del progetto
 
 Il sito pubblicato usa `index.html`, `pwa-action-bar.js`, `manifest.json` e `sw.js`. La pagina `blog.html` costituisce l’archivio separato. I file `hero-archivio.html` e `hero-nuova.html` sono prototipi non collegati alla navigazione pubblica; restano mappati per garantire l’unicità project-wide.
 
-I primi quattro task del README sono completati. La sezione Servizi presenta l’introduzione generale e le sei aree ufficiali con accordion invariati nel comportamento e nello stile.
+I primi cinque task del README sono completati. La nuova sezione Modalità di collaborazione presenta otto forme di ingaggio e una call to action verso Contatti.
 
 ## Sito principale
 
@@ -34,20 +34,20 @@ I primi quattro task del README sono completati. La sezione Servizi presenta l�
 | F20 | `index.html` | 1118–1171 | Stile della barra azioni PWA | F1, F10 | STABLE | 2026-09-02 |
 | F21 | `index.html` | 1172–1380 | Stile delle modali PWA | F1, F20 | STABLE | 2026-09-02 |
 | F21b | `index.html` | 1382–1466 | Stile delle referenze aziendali | F1, F7-ext | STABLE | 2026-09-02 |
-| F11 | `index.html` | 1474–1509 | Markup del menu desktop e mobile | F2, F2b, F25 | STABLE | 2026-09-02 |
-| F12 | `index.html` | 1507–1531 | Markup della hero | F3, F10b | STABLE | 2026-07-31 |
-| F13 | `index.html` | 1534–1584 | Markup della sezione Chi sono | F3, F4, F10b, F19 | STABLE | 2026-09-02 |
-| F14 | `index.html` | 1578–1608 | Markup della sezione Visione | F5 | STABLE | 2026-07-31 |
-| F15 | `index.html` | 1615–1665 | Markup della sezione Servizi | F3, F6, F19, F24 | STABLE | 2026-09-02 |
-| F16 | `index.html` | 1666–1786 | Markup della sezione professionale Referenze | F7, F7b | STABLE | 2026-09-02 |
-| F26 | `index.html` | 1787–1939 | Markup di Community, referenze e testimonianze | F7-ext, F21b | STABLE | 2026-09-02 |
-| F17 | `index.html` | 1940–1978 | Markup della sezione Contatti | F8 | STABLE | 2026-09-02 |
-| F18 | `index.html` | 1979–1990 | Markup del footer | F9 | STABLE | 2026-07-31 |
-| F19 | `index.html` | 1991–2004 | Osservatore delle animazioni fade-in | F10 | STABLE | 2026-07-31 |
-| F22 | `index.html` | 2005–2015 | Registrazione del service worker | F28, F29 | STABLE | 2026-09-02 |
-| F23 | `index.html` | 2016–2077 | Markup della barra e delle modali PWA | F20, F21, F27, F28 | STABLE | 2026-09-02 |
-| F24 | `index.html` | 2078–2091 | Comportamento degli accordion Servizi | F6, F15 | STABLE | 2026-09-02 |
-| F25 | `index.html` | 2092–2117 | Comportamento del menu hamburger | F2b, F11 | STABLE | 2026-09-02 |
+| F11 | `index.html` | 1553–1588 | Markup del menu desktop e mobile | F2, F2b, F25 | STABLE | 2026-09-02 |
+| F12 | `index.html` | 1589–1613 | Markup della hero | F3, F10b | STABLE | 2026-07-31 |
+| F13 | `index.html` | 1614–1663 | Markup della sezione Chi sono | F3, F4, F10b, F19 | STABLE | 2026-09-02 |
+| F14 | `index.html` | 1664–1694 | Markup della sezione Visione | F5 | STABLE | 2026-07-31 |
+| F15 | `index.html` | 1695–1744 | Markup della sezione Servizi | F3, F6, F19, F24 | STABLE | 2026-09-02 |
+| F16 | `index.html` | 1780–1901 | Markup della sezione professionale Referenze | F7, F7b | STABLE | 2026-09-02 |
+| F26 | `index.html` | 1902–2054 | Markup di Community, referenze e testimonianze | F7-ext, F21b | STABLE | 2026-09-02 |
+| F17 | `index.html` | 2055–2093 | Markup della sezione Contatti | F8 | STABLE | 2026-09-02 |
+| F18 | `index.html` | 2094–2105 | Markup del footer | F9 | STABLE | 2026-07-31 |
+| F19 | `index.html` | 2106–2119 | Osservatore delle animazioni fade-in | F10 | STABLE | 2026-07-31 |
+| F22 | `index.html` | 2120–2130 | Registrazione del service worker | F28, F29 | STABLE | 2026-09-02 |
+| F23 | `index.html` | 2131–2192 | Markup della barra e delle modali PWA | F20, F21, F27, F28 | STABLE | 2026-09-02 |
+| F24 | `index.html` | 2193–2206 | Comportamento degli accordion Servizi | F6, F15 | STABLE | 2026-09-02 |
+| F25 | `index.html` | 2207–2235 | Comportamento del menu hamburger | F2b, F11 | STABLE | 2026-09-02 |
 | F27 | `pwa-action-bar.js` | 1–145 | Logica della barra azioni e delle modali PWA | F20, F21, F23, F29 | STABLE | 2026-09-02 |
 | F27.1 | `pwa-action-bar.js` | 77–103 | Ascolto degli aggiornamenti del service worker | F27, F29 | STABLE | 2026-09-02 |
 | F28 | `manifest.json` | 1–118 | Identità, icone, schermate e scorciatoie PWA | F0, F13, F15, F17 | STABLE | 2026-09-02 |
@@ -56,6 +56,8 @@ I primi quattro task del README sono completati. La sezione Servizi presenta l�
 | F29.2 | `sw.js` | 31–64 | Attivazione e pulizia delle cache | F29 | STABLE | 2026-09-02 |
 | F29.3 | `sw.js` | 66–97 | Recupero network-first e fallback cache | F29 | STABLE | 2026-09-02 |
 | F29.4 | `sw.js` | 99–106 | Gestione dei messaggi del client | F29 | STABLE | 2026-09-02 |
+| F72 | `index.html` | 1468–1546 | Stile della sezione Modalità di collaborazione | F1, F3, F10 | STABLE | 2026-09-02 |
+| F73 | `index.html` | 1745–1779 | Markup della sezione Modalità di collaborazione | F3, F10, F17, F19, F72 | STABLE | 2026-09-02 |
 
 Il formato JSON non consente commenti: **F28** è identificato esclusivamente nella presente mappa.
 
@@ -120,6 +122,8 @@ F3 + F10b → F12
 F4 → F13
 F5 → F14
 F6 + F24 → F15
+F1 + F3 + F10 → F72
+F3 + F10 + F17 + F19 + F72 → F73
 F7 + F7b → F16
 F7-ext + F21b → F26
 F8 → F17
@@ -142,7 +146,8 @@ F65 → F66-F71
 | Navigazione mobile | F2b, F11, F25 | Verificare visibilità, apertura, chiusura e area sicura iOS. |
 | Servizi accordion | F6, F15, F24 | Conservare classi, attributi e comportamento di apertura. |
 | Barra PWA | F20, F21, F22, F23, F27, F28, F29 | Verificare desktop, modalità installata e aggiornamento cache. |
-| Animazioni | F10, F19, F39, F46 | Verificare che gli elementi diventino visibili dopo il caricamento. |
+| Animazioni | F10, F19, F39, F46, F73 | Verificare che gli elementi diventino visibili dopo il caricamento. |
+| Call to action verso Contatti | F12, F17, F26, F73 | Verificare l’ancora `#contatti` e la leggibilità sopra la barra PWA. |
 
 ## Vocabolario condiviso
 

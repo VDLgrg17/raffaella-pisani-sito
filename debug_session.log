@@ -121,3 +121,30 @@ Compatibilità della catena: CONFERMATA.
 Stato finale: STABLE.
 Codice certificato da Claude Sonnet 4.6: APPROVATO.
 ---
+
+[TASK 5 — MODALITÀ DI COLLABORAZIONE — 2026-09-02]
+Intento: inserire una sezione autonoma con otto modalità di lavoro e call to action verso Contatti, senza modificare le sezioni esistenti.
+Blocchi autorizzati: nuovi F72 e F73.
+Blocchi da verificare: F1, F3, F10, F11, F15, F16, F17, F19, F20, F23, F25, F28 e F40.
+Validazione GV preventiva dei testi: exit code 0.
+Istruzioni atomiche generate: 9, numerate da [15] a [23].
+Verifica deterministica: PASS; F72 e F73 univoci, otto modalità nell’ordine previsto, CTA corretta e sezioni preesistenti preservate.
+Verifica integrità: PASS; nessun simbolo JavaScript rimosso.
+Verifica visiva desktop: PASS; titolo, introduzione, griglia a due colonne, numerazione, testo conclusivo e call to action risultano coerenti.
+Verifica visiva mobile: PASS; griglia a una colonna, nessun overflow, conclusione visibile e CTA posizionata sopra la barra PWA.
+Verifica navigazione CTA: PASS; il clic raggiunge correttamente `#contatti`.
+Nota diagnostica: la prima origine locale serviva una copia obsoleta tramite service worker; la verifica definitiva è stata eseguita sull’origine isolata 8767.
+Certificazione Claude Sonnet 4.6: APPROVATO.
+Miglioramento Claude applicato: ruoli accessibili `list` e `listitem` aggiunti nel solo F73.
+Verifica F11: STABLE; i collegamenti desktop e mobile puntano a `#credibilita`, quindi la nota storica del validatore non rappresenta un problema corrente.
+VEDETTA — POST-MODIFICA
+Blocchi modificati: nuovi F72 e F73.
+Blocchi verificati senza modifica: F1, F3, F10, F11, F15, F16, F17, F19, F20, F23, F25, F28 e F40.
+Contratti controllati: ordine delle sezioni, otto modalità, stile responsive, fade-in, accessibilità della lista, CTA, fotografie, menu e barra PWA.
+Nuove dipendenze rilevate: F73 dipende dall’ancora Contatti fornita da F17.
+Mappa blocchi aggiornata: SÌ.
+Header F aggiornati: SÌ.
+Compatibilità della catena: CONFERMATA.
+Stato finale: STABLE.
+Codice certificato da Claude Sonnet 4.6: APPROVATO.
+---

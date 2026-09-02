@@ -24,7 +24,7 @@ Il commit GitHub di riferimento al momento della stesura è `7be4093`.
 | 2 | **Completato il 2 settembre 2026.** Sezione Chi sono integrata con il nuovo posizionamento strategico B2B del documento guida. |
 | 3 | **Completato il 2 settembre 2026.** La sezione Visione risultava già integralmente allineata ai tre pilastri Accoglienza, Cultura e Ascolto; nessuna modifica al sito è stata necessaria. |
 | 4 | **Completato il 2 settembre 2026.** Sezione Servizi riorganizzata nelle sei aree ufficiali; stile e comportamento degli accordion preservati. |
-| 5 | Inserire la sezione Modalità di collaborazione con le forme di ingaggio e la relativa call to action finale. |
+| 5 | **Completato il 2 settembre 2026.** Sezione Modalità di collaborazione inserita con otto forme di ingaggio e call to action verso Contatti. |
 | 6 | Creare la sezione Referenze professionali dopo il ricevimento di testimonianze autorizzate e verificabili; nessuna referenza può essere inventata. |
 | 7 | Aggiornare la sezione Community olfattiva, preservando i box esistenti e riscrivendo la presentazione della community. |
 | 8 | Collegare il dominio `sensidistrati.it` a Netlify soltanto dopo la disponibilità del nome di dominio attivo, degli screenshot della zona DNS, dei record esistenti e della verifica di eventuali caselle email. |
@@ -41,4 +41,4 @@ Se `mappa_blocchi.md` non è presente oppure non coincide con il codice reale, d
 
 ## Stato operativo
 
-I primi quattro interventi sono completati. Il prossimo task riguarda la sezione Modalità di collaborazione; il codice resta congelato fino all’apertura del relativo gate Vedetta. Questo documento deve essere aggiornato dopo ogni attività completata, ogni nuova dipendenza emersa o ogni variazione della sequenza stabilita.
+I primi cinque interventi sono completati. Il prossimo task riguarda la predisposizione della sezione Referenze senza contenuti inventati; il codice resta congelato fino all’apertura del relativo gate Vedetta. Questo documento deve essere aggiornato dopo ogni attività completata, ogni nuova dipendenza emersa o ogni variazione della sequenza stabilita.
