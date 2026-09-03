@@ -475,7 +475,7 @@
   /* +--------------------------------------------------+
    | [F4] - CSS Chi Sono — identità, testo, foto        |
    | Dipende da: F1                                      |
-   | Status: STABLE | Last modified: 2026-07-31      |
+   | Status: STABLE | Last modified: 2026-09-03      |
    +--------------------------------------------------+ */
   /* CHI SONO */
   #chi-sono { background: var(--avorio); }
@@ -643,9 +643,9 @@
   /* +--------------------------------------------------+
    | [F8] - CSS Contatti — form, CTA                    |
    | Dipende da: F1                                      |
-   | Status: STABLE | Last modified: 2026-07-31      |
+   | Status: STABLE | Last modified: 2026-09-03      |
    +--------------------------------------------------+ */
-  /* [F_AFORISMA] Blocco aforisma Coco Chanel */
+  /* [F_AFORISMA] Blocco contenuto provvisorio */
   .aforisma-chanel {
     background: var(--carta);
     padding: 60px 28px;
@@ -654,13 +654,8 @@
     position: relative;
     z-index: 10;
   }
-  .aforisma-img {
-    max-width: 90%;
-    width: 900px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-  }
+  /* [31] Mantiene centrato il solo contenuto provvisorio in attesa della frase definitiva. */
+  .aforisma-placeholder { margin-bottom: 0; }
   .aforisma-testo {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
@@ -998,7 +993,7 @@
     .fade-in { opacity: 1; transform: none; }
   }
 
-  /* [F10b] Hero invertita su mobile — verde sopra, foto sotto */
+  /* [F10b] Hero invertita su mobile — verde sopra, foto sotto | Status: STABLE | Last modified: 2026-09-03 */
   @media (max-width: 639px) {
     #hero { flex-direction: column-reverse; }
     .hero-testo { min-height: 55vw; padding: 32px 20px 28px; }
@@ -1009,7 +1004,8 @@
     nav { padding: 18px 48px; }
     section { padding: 140px 72px; }
     footer { padding: 24px 48px; flex-direction: row; justify-content: space-between; align-items: center; }
-    .chi-sono-grid { grid-template-columns: 1fr 1.7fr; align-items: start; }
+    /* [32] Espande i contenuti Chi sono dopo la rimozione temporanea della fotografia. */
+    .chi-sono-grid { grid-template-columns: 1fr; align-items: start; }
     .valori-grid { grid-template-columns: repeat(3, 1fr); gap: 0 48px; }
     #hero { flex-direction: row; padding-top: 0; }
     .hero-foto-wrap { flex: 0 0 55%; padding-top: 58px; }
@@ -1559,11 +1555,12 @@
 <!-- +--------------------------------------------------+
      | [F13] - Markup CHI SONO — identità, testo, foto    |
      | Dipende da: F3, F4, F10b, F19                      |
-     | Status: STABLE | Last modified: 2026-09-02     |
+     | Status: STABLE | Last modified: 2026-09-03     |
      +--------------------------------------------------+ -->
-<!-- [F_AFORISMA] Aforisma Coco Chanel — tra hero e chi-sono -->
+<!-- [F_AFORISMA] Contenuto provvisorio — tra hero e chi-sono -->
 <div class="aforisma-chanel">
-  <img src="assets/aforisma-chanel.png" alt="«un profumo è come un abito invisibile che si porta addosso.» — Coco Chanel" class="aforisma-img">
+  <!-- [33] Sostituisce la citazione Chanel con il contenuto provvisorio richiesto. -->
+  <p class="aforisma-testo aforisma-placeholder">In attesa di contenuto</p>
 </div>
 
 <section id="chi-sono">
@@ -1576,9 +1573,7 @@
     <img src="/galleria-fotografica/galleria-01.jpg" alt="Essenze botaniche personali" style="width: 100%; max-width: 560px; aspect-ratio: 3/2; object-fit: cover; border: 1px solid var(--lino); margin: 0 auto; display: block;">
   </div>
   <div class="chi-sono-grid">
-    <div class="fade-in">
-      <img class="chi-foto" src="assets/raffaella-chi-sono.webp" alt="Raffaella Pisani — formatrice e consulente di cultura olfattiva">
-    </div>
+    <!-- [34] Rimuove la fotografia con abito blu senza inserire sostituzioni. -->
     <div class="fade-in">
       <!-- [6] Introduce il posizionamento strategico B2B definito nel documento guida. -->
       <p class="section-body">Sono Raffaella: la sintesi tra la concretezza della strategia B2B e una visione d’avanguardia della profumeria d’autore. Erede di una storica famiglia di profumieri, ho evoluto decenni di memoria olfattiva e presenza sul campo in un laboratorio concettuale permanente. Mi definisco un paradosso felice: unisco il rigore analitico all’intuito per l’invisibile. Non impongo formule rigide, ma affianco imprenditori e visionari per decodificare il presente e anticipare i linguaggi del domani, ponendoci sempre un passo avanti al mercato.</p>

@@ -317,3 +317,24 @@ Le istruzioni atomiche aggiunte sono due unità, identificate con i numeri 29 e 
 Vedetta post-modifica: la catena F1, F3, F10b, F11, F12, F17, F20, F23, F27 e F29 è compatibile.
 Lo stato finale dei blocchi F3 e F12 è stabile.
 ---
+
+[TASK 9.2 — Contenuto provvisorio e foto Chi sono — 2026-09-03]
+Gate Vedetta: apertura autorizzata da Giorgio.
+Intento: sostituire l’immagine della citazione Chanel con il testo “In attesa di contenuto” ed eliminare dal markup la fotografia con abito blu, senza sostituzioni.
+I blocchi da modificare sono F4, F8, F10b e F13.
+I blocchi da verificare sono F1, F3, F10, F12, F14, F19 e F28.
+Dipendenze nascoste rilevate: la griglia desktop Chi sono deve tornare a una sola colonna per evitare che i testi restino compressi dopo la rimozione della fotografia.
+Relazioni irrisolte: nessuna relazione resta irrisolta.
+Chiusura ricorsiva completata: sì, la chiusura è stata completata.
+Lo stato iniziale dei blocchi autorizzati corrisponde alla lavorazione in corso.
+---
+
+[TASK 9.2 — Verifica post-modifica — 2026-09-03]
+La citazione Chanel e il relativo asset non sono più presenti nel markup. Il blocco mostra esclusivamente il testo “In attesa di contenuto” richiesto da Giorgio.
+La fotografia con abito blu non è più referenziata e la sezione Chi sono utilizza una sola colonna su desktop e smartphone. I testi approvati, le ancore e le funzionalità restano invariati.
+Il controllo deterministico e il Code Integrity Verifier hanno restituito esito positivo senza regressioni. Le verifiche visuali desktop e mobile hanno confermato la rimozione e l’assenza di overflow.
+Il validatore GV ha segnalato che il placeholder isolato contiene quattro parole; il testo è stato conservato senza variazioni perché corrisponde alla formulazione esatta imposta da Giorgio. Claude Sonnet 4.6 ha approvato il diff reale senza correzioni bloccanti.
+Le istruzioni atomiche aggiunte sono quattro unità, identificate con i numeri da 31 a 34.
+Vedetta post-modifica: la catena F1, F3, F4, F8, F10, F10b, F12, F13, F14, F19 e F28 è compatibile.
+Lo stato finale dei blocchi F4, F8, F10b e F13 è stabile.
+---
