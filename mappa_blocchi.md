@@ -4,7 +4,7 @@
 
 Protocollo: `blocchi-f-operativo` con sorveglianza `blocchi-f-vedetta`
 Aggiornamento: 2026-09-03
-Versione: 3.6
+Versione: 3.7
 
 ## Stato del progetto
 
@@ -36,18 +36,18 @@ Il codice dei primi otto interventi è completato e certificato. La nuova sezion
 | F21b | `index.html` | 1388–1415 | Pulsante e visibilità delle testimonianze Community | F1, F7-ext | STABLE | 2026-09-02 |
 | F11 | `index.html` | 1502–1537 | Markup del menu desktop e mobile | F2, F2b, F25 | STABLE | 2026-09-02 |
 | F12 | `index.html` | 1538–1565 | Markup della hero | F3, F10b | STABLE | 2026-09-03 |
-| F13 | `index.html` | 1566–1614 | Markup della sezione Chi sono | F3, F4, F10b, F19 | STABLE | 2026-09-03 |
-| F14 | `index.html` | 1615–1645 | Markup della sezione Visione | F5 | STABLE | 2026-07-31 |
-| F15 | `index.html` | 1646–1695 | Markup della sezione Servizi | F3, F6, F19, F24 | STABLE | 2026-09-02 |
-| F16 | `index.html` | 1732–1856 | Introduzione, collaborazioni e case history della sezione Referenze | F3, F6, F7, F8, F19 | STABLE | 2026-09-02 |
-| F26 | `index.html` | 1857–1984 | Community olfattiva e testimonianze personali | F3, F6, F7-ext, F17, F19, F21b | STABLE | 2026-09-02 |
-| F17 | `index.html` | 1985–2030 | Markup della sezione Contatti | F8 | STABLE | 2026-09-02 |
-| F18 | `index.html` | 2031–2042 | Markup del footer | F9 | STABLE | 2026-07-31 |
-| F19 | `index.html` | 2043–2055 | Osservatore delle animazioni fade-in | F10 | STABLE | 2026-07-31 |
-| F22 | `index.html` | 2056–2067 | Registrazione del service worker | F28, F29 | STABLE | 2026-09-02 |
-| F23 | `index.html` | 2068–2128 | Markup della barra e delle modali PWA | F20, F21, F27, F28 | STABLE | 2026-09-02 |
-| F24 | `index.html` | 2129–2142 | Comportamento degli accordion Servizi | F6, F15 | STABLE | 2026-09-02 |
-| F25 | `index.html` | 2143–2171 | Comportamento del menu hamburger | F2b, F11 | STABLE | 2026-09-02 |
+| F13 | `index.html` | 1566–1611 | Markup della sezione Chi sono | F3, F4, F10b, F19 | STABLE | 2026-09-03 |
+| F14 | `index.html` | 1612–1639 | Markup della sezione Visione | F5 | STABLE | 2026-09-03 |
+| F15 | `index.html` | 1640–1680 | Markup della sezione Servizi | F3, F6, F19, F24 | STABLE | 2026-09-03 |
+| F16 | `index.html` | 1717–1832 | Introduzione, collaborazioni e case history della sezione Referenze | F3, F6, F7, F8, F19 | STABLE | 2026-09-03 |
+| F26 | `index.html` | 1833–1960 | Community olfattiva e testimonianze personali | F3, F6, F7-ext, F17, F19, F21b | STABLE | 2026-09-02 |
+| F17 | `index.html` | 1961–2003 | Markup della sezione Contatti | F8 | STABLE | 2026-09-03 |
+| F18 | `index.html` | 2004–2015 | Markup del footer | F9 | STABLE | 2026-07-31 |
+| F19 | `index.html` | 2016–2028 | Osservatore delle animazioni fade-in | F10 | STABLE | 2026-07-31 |
+| F22 | `index.html` | 2029–2040 | Registrazione del service worker | F28, F29 | STABLE | 2026-09-02 |
+| F23 | `index.html` | 2041–2101 | Markup della barra e delle modali PWA | F20, F21, F27, F28 | STABLE | 2026-09-02 |
+| F24 | `index.html` | 2102–2115 | Comportamento degli accordion Servizi | F6, F15 | STABLE | 2026-09-02 |
+| F25 | `index.html` | 2116–2144 | Comportamento del menu hamburger | F2b, F11 | STABLE | 2026-09-02 |
 | F27 | `pwa-action-bar.js` | 1–145 | Logica della barra azioni e delle modali PWA | F20, F21, F23, F29 | STABLE | 2026-09-02 |
 | F27.1 | `pwa-action-bar.js` | 77–103 | Ascolto degli aggiornamenti del service worker | F27, F29 | STABLE | 2026-09-02 |
 | F28 | `manifest.json` | 1–118 | Identità, icone, schermate e scorciatoie PWA | F0, F13, F15, F17 | STABLE | 2026-09-02 |
@@ -57,7 +57,7 @@ Il codice dei primi otto interventi è completato e certificato. La nuova sezion
 | F29.3 | `sw.js` | 66–97 | Recupero network-first e fallback cache | F29 | STABLE | 2026-09-02 |
 | F29.4 | `sw.js` | 99–106 | Gestione dei messaggi del client | F29 | STABLE | 2026-09-02 |
 | F72 | `index.html` | 1416–1501 | Stile della sezione Modalità di collaborazione | F1, F3, F10 | STABLE | 2026-09-03 |
-| F73 | `index.html` | 1696–1731 | Markup della sezione Modalità di collaborazione | F3, F10, F17, F19, F72 | STABLE | 2026-09-02 |
+| F73 | `index.html` | 1681–1716 | Markup della sezione Modalità di collaborazione | F3, F10, F17, F19, F72 | STABLE | 2026-09-02 |
 
 Il formato JSON non consente commenti: **F28** è identificato esclusivamente nella presente mappa.
 

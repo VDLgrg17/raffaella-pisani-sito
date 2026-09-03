@@ -360,3 +360,25 @@ Le istruzioni atomiche aggiunte sono dodici unità, identificate con i numeri da
 Vedetta post-modifica: la catena F0–F29 e F30–F46 è compatibile e non presenta dipendenze irrisolte.
 Lo stato finale dei blocchi F1, F3, F5, F6, F8, F9, F10b, F21, F72, F34, F35 e F37 è stabile.
 ---
+
+[TASK 9.4 — Rimozione fotografie centrali — 2026-09-03]
+Gate Vedetta: apertura autorizzata da Giorgio.
+Intento: eliminare dal markup tutte le fotografie decorative centrali che mostrano fiori, profumi, resine ed essenze, senza inserire sostituzioni.
+I blocchi da modificare sono F13, F14, F15, F16 e F17. I blocchi da verificare sono F3–F10b, F11, F12, F18–F29 e F72–F73.
+Dipendenze nascoste rilevate: le otto immagini sorgenti producono nove elementi nel markup perché `galleria-06.jpg` compare due volte nella sezione Referenze.
+I file fotografici restano nel repository e viene eliminato soltanto il loro collegamento alle pagine pubbliche.
+Relazioni irrisolte: nessuna relazione resta irrisolta.
+Chiusura ricorsiva completata: sì, la chiusura è stata completata.
+Lo stato iniziale dei blocchi autorizzati corrisponde alla lavorazione in corso.
+---
+
+[TASK 9.4 — Verifica post-modifica — 2026-09-03]
+Le nove occorrenze pubbliche delle otto fotografie decorative centrali sono state eliminate dal markup senza sostituzioni. Gli otto file sorgenti restano disponibili nel repository e l’immagine della hero resta invariata.
+Le verifiche visuali desktop e mobile hanno confermato la continuità delle sezioni, l’assenza di contenitori fotografici vuoti e l’assenza di overflow. Testi, ancore, accordion, Community, modulo Contatti e barra PWA restano integri.
+Il controllo deterministico e il Code Integrity Verifier hanno restituito esito positivo senza regressioni. Nessun riferimento a `/galleria-fotografica/` resta nel markup della pagina principale.
+Claude Sonnet 4.6 non era raggiungibile per un errore SSL. Il validatore di fallback GPT-5.4 ha approvato il diff reale senza correzioni bloccanti, come previsto dal protocollo.
+La pulizia dei selettori CSS non più utilizzati resta esclusa perché non appartiene alla rimozione autorizzata e non incide sul sito pubblico.
+Le istruzioni atomiche aggiunte sono nove unità, identificate con i numeri da 47 a 55.
+Vedetta post-modifica: la catena F3–F29 e la regola documentale sono compatibili e non presentano dipendenze irrisolte.
+Lo stato finale dei blocchi F13, F14, F15, F16 e F17 è stabile.
+---

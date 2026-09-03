@@ -1,6 +1,6 @@
 # Sito Raffaella Pisani — documento di continuità
 
-**Data di riferimento:** 2 settembre 2026.
+**Data di riferimento:** 3 settembre 2026.
 
 Questo documento registra lo stato del sito di Raffaella Pisani, definisce le attività ancora aperte e stabilisce la sequenza di lavoro da rispettare nelle sessioni successive. Nessuna modifica al codice può partire senza la dichiarazione preventiva dei blocchi coinvolti, delle righe, delle dipendenze e della superficie di impatto.
 
@@ -17,6 +17,12 @@ Sono state inoltre corrette le criticità di leggibilità segnalate nelle sezion
 Il controllo integrale del 2 settembre 2026 ha verificato il sito a 1280 × 800, 768 × 1024 e 390 × 844 pixel. Navigazione, ancore, accordion, Community, immagini, barra PWA e responsive risultano conformi. Il controllo ha escluso il presunto difetto dell’offset mobile e ha individuato due problemi reali: il blocco F17 era soltanto visuale e il blocco F30 non dichiarava alcuna icona.
 
 Il modulo Contatti è ora un modulo HTML statico rilevabile da Netlify. I campi possiedono nomi, obbligatorietà, associazioni accessibili e validazione nativa, mentre stile e testo visibile restano invariati. La pagina Archivio riusa manifest e icone già disponibili nel progetto, eliminando la richiesta implicita della favicon mancante.
+
+## Regola fotografica vincolante
+
+Ogni futura fotografia deve essere collocata a sinistra, con i contenuti testuali a destra. Nessuna fotografia può essere collocata al centro della pagina come elemento autonomo. Nelle impaginazioni a colonna singola per smartphone resta valido l’ordine responsivo già approvato, senza trasformare la fotografia in una cartolina centrale.
+
+Le immagini decorative con fiori, profumi, resine ed essenze sono state rimosse dal markup senza sostituzioni. I file sorgenti restano disponibili nel repository e potranno essere riutilizzati soltanto dopo una nuova autorizzazione.
 
 Il checkpoint GitHub precedente al task Referenze è `9bc67f2`; gli stati successivi sono tracciati nella cronologia del branch `master`.
 
