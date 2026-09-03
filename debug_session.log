@@ -494,3 +494,10 @@ Le istruzioni atomiche aggiunte al progetto sono otto unità, identificate con i
 Vedetta post-modifica: la catena F1, F3, F6, F7b, F10, F10b, F15, F19, F24 e F29 è compatibile e non presenta dipendenze irrisolte.
 Lo stato finale del blocco F15 è stabile.
 ---
+
+[TASK 11.2 — Verifica pubblica — 2026-09-03]
+Il commit `5843c5e` è pubblicato su `github/master` e il repository locale coincide con il branch remoto. Il deploy automatico Netlify restituisce stato HTTP 200.
+Il primo accordion pubblico contiene destinatari, problema, rischio, intervento, cinque attività, valore e call to action. Gli altri cinque pannelli restano presenti e invariati.
+Il primo controllo pubblico cercava alcune frasi grezze del documento anziché le etichette strutturate del markup validato. La verifica è stata ripetuta con criteri coerenti con il codice reale e ha restituito esito positivo.
+La verifica pubblica del solo Task 2 è superata e il lavoro può fermarsi prima del Task 3.
+---
