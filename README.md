@@ -54,7 +54,7 @@ Se `mappa_blocchi.md` non è presente oppure non coincide con il codice reale, d
 
 La geometria laterale è predisposta nelle sezioni Chi sono, Visione, Servizi, Referenze e Contatti. I nove contenitori restano vuoti in attesa delle fotografie e occupano il lato opposto ai contenuti. Modalità di collaborazione e Community restano sezioni testuali, mentre la hero conserva la propria composizione già approvata.
 
-I sei accordion possiedono comandi accessibili, pannelli univoci, stato iniziale chiuso e contenuti inseriti nel flusso della pagina. Quattro accordion riportano ora contenuti completi derivati dal documento sorgente, mentre gli ultimi due servizi restano sintetici in attesa dei task autorizzati successivi.
+I sei accordion possiedono comandi accessibili, pannelli univoci, stato iniziale chiuso e contenuti inseriti nel flusso della pagina. Cinque accordion riportano ora contenuti completi derivati dal documento sorgente, mentre l’ultimo servizio resta sintetico in attesa del task autorizzato successivo.
 
 Il primo accordion Ambassador contiene destinatari, problema, rischio, intervento, cinque attività, valore e call to action derivati dal documento sorgente. La sola correzione editoriale applicata corrisponde alla minuscola dopo i due punti richiesta dal validatore GV.
 
@@ -65,3 +65,5 @@ Il secondo accordion Consulenza narrativa e direzione culturale contiene destina
 Il terzo accordion Formazione olfattiva per team e reti vendita contiene destinatari, problema, risultato, intervento, sei attività, valore e call to action derivati dal documento sorgente. La struttura, l’accessibilità, la geometria e gli altri cinque servizi restano invariati.
 
 Il quarto accordion Eventi ed esperienze olfattive contiene destinatari, problema, funzione dell’olfatto, intervento, sei attività, valore e call to action derivati dal documento sorgente. La struttura, l’accessibilità, la geometria e gli altri cinque servizi restano invariati.
+
+Il quinto accordion Contenuti editoriali e culturali contiene destinatari, problema, intervento, sei attività, valore e call to action derivati dal documento sorgente. La struttura, l’accessibilità, la geometria e gli altri cinque servizi restano invariati.
