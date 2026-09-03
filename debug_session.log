@@ -404,3 +404,8 @@ Le istruzioni atomiche aggiunte sono dieci unità, identificate con i numeri da 
 Vedetta post-modifica: la catena F1, F3–F29 e la regola documentale sono compatibili e non presentano dipendenze irrisolte.
 Lo stato finale dei blocchi F7b, F13, F14, F15, F16 e F17 è stabile.
 ---
+
+[TASK 9.4A — Verifica pubblica — 2026-09-03]
+I checkpoint locali `821775e` e `c15b274` sono stati pubblicati su `github/master`. La parità tra repository locale e remoto corrisponde a zero commit di differenza.
+Il deploy automatico Netlify contiene nove spazi fotografici vuoti e non contiene fotografie a cartolina o riferimenti pubblici alla cartella fotografica. La verifica pubblica è stata superata senza accessi manuali al pannello Netlify.
+---

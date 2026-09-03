@@ -26,4 +26,4 @@
 - [x] Formalizzare la regola fotografica con immagini a sinistra e contenuti a destra.
 - [x] Eliminare le fotografie centrali decorative con fiori, profumi ed essenze, senza sostituzioni.
 - [x] Ripristinare nelle posizioni originali i contenitori fotografici vuoti, senza immagini.
-- [ ] Verificare desktop e mobile, certificare e pubblicare i nuovi task su GitHub.
+- [x] Verificare desktop e mobile, certificare e pubblicare i nuovi task su GitHub.
