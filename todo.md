@@ -51,6 +51,7 @@
 - [x] Integrare e pubblicare il contenuto completo di Ambassador olfattivo per brand.
 - [x] Integrare e pubblicare il contenuto completo di Consulenza narrativa e direzione culturale.
 - [x] Integrare e pubblicare il contenuto completo di Formazione olfattiva per team e reti vendita.
+- [x] Integrare e pubblicare il contenuto completo di Eventi ed esperienze olfattive.
 - [ ] Integrare integralmente i sei servizi dal documento sorgente.
 - [ ] Verificare la matrice documento-sito, l’interazione e il responsive.
 - [ ] Certificare, documentare e pubblicare il recupero dei contenuti Servizi.

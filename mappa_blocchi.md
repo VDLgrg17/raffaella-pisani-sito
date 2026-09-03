@@ -38,16 +38,16 @@ Il codice dei nuovi interventi è completato e la geometria laterale è predispo
 | F12 | `index.html` | 1626–1653 | Markup della hero | F3, F10b | STABLE | 2026-09-03 |
 | F13 | `index.html` | 1654–1706 | Markup della sezione Chi sono | F3, F4, F7b, F10b, F19 | STABLE | 2026-09-03 |
 | F14 | `index.html` | 1707–1741 | Markup della sezione Visione | F5, F7b, F10b | STABLE | 2026-09-03 |
-| F15 | `index.html` | 1742–1884 | Markup della sezione Servizi | F3, F6, F7b, F10b, F19, F24 | STABLE | 2026-09-03 |
-| F16 | `index.html` | 1921–2062 | Introduzione, collaborazioni e case history della sezione Referenze | F3, F6, F7, F7b, F8, F10b, F19 | STABLE | 2026-09-03 |
-| F26 | `index.html` | 2063–2190 | Community olfattiva e testimonianze personali | F3, F6, F7-ext, F17, F19, F21b | STABLE | 2026-09-02 |
-| F17 | `index.html` | 2191–2241 | Markup della sezione Contatti | F7b, F8, F10b | STABLE | 2026-09-03 |
-| F18 | `index.html` | 2242–2253 | Markup del footer | F9 | STABLE | 2026-07-31 |
-| F19 | `index.html` | 2254–2266 | Osservatore delle animazioni fade-in | F10 | STABLE | 2026-07-31 |
-| F22 | `index.html` | 2267–2278 | Registrazione del service worker | F28, F29 | STABLE | 2026-09-02 |
-| F23 | `index.html` | 2279–2339 | Markup della barra e delle modali PWA | F20, F21, F27, F28 | STABLE | 2026-09-02 |
-| F24 | `index.html` | 2340–2365 | Comportamento degli accordion Servizi | F6, F15 | STABLE | 2026-09-03 |
-| F25 | `index.html` | 2366–2394 | Comportamento del menu hamburger | F2b, F11 | STABLE | 2026-09-02 |
+| F15 | `index.html` | 1742–1944 | Markup della sezione Servizi | F3, F6, F7b, F10b, F19, F24 | STABLE | 2026-09-03 |
+| F16 | `index.html` | 1945–2086 | Introduzione, collaborazioni e case history della sezione Referenze | F3, F6, F7, F7b, F8, F10b, F19 | STABLE | 2026-09-03 |
+| F26 | `index.html` | 2087–2214 | Community olfattiva e testimonianze personali | F3, F6, F7-ext, F17, F19, F21b | STABLE | 2026-09-02 |
+| F17 | `index.html` | 2215–2265 | Markup della sezione Contatti | F7b, F8, F10b | STABLE | 2026-09-03 |
+| F18 | `index.html` | 2266–2277 | Markup del footer | F9 | STABLE | 2026-07-31 |
+| F19 | `index.html` | 2278–2290 | Osservatore delle animazioni fade-in | F10 | STABLE | 2026-07-31 |
+| F22 | `index.html` | 2291–2302 | Registrazione del service worker | F28, F29 | STABLE | 2026-09-02 |
+| F23 | `index.html` | 2303–2363 | Markup della barra e delle modali PWA | F20, F21, F27, F28 | STABLE | 2026-09-02 |
+| F24 | `index.html` | 2364–2389 | Comportamento degli accordion Servizi | F6, F15 | STABLE | 2026-09-03 |
+| F25 | `index.html` | 2390–2418 | Comportamento del menu hamburger | F2b, F11 | STABLE | 2026-09-02 |
 | F27 | `pwa-action-bar.js` | 1–145 | Logica della barra azioni e delle modali PWA | F20, F21, F23, F29 | STABLE | 2026-09-02 |
 | F27.1 | `pwa-action-bar.js` | 77–103 | Ascolto degli aggiornamenti del service worker | F27, F29 | STABLE | 2026-09-02 |
 | F28 | `manifest.json` | 1–118 | Identità, icone, schermate e scorciatoie PWA | F0, F13, F15, F17 | STABLE | 2026-09-02 |
