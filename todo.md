@@ -27,3 +27,6 @@
 - [x] Eliminare le fotografie centrali decorative con fiori, profumi ed essenze, senza sostituzioni.
 - [x] Ripristinare nelle posizioni originali i contenitori fotografici vuoti, senza immagini.
 - [x] Verificare desktop e mobile, certificare e pubblicare i nuovi task su GitHub.
+- [x] Analizzare la geometria desktop e mobile del sito Nicoletta Armellin.
+- [x] Mappare il modello laterale immagine-testo sulle sezioni e sui Blocchi F di Raffaella.
+- [x] Presentare la geometria proposta senza modificare il codice del sito.
