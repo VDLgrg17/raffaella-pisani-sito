@@ -916,7 +916,7 @@
   /* +--------------------------------------------------+
    | [F7b] - CSS Galleria Fotografica — griglia          |
    | Dipende da: F1                                      |
-   | Status: STABLE | Last modified: 2026-07-31      |
+   | Status: STABLE | Last modified: 2026-09-03      |
    +--------------------------------------------------+ */
   #galleria {
     padding: 120px 28px;
@@ -944,6 +944,13 @@
   .galleria-item img:hover {
     transform: scale(1.04);
     opacity: 1;
+  }
+  /* [56] Conserva la superficie delle fotografie rimosse senza mostrare immagini, bordi o sfondi sostitutivi. */
+  .photo-placeholder {
+    width: 100%;
+    max-width: 560px;
+    aspect-ratio: 3 / 2;
+    margin: 0 auto;
   }
   #galleria .section-eyebrow { color: var(--salvia); }
   #galleria .section-title { color: var(--carta); }
@@ -1578,7 +1585,10 @@
     <p class="section-eyebrow">Chi sono</p>
     <h2 class="section-title">Un metodo costruito<br>nel tempo.</h2>
   </div>
-  <!-- [47] Rimuove la prima fotografia decorativa centrale senza sostituzioni. -->
+  <!-- [57] Mantiene vuoto il primo spazio fotografico nelle dimensioni originarie. -->
+  <div style="margin-top: 40px; margin-bottom: 60px;" class="fade-in">
+    <div class="photo-placeholder" aria-hidden="true"></div>
+  </div>
   <div class="chi-sono-grid">
     <!-- [34] Rimuove la fotografia con abito blu senza inserire sostituzioni. -->
     <div class="fade-in">
@@ -1618,7 +1628,10 @@
     <p class="section-eyebrow">La visione</p>
     <h2 class="section-title">Tre parole.<br>Un metodo</h2>
   </div>
-  <!-- [48] Rimuove la seconda fotografia decorativa centrale senza sostituzioni. -->
+  <!-- [58] Mantiene vuoto il secondo spazio fotografico nelle dimensioni originarie. -->
+  <div style="margin-top: 60px; margin-bottom: 40px;" class="fade-in">
+    <div class="photo-placeholder" aria-hidden="true"></div>
+  </div>
   <div class="valori-grid">
     <div class="valore-item fade-in">
       <p class="valore-nome">Accoglienza</p>
@@ -1673,9 +1686,18 @@
   </div>
 
 </section>
-  <!-- [49] Rimuove la terza fotografia decorativa centrale senza sostituzioni. -->
-  <!-- [50] Rimuove la quarta fotografia decorativa centrale senza sostituzioni. -->
-  <!-- [51] Rimuove la quinta fotografia decorativa centrale senza sostituzioni. -->
+  <!-- [59] Mantiene vuoto il terzo spazio fotografico nelle dimensioni originarie. -->
+  <div style="margin-top: 60px; background: var(--carta); position: relative; z-index: 2;" class="fade-in">
+    <div class="photo-placeholder" aria-hidden="true"></div>
+  </div>
+  <!-- [60] Mantiene vuoto il quarto spazio fotografico nelle dimensioni originarie. -->
+  <div style="margin-top: 60px; background: var(--carta); position: relative; z-index: 2;" class="fade-in">
+    <div class="photo-placeholder" aria-hidden="true"></div>
+  </div>
+  <!-- [61] Mantiene vuoto il quinto spazio fotografico nelle dimensioni originarie. -->
+  <div style="margin-top: 40px; margin-bottom: 60px; background: var(--carta); position: relative; z-index: 2;" class="fade-in">
+    <div class="photo-placeholder" aria-hidden="true"></div>
+  </div>
 
 <!-- +--------------------------------------------------+
      | [F73] - Markup MODALITÀ DI COLLABORAZIONE         |
@@ -1743,7 +1765,10 @@
   <div class="collab-genesi fade-in">
     <p class="collab-genesi-text">Tutto comincia dietro il bancone di una profumeria degli anni Ottanta. Figlia d'arte, arruolata sul campo prima ancora di averne l'età. Con la carta d'identità contro, ho puntato tutto sulla testa: ho iniziato a studiare come una matta per fare la differenza come ragazzina brillante. Da lì, la prima svolta: il mio negozio di profumeria artistica. Uno spazio alternativo per l'epoca — boutique di giorno e luogo d'incontro la sera, tra musica, poesia, danza e fotografia.</p>
   </div>
-    <!-- [52] Rimuove la prima occorrenza della sesta fotografia senza sostituzioni. -->
+    <!-- [62] Mantiene vuoto il sesto spazio fotografico nelle dimensioni originarie. -->
+    <div style="margin-bottom: 40px;" class="fade-in">
+      <div class="photo-placeholder" aria-hidden="true"></div>
+    </div>
     <div class="collab-grid fade-in">
 
     <article class="collab-item">
@@ -1824,8 +1849,14 @@
     </div>
   </div>
 
-  <!-- [53] Rimuove la settima fotografia decorativa centrale senza sostituzioni. -->
-  <!-- [54] Rimuove la seconda occorrenza della sesta fotografia senza sostituzioni. -->
+  <!-- [63] Mantiene vuoto il settimo spazio fotografico nelle dimensioni originarie. -->
+  <div style="margin-top: 60px;" class="fade-in">
+    <div class="photo-placeholder" aria-hidden="true"></div>
+  </div>
+  <!-- [64] Mantiene vuoto l’ottavo spazio fotografico nelle dimensioni originarie. -->
+  <div style="margin-top: 60px;" class="fade-in">
+    <div class="photo-placeholder" aria-hidden="true"></div>
+  </div>
 </section>
 
 
@@ -1991,7 +2022,10 @@
     <button type="submit" class="form-submit">Invia il messaggio</button>
   </form>
 
-  <!-- [55] Rimuove l’ottava fotografia decorativa centrale senza sostituzioni. -->
+  <!-- [65] Mantiene vuoto il nono spazio fotografico nelle dimensioni originarie. -->
+  <div style="margin-top: 60px; margin-bottom: 40px;" class="fade-in">
+    <div class="photo-placeholder" aria-hidden="true"></div>
+  </div>
   <div class="contatti-info fade-in">
     <p class="contatti-info-label">Email</p>
     <p class="contatti-info-val">raffaellapisani71@gmail.com</p>

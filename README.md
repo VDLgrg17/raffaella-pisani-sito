@@ -22,7 +22,7 @@ Il modulo Contatti è ora un modulo HTML statico rilevabile da Netlify. I campi 
 
 Ogni futura fotografia deve essere collocata a sinistra, con i contenuti testuali a destra. Nessuna fotografia può essere collocata al centro della pagina come elemento autonomo. Nelle impaginazioni a colonna singola per smartphone resta valido l’ordine responsivo già approvato, senza trasformare la fotografia in una cartolina centrale.
 
-Le immagini decorative con fiori, profumi, resine ed essenze sono state rimosse dal markup senza sostituzioni. I file sorgenti restano disponibili nel repository e potranno essere riutilizzati soltanto dopo una nuova autorizzazione.
+Le fotografie a cartolina con fiori, profumi, resine ed essenze non devono comparire nelle pagine pubbliche. I nove spazi originari restano vuoti, con dimensioni e posizioni preservate, in attesa delle immagini sostitutive. Gli otto file sorgenti restano disponibili nel repository e non sono richiamati dal markup.
 
 Il checkpoint GitHub precedente al task Referenze è `9bc67f2`; gli stati successivi sono tracciati nella cronologia del branch `master`.
 

@@ -382,3 +382,25 @@ Le istruzioni atomiche aggiunte sono nove unità, identificate con i numeri da 4
 Vedetta post-modifica: la catena F3–F29 e la regola documentale sono compatibili e non presentano dipendenze irrisolte.
 Lo stato finale dei blocchi F13, F14, F15, F16 e F17 è stabile.
 ---
+
+[TASK 9.4A — Spazi fotografici vuoti — 2026-09-03]
+Gate Vedetta: apertura autorizzata da Giorgio.
+Intento: eliminare tutte le fotografie a cartolina indicate negli screenshot e mantenere vuoti i rispettivi spazi originali, in attesa delle sostituzioni.
+I blocchi da modificare sono F7b, F13, F14, F15, F16 e F17. I blocchi da verificare sono F1, F3–F10b, F11, F12, F18–F29 e F72–F73.
+Dipendenze nascoste rilevate: gli otto file fotografici producevano nove posizioni pubbliche perché una fotografia compariva due volte nella sezione Referenze.
+Ogni posizione vuota deve conservare larghezza massima, proporzione e margini originari senza utilizzare immagini, sfondi fotografici o contenuti sostitutivi.
+Relazioni irrisolte: nessuna relazione resta irrisolta.
+Chiusura ricorsiva completata: sì, la chiusura è stata completata.
+Lo stato iniziale dei blocchi autorizzati corrisponde alla lavorazione in corso.
+---
+
+[TASK 9.4A — Verifica post-modifica — 2026-09-03]
+Le nove fotografie a cartolina non compaiono più nelle pagine pubbliche e i rispettivi spazi originari restano vuoti. Gli spazi mantengono larghezza massima, proporzione e margini senza immagini, bordi, sfondi fotografici o contenuti sostitutivi.
+Il controllo del DOM ha confermato nove contenitori da 560 × 373 pixel sul viewport desktop, con sfondo trasparente e assenza di overflow. Le verifiche visuali desktop e mobile hanno confermato la presenza degli spazi vuoti e l’integrità dei contenuti circostanti.
+Il modulo Contatti, le ancore, gli accordion, la Community, la hero e la barra PWA restano integri. Gli otto file sorgenti restano disponibili nel repository e non sono richiamati dal markup pubblico.
+Il controllo deterministico e il Code Integrity Verifier hanno restituito esito positivo senza regressioni. Claude Sonnet 4.6 ha approvato il diff reale senza correzioni bloccanti.
+Il suggerimento relativo a un’etichetta accessibile non viene applicato perché gli spazi sono intenzionalmente vuoti e decorativi. L’attributo `aria-hidden` evita di annunciare agli utenti un contenuto inesistente.
+Le istruzioni atomiche aggiunte sono dieci unità, identificate con i numeri da 56 a 65.
+Vedetta post-modifica: la catena F1, F3–F29 e la regola documentale sono compatibili e non presentano dipendenze irrisolte.
+Lo stato finale dei blocchi F7b, F13, F14, F15, F16 e F17 è stabile.
+---
