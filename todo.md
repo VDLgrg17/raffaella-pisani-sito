@@ -34,3 +34,9 @@
 - [x] Distribuire i nove contenitori vuoti secondo l’alternanza approvata.
 - [x] Impostare su smartphone testo sopra e contenitore fotografico sotto.
 - [x] Verificare, certificare e pubblicare la nuova geometria su GitHub.
+- [x] Estrarre integralmente dal documento guida il materiale originale relativo ai Servizi.
+- [x] Confrontare ogni integrazione richiesta con il contenuto Servizi attualmente pubblicato.
+- [x] Presentare il materiale originale e il riscontro voce per voce senza modificare il sito.
+- [x] Estrarre integralmente i requisiti dal nuovo documento della sezione Servizi.
+- [x] Confrontare ogni requisito con la sezione Servizi pubblicata.
+- [x] Consegnare il match completo senza modificare il sito.
