@@ -43,3 +43,11 @@
 - [x] Consolidare le parti mancanti per i sei servizi del documento.
 - [x] Definire i task numerati con contenuto, destinazione e criteri di completamento.
 - [x] Presentare il piano di recupero per conferma prima di modificare il sito.
+- [x] Preparare la struttura editoriale completa degli accordion Servizi.
+- [x] Marcare F6, F15 e F24 come WIP e creare gli snapshot pre-modifica.
+- [x] Spostare gli stili accordion da F3 a F6 e aggiornare la mappa delle dipendenze.
+- [x] Predisporre paragrafi, elenchi e call to action senza inserire i testi completi.
+- [ ] Verificare, certificare e pubblicare separatamente il solo Task 1.
+- [ ] Integrare integralmente i sei servizi dal documento sorgente.
+- [ ] Verificare la matrice documento-sito, l’interazione e il responsive.
+- [ ] Certificare, documentare e pubblicare il recupero dei contenuti Servizi.

@@ -53,3 +53,5 @@ Se `mappa_blocchi.md` non è presente oppure non coincide con il codice reale, d
 ## Stato operativo
 
 La geometria laterale è predisposta nelle sezioni Chi sono, Visione, Servizi, Referenze e Contatti. I nove contenitori restano vuoti in attesa delle fotografie e occupano il lato opposto ai contenuti. Modalità di collaborazione e Community restano sezioni testuali, mentre la hero conserva la propria composizione già approvata.
+
+I sei accordion possiedono comandi accessibili, pannelli univoci, stato iniziale chiuso e contenuti inseriti nel flusso della pagina. Le sei sintesi precedenti restano invariate e nessun testo completo, elenco o call to action è stato anticipato.

@@ -433,3 +433,34 @@ Lo stato finale dei blocchi F7b, F10b, F13, F14, F15, F16 e F17 è stabile.
 Validazione Claude definitiva: approvata da Claude Sonnet 4.6. Il validatore ha confermato nove fasce laterali, alternanza corretta, ordine mobile, assenza di regressioni e coerenza della mappa Blocchi F. Le osservazioni su indentazione e densità dei tre valori della Visione non sono bloccanti e non richiedono modifiche al comportamento approvato.
 La verifica pubblica Netlify risulta superata. Il deploy automatico del commit `73a802d` restituisce stato HTTP 200 e contiene nove fasce laterali con nove spazi fotografici vuoti. GitHub risulta sincronizzato con parità locale-remoto pari a zero commit di differenza.
 ---
+
+[TASK 11.1 — Struttura editoriale degli accordion — 2026-09-03]
+Sto operando in modalità RLM.
+Richiesta autorizzata: predisporre soltanto la struttura interna degli accordion per paragrafi, elenchi e call to action, senza inserire ancora i testi completi dei sei servizi.
+Il blocco principale è F6, responsabile dello stile degli accordion. I blocchi collegati da modificare sono F15 per il contratto del markup interno e F24 per apertura, chiusura e accessibilità.
+Le dipendenze dirette a monte sono F1 e il contratto tipografico esistente. I dipendenti diretti a valle sono F10, F15, F19 e F24.
+Le relazioni trasversali comprendono geometria laterale F7b e F10b, animazioni F19, tastiera, click esterno, PWA e comportamento responsive.
+La dipendenza nascosta rilevata riguarda il posizionamento assoluto dei dropdown correnti, che non può ospitare in sicurezza contenuti lunghi senza troncamenti o sovrapposizioni.
+I blocchi da modificare sono F6, F15 e F24. I blocchi da verificare senza modifica sono F1, F3, F7b, F10, F10b, F19, F23 e F29.
+Hero, Chi sono, Visione, Modalità di collaborazione, Referenze, Community, Contatti, immagini e pagina Archivio sono esclusi con prova perché non consumano il markup interno degli accordion.
+Non risultano dipendenze circolari o relazioni irrisolte. La chiusura ricorsiva è completata e il gate Vedetta riceve apertura autorizzata dalla conferma di Giorgio.
+Lo stato iniziale dei blocchi F6, F15 e F24 corrisponde alla lavorazione in corso.
+---
+
+[TASK 11.1 — Estensione del gate Vedetta — 2026-09-03]
+Il controllo del codice reale ha rilevato che gli stili degli accordion si trovano nel blocco F3 anziché nel blocco F6 indicato dalla mappa. Giorgio ha autorizzato lo spostamento strutturale da F3 a F6 e la prosecuzione del solo Task 1.
+I blocchi autorizzati diventano F3, F6, F15 e F24. La hero deve restare invariata e nessun testo completo dei servizi può essere inserito in questa fase.
+Lo stato iniziale del blocco F3 corrisponde alla lavorazione in corso.
+---
+
+[TASK 11.1 — Verifica post-modifica — 2026-09-03]
+Gli stili degli accordion sono stati spostati integralmente dal blocco F3 al blocco F6 senza modificarne i valori. La hero resta invariata e la mappa rappresenta ora la responsabilità reale dei blocchi.
+I sei accordion possiedono comandi accessibili, pannelli univoci, stato iniziale chiuso e contenuti inseriti nel flusso della pagina. Le sei sintesi precedenti restano invariate e nessun testo completo, elenco o call to action è stato anticipato.
+Il controllo deterministico ha superato ventidue criteri. Le verifiche browser desktop e mobile hanno confermato apertura singola, richiusura, chiusura esterna, sincronizzazione degli attributi accessibili e assenza di overflow.
+Il primo controllo della superficie utilizzava confini regex incompleti e il secondo dipendeva dagli header standard del diff Git. Anti-Loop ha sostituito entrambi con un confronto basato sui marker reali dei Blocchi F, che ha restituito esito positivo.
+Lo snapshot temporaneo non era più disponibile dopo la compattazione ed è stato ricostruito dalla copia pre-modifica già salvata. Il Code Integrity Verifier ha restituito esito positivo senza regressioni.
+Claude Sonnet 4.6 ha approvato il diff definitivo senza correzioni bloccanti. Il validatore ha confermato struttura, accessibilità, apertura singola, chiusura esterna, pannelli nel flusso, sintesi invariate e corretta riallocazione degli stili nel blocco F6.
+Le istruzioni atomiche aggiunte al progetto sono dodici unità, identificate con i numeri da 78 a 89.
+Vedetta post-modifica: la catena F1, F3, F6, F7b, F10, F10b, F15, F19, F24 e F29 è compatibile e non presenta dipendenze irrisolte.
+Lo stato finale dei blocchi F3, F6, F15 e F24 è stabile.
+---
