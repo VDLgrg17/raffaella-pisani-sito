@@ -916,7 +916,7 @@
   /* +--------------------------------------------------+
    | [F7b] - CSS Galleria Fotografica — griglia          |
    | Dipende da: F1                                      |
-   | Status: STABLE | Last modified: 2026-09-03      |
+   | Status: STABLE | Last modified: 2026-09-03   |
    +--------------------------------------------------+ */
   #galleria {
     padding: 120px 28px;
@@ -952,6 +952,27 @@
     aspect-ratio: 3 / 2;
     margin: 0 auto;
   }
+  /* [66] Definisce la griglia riutilizzabile che separa nettamente fotografia e contenuto. */
+  .media-band {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+    align-items: center;
+  }
+  .media-band + .media-band { margin-top: 72px; }
+  .media-band--align-start { align-items: start; }
+  .media-band-slot,
+  .media-band-copy { min-width: 0; }
+  .media-band .photo-placeholder {
+    max-width: 560px;
+    margin: 0;
+  }
+  .media-band-copy .collab-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 0;
+  }
+  .media-band-copy .aree-intervento { margin-top: 0; }
   #galleria .section-eyebrow { color: var(--salvia); }
   #galleria .section-title { color: var(--carta); }
   #galleria .section-body { color: var(--salvia-light); }
@@ -1007,11 +1028,14 @@
     .fade-in { opacity: 1; transform: none; }
   }
 
-  /* [F10b] Hero invertita su mobile — verde sopra, foto sotto | Status: STABLE | Last modified: 2026-09-03 */
+  /* [F10b] Responsive hero e geometria laterale | Status: STABLE | Last modified: 2026-09-03 */
   @media (max-width: 639px) {
     #hero { flex-direction: column-reverse; }
     .hero-testo { min-height: 55vw; padding: 32px 20px 28px; }
     .hero-foto-wrap { min-height: 70vw; }
+    /* [67] Mantiene il testo sopra e lo spazio fotografico sotto nelle sezioni mobili. */
+    .media-band-copy { order: 1; }
+    .media-band-slot { order: 2; }
   }
 
   @media (min-width: 640px) {
@@ -1028,6 +1052,21 @@
       flex: 1;
       padding: 80px 48px;
       border-left: 3px solid var(--oro);
+    }
+    /* [68] Colloca fotografia e contenuto su colonne opposte secondo l’alternanza dichiarata. */
+    .media-band {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 48px;
+    }
+    .media-band--image-left .media-band-slot,
+    .media-band--image-right .media-band-copy {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    .media-band--image-left .media-band-copy,
+    .media-band--image-right .media-band-slot {
+      grid-column: 2;
+      grid-row: 1;
     }
   }
 
@@ -1572,7 +1611,7 @@
 <!-- +--------------------------------------------------+
      | [F13] - Markup CHI SONO — identità, testo, foto    |
      | Dipende da: F3, F4, F10b, F19                      |
-     | Status: STABLE | Last modified: 2026-09-03     |
+     | Status: STABLE | Last modified: 2026-09-03  |
      +--------------------------------------------------+ -->
 <!-- [F_AFORISMA] Contenuto provvisorio — tra hero e chi-sono -->
 <div class="aforisma-chanel">
@@ -1581,31 +1620,35 @@
 </div>
 
 <section id="chi-sono">
-  <div class="fade-in">
-    <p class="section-eyebrow">Chi sono</p>
-    <h2 class="section-title">Un metodo costruito<br>nel tempo.</h2>
-  </div>
-  <!-- [57] Mantiene vuoto il primo spazio fotografico nelle dimensioni originarie. -->
-  <div style="margin-top: 40px; margin-bottom: 60px;" class="fade-in">
-    <div class="photo-placeholder" aria-hidden="true"></div>
-  </div>
-  <div class="chi-sono-grid">
-    <!-- [34] Rimuove la fotografia con abito blu senza inserire sostituzioni. -->
-    <div class="fade-in">
-      <!-- [6] Introduce il posizionamento strategico B2B definito nel documento guida. -->
-      <p class="section-body">Sono Raffaella: la sintesi tra la concretezza della strategia B2B e una visione d’avanguardia della profumeria d’autore. Erede di una storica famiglia di profumieri, ho evoluto decenni di memoria olfattiva e presenza sul campo in un laboratorio concettuale permanente. Mi definisco un paradosso felice: unisco il rigore analitico all’intuito per l’invisibile. Non impongo formule rigide, ma affianco imprenditori e visionari per decodificare il presente e anticipare i linguaggi del domani, ponendoci sempre un passo avanti al mercato.</p>
-      <!-- [7] Separa il nuovo posizionamento dai testi identitari già approvati. -->
-      <div class="divider"></div>
-      <p class="section-body">Esploro il senso cieco e con grazia mi immergo in visioni divergenti per svelarne le sfumature più recondite. La mia missione è restituire alle costruzioni dell'olfatto la dignità di arte viscerale, accademica e poetica.</p>
-      <div class="divider"></div>
-      <p class="section-body">Formatrice e consulente di cultura olfattiva, ho costruito nel tempo un metodo che unisce neuroscienze della percezione, storia dell'arte, botanica e narrazione. Non una sensibilità innata: una competenza stratificata, verificata sul campo con brand, istituzioni e spazi del lusso.</p>
-      <div class="divider"></div>
-      <p class="section-body">Lavoro con brand del lusso, hotel, spa, editori e istituzioni culturali per costruire narrazioni olfattive che generano valore misurabile: posizionamento, differenziazione, esperienza memorabile. Il profumo come strumento strategico di comunicazione — non come accessorio.</p>
-      <div class="divider"></div>
-      <p class="section-body" style="font-style: italic; color: var(--smeraldo); border-left: 2px solid var(--oro); padding-left: 16px;">Ciò che mi distingue è uno sguardo interdisciplinare: collego profumo, memoria, percezione, botanica, arte e narrazione per dare alle organizzazioni un accesso inedito al linguaggio sensoriale.</p>
+  <!-- [69] Dispone lo spazio fotografico a sinistra e l’intero contenuto Chi sono a destra. -->
+  <div class="media-band media-band--image-left">
+    <div class="media-band-slot fade-in">
+      <!-- [57] Mantiene vuoto il primo spazio fotografico nelle dimensioni originarie. -->
+      <div class="photo-placeholder" aria-hidden="true"></div>
+    </div>
+    <div class="media-band-copy">
+      <div class="fade-in">
+        <p class="section-eyebrow">Chi sono</p>
+        <h2 class="section-title">Un metodo costruito<br>nel tempo.</h2>
+      </div>
+      <div class="chi-sono-grid">
+        <!-- [34] Rimuove la fotografia con abito blu senza inserire sostituzioni. -->
+        <div class="fade-in">
+          <!-- [6] Introduce il posizionamento strategico B2B definito nel documento guida. -->
+          <p class="section-body">Sono Raffaella: la sintesi tra la concretezza della strategia B2B e una visione d’avanguardia della profumeria d’autore. Erede di una storica famiglia di profumieri, ho evoluto decenni di memoria olfattiva e presenza sul campo in un laboratorio concettuale permanente. Mi definisco un paradosso felice: unisco il rigore analitico all’intuito per l’invisibile. Non impongo formule rigide, ma affianco imprenditori e visionari per decodificare il presente e anticipare i linguaggi del domani, ponendoci sempre un passo avanti al mercato.</p>
+          <!-- [7] Separa il nuovo posizionamento dai testi identitari già approvati. -->
+          <div class="divider"></div>
+          <p class="section-body">Esploro il senso cieco e con grazia mi immergo in visioni divergenti per svelarne le sfumature più recondite. La mia missione è restituire alle costruzioni dell'olfatto la dignità di arte viscerale, accademica e poetica.</p>
+          <div class="divider"></div>
+          <p class="section-body">Formatrice e consulente di cultura olfattiva, ho costruito nel tempo un metodo che unisce neuroscienze della percezione, storia dell'arte, botanica e narrazione. Non una sensibilità innata: una competenza stratificata, verificata sul campo con brand, istituzioni e spazi del lusso.</p>
+          <div class="divider"></div>
+          <p class="section-body">Lavoro con brand del lusso, hotel, spa, editori e istituzioni culturali per costruire narrazioni olfattive che generano valore misurabile: posizionamento, differenziazione, esperienza memorabile. Il profumo come strumento strategico di comunicazione — non come accessorio.</p>
+          <div class="divider"></div>
+          <p class="section-body" style="font-style: italic; color: var(--smeraldo); border-left: 2px solid var(--oro); padding-left: 16px;">Ciò che mi distingue è uno sguardo interdisciplinare: collego profumo, memoria, percezione, botanica, arte e narrazione per dare alle organizzazioni un accesso inedito al linguaggio sensoriale.</p>
+        </div>
+      </div>
     </div>
   </div>
-
 </section>
 
 <!-- [T04] Sezione Manifesto — fondo nero, citazione d'apertura -->
@@ -1621,83 +1664,107 @@
 <!-- +--------------------------------------------------+
      | [F14] - Markup VISIONE — Accoglienza, Cultura, Ascolto|
      | Dipende da: F5                                     |
-     | Status: STABLE | Last modified: 2026-09-03     |
+     | Status: STABLE | Last modified: 2026-09-03  |
      +--------------------------------------------------+ -->
 <section id="visione">
-  <div class="fade-in">
-    <p class="section-eyebrow">La visione</p>
-    <h2 class="section-title">Tre parole.<br>Un metodo</h2>
-  </div>
-  <!-- [58] Mantiene vuoto il secondo spazio fotografico nelle dimensioni originarie. -->
-  <div style="margin-top: 60px; margin-bottom: 40px;" class="fade-in">
-    <div class="photo-placeholder" aria-hidden="true"></div>
-  </div>
-  <div class="valori-grid">
-    <div class="valore-item fade-in">
-      <p class="valore-nome">Accoglienza</p>
-      <p class="valore-desc">Tradurre il profumo in linguaggio accessibile senza banalizzarlo. Un approccio che unisce rigore culturale e capacità narrativa per rendere il sensoriale comprensibile e strategico.</p>
+  <!-- [70] Dispone i contenuti della Visione a sinistra e lo spazio fotografico a destra. -->
+  <div class="media-band media-band--image-right">
+    <div class="media-band-copy">
+      <div class="fade-in">
+        <p class="section-eyebrow">La visione</p>
+        <h2 class="section-title">Tre parole.<br>Un metodo</h2>
+      </div>
+      <div class="valori-grid">
+        <div class="valore-item fade-in">
+          <p class="valore-nome">Accoglienza</p>
+          <p class="valore-desc">Tradurre il profumo in linguaggio accessibile senza banalizzarlo. Un approccio che unisce rigore culturale e capacità narrativa per rendere il sensoriale comprensibile e strategico.</p>
+        </div>
+        <div class="valore-item fade-in">
+          <p class="valore-nome">Cultura</p>
+          <p class="valore-desc">Un corpus di conoscenza costruito in vent'anni: neuroscienze olfattive, storia della profumeria, semiotica del senso, botanica. Una cultura applicata, non accademica.</p>
+        </div>
+        <div class="valore-item fade-in">
+          <p class="valore-nome">Ascolto</p>
+          <p class="valore-desc">Ogni progetto inizia dall'ascolto del contesto: il brand, il pubblico, lo spazio. Il risultato è un'esperienza costruita su misura, non un format replicabile.</p>
+        </div>
+      </div>
     </div>
-    <div class="valore-item fade-in">
-      <p class="valore-nome">Cultura</p>
-      <p class="valore-desc">Un corpus di conoscenza costruito in vent'anni: neuroscienze olfattive, storia della profumeria, semiotica del senso, botanica. Una cultura applicata, non accademica.</p>
-    </div>
-    <div class="valore-item fade-in">
-      <p class="valore-nome">Ascolto</p>
-      <p class="valore-desc">Ogni progetto inizia dall'ascolto del contesto: il brand, il pubblico, lo spazio. Il risultato è un'esperienza costruita su misura, non un format replicabile.</p>
+    <div class="media-band-slot fade-in">
+      <!-- [58] Mantiene vuoto il secondo spazio fotografico nelle dimensioni originarie. -->
+      <div class="photo-placeholder" aria-hidden="true"></div>
     </div>
   </div>
-
 </section>
 
 <!-- +--------------------------------------------------+
      | [F15] - Markup SERVIZI — sei aree accordion        |
      | Dipende da: F3, F6, F19, F24                       |
-     | Status: STABLE | Last modified: 2026-09-03     |
+     | Status: STABLE | Last modified: 2026-09-03  |
      +--------------------------------------------------+ -->
 <section id="servizi">
-  <div class="fade-in">
-    <p class="section-eyebrow">Servizi</p>
-    <h2 class="section-title">Ambassador, cultura olfattiva<br>e consulenza narrativa<br>per brand e luoghi dell’esperienza</h2>
-  </div>
-  <!-- [8] Sostituisce le tre card riassuntive con l’introduzione generale del documento guida. -->
-  <div class="servizi-lista fade-in">
-    <p class="servizio-desc">Affianco brand di profumeria artistica, realtà del luxury retail, hotel, spa, istituzioni culturali e progetti esperienziali nella costruzione di racconti, eventi e percorsi olfattivi capaci di trasformare il profumo in linguaggio, relazione e valore percepito.</p>
-    <div class="divider"></div>
-    <p class="servizio-desc">Il mio lavoro unisce cultura olfattiva, botanica, arte, neuroscienze della percezione e narrazione per aiutare brand e luoghi a comunicare in modo più profondo, riconoscibile e capace di lasciare un segno.</p>
-    <div class="divider"></div>
-    <p class="servizio-desc">Ogni collaborazione nasce dall’ascolto del contesto, dell’identità del brand e del pubblico a cui si rivolge.</p>
-  </div>
-  <div class="aree-intervento fade-in">
-    <p class="section-eyebrow" style="margin-bottom: 24px;">Cosa posso fare per il tuo brand</p>
-    <div class="aree-grid">
-      <!-- [9] Presenta il servizio Ambassador olfattivo per brand. -->
-      <div class="area-item" onclick="toggleArea(this)">Ambassador olfattivo per brand<div class="area-dropdown">Racconto fragranze e collezioni durante eventi e incontri, elevando autorevolezza e valore percepito.</div></div>
-      <!-- [10] Presenta il servizio di consulenza narrativa e direzione culturale. -->
-      <div class="area-item" onclick="toggleArea(this)">Consulenza narrativa e direzione culturale<div class="area-dropdown">Rendo identità, tono di voce e storytelling più precisi, coerenti e riconoscibili.</div></div>
-      <!-- [11] Presenta il servizio di formazione olfattiva. -->
-      <div class="area-item" onclick="toggleArea(this)">Formazione olfattiva per team e reti vendita<div class="area-dropdown">Formo team e reti vendita a raccontare il profumo con competenza e capacità narrativa.</div></div>
-      <!-- [12] Presenta il servizio di eventi ed esperienze olfattive. -->
-      <div class="area-item" onclick="toggleArea(this)">Eventi ed esperienze olfattive<div class="area-dropdown">Creo esperienze che uniscono profumo, memoria, arte, botanica e territorio.</div></div>
-      <!-- [13] Presenta il servizio di contenuti editoriali e culturali. -->
-      <div class="area-item" onclick="toggleArea(this)">Contenuti editoriali e culturali<div class="area-dropdown">Scrivo articoli, testi e script con profondità culturale e coerenza editoriale.</div></div>
-      <!-- [14] Presenta i progetti speciali per ospitalità e luoghi culturali. -->
-      <div class="area-item" onclick="toggleArea(this)">Progetti speciali per hospitality, spa e luoghi culturali<div class="area-dropdown">Integro l’olfatto in hotel, spa e luoghi culturali con percorsi sensoriali su misura.</div></div>
+  <!-- [71] Affianca l’introduzione dei Servizi allo spazio fotografico destro. -->
+  <div class="media-band media-band--image-right">
+    <div class="media-band-copy">
+      <div class="fade-in">
+        <p class="section-eyebrow">Servizi</p>
+        <h2 class="section-title">Ambassador, cultura olfattiva<br>e consulenza narrativa<br>per brand e luoghi dell’esperienza</h2>
+      </div>
+      <!-- [8] Sostituisce le tre card riassuntive con l’introduzione generale del documento guida. -->
+      <div class="servizi-lista fade-in">
+        <p class="servizio-desc">Affianco brand di profumeria artistica, realtà del luxury retail, hotel, spa, istituzioni culturali e progetti esperienziali nella costruzione di racconti, eventi e percorsi olfattivi capaci di trasformare il profumo in linguaggio, relazione e valore percepito.</p>
+        <div class="divider"></div>
+        <p class="servizio-desc">Il mio lavoro unisce cultura olfattiva, botanica, arte, neuroscienze della percezione e narrazione per aiutare brand e luoghi a comunicare in modo più profondo, riconoscibile e capace di lasciare un segno.</p>
+        <div class="divider"></div>
+        <p class="servizio-desc">Ogni collaborazione nasce dall’ascolto del contesto, dell’identità del brand e del pubblico a cui si rivolge.</p>
+      </div>
+    </div>
+    <div class="media-band-slot fade-in">
+      <!-- [59] Mantiene vuoto il terzo spazio fotografico nelle dimensioni originarie. -->
+      <div class="photo-placeholder" aria-hidden="true"></div>
     </div>
   </div>
 
+  <!-- [72] Affianca le prime tre aree dei Servizi allo spazio fotografico sinistro. -->
+  <div class="media-band media-band--image-left">
+    <div class="media-band-slot fade-in">
+      <!-- [60] Mantiene vuoto il quarto spazio fotografico nelle dimensioni originarie. -->
+      <div class="photo-placeholder" aria-hidden="true"></div>
+    </div>
+    <div class="media-band-copy">
+      <div class="aree-intervento fade-in">
+        <p class="section-eyebrow" style="margin-bottom: 24px;">Cosa posso fare per il tuo brand</p>
+        <div class="aree-grid">
+          <!-- [9] Presenta il servizio Ambassador olfattivo per brand. -->
+          <div class="area-item" onclick="toggleArea(this)">Ambassador olfattivo per brand<div class="area-dropdown">Racconto fragranze e collezioni durante eventi e incontri, elevando autorevolezza e valore percepito.</div></div>
+          <!-- [10] Presenta il servizio di consulenza narrativa e direzione culturale. -->
+          <div class="area-item" onclick="toggleArea(this)">Consulenza narrativa e direzione culturale<div class="area-dropdown">Rendo identità, tono di voce e storytelling più precisi, coerenti e riconoscibili.</div></div>
+          <!-- [11] Presenta il servizio di formazione olfattiva. -->
+          <div class="area-item" onclick="toggleArea(this)">Formazione olfattiva per team e reti vendita<div class="area-dropdown">Formo team e reti vendita a raccontare il profumo con competenza e capacità narrativa.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- [73] Affianca le ultime tre aree dei Servizi allo spazio fotografico destro. -->
+  <div class="media-band media-band--image-right">
+    <div class="media-band-copy">
+      <div class="aree-intervento fade-in">
+        <div class="aree-grid">
+          <!-- [12] Presenta il servizio di eventi ed esperienze olfattive. -->
+          <div class="area-item" onclick="toggleArea(this)">Eventi ed esperienze olfattive<div class="area-dropdown">Creo esperienze che uniscono profumo, memoria, arte, botanica e territorio.</div></div>
+          <!-- [13] Presenta il servizio di contenuti editoriali e culturali. -->
+          <div class="area-item" onclick="toggleArea(this)">Contenuti editoriali e culturali<div class="area-dropdown">Scrivo articoli, testi e script con profondità culturale e coerenza editoriale.</div></div>
+          <!-- [14] Presenta i progetti speciali per ospitalità e luoghi culturali. -->
+          <div class="area-item" onclick="toggleArea(this)">Progetti speciali per hospitality, spa e luoghi culturali<div class="area-dropdown">Integro l’olfatto in hotel, spa e luoghi culturali con percorsi sensoriali su misura.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="media-band-slot fade-in">
+      <!-- [61] Mantiene vuoto il quinto spazio fotografico nelle dimensioni originarie. -->
+      <div class="photo-placeholder" aria-hidden="true"></div>
+    </div>
+  </div>
 </section>
-  <!-- [59] Mantiene vuoto il terzo spazio fotografico nelle dimensioni originarie. -->
-  <div style="margin-top: 60px; background: var(--carta); position: relative; z-index: 2;" class="fade-in">
-    <div class="photo-placeholder" aria-hidden="true"></div>
-  </div>
-  <!-- [60] Mantiene vuoto il quarto spazio fotografico nelle dimensioni originarie. -->
-  <div style="margin-top: 60px; background: var(--carta); position: relative; z-index: 2;" class="fade-in">
-    <div class="photo-placeholder" aria-hidden="true"></div>
-  </div>
-  <!-- [61] Mantiene vuoto il quinto spazio fotografico nelle dimensioni originarie. -->
-  <div style="margin-top: 40px; margin-bottom: 60px; background: var(--carta); position: relative; z-index: 2;" class="fade-in">
-    <div class="photo-placeholder" aria-hidden="true"></div>
-  </div>
 
 <!-- +--------------------------------------------------+
      | [F73] - Markup MODALITÀ DI COLLABORAZIONE         |
@@ -1738,37 +1805,46 @@
 <!-- +--------------------------------------------------+
      | [F16] - Markup REFERENZE — introduzione, progetti  |
      | Dipende da: F3, F6, F7, F8, F19                   |
-     | Status: STABLE | Last modified: 2026-09-03         |
+     | Status: STABLE | Last modified: 2026-09-03      |
      +--------------------------------------------------+ -->
 <section id="credibilita">
-  <div class="fade-in">
-    <!-- [24] Presenta le Referenze professionali con il testo guida validato. -->
-    <p class="section-eyebrow">Referenze</p>
-    <h2 class="section-title">Voci qualificate<br>sul mio lavoro</h2>
-    <p class="section-body">In questa sezione raccolgo le testimonianze di brand, aziende, istituzioni e professionisti che hanno collaborato con me in progetti legati alla cultura olfattiva, alla narrazione, all’esperienza sensoriale e alla valorizzazione del profumo come linguaggio.</p>
-    <p class="section-body">Non sono semplici recensioni: sono referenze professionali che raccontano il mio modo di lavorare, la qualità della relazione costruita e il valore generato nei diversi contesti di collaborazione.</p>
-    <p class="section-body">Attraverso queste voci emerge un metodo: ascoltare l’identità del brand o del progetto, trasformare il profumo in racconto e creare esperienze capaci di lasciare una traccia riconoscibile.</p>
-    <!-- [25] Riserva questo punto esclusivamente alle future referenze reali e autorizzate. -->
-  </div>
-
-  <!-- T07+T08 — Barra loghi collaborazioni -->
-  <div class="loghi-bar fade-in">
-    <div class="logo-item">Puntoettore</div>
-    <div class="logo-item">Deha — Pitti</div>
-    <div class="logo-item">Cerasa — Salone del Mobile</div>
-    <div class="logo-item">Semenzato</div>
-    <div class="logo-item">Monom</div>
-    <div class="logo-item">MCZ Group</div>
-    <div class="logo-item">Rotary</div>
-  </div>
-
-  <div class="collab-genesi fade-in">
-    <p class="collab-genesi-text">Tutto comincia dietro il bancone di una profumeria degli anni Ottanta. Figlia d'arte, arruolata sul campo prima ancora di averne l'età. Con la carta d'identità contro, ho puntato tutto sulla testa: ho iniziato a studiare come una matta per fare la differenza come ragazzina brillante. Da lì, la prima svolta: il mio negozio di profumeria artistica. Uno spazio alternativo per l'epoca — boutique di giorno e luogo d'incontro la sera, tra musica, poesia, danza e fotografia.</p>
-  </div>
-    <!-- [62] Mantiene vuoto il sesto spazio fotografico nelle dimensioni originarie. -->
-    <div style="margin-bottom: 40px;" class="fade-in">
+  <!-- [74] Affianca lo spazio fotografico sinistro all’introduzione delle Referenze. -->
+  <div class="media-band media-band--image-left media-band--align-start">
+    <div class="media-band-slot fade-in">
+      <!-- [62] Mantiene vuoto il sesto spazio fotografico nelle dimensioni originarie. -->
       <div class="photo-placeholder" aria-hidden="true"></div>
     </div>
+    <div class="media-band-copy">
+      <div class="fade-in">
+        <!-- [24] Presenta le Referenze professionali con il testo guida validato. -->
+        <p class="section-eyebrow">Referenze</p>
+        <h2 class="section-title">Voci qualificate<br>sul mio lavoro</h2>
+        <p class="section-body">In questa sezione raccolgo le testimonianze di brand, aziende, istituzioni e professionisti che hanno collaborato con me in progetti legati alla cultura olfattiva, alla narrazione, all’esperienza sensoriale e alla valorizzazione del profumo come linguaggio.</p>
+        <p class="section-body">Non sono semplici recensioni: sono referenze professionali che raccontano il mio modo di lavorare, la qualità della relazione costruita e il valore generato nei diversi contesti di collaborazione.</p>
+        <p class="section-body">Attraverso queste voci emerge un metodo: ascoltare l’identità del brand o del progetto, trasformare il profumo in racconto e creare esperienze capaci di lasciare una traccia riconoscibile.</p>
+        <!-- [25] Riserva questo punto esclusivamente alle future referenze reali e autorizzate. -->
+      </div>
+
+      <!-- T07+T08 — Barra loghi collaborazioni -->
+      <div class="loghi-bar fade-in">
+        <div class="logo-item">Puntoettore</div>
+        <div class="logo-item">Deha — Pitti</div>
+        <div class="logo-item">Cerasa — Salone del Mobile</div>
+        <div class="logo-item">Semenzato</div>
+        <div class="logo-item">Monom</div>
+        <div class="logo-item">MCZ Group</div>
+        <div class="logo-item">Rotary</div>
+      </div>
+
+      <div class="collab-genesi fade-in">
+        <p class="collab-genesi-text">Tutto comincia dietro il bancone di una profumeria degli anni Ottanta. Figlia d'arte, arruolata sul campo prima ancora di averne l'età. Con la carta d'identità contro, ho puntato tutto sulla testa: ho iniziato a studiare come una matta per fare la differenza come ragazzina brillante. Da lì, la prima svolta: il mio negozio di profumeria artistica. Uno spazio alternativo per l'epoca — boutique di giorno e luogo d'incontro la sera, tra musica, poesia, danza e fotografia.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- [75] Affianca la prima parte dei progetti allo spazio fotografico destro. -->
+  <div class="media-band media-band--image-right media-band--align-start">
+    <div class="media-band-copy">
     <div class="collab-grid fade-in">
 
     <article class="collab-item">
@@ -1807,7 +1883,22 @@
       <h3 class="collab-nome">Michele Marin</h3>
       <p class="collab-desc">Attorno alla fragranza Hop On, abbiamo costruito una serata guidata dalla voce di Andy Warhol e dalla musica dei Velvet Underground, richiamando la celebre banana del primo disco, per dare vita a una trasposizione colta tra profumo, musica e storia del design.</p>
     </article>
+      </div>
+    </div>
+    <div class="media-band-slot fade-in">
+      <!-- [63] Mantiene vuoto il settimo spazio fotografico nelle dimensioni originarie. -->
+      <div class="photo-placeholder" aria-hidden="true"></div>
+    </div>
+  </div>
 
+  <!-- [76] Affianca la seconda parte dei progetti allo spazio fotografico sinistro. -->
+  <div class="media-band media-band--image-left media-band--align-start">
+    <div class="media-band-slot fade-in">
+      <!-- [64] Mantiene vuoto l’ottavo spazio fotografico nelle dimensioni originarie. -->
+      <div class="photo-placeholder" aria-hidden="true"></div>
+    </div>
+    <div class="media-band-copy">
+      <div class="collab-grid fade-in">
     <article class="collab-item">
       <h3 class="collab-nome">Rotary Castelfranco</h3>
       <p class="collab-desc">Ho dato vita a una serata basata sul gioco sinestetico tra profumi, colori e storie. L'obiettivo è stato scardinare la concezione classica del profumo per regalargli una vita diversa: intima, riflessiva e profondamente comunicativa.</p>
@@ -1837,25 +1928,18 @@
     <article class="collab-item">
       <h3 class="collab-nome">Profumerie Artistiche e Territorio</h3>
       <p class="collab-desc">Tra i progetti che porto avanti con più passione figurano i piccoli eventi di divulgazione sul territorio. Vengo chiamata sia dalle profumerie artistiche sia da contesti del tutto inaspettati, dove costruisco ogni volta esperienze su misura che reinventano il profumo adattandolo al luogo e all'atmosfera che lo ospita.</p>
-        </article>
-  </div>
-  <!-- T18 — Mini case history -->
-  <div class="case-history fade-in">
-    <p class="section-eyebrow" style="margin-bottom: 20px;">Un progetto in dettaglio</p>
-    <div class="case-item">
-      <p class="case-contesto"><strong>Contesto:</strong> Salone del Mobile, stand Cerasa. Un brand di arredo bagno di alto livello che vuole differenziarsi attraverso l'esperienza sensoriale.</p>
-      <p class="case-azione"><strong>intervento:</strong> progettazione e conduzione di un percorso olfattivo immersivo integrato allo spazio espositivo. Selezione delle fragranze, narrazione guidata, formazione dello staff.</p>
-      <p class="case-valore"><strong>risultato:</strong> l'esperienza olfattiva è diventata il punto di conversazione più ricordato dai visitatori dello stand.</p>
+    </article>
+      </div>
+      <!-- T18 — Mini case history -->
+      <div class="case-history fade-in">
+        <p class="section-eyebrow" style="margin-bottom: 20px;">Un progetto in dettaglio</p>
+        <div class="case-item">
+          <p class="case-contesto"><strong>Contesto:</strong> Salone del Mobile, stand Cerasa. Un brand di arredo bagno di alto livello che vuole differenziarsi attraverso l'esperienza sensoriale.</p>
+          <p class="case-azione"><strong>intervento:</strong> progettazione e conduzione di un percorso olfattivo immersivo integrato allo spazio espositivo. Selezione delle fragranze, narrazione guidata, formazione dello staff.</p>
+          <p class="case-valore"><strong>risultato:</strong> l'esperienza olfattiva è diventata il punto di conversazione più ricordato dai visitatori dello stand.</p>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <!-- [63] Mantiene vuoto il settimo spazio fotografico nelle dimensioni originarie. -->
-  <div style="margin-top: 60px;" class="fade-in">
-    <div class="photo-placeholder" aria-hidden="true"></div>
-  </div>
-  <!-- [64] Mantiene vuoto l’ottavo spazio fotografico nelle dimensioni originarie. -->
-  <div style="margin-top: 60px;" class="fade-in">
-    <div class="photo-placeholder" aria-hidden="true"></div>
   </div>
 </section>
 
@@ -1991,46 +2075,51 @@
 <!-- +--------------------------------------------------+
      | [F17] - Markup CONTATTI — form/CTA percorso olfattivo|
      | Dipende da: F8                                     |
-     | Status: STABLE | Last modified: 2026-09-03        |
+     | Status: STABLE | Last modified: 2026-09-03     |
      +--------------------------------------------------+ -->
 <section id="contatti">
-  <div class="fade-in">
-    <p class="section-eyebrow">Contatti</p>
-    <h2 class="section-title">Inizia il tuo<br>percorso olfattivo.</h2>
-    <p class="section-body">Sei un brand, un'istituzione culturale o uno spazio che vuole costruire un'esperienza olfattiva autentica? Scrivimi per avviare una conversazione professionale.</p>
-  </div>
-  <!-- [1] Dichiara il modulo statico rilevabile da Netlify senza introdurre JavaScript. -->
-  <form name="contatti" method="POST" data-netlify="true" style="margin-top:36px" class="fade-in">
-    <!-- [2] Mantiene esplicita l’associazione tra il payload POST e il modulo Contatti. -->
-    <input type="hidden" name="form-name" value="contatti">
-    <!-- [3] Rende obbligatorio e accessibile il campo Nome. -->
-    <div class="form-group">
-      <label for="contatti-nome">Nome</label>
-      <input id="contatti-nome" name="nome" type="text" autocomplete="name" placeholder="Il tuo nome" required>
+  <!-- [77] Dispone lo spazio fotografico a sinistra e i Contatti completi a destra. -->
+  <div class="media-band media-band--image-left media-band--align-start">
+    <div class="media-band-slot fade-in">
+      <!-- [65] Mantiene vuoto il nono spazio fotografico nelle dimensioni originarie. -->
+      <div class="photo-placeholder" aria-hidden="true"></div>
     </div>
-    <!-- [4] Rende obbligatorio e accessibile il campo Email. -->
-    <div class="form-group">
-      <label for="contatti-email">Email</label>
-      <input id="contatti-email" name="email" type="email" autocomplete="email" placeholder="La tua email" required>
-    </div>
-    <!-- [5] Rende obbligatorio e accessibile il campo Messaggio. -->
-    <div class="form-group">
-      <label for="contatti-messaggio">Messaggio</label>
-      <textarea id="contatti-messaggio" name="messaggio" placeholder="Raccontami di te e di cosa stai cercando…" required></textarea>
-    </div>
-    <!-- [6] Invia il modulo mediante il comportamento HTML standard. -->
-    <button type="submit" class="form-submit">Invia il messaggio</button>
-  </form>
+    <div class="media-band-copy">
+      <div class="fade-in">
+        <p class="section-eyebrow">Contatti</p>
+        <h2 class="section-title">Inizia il tuo<br>percorso olfattivo.</h2>
+        <p class="section-body">Sei un brand, un'istituzione culturale o uno spazio che vuole costruire un'esperienza olfattiva autentica? Scrivimi per avviare una conversazione professionale.</p>
+      </div>
+      <!-- [1] Dichiara il modulo statico rilevabile da Netlify senza introdurre JavaScript. -->
+      <form name="contatti" method="POST" data-netlify="true" style="margin-top:36px" class="fade-in">
+        <!-- [2] Mantiene esplicita l’associazione tra il payload POST e il modulo Contatti. -->
+        <input type="hidden" name="form-name" value="contatti">
+        <!-- [3] Rende obbligatorio e accessibile il campo Nome. -->
+        <div class="form-group">
+          <label for="contatti-nome">Nome</label>
+          <input id="contatti-nome" name="nome" type="text" autocomplete="name" placeholder="Il tuo nome" required>
+        </div>
+        <!-- [4] Rende obbligatorio e accessibile il campo Email. -->
+        <div class="form-group">
+          <label for="contatti-email">Email</label>
+          <input id="contatti-email" name="email" type="email" autocomplete="email" placeholder="La tua email" required>
+        </div>
+        <!-- [5] Rende obbligatorio e accessibile il campo Messaggio. -->
+        <div class="form-group">
+          <label for="contatti-messaggio">Messaggio</label>
+          <textarea id="contatti-messaggio" name="messaggio" placeholder="Raccontami di te e di cosa stai cercando…" required></textarea>
+        </div>
+        <!-- [6] Invia il modulo mediante il comportamento HTML standard. -->
+        <button type="submit" class="form-submit">Invia il messaggio</button>
+      </form>
 
-  <!-- [65] Mantiene vuoto il nono spazio fotografico nelle dimensioni originarie. -->
-  <div style="margin-top: 60px; margin-bottom: 40px;" class="fade-in">
-    <div class="photo-placeholder" aria-hidden="true"></div>
-  </div>
-  <div class="contatti-info fade-in">
-    <p class="contatti-info-label">Email</p>
-    <p class="contatti-info-val">raffaellapisani71@gmail.com</p>
-    <p class="contatti-info-label">Social</p>
-    <p class="contatti-info-val">Instagram · LinkedIn</p>
+      <div class="contatti-info fade-in">
+        <p class="contatti-info-label">Email</p>
+        <p class="contatti-info-val">raffaellapisani71@gmail.com</p>
+        <p class="contatti-info-label">Social</p>
+        <p class="contatti-info-val">Instagram · LinkedIn</p>
+      </div>
+    </div>
   </div>
 </section>
 

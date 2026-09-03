@@ -409,3 +409,26 @@ Lo stato finale dei blocchi F7b, F13, F14, F15, F16 e F17 è stabile.
 I checkpoint locali `821775e` e `c15b274` sono stati pubblicati su `github/master`. La parità tra repository locale e remoto corrisponde a zero commit di differenza.
 Il deploy automatico Netlify contiene nove spazi fotografici vuoti e non contiene fotografie a cartolina o riferimenti pubblici alla cartella fotografica. La verifica pubblica è stata superata senza accessi manuali al pannello Netlify.
 ---
+
+[TASK 10 — Geometria laterale — 2026-09-03]
+Sto operando in modalità RLM.
+Richiesta: organizzare subito i nove contenitori fotografici vuoti a sinistra oppure a destra e collocare i contenuti sul lato opposto, senza immagini centrali.
+Il blocco principale è F7b, responsabile del contratto dei contenitori fotografici. I blocchi di markup da modificare sono F13, F14, F15, F16 e F17, mentre F10b governa l’ordine mobile.
+Le dipendenze dirette a monte sono F1, F3, F4, F5, F6, F7 e F8. I dipendenti diretti a valle sono F19, F24 e F26.
+Le relazioni trasversali comprendono ancore, animazioni, accordion, modulo Contatti, Community, barra PWA e struttura responsive.
+La dipendenza nascosta rilevata riguarda i tre contenitori Servizi, che si trovano attualmente fuori dalla sezione e devono essere ricondotti nelle fasce laterali pertinenti.
+I blocchi da verificare senza modifica sono F0–F9, F10, F11, F12, F18–F29 e F72–F73. La pagina Archivio e i prototipi non pubblicati sono esclusi con prova perché non condividono i contenitori o il markup della pagina principale.
+Non risultano dipendenze circolari o relazioni irrisolte. La chiusura ricorsiva è completata e il gate Vedetta riceve apertura autorizzata dalla conferma di Giorgio.
+Stato iniziale dei blocchi autorizzati: lavorazione in corso.
+---
+
+[TASK 10 — Verifica post-modifica — 2026-09-03]
+La pagina principale contiene nove fasce laterali con due colonne equivalenti. Chi sono dispone lo spazio fotografico a sinistra; Visione lo dispone a destra; Servizi alterna destra, sinistra e destra; Referenze alterna sinistra, destra e sinistra; Contatti dispone lo spazio fotografico a sinistra.
+Il controllo del DOM a 1280 pixel ha misurato colonne da 537 pixel separate da 48 pixel e non ha rilevato overflow orizzontale. Ogni fascia contiene una sola colonna fotografica e una sola colonna testuale.
+Le verifiche visuali desktop hanno confermato la separazione netta tra contenuti e spazi fotografici. Le verifiche mobili a 390 × 844 pixel hanno confermato testo sopra, spazio fotografico sotto, menu hamburger visibile e barra PWA integra.
+Il controllo deterministico ha confermato nove fasce, nove contenitori vuoti, sei accordion, tredici collaborazioni e dodici testimonianze. Il Code Integrity Verifier ha restituito esito positivo senza regressioni e la console browser non presenta errori.
+Le istruzioni atomiche aggiunte sono dodici unità, identificate con i numeri da 66 a 77.
+Vedetta post-modifica: la catena F1, F3–F29 e F72–F73 è compatibile e non presenta dipendenze irrisolte.
+Lo stato finale dei blocchi F7b, F10b, F13, F14, F15, F16 e F17 è stabile.
+Validazione Claude definitiva: approvata da Claude Sonnet 4.6. Il validatore ha confermato nove fasce laterali, alternanza corretta, ordine mobile, assenza di regressioni e coerenza della mappa Blocchi F. Le osservazioni su indentazione e densità dei tre valori della Visione non sono bloccanti e non richiedono modifiche al comportamento approvato.
+---

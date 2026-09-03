@@ -52,4 +52,4 @@ Se `mappa_blocchi.md` non è presente oppure non coincide con il codice reale, d
 
 ## Stato operativo
 
-I nuovi interventi autorizzati il 3 settembre 2026 sono completati e certificati fino al commit `c15b274`. La hero utilizza il ritaglio approvato, la citazione Chanel è sostituita dal contenuto provvisorio, la fotografia con abito blu non compare, i testi chiari sono rafforzati e i nove spazi fotografici restano vuoti in attesa delle sostituzioni. GitHub resta la fonte di verità e Netlify aggiorna automaticamente il sito dal branch `master`.
+La geometria laterale è predisposta nelle sezioni Chi sono, Visione, Servizi, Referenze e Contatti. I nove contenitori restano vuoti in attesa delle fotografie e occupano il lato opposto ai contenuti. Modalità di collaborazione e Community restano sezioni testuali, mentre la hero conserva la propria composizione già approvata.

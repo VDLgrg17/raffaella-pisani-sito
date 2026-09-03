@@ -30,3 +30,7 @@
 - [x] Analizzare la geometria desktop e mobile del sito Nicoletta Armellin.
 - [x] Mappare il modello laterale immagine-testo sulle sezioni e sui Blocchi F di Raffaella.
 - [x] Presentare la geometria proposta senza modificare il codice del sito.
+- [x] Creare la griglia laterale riutilizzabile per fotografia e contenuto opposto.
+- [x] Distribuire i nove contenitori vuoti secondo l’alternanza approvata.
+- [x] Impostare su smartphone testo sopra e contenitore fotografico sotto.
+- [x] Verificare, certificare e pubblicare la nuova geometria su GitHub.
