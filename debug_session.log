@@ -464,3 +464,9 @@ Le istruzioni atomiche aggiunte al progetto sono dodici unità, identificate con
 Vedetta post-modifica: la catena F1, F3, F6, F7b, F10, F10b, F15, F19, F24 e F29 è compatibile e non presenta dipendenze irrisolte.
 Lo stato finale dei blocchi F3, F6, F15 e F24 è stabile.
 ---
+
+[TASK 11.1 — Verifica pubblica — 2026-09-03]
+Il commit `4988705` è pubblicato su `github/master` e il repository locale coincide con il branch remoto. Il deploy automatico Netlify restituisce stato HTTP 200.
+Il sito pubblico contiene sei comandi e sei pannelli accordion, usa pannelli inseriti nel flusso della pagina e include le classi editoriali predisposte. I testi completi dei servizi non sono ancora presenti, come richiesto dal perimetro del solo Task 1.
+La verifica pubblica del solo Task 1 è superata e il lavoro può fermarsi prima del Task 2.
+---
