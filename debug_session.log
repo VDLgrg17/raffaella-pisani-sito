@@ -501,3 +501,26 @@ Il primo accordion pubblico contiene destinatari, problema, rischio, intervento,
 Il primo controllo pubblico cercava alcune frasi grezze del documento anziché le etichette strutturate del markup validato. La verifica è stata ripetuta con criteri coerenti con il codice reale e ha restituito esito positivo.
 La verifica pubblica del solo Task 2 è superata e il lavoro può fermarsi prima del Task 3.
 ---
+
+[TASK 11.3 — Consulenza narrativa e direzione culturale — 2026-09-03]
+Sto operando in modalità RLM.
+Richiesta autorizzata: integrare esclusivamente nel secondo accordion destinatari, problema, rischio, intervento, sei attività, valore e call to action del documento.
+Il blocco principale da modificare è F15, responsabile del markup dei sei servizi. Le dipendenze dirette a monte sono F3, F6, F7b e F10b, mentre i dipendenti diretti a valle sono F19 e F24.
+Le relazioni trasversali comprendono geometria laterale, apertura singola, attributi accessibili, click esterno, altezza dinamica della sezione, responsive e barra PWA.
+La dipendenza nascosta riguarda l’aumento dell’altezza del secondo pannello, che deve restare nel flusso senza sovrapporre le sezioni successive.
+Il blocco da modificare è soltanto F15. I blocchi da verificare senza modifica sono F3, F6, F7b, F10, F10b, F19, F24 e F29.
+Gli altri cinque accordion, le altre sezioni, le immagini, il menu e la pagina Archivio sono esclusi con prova perché non condividono il contenuto interno del pannello `servizio-consulenza`.
+Non risultano dipendenze circolari o relazioni irrisolte. La chiusura ricorsiva è completata e il gate Vedetta riceve apertura autorizzata dalla conferma di Giorgio.
+Lo stato iniziale del blocco F15 corrisponde alla lavorazione in corso.
+---
+
+[TASK 11.3 — Verifica post-modifica — 2026-09-03]
+Il secondo accordion contiene destinatari, problema, rischio, intervento, sei attività, valore e call to action del documento. Il primo accordion completo e i restanti quattro accordion sintetici restano invariati.
+La verifica desktop ha confermato sette paragrafi, sei attività, call to action, pannello nel flusso e assenza di overflow. La verifica mobile a 390 × 844 pixel ha confermato sette paragrafi, sei attività, altezza dinamica e assenza di overflow orizzontale.
+Il controllo deterministico ha superato quindici criteri. Il Code Integrity Verifier ha restituito esito positivo senza regressioni.
+La prima chiamata esterna non ha restituito risposte dai cinque validatori. La verifica di raggiungibilità ha confermato il gateway attivo e il retry ha ottenuto l’approvazione di Claude Sonnet 4.6 senza correzioni bloccanti.
+L’osservazione sulla ripetizione della parola “racconto” nella call to action non richiede modifiche perché il testo corrisponde alla fonte validata e la scelta editoriale appartiene a Giorgio.
+Le istruzioni atomiche aggiunte al progetto sono otto unità, identificate con i numeri da 98 a 105.
+Vedetta post-modifica: la catena F3, F6, F7b, F10, F10b, F15, F19, F24 e F29 è compatibile e non presenta dipendenze irrisolte.
+Lo stato finale del blocco F15 è stabile.
+---

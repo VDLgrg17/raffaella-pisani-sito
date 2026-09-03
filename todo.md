@@ -49,6 +49,7 @@
 - [x] Predisporre paragrafi, elenchi e call to action senza inserire i testi completi.
 - [x] Verificare, certificare e pubblicare separatamente il solo Task 1.
 - [x] Integrare e pubblicare il contenuto completo di Ambassador olfattivo per brand.
+- [x] Integrare e pubblicare il contenuto completo di Consulenza narrativa e direzione culturale.
 - [ ] Integrare integralmente i sei servizi dal documento sorgente.
 - [ ] Verificare la matrice documento-sito, l’interazione e il responsive.
 - [ ] Certificare, documentare e pubblicare il recupero dei contenuti Servizi.
