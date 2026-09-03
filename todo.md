@@ -40,3 +40,6 @@
 - [x] Estrarre integralmente i requisiti dal nuovo documento della sezione Servizi.
 - [x] Confrontare ogni requisito con la sezione Servizi pubblicata.
 - [x] Consegnare il match completo senza modificare il sito.
+- [x] Consolidare le parti mancanti per i sei servizi del documento.
+- [x] Definire i task numerati con contenuto, destinazione e criteri di completamento.
+- [x] Presentare il piano di recupero per conferma prima di modificare il sito.
