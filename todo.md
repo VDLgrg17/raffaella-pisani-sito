@@ -53,6 +53,7 @@
 - [x] Integrare e pubblicare il contenuto completo di Formazione olfattiva per team e reti vendita.
 - [x] Integrare e pubblicare il contenuto completo di Eventi ed esperienze olfattive.
 - [x] Integrare e pubblicare il contenuto completo di Contenuti editoriali e culturali.
+- [x] Integrare e pubblicare il contenuto completo di Progetti speciali per hospitality, spa e luoghi culturali.
 - [ ] Integrare integralmente i sei servizi dal documento sorgente.
 - [ ] Verificare la matrice documento-sito, l’interazione e il responsive.
 - [ ] Certificare, documentare e pubblicare il recupero dei contenuti Servizi.
