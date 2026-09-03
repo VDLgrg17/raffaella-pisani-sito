@@ -431,4 +431,5 @@ Le istruzioni atomiche aggiunte sono dodici unità, identificate con i numeri da
 Vedetta post-modifica: la catena F1, F3–F29 e F72–F73 è compatibile e non presenta dipendenze irrisolte.
 Lo stato finale dei blocchi F7b, F10b, F13, F14, F15, F16 e F17 è stabile.
 Validazione Claude definitiva: approvata da Claude Sonnet 4.6. Il validatore ha confermato nove fasce laterali, alternanza corretta, ordine mobile, assenza di regressioni e coerenza della mappa Blocchi F. Le osservazioni su indentazione e densità dei tre valori della Visione non sono bloccanti e non richiedono modifiche al comportamento approvato.
+La verifica pubblica Netlify risulta superata. Il deploy automatico del commit `73a802d` restituisce stato HTTP 200 e contiene nove fasce laterali con nove spazi fotografici vuoti. GitHub risulta sincronizzato con parità locale-remoto pari a zero commit di differenza.
 ---
