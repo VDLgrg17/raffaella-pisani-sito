@@ -61,3 +61,5 @@ Il primo accordion Ambassador contiene destinatari, problema, rischio, intervent
 Il controllo deterministico ha superato sedici criteri. Gli altri cinque accordion, le immagini, i collegamenti, la geometria laterale e le superfici esterne al blocco F15 restano invariati.
 
 Il secondo accordion Consulenza narrativa e direzione culturale contiene destinatari, problema, rischio, intervento, sei attività, valore e call to action derivati dal documento sorgente. La struttura, l’accessibilità, la geometria e gli altri cinque servizi restano invariati.
+
+Il terzo accordion Formazione olfattiva per team e reti vendita contiene destinatari, problema, risultato, intervento, sei attività, valore e call to action derivati dal documento sorgente. La struttura, l’accessibilità, la geometria e gli altri cinque servizi restano invariati.

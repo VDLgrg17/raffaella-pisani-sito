@@ -530,3 +530,25 @@ Il commit `84b4926` è pubblicato su `github/master` e il repository locale coin
 Il secondo accordion pubblico contiene destinatari, problema, rischio, intervento, sei attività, valore e call to action. Il primo accordion completo e i restanti quattro accordion sintetici restano presenti e invariati.
 La verifica pubblica del solo Task 3 è superata e il lavoro può fermarsi prima del Task 4.
 ---
+
+[TASK 11.4 — Formazione olfattiva per team e reti vendita — 2026-09-03]
+Sto operando in modalità RLM.
+Richiesta autorizzata: integrare esclusivamente nel terzo accordion destinatari, problema, risultato, intervento, sei attività, valore e call to action del documento.
+Il blocco principale da modificare è F15, responsabile del markup dei sei servizi. Le dipendenze dirette a monte sono F3, F6, F7b e F10b, mentre i dipendenti diretti a valle sono F19 e F24.
+Le relazioni trasversali comprendono geometria laterale, apertura singola, attributi accessibili, click esterno, altezza dinamica della sezione, responsive e barra PWA.
+La dipendenza nascosta riguarda l’aumento dell’altezza del terzo pannello, che deve restare nel flusso senza sovrapporre le sezioni successive.
+Il blocco da modificare è soltanto F15. I blocchi da verificare senza modifica sono F3, F6, F7b, F10, F10b, F19, F24 e F29.
+I primi due accordion completi, gli altri tre accordion sintetici, le altre sezioni, le immagini, il menu e la pagina Archivio sono esclusi con prova perché non condividono il contenuto interno del pannello `servizio-formazione`.
+Non risultano dipendenze circolari o relazioni irrisolte. La chiusura ricorsiva è completata e il gate Vedetta riceve apertura autorizzata dalla conferma di Giorgio.
+Stato iniziale del blocco F15: lavorazione in corso.
+---
+
+[TASK 11.4 — Verifica post-modifica — 2026-09-03]
+Il terzo accordion Formazione contiene destinatari, problema, risultato, intervento, sei attività, valore e call to action del documento. I primi due accordion completi e gli altri tre accordion sintetici restano invariati.
+La verifica desktop ha confermato sette paragrafi, sei attività, call to action, pannello nel flusso e assenza di overflow. La verifica mobile a 390 × 844 pixel ha confermato sette paragrafi, sei attività, altezza dinamica e assenza di overflow orizzontale.
+Il controllo deterministico ha superato diciannove criteri. Il Code Integrity Verifier ha restituito esito positivo senza regressioni.
+Claude Sonnet 4.6 ha approvato il diff definitivo senza correzioni bloccanti. Il validatore ha confermato che l’etichetta “Risultato” corrisponde correttamente alla fonte del terzo servizio.
+Le istruzioni atomiche aggiunte al progetto sono sette unità, identificate con i numeri da 106 a 112.
+Vedetta post-modifica: la catena F3, F6, F7b, F10, F10b, F15, F19, F24 e F29 è compatibile e non presenta dipendenze irrisolte.
+Lo stato finale del blocco F15 è stabile.
+---
