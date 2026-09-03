@@ -32,7 +32,7 @@
   /* +--------------------------------------------------+
    | [F1] - Reset, variabili colore, tipografia base    |
    | Dipende da: F0                                      |
-   | Status: STABLE | Last modified: 2026-07-31      |
+   | Status: STABLE | Last modified: 2026-09-03      |
    +--------------------------------------------------+ */
   :root {
     --carta:        #D8D2C8;
@@ -70,7 +70,8 @@
     font-style: italic;
     font-size: clamp(1.3rem, 3.5vw, 2rem);
     font-weight: 300;
-    color: #EDE8E0;
+    /* [35] Porta la citazione del manifesto al bianco pieno. */
+    color: #ffffff;
     line-height: 1.65;
     max-width: 680px;
     margin: 0 auto 32px;
@@ -273,7 +274,8 @@
     font-size: clamp(1.6rem, 5.5vw, 2.4rem);
     font-weight: 300;
     letter-spacing: 0.12em;
-    color: var(--carta);
+    /* [36] Rafforza l’identità testuale della hero sul fondo fotografico scuro. */
+    color: #ffffff;
     text-transform: uppercase;
     line-height: 1;
   }
@@ -282,7 +284,7 @@
     font-size: 0.56rem;
     letter-spacing: 0.28em;
     text-transform: uppercase;
-    color: var(--salvia-light);
+    color: #ffffff;
     font-weight: 300;
   }
 
@@ -354,7 +356,8 @@
     font-size: 0.7rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: rgba(255,240,220,0.9);
+    /* [37] Rende pienamente leggibili etichette e descrizioni dei servizi. */
+    color: #ffffff;
     border: 1px solid rgba(255,240,220,0.4);
     padding: 8px 14px;
     opacity: 1;
@@ -387,7 +390,7 @@
     font-weight: 300;
     letter-spacing: 0.04em;
     text-transform: none;
-    color: rgba(255,240,220,0.88);
+    color: #ffffff;
     line-height: 1.55;
     box-shadow: 0 8px 24px rgba(0,0,0,0.35);
   }
@@ -396,12 +399,12 @@
   .hero-b2b {
     font-size: 0.72rem;
     letter-spacing: 0.08em;
-    color: var(--salvia-light);
+    color: #ffffff;
     font-weight: 300;
     line-height: 1.6;
     margin-bottom: 18px;
     max-width: 320px;
-    opacity: 0.85;
+    opacity: 1;
   }
   .hero-divider {
     width: 32px;
@@ -414,7 +417,7 @@
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-size: clamp(0.88rem, 2.4vw, 1rem);
-    color: var(--salvia-light);
+    color: #ffffff;
     line-height: 1.7;
     margin-bottom: 28px;
     padding-left: 14px;
@@ -425,8 +428,8 @@
     display: inline-block;
     padding: 11px 28px;
     background: transparent;
-    border: 1px solid var(--salvia-light);
-    color: var(--salvia-light);
+    border: 1px solid #ffffff;
+    color: #ffffff;
     font-size: 0.65rem;
     font-weight: 400;
     letter-spacing: 0.2em;
@@ -498,13 +501,14 @@
   /* +--------------------------------------------------+
    | [F5] - CSS Visione — tre valori, card              |
    | Dipende da: F1                                      |
-   | Status: STABLE | Last modified: 2026-07-31      |
+   | Status: STABLE | Last modified: 2026-09-03      |
    +--------------------------------------------------+ */
   /* VISIONE */
   #visione { background: var(--smeraldo); }
   #visione { background: url('assets/profumo-sfondo-verde.png') center center / cover no-repeat; }
-  #visione .section-title { color: var(--carta); }
-  #visione .section-eyebrow { color: var(--salvia-light); }
+  /* [38] Porta al bianco pieno i testi chiari della Visione. */
+  #visione .section-title { color: #ffffff; }
+  #visione .section-eyebrow { color: #ffffff; }
 
   .valori-grid {
     display: grid;
@@ -523,13 +527,13 @@
     font-size: 1.75rem;
     font-weight: 300;
     font-style: italic;
-    color: var(--salvia-light);
+    color: #ffffff;
     margin-bottom: 8px;
   }
 
   .valore-desc {
     font-size: 0.87rem;
-    color: var(--salvia);
+    color: #ffffff;
     line-height: 1.8;
     max-width: 500px;
     text-align: justify;
@@ -544,7 +548,7 @@
   /* +--------------------------------------------------+
    | [F6] - CSS Servizi — introduzione e sei aree       |
    | Dipende da: F1                                      |
-   | Status: STABLE | Last modified: 2026-09-02      |
+   | Status: STABLE | Last modified: 2026-09-03      |
    +--------------------------------------------------+ */
   /* SERVIZI */
   #servizi {
@@ -561,8 +565,9 @@
     z-index: 0;
   }
   #servizi > * { position: relative; z-index: 1; }
-  #servizi .section-title { color: var(--carta); }
-  #servizi .section-eyebrow { color: rgba(255,240,220,0.75); }
+  /* [39] Porta al bianco pieno titoli, testi e descrizioni dei Servizi. */
+  #servizi .section-title { color: #ffffff; }
+  #servizi .section-eyebrow { color: #ffffff; }
   .servizi-lista { margin-top: 48px; }
 
   .servizio-item {
@@ -585,7 +590,7 @@
     font-size: 1.75rem;
     font-weight: 300;
     font-style: italic;
-    color: var(--carta);
+    color: #ffffff;
     line-height: 1.2;
     letter-spacing: 0.02em;
   }
@@ -601,7 +606,7 @@
     font-size: 0.58rem;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: rgba(255,240,220,0.9);
+    color: #ffffff;
     border: none;
     border-bottom: 1px solid rgba(255,240,220,0.5);
     padding: 2px 0;
@@ -613,7 +618,7 @@
 
   .servizio-desc {
     font-size: 0.92rem;
-    color: rgba(255,240,220,0.85);
+    color: #ffffff;
     line-height: 2.0;
     max-width: 580px;
     text-align: justify;
@@ -690,7 +695,8 @@
   /* CONTATTI */
   #contatti { background: var(--smeraldo); }
   #contatti { background: url('assets/profumo-sfondo-verde.png') center center / cover no-repeat; }
-  #contatti .section-title { color: var(--carta); }
+  /* [40] Uniforma al bianco pieno tutti i testi chiari dei Contatti. */
+  #contatti .section-title { color: #ffffff; }
   #contatti .section-eyebrow { color: #ffffff; }
   #contatti .section-body { color: #ffffff; }
 
@@ -732,7 +738,7 @@
   }
 
   .form-group input::placeholder,
-  .form-group textarea::placeholder { color: rgba(255,255,255,0.75); }
+  .form-group textarea::placeholder { color: #ffffff; opacity: 1; }
 
   .form-group input:focus,
   .form-group textarea:focus {
@@ -950,7 +956,7 @@
   /* +--------------------------------------------------+
    | [F9] - CSS Footer — logo, info, copyright          |
    | Dipende da: F1                                      |
-   | Status: STABLE | Last modified: 2026-07-31      |
+   | Status: STABLE | Last modified: 2026-09-03      |
    +--------------------------------------------------+ */
   /* FOOTER */
   footer {
@@ -972,7 +978,8 @@
     color: #ffffff;
   }
 
-  .footer-legal { font-size: 0.62rem; color: rgba(255,255,255,0.7); line-height: 1.6; }
+  /* [41] Rende pienamente leggibile il testo legale del footer. */
+  .footer-legal { font-size: 0.62rem; color: #ffffff; line-height: 1.6; }
   .footer-link { color: #ffffff; text-decoration: none; }
   .footer-link:hover { text-decoration: underline; }
 
@@ -1039,12 +1046,13 @@
 
   .gdpr-text {
     font-size: 0.85rem;
-    color: var(--salvia);
+    /* [42] Porta al bianco pieno i contenuti della barra informativa. */
+    color: #ffffff;
     line-height: 1.6;
   }
 
   .gdpr-text a {
-    color: var(--salvia-light);
+    color: #ffffff;
     text-decoration: underline;
   }
 
@@ -1067,7 +1075,7 @@
 
   #gdpr-accept-btn {
     background: var(--smeraldo);
-    color: var(--carta);
+    color: #ffffff;
   }
 
   #gdpr-accept-btn:hover {
@@ -1076,8 +1084,8 @@
 
   #gdpr-reject-btn {
     background: transparent;
-    border: 1px solid var(--salvia);
-    color: var(--salvia);
+    border: 1px solid #ffffff;
+    color: #ffffff;
   }
 
   #gdpr-reject-btn:hover {
@@ -1166,7 +1174,7 @@
     border-color: #B89450;
   }
 
-  /* [F21] - CSS Modali PWA | Dipende da: F1, F20 | Status: STABLE | Last modified: 2026-09-02 */
+  /* [F21] - CSS Modali PWA | Dipende da: F1, F20 | Status: STABLE | Last modified: 2026-09-03 */
   .gv-modal-bottom {
     display: none;
     position: fixed;
@@ -1226,7 +1234,8 @@
     width: 100%;
     padding: 12px 16px;
     background: var(--smeraldo);
-    color: var(--carta);
+    /* [43] Rafforza il testo del pulsante principale nelle modali PWA. */
+    color: #ffffff;
     border: none;
     border-radius: 6px;
     font-size: 0.85rem;
@@ -1406,13 +1415,14 @@
   /* +--------------------------------------------------+
    | [F72] - CSS Modalità di collaborazione              |
    | Dipende da: F1, F3, F10                             |
-   | Status: STABLE | Last modified: 2026-09-02          |
+   | Status: STABLE | Last modified: 2026-09-03          |
    +--------------------------------------------------+ */
   /* [15] Definisce il fondo e la gerarchia cromatica della nuova sezione. */
   #collaborazione { background: var(--smeraldo); }
   #collaborazione .section-eyebrow { color: var(--oro); }
-  #collaborazione .section-title { color: var(--carta); }
-  #collaborazione .section-body { color: var(--salvia-light); }
+  /* [44] Porta al bianco pieno i contenuti della Modalità di collaborazione. */
+  #collaborazione .section-title { color: #ffffff; }
+  #collaborazione .section-body { color: #ffffff; }
 
   /* [16] Organizza le modalità in una lista lineare sullo smartphone. */
   .modalita-list {
@@ -1433,7 +1443,7 @@
     gap: 16px;
     padding: 18px 0;
     border-bottom: 1px solid rgba(168,137,90,0.45);
-    color: var(--carta);
+    color: #ffffff;
     font-size: 0.72rem;
     line-height: 1.55;
     letter-spacing: 0.12em;
@@ -1462,14 +1472,14 @@
   .modalita-cta-copy {
     max-width: 620px;
     margin: 0;
-    color: var(--carta);
+    color: #ffffff;
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(1.3rem, 4vw, 1.8rem);
     font-weight: 300;
     line-height: 1.35;
   }
   #collaborazione .btn-primary {
-    color: var(--carta);
+    color: #ffffff;
     border-color: var(--oro);
   }
   #collaborazione .btn-primary:hover {

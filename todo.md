@@ -22,7 +22,7 @@
 - [x] Eliminare dalla hero la fascia superiore con fiori e profumi, senza sostituzioni.
 - [x] Sostituire la citazione Chanel con il testo provvisorio “In attesa di contenuto”.
 - [x] Eliminare la fotografia di Raffaella con l’abito blu, senza sostituzioni.
-- [ ] Rendere pienamente visibili tutti i testi bianchi attualmente pallidi.
+- [x] Rendere pienamente visibili tutti i testi bianchi attualmente pallidi.
 - [ ] Formalizzare la regola fotografica con immagini a sinistra e contenuti a destra.
 - [ ] Eliminare le fotografie centrali decorative con fiori, profumi ed essenze, senza sostituzioni.
 - [ ] Verificare desktop e mobile, certificare e pubblicare i nuovi task su GitHub.

@@ -338,3 +338,25 @@ Le istruzioni atomiche aggiunte sono quattro unità, identificate con i numeri d
 Vedetta post-modifica: la catena F1, F3, F4, F8, F10, F10b, F12, F13, F14, F19 e F28 è compatibile.
 Lo stato finale dei blocchi F4, F8, F10b e F13 è stabile.
 ---
+
+[TASK 9.3 — Testi chiari più visibili — 2026-09-03]
+Gate Vedetta: apertura autorizzata da Giorgio.
+Intento: rendere bianchi pieni e opachi i testi chiari collocati sugli sfondi scuri delle due pagine pubbliche, senza modificare font, contenuti, sfondi o impaginazione.
+I blocchi da modificare nella pagina principale sono F1, F3, F5, F6, F8, F9, F10b, F21 e F72. I blocchi da modificare nella pagina Archivio sono F34, F35 e F37.
+I blocchi da verificare sono F0, F7b, F11–F19, F20, F23–F29 e F30–F46.
+Dipendenze nascoste rilevate: i colori chiari includono variabili beige, verde salvia e valori bianchi semitrasparenti che appaiono pallidi sui fondi fotografici o scuri.
+Sono esclusi gli effetti hover, i bordi, le animazioni di entrata e i testi scuri collocati su fondi chiari.
+Relazioni irrisolte: nessuna relazione resta irrisolta.
+Chiusura ricorsiva completata: sì, la chiusura è stata completata.
+Lo stato iniziale dei blocchi autorizzati corrisponde alla lavorazione in corso.
+---
+
+[TASK 9.3 — Verifica post-modifica — 2026-09-03]
+I testi chiari collocati sugli sfondi scuri della pagina principale e dell’Archivio utilizzano ora il bianco pieno con opacità completa. Font, contenuti, sfondi, impaginazione, effetti hover e funzionalità restano invariati.
+Le verifiche visuali hanno confermato il maggiore contrasto nella hero, nella Visione, nei Servizi, nei Contatti, nella Modalità di collaborazione e nel footer Archivio. La verifica mobile della hero ha confermato leggibilità, ordine approvato e assenza di overflow.
+I controlli del DOM hanno misurato `rgb(255, 255, 255)` e opacità `1` sugli elementi mirati della hero e dell’Archivio. Il controllo deterministico e il Code Integrity Verifier hanno restituito esito positivo senza regressioni.
+Claude Sonnet 4.6 ha approvato il diff reale senza correzioni bloccanti. L’osservazione estetica sull’occhiello della Visione non richiede variazioni perché il bianco pieno corrisponde alla richiesta autorizzata.
+Le istruzioni atomiche aggiunte sono dodici unità, identificate con i numeri da 35 a 46.
+Vedetta post-modifica: la catena F0–F29 e F30–F46 è compatibile e non presenta dipendenze irrisolte.
+Lo stato finale dei blocchi F1, F3, F5, F6, F8, F9, F10b, F21, F72, F34, F35 e F37 è stabile.
+---

@@ -135,7 +135,7 @@ nav {
   line-height: 1.85;
 }
 
-/* [F34] - CSS filtri categorie | Dipende da: F31, F33 | Status: STABLE | Last modified: 2026-09-02 */
+/* [F34] - CSS filtri categorie | Dipende da: F31, F33 | Status: STABLE | Last modified: 2026-09-03 */
 .categorie-bar {
   display: flex;
   flex-wrap: wrap;
@@ -161,7 +161,8 @@ nav {
 .cat-btn.active {
   background: var(--smeraldo);
   border-color: var(--smeraldo);
-  color: var(--carta);
+  /* [45] Porta al bianco pieno le etichette chiare dei filtri e degli articoli. */
+  color: #ffffff;
 }
 
 /* Colori identificativi per categoria */
@@ -172,7 +173,7 @@ nav {
 .cat-btn[data-cat="mito"].active       { background: var(--oro); border-color: var(--oro); }
 .cat-btn[data-cat="filosofia"].active  { background: var(--seppia); border-color: var(--seppia); }
 
-/* [F35] - CSS griglia articoli | Dipende da: F31, F33 | Status: STABLE | Last modified: 2026-09-02 */
+/* [F35] - CSS griglia articoli | Dipende da: F31, F33 | Status: STABLE | Last modified: 2026-09-03 */
 .articoli-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -196,7 +197,7 @@ nav {
   padding: 4px 10px;
   display: inline-block;
   margin-bottom: 16px;
-  color: var(--carta);
+  color: #ffffff;
 }
 
 .tag-molecole    { background: var(--zafferano); }
@@ -272,10 +273,11 @@ nav {
   line-height: 1.9;
 }
 
-/* [F37] - CSS footer Archivio | Dipende da: F31 | Status: STABLE | Last modified: 2026-09-02 */
+/* [F37] - CSS footer Archivio | Dipende da: F31 | Status: STABLE | Last modified: 2026-09-03 */
 footer {
   background: var(--inchiostro);
-  color: rgba(250,247,242,0.7);
+  /* [46] Porta al bianco pieno tutti i contenuti del footer Archivio. */
+  color: #ffffff;
   padding: 64px 48px 40px;
 }
 
@@ -294,14 +296,14 @@ footer {
   font-size: 1.2rem;
   font-weight: 300;
   letter-spacing: 0.1em;
-  color: var(--carta);
+  color: #ffffff;
   margin-bottom: 12px;
 }
 
 .footer-tagline {
   font-size: 0.78rem;
   line-height: 1.7;
-  color: rgba(250,247,242,0.5);
+  color: #ffffff;
 }
 
 .footer-col-title {
@@ -315,13 +317,13 @@ footer {
 
 .footer-col p, .footer-col a {
   font-size: 0.78rem;
-  color: rgba(250,247,242,0.6);
+  color: #ffffff;
   text-decoration: none;
   line-height: 2;
   display: block;
 }
 
-.footer-col a:hover { color: var(--carta); }
+.footer-col a:hover { color: #ffffff; }
 
 .footer-bottom {
   max-width: 1100px;
@@ -330,7 +332,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   font-size: 0.7rem;
-  color: rgba(250,247,242,0.3);
+  color: #ffffff;
 }
 
 /* [F38] - CSS responsive Archivio | Dipende da: F32-F37 | Status: STABLE | Last modified: 2026-09-02 */
