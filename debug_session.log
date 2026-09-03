@@ -470,3 +470,27 @@ Il commit `4988705` è pubblicato su `github/master` e il repository locale coin
 Il sito pubblico contiene sei comandi e sei pannelli accordion, usa pannelli inseriti nel flusso della pagina e include le classi editoriali predisposte. I testi completi dei servizi non sono ancora presenti, come richiesto dal perimetro del solo Task 1.
 La verifica pubblica del solo Task 1 è superata e il lavoro può fermarsi prima del Task 2.
 ---
+
+[TASK 11.2 — Ambassador olfattivo per brand — 2026-09-03]
+Sto operando in modalità RLM.
+Richiesta autorizzata: integrare esclusivamente nel primo accordion destinatari, problema, rischio, intervento, cinque attività, valore e call to action del documento.
+Il blocco principale da modificare è F15, responsabile del markup dei sei servizi. Le dipendenze dirette a monte sono F3, F6, F7b e F10b, mentre i dipendenti diretti a valle sono F19 e F24.
+Le relazioni trasversali comprendono geometria laterale, apertura singola, attributi accessibili, click esterno, altezza dinamica della sezione, responsive e barra PWA.
+La dipendenza nascosta riguarda l’aumento dell’altezza del primo pannello, che deve restare nel flusso senza sovrapporre le sezioni successive.
+Il blocco da modificare è soltanto F15. I blocchi da verificare senza modifica sono F3, F6, F7b, F10, F10b, F19, F24 e F29.
+Gli altri cinque accordion, le altre sezioni, le immagini, il menu e la pagina Archivio sono esclusi con prova perché non condividono il contenuto interno del pannello `servizio-ambassador`.
+Non risultano dipendenze circolari o relazioni irrisolte. La chiusura ricorsiva è completata e il gate Vedetta riceve apertura autorizzata dalla conferma di Giorgio.
+Lo stato iniziale del blocco F15 corrisponde alla lavorazione in corso.
+---
+
+[TASK 11.2 — Verifica post-modifica — 2026-09-03]
+Il primo accordion Ambassador contiene destinatari, problema, rischio, intervento, cinque attività, valore e call to action derivati dal documento sorgente. La sola correzione editoriale applicata corrisponde alla minuscola dopo i due punti richiesta dal validatore GV.
+Il controllo deterministico ha superato sedici criteri. Gli altri cinque accordion, le immagini, i collegamenti, la geometria laterale e le superfici esterne al blocco F15 restano invariati.
+Il controllo browser sull’origine temporanea priva di service worker ha confermato sette paragrafi, cinque attività, una call to action e assenza di overflow. Il pannello misura 655 pixel di altezza su desktop e 931 pixel su smartphone, restando nel flusso della pagina.
+La prima origine locale mostrava una copia precedente per effetto della cache del service worker. La verifica è stata ripetuta su un’origine isolata e il markup corrente è risultato conforme.
+Il Code Integrity Verifier ha restituito esito positivo senza regressioni. Il primo comando di confronto utilizzava un percorso inesistente ed è stato corretto usando l’interfaccia `snapshot.py diff` prevista dal protocollo.
+Claude Sonnet 4.6 non era raggiungibile per un errore di connessione. Il validatore di fallback GPT-5.4 ha approvato il diff definitivo senza correzioni bloccanti, come previsto dalla pipeline autorizzata.
+Le istruzioni atomiche aggiunte al progetto sono otto unità, identificate con i numeri da 90 a 97.
+Vedetta post-modifica: la catena F1, F3, F6, F7b, F10, F10b, F15, F19, F24 e F29 è compatibile e non presenta dipendenze irrisolte.
+Lo stato finale del blocco F15 è stabile.
+---
