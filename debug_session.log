@@ -716,3 +716,10 @@ Le tre variazioni editoriali non riduttive sono tracciate in `matrice_servizi.md
 Il validatore GV ha restituito exit code 0. Claude Sonnet 4.6 ha approvato la certificazione definitiva senza correzioni bloccanti. Nessun difetto ha richiesto una modifica al codice del sito.
 Vedetta post-certificazione: i blocchi F3, F6, F7b, F10, F10b, F15, F19, F24 e F29 restano stabili nei termini verificati. Il recupero contenutistico Servizi è chiuso.
 ---
+
+[TASK 11.10 — Verifica pubblica conclusiva — 2026-09-04]
+Il commit `51c1b4d` è pubblicato su `github/master` e il repository locale coincide con il branch remoto.
+Il sito pubblico Netlify risponde HTTP 200. Sono presenti una volta ciascuno i sei titoli Servizi e le sei call to action previste dal controllo finale.
+GitHub restituisce `certificazione_finale_servizi.md` al riferimento `master`, con identificatore blob `34d752a0fc85b2177d6d5e20a199ff936fdea674` e dimensione pari a 4991 byte.
+La chiusura completa del recupero Servizi è pubblicata e verificata.
+---
