@@ -665,3 +665,9 @@ Sono dichiarate tre variazioni editoriali non riduttive: un ampliamento della pr
 Il validatore GV ha restituito exit code 0. Claude Sonnet 4.6 ha approvato la matrice aggiornata senza correzioni bloccanti e ha confermato la trasparenza fra corrispondenza letterale e variazione editoriale dichiarata.
 La verifica strutturale e visiva dell’interazione responsive resta fuori dal Task 8 e appartiene al Task 9.
 ---
+
+[TASK 11.8 — Verifica pubblicazione documentale — 2026-09-03]
+Il commit `72b2782` è pubblicato su `github/master` e il repository locale coincide con il branch remoto.
+GitHub restituisce `matrice_servizi.md` al riferimento `master`, con identificatore blob `b899d7b5ac5a3b4452745d6c6bf01d1f4ea2da6f` e dimensione pari a 5057 byte.
+La pubblicazione del solo Task 8 è verificata. Il lavoro può fermarsi prima del Task 9.
+---
