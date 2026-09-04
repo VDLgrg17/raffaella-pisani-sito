@@ -60,3 +60,4 @@
 - [x] Verificare la matrice documento-sito, l’interazione e il responsive.
 - [x] Certificare, documentare, pubblicare e verificare pubblicamente la chiusura complessiva dei Servizi.
 - [x] Certificare, documentare e pubblicare il recupero dei contenuti Servizi.
+- [x] Eseguire il match integrale tra Testisitofinali2sett, task pubblicati e sito reale.

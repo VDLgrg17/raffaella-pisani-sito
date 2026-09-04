@@ -723,3 +723,11 @@ Il sito pubblico Netlify risponde HTTP 200. Sono presenti una volta ciascuno i s
 GitHub restituisce `certificazione_finale_servizi.md` al riferimento `master`, con identificatore blob `34d752a0fc85b2177d6d5e20a199ff936fdea674` e dimensione pari a 4991 byte.
 La chiusura completa del recupero Servizi è pubblicata e verificata.
 ---
+
+[Audit integrale testi — 2026-09-04]
+Richiesta: confrontare il documento `Testisitofinali2sett(1).docx`, i task pubblicati e il sito reale per stabilire se la coincidenza è del cento per cento.
+Risultato verificabile: cinquantadue controlli generali su cinquantadue e settantasei controlli dettagliati Servizi su settantasei sono superati fra documento, markup locale e sito pubblico, che restituisce HTTP 200.
+Risultato letterale: non certificabile al cento per cento, poiché sono presenti sette variazioni editoriali o tipografiche dichiarate e la richiesta di referenze professionali corrette non contiene dati sorgente per la verifica.
+Il report `audit_match_testi_2_settembre.md` distingue conformità semantica verificabile, variazioni letterali e condizione non certificabile. Nessun file di codice è stato modificato.
+Claude Sonnet 4.6 ha approvato il verdetto senza correzioni bloccanti. Il validatore GV ha restituito exit code 0.
+---
