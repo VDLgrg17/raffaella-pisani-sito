@@ -689,3 +689,9 @@ La call to action del sesto pannello è raggiungibile mediante normale scorrimen
 Claude Sonnet 4.6 ha approvato il report definitivo senza correzioni bloccanti. Il validatore GV ha restituito exit code 0. Nessun difetto è stato dimostrato e il codice resta invariato.
 Vedetta post-controllo: i blocchi F3, F6, F7b, F10, F10b, F15, F19, F24 e F29 sono compatibili nei termini verificati e lo stato finale è stabile.
 ---
+
+[TASK 11.9 — Verifica pubblicazione documentale — 2026-09-04]
+Il commit `b368b81` è pubblicato su `github/master` e il repository locale coincide con il branch remoto.
+GitHub restituisce `verifica_accordion_task9.md` al riferimento `master`, con identificatore blob `33879aa4e9fb7bf9cb48de7d0e44801d320ff5d9` e dimensione pari a 4811 byte.
+La pubblicazione del solo Task 9 è verificata. Il lavoro può fermarsi prima del Task 10.
+---
