@@ -56,5 +56,6 @@
 - [x] Integrare e pubblicare il contenuto completo di Progetti speciali per hospitality, spa e luoghi culturali.
 - [x] Redigere, validare e pubblicare la matrice documento sorgente → sito dei sei servizi.
 - [ ] Integrare integralmente i sei servizi dal documento sorgente.
+- [x] Verificare struttura, apertura singola, click esterno, accessibilità e responsive dei sei accordion.
 - [ ] Verificare la matrice documento-sito, l’interazione e il responsive.
 - [ ] Certificare, documentare e pubblicare il recupero dei contenuti Servizi.

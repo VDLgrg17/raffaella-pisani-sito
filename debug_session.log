@@ -671,3 +671,21 @@ Il commit `72b2782` è pubblicato su `github/master` e il repository locale coin
 GitHub restituisce `matrice_servizi.md` al riferimento `master`, con identificatore blob `b899d7b5ac5a3b4452745d6c6bf01d1f4ea2da6f` e dimensione pari a 5057 byte.
 La pubblicazione del solo Task 8 è verificata. Il lavoro può fermarsi prima del Task 9.
 ---
+
+[TASK 11.9 — Gate Vedetta di verifica — 2026-09-03]
+Sto operando in modalità RLM.
+Richiesta autorizzata: verificare struttura, apertura singola, click esterno, accessibilità e responsive dei sei accordion senza modificare il codice salvo difetti dimostrati dai test.
+Blocco principale: F15 in `index.html`, responsabile del markup e dei contenuti dei sei servizi.
+Blocchi da verificare senza modifica: F3, F6, F7b, F10, F10b, F15, F19, F24 e F29. Le relazioni trasversali riguardano classi accordion, attributi ARIA, evento click, flusso verticale, overflow, fade-in, geometria laterale, responsive e cache PWA.
+Blocchi da modificare: nessuno in assenza di difetti dimostrati. Le altre sezioni sono escluse con prova perché il Task 9 esegue soltanto controlli su F15 e sui contratti dichiarati a monte e a valle.
+Non risultano relazioni irrisolte o dipendenze circolari. La chiusura ricorsiva è completata e il gate di verifica è autorizzato.
+---
+
+[TASK 11.9 — Verifica post-controllo — 2026-09-04]
+Il controllo deterministico ha superato sessantanove criteri su sessantanove. La verifica browser desktop ha superato quindici controlli su quindici: stato iniziale, apertura, richiusura, apertura singola e click esterno per i sei servizi.
+Il primo trigger nativo è stato attivato con Invio e ha aggiornato correttamente `aria-expanded`, `hidden` e la classe `open`. La console non ha restituito errori JavaScript durante la sequenza.
+Desktop: `documentWidth=1265` e `viewportWidth=1265`, senza overflow orizzontale. Mobile 390 × 844: ogni pannello ha mantenuto flusso statico, larghezza compresa nel viewport e assenza di overflow orizzontale.
+La call to action del sesto pannello è raggiungibile mediante normale scorrimento sopra la barra fissa. I limiti dichiarati sono Tab sequenziale completo, screen reader, browser alternativi, breakpoint intermedi e misurazione specifica delle call to action dei primi cinque pannelli.
+Claude Sonnet 4.6 ha approvato il report definitivo senza correzioni bloccanti. Il validatore GV ha restituito exit code 0. Nessun difetto è stato dimostrato e il codice resta invariato.
+Vedetta post-controllo: i blocchi F3, F6, F7b, F10, F10b, F15, F19, F24 e F29 sono compatibili nei termini verificati e lo stato finale è stabile.
+---

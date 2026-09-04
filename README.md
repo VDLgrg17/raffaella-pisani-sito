@@ -71,3 +71,5 @@ Il quinto accordion Contenuti editoriali e culturali contiene destinatari, probl
 Il sesto accordion Progetti speciali per hospitality, spa e luoghi culturali contiene destinatari, problema, funzione dell’olfatto, intervento, sei attività, valore e call to action derivati dal documento sorgente. La struttura, l’accessibilità, la geometria e gli altri cinque servizi restano invariati.
 
 La matrice di corrispondenza tra documento sorgente, markup F15 e sito pubblico è registrata in `matrice_servizi.md`. Il controllo conferma sei servizi completi, trentacinque attività presenti e tre variazioni editoriali dichiarate senza omissioni concettuali. La verifica pubblica della matrice riguarda la presenza testuale dei titoli e delle call to action, mentre la verifica strutturale e visiva resta nel task successivo.
+
+La verifica strutturale, interattiva e responsive dei sei accordion è registrata in `verifica_accordion_task9.md`. Il report documenta sessantanove controlli statici, quindici controlli desktop, l’attivazione con Invio e la verifica mobile a 390 × 844. Non sono emersi difetti nei test eseguiti e non è stato modificato alcun file di codice.
