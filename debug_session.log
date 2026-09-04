@@ -656,3 +656,12 @@ Il commit `93bfd88` è pubblicato su `github/master` e il repository locale coin
 Il sesto accordion pubblico contiene il servizio Progetti speciali per hospitality, spa e luoghi culturali completo, sei attività e la call to action del documento. I primi cinque servizi completi restano presenti e invariati.
 La verifica pubblica del solo Task 7 è superata e il lavoro può fermarsi prima dei controlli complessivi.
 ---
+
+[TASK 11.8 — Matrice documento sorgente → sito — 2026-09-03]
+Sto operando in modalità RLM.
+Il documento `matrice_servizi.md` confronta la fonte vincolante, il blocco F15 e il sito pubblico senza modificare `index.html`, gli stili, gli script, il service worker o la geometria.
+La matrice conferma sei servizi verificati su sei, quarantuno blocchi semantici sorgente presenti su quarantuno, trentacinque attività previste presenti su trentacinque e dodici titoli e call to action pubblici rilevati mediante verifica di presenza testuale.
+Sono dichiarate tre variazioni editoriali non riduttive: un ampliamento della prima attività Ambassador, un ampliamento della sua call to action e una riformulazione della call to action Consulenza.
+Il validatore GV ha restituito exit code 0. Claude Sonnet 4.6 ha approvato la matrice aggiornata senza correzioni bloccanti e ha confermato la trasparenza fra corrispondenza letterale e variazione editoriale dichiarata.
+La verifica strutturale e visiva dell’interazione responsive resta fuori dal Task 8 e appartiene al Task 9.
+---
