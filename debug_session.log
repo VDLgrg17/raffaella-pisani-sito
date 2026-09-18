@@ -774,3 +774,54 @@ Motivazione: le cinque fotografie autorizzate sono nelle fasce laterali richiest
 Correzioni bloccanti: nessuna.
 Raccomandazione facoltativa non applicata: valutare in un task separato la posizione verticale dell’immagine Referenze dopo l’ottimizzazione visiva richiesta dall’utente.
 ---
+
+[Correzione ritaglio fotografie — Gate Vedetta pre-modifica — 2026-09-18]
+LOGICA PRIMA DEL CODICE
+Obiettivo: mostrare l’intera fotografia autorizzata in ogni spazio laterale senza tagliare il volto o la testa.
+Causa identificata: F7b assegna a `.section-photo` `aspect-ratio: 3 / 2` e `object-fit: cover`; le cinque sorgenti sono ritratti verticali e vengono quindi ritagliate sopra e sotto.
+Soluzione minima: rimuovere il rapporto fisso e il comportamento di riempimento da F7b, rendendo l’altezza automatica e il contenimento esplicito; nessun markup, asset, script, ordine mobile o testo viene modificato.
+Istruzioni atomiche previste: 1. L’istruzione [140] sostituisce il ritaglio forzato con la visualizzazione del fotogramma integrale.
+
+VEDETTA — PRE-MODIFICA
+Richiesta: correggere tutte le fotografie tagliate affinché mostrino il soggetto senza perdita della testa.
+Blocco principale: F7b, stile della galleria fotografica e della geometria laterale in `index.html`.
+Dipendenze dirette a monte: F1, per variabili tipografiche e cromatiche senza interferenza geometrica.
+Dipendenze indirette a monte: nessuna pertinente.
+Dipendenti diretti a valle: F13, F14, F15, F16 e F26, che usano la classe `.section-photo`.
+Dipendenti indiretti a valle: F10b, che ordina `.media-band-slot` dopo il testo su mobile; F19, che applica il fade-in al contenitore fotografico.
+Relazioni trasversali: `.media-band` in F7b e F10b definisce la disposizione laterale e l’ordine mobile; F24 consuma solo gli accordion di F15 e non riceve la classe fotografica.
+Dipendenze nascoste rilevate: `object-fit: cover` e `aspect-ratio: 3 / 2` condivisi nella stessa regola `.section-photo` causano il taglio dei ritratti; la relazione è ora documentata.
+Dipendenze circolari: nessuna.
+Blocchi da modificare: F7b; documentazione di stato in `mappa_blocchi.md`, `todo.md` e `debug_session.log`.
+Blocchi da verificare: F10b, F13, F14, F15, F16, F26 e F19.
+Blocchi esclusi con prova: F3 e F12 hero, F11 e F25 menu, F20–F23 e F27–F29 PWA, F24 accordion, F17 contatti e F18 footer; nessuno seleziona `.section-photo`.
+Relazioni irrisolte: nessuna.
+Chiusura ricorsiva completata: SÌ.
+Gate Vedetta: APERTURA AUTORIZZATA.
+---
+
+[Correzione ritaglio fotografie — Verifica e Vedetta post-modifica — 2026-09-18]
+Modifica applicata: F7b, istruzione atomica [140]. La regola `.section-photo` non impone più `aspect-ratio: 3 / 2` né `object-fit: cover`; usa ora `height: auto` e `object-fit: contain` per rendere il fotogramma sorgente completo.
+Verifica fonti: le immagini Chi sono, Visione, Servizi e Referenze contengono il volto e la testa completi nel file originale; Community conserva il gruppo e la relatrice nel fotogramma integrale.
+Verifica desktop: PASS. Tutte le cinque immagini sono caricate, mantengono `object-fit: contain`, rapporto sorgente e rapporto renderizzato identici con delta 0, nessun overflow orizzontale e distribuzione laterale invariata.
+Verifica mobile 390×844: PASS. Chi sono 334×444, Visione 334×400, Servizi 334×436, Referenze 334×533 e Community 334×464. Tutti i rapporti sono identici ai file sorgente, il testo resta prima della fotografia e non si verifica overflow orizzontale.
+Verifica visiva: PASS. Lo screenshot mobile di Servizi mostra il capo completo senza taglio, dentro la cornice arrotondata esistente.
+Integrità: PASS. `git diff --check` pulito, markup delle cinque immagini invariato e hash JavaScript invariato.
+VEDETTA — POST-MODIFICA
+Blocchi modificati: F7b.
+Blocchi verificati senza modifica: F10b, F13, F14, F15, F16, F26 e F19.
+Contratti controllati: rapporto intrinseco dell’immagine, ordine mobile, posizionamento laterale, fade-in, markup immagini e comportamento accordion.
+Nuove dipendenze rilevate: il grafo testuale della mappa ora esplicita F7b e F10b per F13–F16 e F26, già presenti negli header reali.
+Mappa blocchi aggiornata: SÌ.
+Header F aggiornati: SÌ.
+Compatibilità della catena: CONFERMATA.
+Stato finale: STABLE.
+---
+
+[VALIDAZIONE CLAUDE DEFINITIVA — Correzione fotogramma integrale — 2026-09-18]
+Modello: anthropic/claude-sonnet-4-6.
+Esito: APPROVATO.
+Motivazione: F7b rimuove il rapporto 3:2 e `cover`, mantiene l’altezza automatica e dichiara `contain`; ogni fotografia verticale mostra il fotogramma completo senza tagli.
+Correzioni bloccanti: nessuna.
+Raccomandazione facoltativa non applicata: valutare soltanto in un futuro task una altezza massima sui viewport molto larghi, senza introdurre nuovi ritagli.
+---

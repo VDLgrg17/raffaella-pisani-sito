@@ -62,3 +62,4 @@
 - [x] Certificare, documentare e pubblicare il recupero dei contenuti Servizi.
 - [x] Eseguire il match integrale tra Testisitofinali2sett, task pubblicati e sito reale.
 - [x] Collocare le cinque fotografie attività nelle sezioni autorizzate, verificando desktop, mobile e deploy pubblico.
+- [x] Correggere il ritaglio delle cinque fotografie attività mostrando il fotogramma integrale.

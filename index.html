@@ -994,15 +994,14 @@
     aspect-ratio: 3 / 2;
     margin: 0 auto;
   }
-  /* [134] Adatta le fotografie autorizzate ai contenitori laterali senza modificare la geometria. */
+  /* [140] Mostra l’intera fotografia verticale senza imporre un rapporto orizzontale o tagliare il soggetto. */
   .section-photo {
     width: 100%;
     max-width: 560px;
-    aspect-ratio: 3 / 2;
+    height: auto;
     margin: 0 auto;
     display: block;
-    object-fit: cover;
-    object-position: center 45%;
+    object-fit: contain;
     border-radius: 16px;
   }
   /* [66] Definisce la griglia riutilizzabile che separa nettamente fotografia e contenuto. */

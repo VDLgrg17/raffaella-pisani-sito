@@ -4,13 +4,13 @@
 
 Protocollo: `blocchi-f-operativo` con sorveglianza `blocchi-f-vedetta`
 Aggiornamento: 2026-09-18
-Versione: 4.4
+Versione: 4.5
 
 ## Stato del progetto
 
 Il sito pubblicato usa `index.html`, `pwa-action-bar.js`, `manifest.json` e `sw.js`. La pagina `blog.html` costituisce l’archivio separato. I file `hero-archivio.html` e `hero-nuova.html` sono prototipi non collegati alla navigazione pubblica; restano mappati per garantire l’unicità project-wide.
 
-La geometria laterale è predisposta su nove spazi, con fotografia e contenuto sempre collocati su lati opposti. Cinque fotografie autorizzate sono collocate in Chi sono, Visione, Servizi, Referenze e Community; gli altri quattro spazi restano vuoti. Su smartphone il testo precede la fotografia, mentre la hero conserva l’ordine approvato con pannello verde sopra e fotografia sotto.
+La geometria laterale è predisposta su nove spazi, con fotografia e contenuto sempre collocati su lati opposti. Cinque fotografie autorizzate sono collocate in Chi sono, Visione, Servizi, Referenze e Community e mostrano l’intero fotogramma verticale senza ritaglio; gli altri quattro spazi restano vuoti. Su smartphone il testo precede la fotografia, mentre la hero conserva l’ordine approvato con pannello verde sopra e fotografia sotto.
 
 ## Sito principale
 
@@ -27,7 +27,7 @@ La geometria laterale è predisposta su nove spazi, con fotografia e contenuto s
 | F8 | `index.html` | 691–845 | Stile della sezione Contatti | F1 | STABLE | 2026-09-03 |
 | F7 | `index.html` | 846–884 | Stile della sezione Collaborazioni | F1 | STABLE | 2026-07-31 |
 | F7-ext | `index.html` | 885–958 | Stile di testimonianze e Community | F1 | STABLE | 2026-07-31 |
-| F7b | `index.html` | 959–1037 | Stile della galleria fotografica e della geometria laterale | F1 | STABLE | 2026-09-18 |
+| F7b | `index.html` | 959–1037 | Stile della galleria fotografica, geometria laterale e fotogramma integrale | F1 | STABLE | 2026-09-18 |
 | F9 | `index.html` | 1038–1067 | Stile del footer | F1 | STABLE | 2026-09-03 |
 | F10 | `index.html` | 1068–1083 | Regole responsive e animazione fade-in | F1, F2–F9 | STABLE | 2026-07-31 |
 | F10b | `index.html` | 1084–1221 | Ordine mobile della hero e geometria laterale | F3, F4, F7b, F10 | STABLE | 2026-09-03 |
@@ -119,13 +119,13 @@ F0 → F1
 F1 → F2, F2b, F3, F4, F5, F6, F7, F7-ext, F7b, F8, F9, F10, F20, F21, F21b
 F2 + F2b + F25 → F11
 F3 + F10b → F12
-F4 → F13
-F5 → F14
-F6 + F24 → F15
+F3 + F4 + F7b + F10b + F19 → F13
+F5 + F7b + F10b → F14
+F3 + F6 + F7b + F10b + F19 + F24 → F15
 F1 + F3 + F10 → F72
 F3 + F10 + F17 + F19 + F72 → F73
-F3 + F6 + F7 + F8 + F19 → F16
-F3 + F6 + F7-ext + F17 + F19 + F21b → F26
+F3 + F6 + F7 + F7b + F8 + F10b + F19 → F16
+F3 + F6 + F7-ext + F7b + F10b + F17 + F19 + F21b → F26
 F8 → F17
 F9 → F18
 F10 → F19
