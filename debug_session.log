@@ -731,3 +731,46 @@ Risultato letterale: non certificabile al cento per cento, poiché sono presenti
 Il report `audit_match_testi_2_settembre.md` distingue conformità semantica verificabile, variazioni letterali e condizione non certificabile. Nessun file di codice è stato modificato.
 Claude Sonnet 4.6 ha approvato il verdetto senza correzioni bloccanti. Il validatore GV ha restituito exit code 0.
 ---
+
+[TENTATIVO 1 — Verifica mobile fotografie — 2026-09-18]
+Errore: Chrome ha rifiutato la connessione DevTools locale con HTTP 403 perché l’origine del client non risultava autorizzata.
+File: ambiente di test temporaneo `/tmp/raffaella-photo-placement/mobile_cdp_check.py`; nessun file di progetto coinvolto.
+Correzione tentata: verificare il processo che occupa la porta 9222 e riavviare esclusivamente il browser di test con l’origine DevTools esplicitamente autorizzata.
+Risposta validatore: non applicabile; la verifica del sito resta da eseguire.
+---
+
+[Fotografie attività — Validazione e Vedetta post-modifica — 2026-09-18]
+Istruzioni atomiche applicate: 6. Le istruzioni [134]–[139] definiscono la classe fotografica riutilizzabile e le cinque collocazioni autorizzate.
+Verifica deterministica: PASS. `git diff --check` non rileva errori di formato; cinque riferimenti `section-photo` e cinque asset autorizzati sono presenti; cinque contenitori non autorizzati restano vuoti.
+Integrità JavaScript: PASS. Il confronto snapshot non rileva regressioni e l’impronta SHA-256 dei blocchi `script` è invariata.
+Verifica browser desktop: PASS. Tutte le cinque immagini risultano caricate, renderizzate a 537×358, senza overflow orizzontale; Chi sono e Referenze restano a sinistra, Visione, Servizi e Community restano a destra.
+Verifica browser mobile 390×844: PASS. Tutte le immagini risultano caricate, renderizzate a 334×223, senza overflow e dopo il rispettivo testo secondo F10b. La fotografia dell’incontro è presente esclusivamente in Community.
+Verifica accordion: PASS. Sei trigger, apertura singola mantenuta per ciascun pannello e chiusura tramite clic esterno mantenuta.
+Validatore primario: Claude Sonnet 4.6 tramite OpenRouter.
+Risposta validatore: APPROVATO. Correzioni bloccanti: nessuna. Osservazione non bloccante: valutare in una futura ottimizzazione un `object-position` dedicato per l’immagine Referenze.
+VEDETTA — POST-MODIFICA
+Blocchi modificati: F7b, F13, F14, F15, F16 e F26.
+Blocchi verificati senza modifica: F10b, F19 e F24.
+Contratti controllati: asset autorizzati, proporzioni laterali, ordine mobile, fade-in, accordion, nessun overflow e preservazione degli spazi non autorizzati.
+Nuove dipendenze rilevate: F26 dipende esplicitamente anche da F7b e F10b; la mappa e l’header sono aggiornati.
+Mappa blocchi aggiornata: SÌ.
+Header F aggiornati: SÌ.
+Compatibilità della catena: CONFERMATA.
+Stato finale: STABLE.
+Codice validato da Claude Sonnet 4.6: APPROVATO.
+---
+
+[TENTATIVO 2 — Validazione Claude fotografie — 2026-09-18]
+Errore: il parser temporaneo ha classificato come RESPINTO una risposta che iniziava con il Markdown `**APPROVATO**`.
+File: ambiente di validazione temporaneo `/tmp/raffaella-photo-placement/validate_photo_placement.py`; nessun file di progetto coinvolto.
+Correzione tentata: normalizzare i marcatori Markdown prima di confrontare il verdetto del modello.
+Risposta validatore: APPROVATO; nessuna correzione bloccante. Restano soltanto due osservazioni facoltative, entrambe fuori dallo scope autorizzato.
+---
+
+[VALIDAZIONE CLAUDE DEFINITIVA — Fotografie attività — 2026-09-18]
+Modello: anthropic/claude-sonnet-4-6.
+Esito: APPROVATO.
+Motivazione: le cinque fotografie autorizzate sono nelle fasce laterali richieste; la fotografia dell’incontro è esclusiva della Community; quattro spazi non autorizzati restano vuoti; hero, menu, PWA, accordion, geometria laterale e ordine mobile restano invariati.
+Correzioni bloccanti: nessuna.
+Raccomandazione facoltativa non applicata: valutare in un task separato la posizione verticale dell’immagine Referenze dopo l’ottimizzazione visiva richiesta dall’utente.
+---

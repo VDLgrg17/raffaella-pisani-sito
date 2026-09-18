@@ -958,7 +958,7 @@
   /* +--------------------------------------------------+
    | [F7b] - CSS Galleria Fotografica — griglia          |
    | Dipende da: F1                                      |
-   | Status: STABLE | Last modified: 2026-09-03   |
+   | Status: STABLE | Last modified: 2026-09-18   |
    +--------------------------------------------------+ */
   #galleria {
     padding: 120px 28px;
@@ -993,6 +993,17 @@
     max-width: 560px;
     aspect-ratio: 3 / 2;
     margin: 0 auto;
+  }
+  /* [134] Adatta le fotografie autorizzate ai contenitori laterali senza modificare la geometria. */
+  .section-photo {
+    width: 100%;
+    max-width: 560px;
+    aspect-ratio: 3 / 2;
+    margin: 0 auto;
+    display: block;
+    object-fit: cover;
+    object-position: center 45%;
+    border-radius: 16px;
   }
   /* [66] Definisce la griglia riutilizzabile che separa nettamente fotografia e contenuto. */
   .media-band {
@@ -1652,8 +1663,8 @@
 
 <!-- +--------------------------------------------------+
      | [F13] - Markup CHI SONO — identità, testo, foto    |
-     | Dipende da: F3, F4, F10b, F19                      |
-     | Status: STABLE | Last modified: 2026-09-03  |
+     | Dipende da: F3, F4, F7b, F10b, F19                 |
+     | Status: STABLE | Last modified: 2026-09-18  |
      +--------------------------------------------------+ -->
 <!-- [F_AFORISMA] Contenuto provvisorio — tra hero e chi-sono -->
 <div class="aforisma-chanel">
@@ -1665,8 +1676,8 @@
   <!-- [69] Dispone lo spazio fotografico a sinistra e l’intero contenuto Chi sono a destra. -->
   <div class="media-band media-band--image-left">
     <div class="media-band-slot fade-in">
-      <!-- [57] Mantiene vuoto il primo spazio fotografico nelle dimensioni originarie. -->
-      <div class="photo-placeholder" aria-hidden="true"></div>
+      <!-- [135] Colloca la fotografia autorizzata nella fascia laterale Chi sono. -->
+      <img class="section-photo" src="assets/fotografie-attivita/raffaella-chi-sono-ricerca-olfattiva.jpeg" alt="Raffaella Pisani durante una ricerca olfattiva in profumeria." loading="lazy" decoding="async">
     </div>
     <div class="media-band-copy">
       <div class="fade-in">
@@ -1705,8 +1716,8 @@
 
 <!-- +--------------------------------------------------+
      | [F14] - Markup VISIONE — Accoglienza, Cultura, Ascolto|
-     | Dipende da: F5                                     |
-     | Status: STABLE | Last modified: 2026-09-03  |
+     | Dipende da: F5, F7b, F10b                          |
+     | Status: STABLE | Last modified: 2026-09-18  |
      +--------------------------------------------------+ -->
 <section id="visione">
   <!-- [70] Dispone i contenuti della Visione a sinistra e lo spazio fotografico a destra. -->
@@ -1732,16 +1743,16 @@
       </div>
     </div>
     <div class="media-band-slot fade-in">
-      <!-- [58] Mantiene vuoto il secondo spazio fotografico nelle dimensioni originarie. -->
-      <div class="photo-placeholder" aria-hidden="true"></div>
+      <!-- [136] Colloca la fotografia autorizzata nella fascia laterale Visione. -->
+      <img class="section-photo" src="assets/fotografie-attivita/raffaella-visione-ascolto-olfattivo.jpeg" alt="Raffaella Pisani presenta una fragranza durante un incontro." loading="lazy" decoding="async">
     </div>
   </div>
 </section>
 
 <!-- +--------------------------------------------------+
      | [F15] - Markup SERVIZI — sei aree accordion        |
-     | Dipende da: F3, F6, F19, F24                       |
-     | Status: STABLE | Last modified: 2026-09-03     |
+     | Dipende da: F3, F6, F7b, F10b, F19, F24            |
+     | Status: STABLE | Last modified: 2026-09-18   |
      +--------------------------------------------------+ -->
 <section id="servizi">
   <!-- [71] Affianca l’introduzione dei Servizi allo spazio fotografico destro. -->
@@ -1761,8 +1772,8 @@
       </div>
     </div>
     <div class="media-band-slot fade-in">
-      <!-- [59] Mantiene vuoto il terzo spazio fotografico nelle dimensioni originarie. -->
-      <div class="photo-placeholder" aria-hidden="true"></div>
+      <!-- [137] Colloca la fotografia autorizzata nella fascia laterale Servizi. -->
+      <img class="section-photo" src="assets/fotografie-attivita/raffaella-servizi-formazione-olfattiva.jpeg" alt="Raffaella Pisani durante una sessione di formazione olfattiva." loading="lazy" decoding="async">
     </div>
   </div>
 
@@ -1990,15 +2001,15 @@
 <!-- CREDIBILITÀ -->
 <!-- +--------------------------------------------------+
      | [F16] - Markup REFERENZE — introduzione, progetti  |
-     | Dipende da: F3, F6, F7, F8, F19                   |
-     | Status: STABLE | Last modified: 2026-09-03      |
+     | Dipende da: F3, F6, F7, F7b, F8, F10b, F19         |
+     | Status: STABLE | Last modified: 2026-09-18   |
      +--------------------------------------------------+ -->
 <section id="credibilita">
   <!-- [74] Affianca lo spazio fotografico sinistro all’introduzione delle Referenze. -->
   <div class="media-band media-band--image-left media-band--align-start">
     <div class="media-band-slot fade-in">
-      <!-- [62] Mantiene vuoto il sesto spazio fotografico nelle dimensioni originarie. -->
-      <div class="photo-placeholder" aria-hidden="true"></div>
+      <!-- [138] Colloca la fotografia autorizzata nella fascia laterale Referenze. -->
+      <img class="section-photo" src="assets/fotografie-attivita/raffaella-referenze-metodo-narrativo.jpeg" alt="Raffaella Pisani consulta materiali di progetto in una profumeria artistica." loading="lazy" decoding="async">
     </div>
     <div class="media-band-copy">
       <div class="fade-in">
@@ -2132,11 +2143,14 @@
 
 <!-- +--------------------------------------------------+
      | [F26] - Markup COMMUNITY — testimonianze personali |
-     | Dipende da: F3, F6, F7-ext, F17, F19, F21b        |
-     | Status: STABLE | Last modified: 2026-09-02         |
+     | Dipende da: F3, F6, F7-ext, F7b, F10b, F17, F19, F21b |
+     | Status: STABLE | Last modified: 2026-09-18         |
      +--------------------------------------------------+ -->
 <section id="community">
-<!-- Dipende da: F3, F6, F7-ext, F17, F19, F21b | Status: STABLE | Last modified: 2026-09-02 -->
+<!-- Dipende da: F3, F6, F7-ext, F7b, F10b, F17, F19, F21b | Status: STABLE | Last modified: 2026-09-18 -->
+  <!-- [139] Colloca la fotografia autorizzata dell’incontro nella fascia laterale Community. -->
+  <div class="media-band media-band--image-right">
+    <div class="media-band-copy">
     <!-- [27] Allinea titolo e presentazione della Community al documento guida validato. -->
     <p class="section-eyebrow">Community olfattiva</p>
     <h2 class="section-title">Persone che condividono<br>un’esperienza</h2>
@@ -2146,6 +2160,12 @@
     <p class="section-body">Questa community rappresenta la parte più personale e relazionale del mio lavoro: uno spazio vivo, aperto e sensibile, in cui la cultura olfattiva diventa esperienza condivisa.</p>
     <div class="divider"></div>
     <p class="section-body" style="font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; opacity:0.6;">Vuoi far parte di questa rete? <a href="#contatti" style="color:var(--oro); text-decoration:none;">Scrivimi →</a></p>
+
+    </div>
+    <div class="media-band-slot fade-in">
+      <img class="section-photo" src="assets/fotografie-attivita/raffaella-community-esperienza-condivisa.jpeg" alt="Raffaella Pisani dialoga con i partecipanti a un incontro della community." loading="lazy" decoding="async">
+    </div>
+  </div>
 
   <!-- [28] Prosegue con le testimonianze senza la precedente chiusura div priva di apertura. -->
   <!-- Pulsante per testimonianze personali -->
