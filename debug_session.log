@@ -1871,3 +1871,145 @@ Il commit di implementazione b2e69d3 è stato pubblicato su github/master. Netli
 Il browser pubblico conferma il testo nella metà sinistra e la fotografia di Raffaella nella metà destra. Le due colonne misurano 632,5 pixel ciascuna, mentre la fotografia e la fascia misurano 1100 pixel in altezza. La fotografia è caricata e la lista originale conserva sette collaborazioni; la Community mantiene il proprio testo a sinistra e la fotografia a destra. Non emergono overflow orizzontale o errori nella console.
 
 In browser pubblici isolati senza cache, a 820 pixel il tablet mantiene la fotografia a sinistra e il testo a destra; a 390 pixel il testo precede ancora la fotografia. Entrambe le verifiche confermano sette voci, caricamento dell'immagine, assenza di overflow e assenza di errori JavaScript. Vedetta post-modifica conferma la compatibilità della catena e lo stato stabile di F6 e F16.
+[2026-10-07T01:09:57+02:00] — Gate Vedetta pre-modifica Community
+
+Sto operando in modalità RLM. Il repository github/master e il master locale sono identici al commit 5d512e3, mentre il worktree è pulito. Uno snapshot di codice, mappa e checklist è conservato prima dell'intervento.
+
+La richiesta inverte esclusivamente la prima fascia Community sul desktop, collocando la fotografia a sinistra e il pannello scritto a destra. Il nodo principale da modificare è F6 in index.html, che contiene i due selettori per le colonne con identificatore community e breakpoint minimo di 900 pixel. F26 è il consumatore diretto della fascia e delle regole CSS, ma il suo markup non richiede modifiche.
+
+Le dipendenze dirette a monte sono F1 per il reset, F3 per la geometria comune, F7b per la griglia e F10b per l'ordine responsive. Le dipendenze indirette sono F10 e F19 per il fade-in, F7-ext e F21b per la griglia testimonianze nascosta e la CTA, F17 per l'ancora verso Contatti. I dipendenti inversi del blocco F6 sono F15, F16, F24 e F26; il nuovo intervento modifica soltanto due valori nei selettori circoscritti a community, quindi Servizi, Referenze e i relativi accordion restano fuori dalla superficie di modifica.
+
+La relazione trasversale scoperta nel codice è la classe image-right mantenuta in F26, che governa il layout fra 640 e 899 pixel. I selettori specifici del blocco F6 prevalgono soltanto da 900 pixel, lasciando identico il tablet; a 390 pixel la regola comune continua a disporre testo e CTA prima della fotografia. I link del menu F11 e dell'Archivio F40 puntano alla stessa ancora community, che non cambia. Nessuna dipendenza circolare o dinamica pertinente resta irrisolta.
+
+Il solo blocco da modificare è F6. I blocchi da verificare senza modifica sono F1, F3, F7b, F10, F10b, F11, F15, F16, F17, F19, F21b, F24, F26 e F40. F4, F5, F8, F20, F22, F23, F25, F27, F28 e F29 sono esclusi con prova, poiché non consumano le coordinate delle colonne community. Sono esclusi con prova anche immagini, testi, PWA, Service Worker, Contatti e Archivio, che non verranno modificati.
+
+La chiusura ricorsiva è completa e le relazioni irrisolte sono assenti; il gate Vedetta consente l'apertura. Le istruzioni atomiche già presenti [159] e [160] verranno aggiornate cambiando soltanto le coordinate delle rispettive colonne, senza aggiungere nuove istruzioni e senza modificare classi, margini, dimensioni, foto, CTA o testimonianze.
+
+[2026-10-06T23:12:39.022802+00:00] — Validazione esterna Community tramite anthropic/claude-sonnet-4-6
+Risposta validatore: APPROVATO. APPROVATO
+
+## Analisi della validazione
+
+### 1. Il codice fa quello che ci si aspetta?
+
+Sì. Il diff mostra esattamente due modifiche chirurgiche in F6:
+
+**Modifica [159]** — slot fotografico Community:
+```css
+/* PRIMA */
+#community > .media-band:first-of-type .media-band-slot {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+/* DOPO */
+#community > .media-band:first-of-type .media-band-slot {
+  grid-column: 1;
+  grid-row: 1;
+}
+```
+
+**Modifica [160]** — pannello testuale Community:
+```css
+/* PRIMA */
+#community > .media-band:first-of-type .media-band-copy {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+/* DOPO */
+#community > .media-band:first-of-type .media-band-copy {
+  grid-column: 2;
+  grid-row: 1;
+}
+```
+
+Lo scambio è simmetrico, completo e coerente con l'obiettivo dichiarato: fotografia a sinistra, testi e CTA a destra sul desktop.
+
+---
+
+### 2. Specificità CSS — comportamento per breakpoint
+
+**Tra 640 e 899 pixel (tablet):**
+
+La classe `.media-band--image-right` presente nel markup F26 attiva la regola generale di F10b:
+
+```css
+@media (min-width: 640px) {
+  .media-band--image-right .media-band-slot {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .media-band--image-right .media-band-copy {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+```
+
+Specificità: `0,1,0` (una classe). Su tablet la fotografia resta a destra e il testo a sinistra, esattamente come prima della modifica. **Il tablet non cambia.**
+
+**Da 900 pixel in su (desktop):**
+
+I selettori F6 con identificatore specifico:
+
+```css
+@media (min-width: 900px) {
+  #community > .media-band:first-of-type .media-band-slot {
+    grid-column: 1; /* FOTO A SINISTRA */
+  }
+  #community > .media-band:first-of-type .media-band-copy {
+    grid-column: 2; /* TESTO A DESTRA */
+  }
+}
+```
+
+Specificità: `0,2,0` (un ID + una pseudo-classe strutturale). Prevale sulla regola `.media-band--image-right` con specificità `0,1,0`. L'inversione è attiva **solo sul desktop** e solo sulla prima fascia Community.
+
+---
+
+### 3. Ci sono errori logici evidenti?
+
+No. La logica è corretta per tutte le superfici:
+
+| Breakpoint | Fotografia | Testo/CTA |
+|---|---|---|
+| < 640 px (mobile) | dopo il testo, F10b ordine 2 | prima, F10b ordine 1 |
+| 640–899 px (tablet) | destra, `.media-band--image-right` | sinistra |
+| ≥ 900 px (desktop) | **sinistra**, override `#community` | **destra** |
+
+La modifica non tocca: margini compensativi `-140px`, `padding-bottom: 0`, `min-height: 100svh`, `align-items: stretch`, `object-fit: cover`, `object-position: center top`, `border-radius: 0`. Tutti questi valori esistenti governano dimensioni e proporzioni e restano invariati.
+
+---
+
+### 4. Può rompere qualcosa che funzionava?
+
+No, per tre ragioni dimostrabili:
+
+- Il selettore usa il combinatore figlio diretto `>` e la pseudo-classe `:first-of-type`, quindi non raggiunge le testimonianze nascoste, la CTA o le altre sezioni
+- Il selettore è **confinato a `#community`**: Servizi, Referenze, Chi sono, Visione e Contatti usano lo stesso pattern strutturale ma con identificatori distinti e non vengono raggiunti
+- Il **breakpoint 900 px** è coerente con l'intera catena F4, F5, F6 già approvata e pubblicata
+
+---
+
+### 5. I log mostrano un pattern di errore ricorrente?
+
+I log mostrano due pattern **non relativi al codice del sito**:
+
+1. **Cache service worker su origini locali**: risolto sistematicamente con origini isolate. Non si ripercuote sul sito pubblicato.
+2. **Strumenti di test temporanei** con parametri DevTools errati o regex di confronto generiche: corretti con cambi di strategia documentati. Nessun file di produzione è mai stato modificato durante questi episodi.
+
+Il codice del sito non ha mai mostrato regressioni confermate nelle verifiche pubbliche Netlify. Il diff in esame è il più piccolo e circoscritto dell'intera sessione: due valori numerici in due selettori esistenti.
+
+---
+
+### Conclusione
+
+Il codice è approvato. Nessuna correzione è richiesta prima del commit. Le istruzioni atomiche [159] e [160] sono aggiornate correttamente. La catena F1, F3, F6, F7b, F10b, F11, F15, F16, F17, F19, F21b, F24, F26 e F40 resta compatibile.
+[2026-10-07T01:13:21+02:00] — Vedetta post-modifica Community
+
+Il solo blocco F6 è stato modificato nelle istruzioni atomiche [159] e [160], che collocano la fotografia a sinistra e il contenuto testuale a destra sul desktop. Le coordinate dei blocchi F1, F3, F7b, F10, F10b, F11, F15, F16, F17, F19, F21b, F24, F26 e F40 sono state verificate senza altre modifiche.
+
+Il controllo deterministico non rileva regressioni: testo, fotografia, attributi, markup, CTA e dodici testimonianze nascoste sono identici allo snapshot. A 1280 pixel la fotografia occupa la metà sinistra e il pannello la metà destra; le larghezze sono uguali e la fotografia riempie l'altezza della fascia. A 820 pixel il tablet conserva la geometria precedente e a 390 pixel testo e CTA precedono la fotografia. Le prove browser confermano immagine caricata, testimonianze invisibili, assenza di overflow e assenza di errori runtime.
+
+Il pulsante «Scrivimi →» resta visibile dopo il fade-in e conduce al modulo Contatti sia sul desktop sia sullo smartphone. Claude Sonnet 4.6 ha approvato il codice senza richiedere correzioni. La sua descrizione numerica della specificità CSS non è usata come prova; il posizionamento delle colonne è certificato dalle misure del browser. Non emergono nuove dipendenze e la catena dei blocchi torna stabile dopo l'aggiornamento della mappa e la verifica della pubblicazione.

@@ -4,13 +4,13 @@
 
 Protocollo: `blocchi-f-operativo` con sorveglianza `blocchi-f-vedetta`
 Aggiornamento: 2026-10-07
-Versione: 6.0
+Versione: 6.1
 
 ## Stato del progetto
 
 Il sito pubblicato usa `index.html`, `pwa-action-bar.js`, `manifest.json` e `sw.js`. La pagina `blog.html` costituisce l’archivio separato. I file `hero-archivio.html` e `hero-nuova.html` sono prototipi non collegati alla navigazione pubblica; restano mappati per garantire l’unicità project-wide.
 
-La geometria laterale è predisposta su nove spazi, con fotografia e contenuto sempre collocati su lati opposti. Chi sono usa su desktop una fotografia strutturale a tutta altezza nella metà sinistra, mentre Referenze usa la metà destra; Visione e Community mantengono la fotografia nella metà destra. Referenze termina dopo il pannello originale composto da titolo, genesi e lista verticale delle sette collaborazioni, poiché i progetti estesi e il case history Cerasa sono stati rimossi con CUT autorizzato. Servizi presenta una fascia nocciola continua e una prima fascia con fotografia a sinistra, testo e sei accordion compatti a destra, che sul desktop termina al bordo inferiore della fotografia. Il bordo inferiore di questa sola fotografia riceve un filo dorato di tre pixel, sovrapposto senza modificarne geometria o ritaglio. Community conserva il fotogramma verticale integrale su smartphone. Gli altri quattro spazi restano vuoti. Su smartphone il testo precede la fotografia, mentre la hero conserva l’ordine approvato con pannello verde sopra e fotografia sotto.
+La geometria laterale è predisposta su nove spazi, con fotografia e contenuto sempre collocati su lati opposti. Chi sono e Community usano su desktop una fotografia strutturale a tutta altezza nella metà sinistra, mentre Referenze e Visione usano la metà destra. Referenze termina dopo il pannello originale composto da titolo, genesi e lista verticale delle sette collaborazioni, poiché i progetti estesi e il case history Cerasa sono stati rimossi con CUT autorizzato. Servizi presenta una fascia nocciola continua e una prima fascia con fotografia a sinistra, testo e sei accordion compatti a destra, che sul desktop termina al bordo inferiore della fotografia. Il bordo inferiore di questa sola fotografia riceve un filo dorato di tre pixel, sovrapposto senza modificarne geometria o ritaglio. Community conserva il fotogramma verticale integrale su smartphone. Gli altri quattro spazi restano vuoti. Su smartphone il testo precede la fotografia, mentre la hero conserva l’ordine approvato con pannello verde sopra e fotografia sotto.
 
 ## Sito principale
 
@@ -23,7 +23,7 @@ La geometria laterale è predisposta su nove spazi, con fotografia e contenuto s
 | F3 | `index.html` | 217–436 | Stile della Hero e del titolo progetto | F1 | STABLE | 2026-10-06 |
 | F4 | `index.html` | 437–485 | Stile della sezione Chi sono e fotografia strutturale desktop | F1, F3, F7b, F10b | STABLE | 2026-10-06 |
 | F5 | `index.html` | 486–558 | Stile della sezione Visione e fotografia strutturale desktop | F1, F3, F7b, F10b | STABLE | 2026-10-06 |
-| F6 | `index.html` | 559–951 | Stile Servizi, compattazione della fascia integrata e regole strutturali circoscritte per Referenze e Community, incluso layout originale, CUT inferiore Referenze, inversione desktop delle colonne Referenze, CUT inferiore desktop Servizi, micro-taglio fotografico e filo dorato inferiore | F1, F3, F7b, F10b | STABLE | 2026-10-07 |
+| F6 | `index.html` | 559–951 | Stile Servizi, compattazione della fascia integrata e regole strutturali circoscritte per Referenze e Community, incluso layout originale, CUT inferiore Referenze, inversione desktop delle colonne Referenze e Community, CUT inferiore desktop Servizi, micro-taglio fotografico e filo dorato inferiore | F1, F3, F7b, F10b | STABLE | 2026-10-07 |
 | F8 | `index.html` | 952–1106 | Stile della sezione Contatti | F1 | STABLE | 2026-09-03 |
 | F7 | `index.html` | 1107–1219 | Stile della sezione Collaborazioni | F1 | STABLE | 2026-07-31 |
 | F7-ext | `index.html` | 1144–1217 | Stile di testimonianze e Community | F1 | STABLE | 2026-07-31 |
@@ -42,7 +42,7 @@ La geometria laterale è predisposta su nove spazi, con fotografia e contenuto s
 | F15 | `index.html` | 2041–2241 | Markup della sezione Servizi con fascia continua, accordion integrati nel pannello testuale e fotografia strutturale | F3, F6, F7b, F10b, F19, F24 | STABLE | 2026-10-06 |
 | F73 | `index.html` | 2242–2277 | Markup della sezione Modalità di collaborazione | F3, F10, F17, F19, F72 | STABLE | 2026-09-02 |
 | F16 | `index.html` | 2278–2313 | Pannello Referenze con titolo, genesi, lista originale delle collaborazioni e foto a destra sul desktop | F3, F6, F7b, F10b, F19 | STABLE | 2026-10-07 |
-| F26 | `index.html` | 2314–2444 | Community olfattiva, fotografia strutturale desktop, CTA Contatti e testimonianze personali nascoste | F3, F6, F7-ext, F7b, F10b, F17, F19, F21b | STABLE | 2026-10-07 |
+| F26 | `index.html` | 2314–2444 | Community olfattiva, fotografia strutturale a sinistra sul desktop, CTA Contatti e testimonianze personali nascoste | F3, F6, F7-ext, F7b, F10b, F17, F19, F21b | STABLE | 2026-10-07 |
 | F17 | `index.html` | 2445–2495 | Markup della sezione Contatti | F7b, F8, F10b | STABLE | 2026-09-03 |
 | F18 | `index.html` | 2496–2507 | Markup del footer | F9 | STABLE | 2026-07-31 |
 | F19 | `index.html` | 2508–2520 | Osservatore delle animazioni fade-in | F10 | STABLE | 2026-07-31 |

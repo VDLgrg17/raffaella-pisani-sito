@@ -81,3 +81,4 @@
 - [x] Spostare il pulsante delle testimonianze Community nella colonna testuale della fascia, sotto la CTA e senza spazio inferiore separato.
 - [x] Rimuovere il pulsante testimonianze Community e sostituire la CTA sbiadita con un pulsante Scrivimi verso Contatti.
 - [x] Invertire esclusivamente le colonne desktop di Referenze, con testo a sinistra e fotografia a destra, mantenendo invariati contenuti e comportamento mobile.
+- [x] Invertire soltanto la fascia desktop Community, con fotografia a sinistra e testo a destra, mantenendo invariati contenuti, tablet e smartphone.
