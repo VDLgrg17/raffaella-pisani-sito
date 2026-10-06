@@ -1088,3 +1088,44 @@ Browser pubblico: fotografia sinistra e geometria della fascia invariate, nessun
 Accordion pubblici: 6/6, apertura singola e chiusura al click esterno confermate.
 URL verificato: https://raffaella-pisani-sito.netlify.app/?v=677ac8b#servizi
 ---
+
+[Servizi — fascia continua e compattazione, Vedetta pre-modifica — 2026-10-06]
+JSON task: {"task_id":"servizi-compact-20261006","description":"rendere continua la fascia nocciola Servizi, mantenere integralmente i tre testi introduttivi con spaziature ridotte, riunire visivamente i sei accordion e aumentarne la leggibilità","files_involved":["index.html","mappa_blocchi.md","todo.md","debug_session.log"],"requirements":["testi originali invariati","una fascia continua a larghezza intera","foto e testo direttamente sotto la fascia","sei accordion invariati nel contenuto e comportamento","pulsanti più leggibili senza nuovi elementi grafici","nessuna modifica fuori Servizi"],"validation_criteria":["fascia continua desktop e mobile","esattamente tre paragrafi introduttivi identici","sei trigger e sei pannelli invariati","apertura singola e chiusura esterna preservate","assenza di overflow","selettori CSS confinati in #servizi"]}.
+Intento Logic Before Code: sostituire la composizione dispersiva in tre fasce con una fascia separatrice continua, una prima fascia foto-testo immediatamente successiva e un unico gruppo visivo di sei accordion; nessun contenuto editoriale o asset viene modificato.
+Giustificazione: l’attuale verticalità centrata della prima fascia e i due gruppi di accordion separati producono spazio vuoto e dispersione. La soluzione minima consiste nel riordinare esclusivamente F15 e applicare in F6 regole CSS con scope `#servizi`.
+VEDETTA — PRE-MODIFICA
+Richiesta: fascia nocciola continua a tutta larghezza, foto sinistra e testo destra immediatamente sotto, testi originali più compatti nel solo layout, sei pulsanti unificati e più leggibili senza elementi nuovi.
+Blocco principale: F6, index.html, stile della sezione Servizi.
+Blocco markup correlato: F15, index.html, struttura della sezione Servizi.
+Dipendenze dirette a monte: F1 per palette e tipografia; F3 per padding e tipografia comuni; F7b per griglia e foto; F10b per ordine mobile; F19 per fade-in; F24 per accordion.
+Dipendenze indirette a monte: F0 attraverso F1; F10 attraverso F19 e F10b.
+Dipendenti diretti a valle: F15 consuma F6; F24 seleziona classi e attributi presenti in F15; F28, F11 e F40 usano soltanto l’ancora `#servizi`.
+Dipendenti indiretti a valle: F22 e F29 soltanto attraverso il collegamento PWA F28, senza lettura di geometria o testo Servizi.
+Relazioni trasversali: F13, F14, F16, F17 e F26 condividono `.media-band` e `.section-photo`; F6 utilizzerà esclusivamente selettori `#servizi` per non raggiungerli.
+Dipendenze nascoste rilevate: nessuna. La mappa e il codice reale concordano sulla catena F6, F15 e F24.
+Dipendenze circolari: nessuna.
+Blocchi da modificare: F6 e F15, più mappa_blocchi.md, todo.md e debug_session.log per tracciabilità.
+Blocchi da verificare: F1, F3, F7b, F10, F10b, F11, F16, F19, F24, F28, F29 e F40.
+Blocchi esclusi con prova: F2, F2b, F4, F5, F7, F7-ext, F8, F9, F12, F13, F14, F17, F18, F20, F21, F21b, F22, F23, F25, F26 e F27 perché non consumano selettori, markup, contenuti o comportamento della sola sezione Servizi.
+Relazioni irrisolte: nessuna.
+Chiusura ricorsiva completata: SÌ.
+Gate Vedetta: APERTURA AUTORIZZATA.
+---
+[TENTATIVO 1 — 2026-10-06T19:50:37+02:00]
+Errore: Claude Sonnet 4.6 ha respinto la prima versione della compattazione Servizi per due rischi CSS: fascia continua dipendente da margini negativi fissi e selettori F6 globali non confinati alla sezione.
+File: index.html, F6 righe 554–800 circa.
+Correzione tentata: sostituire la compensazione a valori fissi con una fascia `100vw` centrata rispetto al contenitore e prefissare ogni selettore F6 con `#servizi`; consolidare la definizione di `.servizio-desc` in una sola regola scoped.
+Risposta validatore: RESPINTO — necessarie correzioni prima dell’approvazione.
+---
+[Servizi — fascia continua e compattazione, verifica post-modifica — 2026-10-06]
+Controllo statico: PASS. `git diff --check` senza errori; testo visibile F15 identico al pre-intervento; 6 trigger, 6 pannelli, 6 id aria-controls univoci, una sola fotografia Servizi, una sola fascia separatrice e nessun photo-placeholder residuo in F15.
+Controllo CSS: PASS. Tutti i selettori F6 condivisibili sono confinati in `#servizi`; `.servizio-desc`, `.aree-grid` e `.area-trigger` hanno una sola definizione F6 consolidata; la fascia usa `width: 100vw` e `margin-left: calc(50% - 50vw)` senza margini fissi.
+Controllo responsive controllato: PASS. Desktop 1440×1100 e mobile 390×844 confermano: sezione avviata dalla fascia, fascia a larghezza completa, contiguità fascia-introduzione, foto sinistra su desktop, testo prima della foto su mobile, 1 fascia introduttiva, 6 accordion riuniti, testi invariati, foto caricata e assenza di overflow orizzontale. Altezza trigger: 58 px desktop e 62 px mobile.
+Controllo funzionale browser: PASS. Sei trigger testati uno per volta: apertura singola preservata; click esterno: 0 pannelli aperti. Console browser senza errori.
+Integrità deterministica: PASS. Nessun simbolo rilevato come rimosso; nessuna modifica a `sw.js`, `manifest.json`, `pwa-action-bar.js` o `blog.html`.
+Validazione Claude, tentativo 2 — 2026-10-06T19:53:19+02:00
+Modello: anthropic/claude-sonnet-4-6
+Esito: APPROVATO
+Motivazione sintetica: fascia continua robusta e indipendente da margini fissi; testi invariati; sei accordion unificati con id e ARIA invariati; tutti i selettori confinati in `#servizi`; nessuna regressione negli accordion o nelle altre sezioni. Osservazione facoltativa non bloccante: ordine convenzionale delle due dichiarazioni `display` e `flex-direction` in un selettore già esistente.
+Gate Vedetta: CHIUSO. F6 e F15 stabilizzati dopo la verifica completa della catena F1, F3, F7b, F10, F10b, F11, F16, F19, F24, F28, F29 e F40.
+---

@@ -555,6 +555,8 @@
     background: url('assets/blocchi-terracotta.png') center 30% / 100% auto no-repeat;
     position: relative;
     overflow: hidden;
+    /* [153] Elimina il margine superiore della sezione affinché la fascia inizi al suo bordo. */
+    padding-top: 0;
   }
   #servizi::before {
     content: '';
@@ -566,17 +568,35 @@
   }
   #servizi > * { position: relative; z-index: 1; }
   /* [39] Porta al bianco pieno titoli, testi e descrizioni dei Servizi. */
-  #servizi .section-title { color: #ffffff; }
+  /* [152] Evita la dilatazione delle parole ereditata dall’allineamento giustificato globale. */
+  #servizi .section-title { color: #ffffff; text-align: left; }
   #servizi .section-eyebrow { color: #ffffff; }
-  .servizi-lista { margin-top: 48px; }
+  /* [147] Crea una fascia nocciola continua a tutta larghezza senza dipendere da margini fissi. */
+  #servizi .servizi-separator {
+    width: 100vw;
+    height: clamp(72px, 9vw, 132px);
+    margin-left: calc(50% - 50vw);
+    background: #8a786a;
+  }
+  /* [148] Riduce il ritmo verticale dell’introduzione senza modificare i tre testi sorgente. */
+  #servizi .servizi-lista { margin-top: 28px; }
+  #servizi .servizi-lista .divider { margin: 16px 0; }
+  /* [149] Riunisce i sei servizi in un gruppo leggibile senza aggiungere elementi grafici. */
+  #servizi .servizi-aree {
+    margin-top: 0;
+    padding: 56px 0 0;
+  }
+  #servizi .servizi-aree .aree-intervento { margin-top: 0; }
+  #servizi .servizi-aree-label { margin-bottom: 18px; }
 
-  .servizio-item {
+  /* [154] Confina i selettori Servizi al relativo contenitore per proteggere le altre sezioni. */
+  #servizi .servizio-item {
     border-top: 1px solid rgba(255,240,220,0.25);
     padding: 52px 0;
   }
-  .servizio-item:last-child { border-bottom: 1px solid rgba(255,240,220,0.25); }
+  #servizi .servizio-item:last-child { border-bottom: 1px solid rgba(255,240,220,0.25); }
 
-  .servizio-header {
+  #servizi .servizio-header {
     flex-direction: column;
     display: flex;
     align-items: flex-start;
@@ -585,7 +605,7 @@
     margin-bottom: 12px;
   }
 
-  .servizio-nome {
+  #servizi .servizio-nome {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.75rem;
     font-weight: 300;
@@ -595,14 +615,14 @@
     letter-spacing: 0.02em;
   }
 
-  .servizio-tags {
+  #servizi .servizio-tags {
     display: flex;
     gap: 32px;
     align-items: flex-start;
     margin-top: 14px;
     flex-wrap: wrap;
   }
-  .servizio-tag {
+  #servizi .servizio-tag {
     font-size: 0.58rem;
     letter-spacing: 0.16em;
     text-transform: uppercase;
@@ -616,32 +636,32 @@
     opacity: 1;
   }
 
-  .servizio-desc {
+  #servizi .servizio-desc {
     font-size: 0.92rem;
     color: #ffffff;
-    line-height: 2.0;
-    max-width: 580px;
-    text-align: justify;
+    line-height: 1.7;
+    max-width: 620px;
+    text-align: left;
   }
 
   /* T15 — Aree di intervento */
-  .aree-intervento { margin-top: 60px; }
+  #servizi .aree-intervento { margin-top: 60px; }
   /* [78] Organizza gli accordion in una colonna stabile adatta ai contenuti estesi. */
-  .aree-grid {
+  #servizi .aree-grid {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    gap: 12px;
-    max-width: 560px;
+    gap: 14px;
+    max-width: 960px;
   }
   /* [79] Trasforma ogni servizio in un contenitore autonomo senza alterare la geometria laterale. */
-  .area-item {
+  #servizi .area-item {
     width: 100%;
     border: 1px solid rgba(255,240,220,0.4);
     background: transparent;
     transition: background 0.2s, border-color 0.2s;
   }
   /* [80] Mantiene il titolo del servizio come comando accessibile a larghezza piena. */
-  .area-trigger {
+  #servizi .area-trigger {
     width: 100%;
     display: flex;
     align-items: center;
@@ -649,10 +669,11 @@
     gap: 16px;
     border: 0;
     background: transparent;
-    padding: 12px 14px;
+    min-height: 58px;
+    padding: 16px 20px;
     font-family: 'Inter', sans-serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
+    font-size: clamp(0.76rem, 1.25vw, 0.88rem);
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: #ffffff;
     cursor: pointer;
@@ -660,28 +681,28 @@
     user-select: none;
   }
   /* [81] Conserva le reazioni visive approvate su passaggio, apertura e tastiera. */
-  .area-item:hover {
+  #servizi .area-item:hover {
     background: rgba(255,240,220,0.08);
     border-color: rgba(255,240,220,0.7);
   }
-  .area-item.open {
+  #servizi .area-item.open {
     background: rgba(255,240,220,0.12);
     border-color: rgba(255,240,220,0.9);
   }
-  .area-trigger:focus-visible {
+  #servizi .area-trigger:focus-visible {
     outline: 2px solid var(--oro);
     outline-offset: 3px;
   }
   /* [82] Comunica visivamente lo stato dell’accordion senza aggiungere testo. */
-  .area-icon {
+  #servizi .area-icon {
     flex: 0 0 auto;
     font-size: 1rem;
     line-height: 1;
     transition: transform 0.2s;
   }
-  .area-item.open .area-icon { transform: rotate(45deg); }
+  #servizi .area-item.open .area-icon { transform: rotate(45deg); }
   /* [83] Inserisce il contenuto esteso nel flusso della pagina senza sovrapposizioni. */
-  .area-dropdown {
+  #servizi .area-dropdown {
     display: block;
     position: static;
     width: 100%;
@@ -697,18 +718,18 @@
     line-height: 1.55;
     box-shadow: inset 0 12px 20px rgba(0,0,0,0.12);
   }
-  .area-dropdown[hidden] { display: none; }
+  #servizi .area-dropdown[hidden] { display: none; }
   /* [84] Predispone paragrafi distinti e leggibili per il testo completo di ogni servizio. */
-  .service-detail p { margin: 0 0 14px; }
-  .service-detail p:last-child { margin-bottom: 0; }
+  #servizi .service-detail p { margin: 0 0 14px; }
+  #servizi .service-detail p:last-child { margin-bottom: 0; }
   /* [85] Predispone gli elenchi delle attività mantenendo ritmo e contrasto del sito. */
-  .service-detail-list {
+  #servizi .service-detail-list {
     margin: 0 0 16px;
     padding-left: 20px;
   }
-  .service-detail-list li { margin-bottom: 8px; }
+  #servizi .service-detail-list li { margin-bottom: 8px; }
   /* [86] Predispone la call to action conclusiva senza introdurre nuovi contenuti. */
-  .service-detail-cta {
+  #servizi .service-detail-cta {
     margin-top: 18px;
     padding-top: 14px;
     border-top: 1px solid rgba(255,240,220,0.3);
@@ -720,30 +741,30 @@
 
   /* [143] Estende esclusivamente la prima fascia Servizi fino ai bordi della sezione desktop. */
   @media (min-width: 900px) {
-    #servizi > .media-band:first-child {
+    #servizi > .servizi-intro {
       min-height: 100svh;
-      margin-top: -140px;
+      margin-top: 0;
       margin-right: -72px;
       margin-left: -72px;
       gap: 0;
       align-items: stretch;
     }
     /* [144] Inverte le colonne della prima fascia, collocando la fotografia a sinistra e il testo a destra. */
-    #servizi > .media-band:first-child > .media-band-slot {
+    #servizi > .servizi-intro > .media-band-slot {
       grid-column: 1;
       grid-row: 1;
       align-self: stretch;
     }
-    #servizi > .media-band:first-child > .media-band-copy {
+    #servizi > .servizi-intro > .media-band-copy {
       grid-column: 2;
       grid-row: 1;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: clamp(72px, 8vw, 152px) clamp(52px, 7vw, 136px);
+      padding: clamp(52px, 6vw, 112px) clamp(44px, 5vw, 96px);
     }
     /* [145] Trasforma la sola fotografia introduttiva Servizi in superficie strutturale senza bordi. */
-    #servizi > .media-band:first-child .section-photo {
+    #servizi > .servizi-intro .section-photo {
       width: 100%;
       max-width: none;
       height: 100%;
@@ -751,6 +772,12 @@
       object-fit: cover;
       object-position: right top;
       border-radius: 0;
+    }
+    #servizi .servizi-aree {
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 1200px;
+      padding-top: 72px;
     }
   }
 
@@ -1842,8 +1869,11 @@
      | Status: STABLE | Last modified: 2026-10-06         |
      +--------------------------------------------------+ -->
 <section id="servizi">
+  <!-- [150] Inserisce una fascia continua a tutta larghezza come pausa visiva prima dei Servizi. -->
+  <div class="servizi-separator" aria-hidden="true"></div>
+
   <!-- [71] Fornisce a F6 l’introduzione e la fotografia della prima fascia Servizi. -->
-  <div class="media-band media-band--image-right">
+  <div class="media-band media-band--image-right servizi-intro">
     <div class="media-band-copy">
       <div class="fade-in">
         <p class="section-eyebrow">Servizi</p>
@@ -1865,16 +1895,11 @@
     </div>
   </div>
 
-  <!-- [72] Affianca le prime tre aree dei Servizi allo spazio fotografico sinistro. -->
-  <div class="media-band media-band--image-left">
-    <div class="media-band-slot fade-in">
-      <!-- [60] Mantiene vuoto il quarto spazio fotografico nelle dimensioni originarie. -->
-      <div class="photo-placeholder" aria-hidden="true"></div>
-    </div>
-    <div class="media-band-copy">
-      <div class="aree-intervento fade-in">
-        <p class="section-eyebrow" style="margin-bottom: 24px;">Cosa posso fare per il tuo brand</p>
-        <div class="aree-grid">
+  <!-- [151] Riunisce i sei accordion esistenti in un unico gruppo senza alterarne contenuti o comportamenti. -->
+  <div class="servizi-aree">
+    <div class="aree-intervento fade-in">
+      <p class="section-eyebrow servizi-aree-label">Cosa posso fare per il tuo brand</p>
+      <div class="aree-grid">
           <!-- [87] Predispone il primo accordion per il futuro contenuto completo Ambassador. -->
           <div class="area-item">
             <button class="area-trigger" type="button" aria-expanded="false" aria-controls="servizio-ambassador" onclick="toggleArea(this)"><span>Ambassador olfattivo per brand</span><span class="area-icon" aria-hidden="true">+</span></button>
@@ -1945,16 +1970,7 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- [73] Affianca le ultime tre aree dei Servizi allo spazio fotografico destro. -->
-  <div class="media-band media-band--image-right">
-    <div class="media-band-copy">
-      <div class="aree-intervento fade-in">
-        <div class="aree-grid">
           <!-- [113] Integra il contenuto completo Eventi senza coinvolgere gli altri servizi. -->
           <div class="area-item">
             <button class="area-trigger" type="button" aria-expanded="false" aria-controls="servizio-eventi" onclick="toggleArea(this)"><span>Eventi ed esperienze olfattive</span><span class="area-icon" aria-hidden="true">+</span></button>
@@ -2041,12 +2057,8 @@
               </div>
             </div>
           </div>
-        </div>
+
       </div>
-    </div>
-    <div class="media-band-slot fade-in">
-      <!-- [61] Mantiene vuoto il quinto spazio fotografico nelle dimensioni originarie. -->
-      <div class="photo-placeholder" aria-hidden="true"></div>
     </div>
   </div>
 </section>
