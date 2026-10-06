@@ -1736,24 +1736,50 @@
     }
   }
 
-  /* [F21b] - CSS Testimonianze Community | Dipende da: F1, F7-ext | Status: STABLE | Last modified: 2026-09-02 */
-  /* Pulsante testimonianze */
-  .btn-testimonianze {
-    background: transparent;
-    border: 1px solid var(--oro);
-    color: var(--oro);
+  /* [F21b] - CSS CTA e testimonianze Community | Dipende da: F1, F7-ext | Status: STABLE | Last modified: 2026-10-07 */
+  /* [183] Rende la CTA Community leggibile, distinta e collegata direttamente a Contatti. */
+  #community .community-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-top: 42px;
+  }
+  #community .community-cta-question {
+    margin: 0;
+    color: var(--smeraldo);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    font-weight: 400;
+    line-height: 1.25;
+  }
+  #community .community-cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 14px 28px;
+    background: var(--smeraldo);
+    border: 1px solid var(--smeraldo);
+    color: #ffffff;
     font-family: var(--font-sans);
     font-size: 0.7rem;
-    letter-spacing: 0.15em;
+    font-weight: 500;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    padding: 14px 32px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.16s;
   }
-  .btn-testimonianze:hover {
+  #community .community-cta-button:hover {
     background: var(--oro);
-    color: var(--nero-manifesto);
+    border-color: var(--oro);
+    color: var(--inchiostro);
   }
+  #community .community-cta-button:focus-visible {
+    outline: 2px solid var(--oro);
+    outline-offset: 4px;
+  }
+  #community .community-cta-button:active { transform: scale(0.97); }
   /* Testimonianze nascoste */
   .testi-hidden {
     display: none;
@@ -2294,13 +2320,10 @@
     <p class="section-body">In questi momenti accompagno i partecipanti in un viaggio sensoriale e narrativo, dove l’olfatto diventa uno strumento per conoscersi meglio, condividere vissuti e aprire nuove connessioni con sé stessi, con gli altri e con il mondo delle fragranze.</p>
     <p class="section-body">Questa community rappresenta la parte più personale e relazionale del mio lavoro: uno spazio vivo, aperto e sensibile, in cui la cultura olfattiva diventa esperienza condivisa.</p>
     <div class="divider"></div>
-    <p class="section-body" style="font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; opacity:0.6;">Vuoi far parte di questa rete? <a href="#contatti" style="color:var(--oro); text-decoration:none;">Scrivimi →</a></p>
-    <!-- [181] Colloca il pulsante delle testimonianze sotto la CTA e nella colonna testuale Community. -->
-    <div class="fade-in" style="margin-top:48px;">
-      <!-- [26] Mantiene nella Community soltanto le testimonianze personali esistenti. -->
-      <button class="btn-testimonianze" onclick="document.getElementById('testimonianze-nascoste').classList.toggle('visible'); this.textContent = this.textContent.includes('Leggi') ? 'Nascondi le testimonianze ↑' : 'Leggi le testimonianze della community →'">
-        Leggi le testimonianze della community →
-      </button>
+    <!-- [184] Sostituisce l'azione testimonianze con una CTA Community diretta verso Contatti. -->
+    <div class="community-cta fade-in">
+      <p class="community-cta-question">Vuoi far parte di questa community?</p>
+      <a class="community-cta-button" href="#contatti">Scrivimi →</a>
     </div>
     </div>
     <div class="media-band-slot fade-in">

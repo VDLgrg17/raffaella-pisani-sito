@@ -79,3 +79,4 @@
 - [x] Applicare il micro-taglio desktop alla sola fotografia Servizi per nascondere il bordo inferiore con elementi bianchi.
 - [x] Applicare un filo dorato minimo al bordo inferiore della sola fotografia Servizi sul desktop.
 - [x] Spostare il pulsante delle testimonianze Community nella colonna testuale della fascia, sotto la CTA e senza spazio inferiore separato.
+- [x] Rimuovere il pulsante testimonianze Community e sostituire la CTA sbiadita con un pulsante Scrivimi verso Contatti.

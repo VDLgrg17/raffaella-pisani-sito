@@ -1735,3 +1735,35 @@ Il browser pubblico conferma un solo pulsante e una sola griglia, dodici testimo
 Il click pubblico apre la griglia con testo «Nascondi le testimonianze ↑», conserva dodici card e colloca Contatti dopo la griglia; il secondo click richiude la griglia, ripristina il testo «Leggi le testimonianze della community →» e colloca Contatti dopo la fascia. La fotografia viene caricata esplicitamente nella sola sessione di verifica per attendere il fade-in prima della misura, senza modificare il sito pubblicato.
 
 Stato della pubblicazione: completato e verificato.
+
+[2026-10-07T00:46:56+02:00] — Vedetta pre-modifica CTA Community
+
+La richiesta autorizzata elimina soltanto il pulsante visibile delle testimonianze, poiché le testimonianze non devono essere mostrate per il momento, senza cancellare le dodici card nascoste che potranno essere riattivate in futuro. La call to action attenuata «Vuoi far parte di questa rete? Scrivimi →» viene sostituita con il messaggio «Vuoi far parte di questa community?» e con un pulsante visibile «Scrivimi →» collegato all'ancora esistente `#contatti`.
+
+Il nodo principale è F26, `index.html`, responsabile del markup Community. F21b è il nodo di stile da modificare perché contiene il pulsante da eliminare e la nuova call to action Community. Le dipendenze dirette verificate sono F3 per tipografia e sfondo, F6 per geometria desktop, F7-ext per la griglia testimonianze preservata, F7b per media-band, F10b per ordine mobile, F17 per l'ancora `#contatti`, F19 per fade-in e F21b per stile e visibilità.
+
+Le relazioni trasversali confermate sono il link verso Contatti, l'osservazione `.fade-in`, la fotografia laterale desktop, l'ordine mobile testo, call to action e fotografia e la griglia testimonianze nascosta. Non risultano dipendenze dinamiche oltre l'ancora, dipendenze circolari o relazioni irrisolte.
+
+I blocchi da modificare sono F21b e F26, mentre i blocchi da verificare sono F1, F3, F6, F7-ext, F7b, F10b, F11, F17 e F19. Sono esclusi con prova F2, F2b, F4, F5, F8-F10, F12-F16, F18, F20-F29, PWA, Service Worker, immagini, Servizi, Referenze e Archivio perché non condividono stile, markup, eventi o ancore con il pulsante Community rimosso.
+
+La soluzione minima sostituisce il testo sbiadito e il pulsante testimonianze con una CTA semanticamente separata, visibile, accessibile e allineata alla colonna testuale, preservando foto, testi descrittivi, testimonianze nascoste, geometria e funzione del modulo Contatti. La chiusura ricorsiva è completata e il gate Vedetta ha apertura autorizzata.
+
+Le istruzioni atomiche pianificate sono [183] per gli stili della CTA e [184] per il markup Community.
+
+[2026-10-07T00:51:33+02:00] — Vedetta post-modifica CTA Community
+
+I blocchi modificati sono F21b e F26. F21b rimuove lo stile del pulsante testimonianze e introduce una CTA Community con domanda in verde smeraldo, pulsante verde smeraldo, testo bianco, altezza minima di 48 pixel, hover oro, focus visibile e stato attivo. F26 rimuove il comando visibile per testimonianze, inserisce «Vuoi far parte di questa community?» e il pulsante «Scrivimi →» verso `#contatti`.
+
+I blocchi verificati senza modifica sono F1, F3, F6, F7-ext, F7b, F10b, F11, F17 e F19. Restano preservati fotografia, testi descrittivi, geometria desktop, ordine mobile, griglia unica nascosta e dodici testimonianze personali. Il controllo statico conferma l'assenza di `btn-testimonianze`, l'assenza di testo o funzione di apertura delle testimonianze, una CTA unica verso Contatti, una griglia testimonianze unica, dodici card, focus visibile e stato attivo.
+
+Il browser desktop locale conferma CTA visibile dopo il fade-in, domanda leggibile, pulsante verde smeraldo con testo bianco e altezza minima 48 pixel, assenza di overflow, fotografia laterale e ancoraggio corretto verso Contatti. Il controllo mobile 390 per 844 pixel conferma ordine testo, CTA e fotografia, immagine caricata, pulsante unico, testimonianze nascoste, assenza di overflow, ancora Contatti e barra PWA presente. La prima origine locale ha richiesto alcuni secondi per rendere disponibile il server, senza modificare il sito; la verifica è poi completata con esito positivo.
+
+`git diff --check` è pulito e il controllo deterministico non rileva regressioni. Claude Sonnet 4.6 approva senza correzioni bloccanti; la nota facoltativa su `--font-sans` non altera la resa perché il pulsante eredita già il font Inter dal body e resta fuori dalla correzione minima autorizzata.
+
+Le istruzioni atomiche aggiunte sono [183] per lo stile e [184] per il markup. La mappa Blocchi F, gli header e la checklist vengono riallineati, la compatibilità della catena è confermata e lo stato finale torna stabile.
+
+[2026-10-07T00:53:17+02:00] — Raffinamento QA CTA Community
+
+Il primo controllo desktop ha confrontato impropriamente le quote verticali della CTA e della fotografia. Nella griglia desktop le colonne sono affiancate, quindi la fotografia inizia più in alto della CTA senza rappresentare un difetto. Nessun file del sito è stato modificato.
+
+La metrica corretta verifica che `.media-band-copy` contenga la CTA e che il suo bordo sinistro sia a sinistra del bordo della fotografia. Il browser conferma contenimento nel pannello testuale, CTA visibile, posizione laterale corretta, fotografia nella colonna destra e assenza di overflow orizzontale. La compatibilità del layout desktop resta confermata.
