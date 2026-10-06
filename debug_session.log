@@ -1219,3 +1219,12 @@ Compatibilità della catena: CONFERMATA.
 Stato finale: STABLE.
 Codice validato da Claude Sonnet 4.6: tutto ok.
 ---
+[Community — verifica pubblica Netlify, 2026-10-06]
+Commit pubblicato: `2021075` — `v5.2 — Allinea fotografia Community`.
+GitHub: push su `github/master` completato.
+Netlify: HTTP 200 e marker CSS [158], asset Community e selettore strutturale rilevati nel secondo tentativo.
+Browser pubblico 1280×1100: PASS. Fascia 1265×1100, colonne equivalenti 632,5 px, testo a sinistra, fotografia a destra 632,5×1100, `cover`, `center top`, bordo 0 px, nessun overflow.
+Browser pubblico: PASS. Fotografia 1151×1600 caricata, pulsante Community apre e ripristina 12 testimonianze, sei accordion mantengono apertura singola e chiusura esterna.
+Console pubblica: PASS; nessun errore rilevato.
+Stato GitHub e Netlify: verificato pubblicamente senza pannelli autenticati.
+---
