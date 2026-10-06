@@ -825,3 +825,69 @@ Motivazione: F7b rimuove il rapporto 3:2 e `cover`, mantiene l’altezza automat
 Correzioni bloccanti: nessuna.
 Raccomandazione facoltativa non applicata: valutare soltanto in un futuro task una altezza massima sui viewport molto larghi, senza introdurre nuovi ritagli.
 ---
+
+[Chi sono — fotografia strutturale a metà pagina — Gate Vedetta pre-modifica — 2026-10-06]
+LOGICA PRIMA DEL CODICE
+Obiettivo: nella sola sezione Chi sono, trasformare la fotografia verticale da riquadro con margini in metà sinistra strutturale della sezione desktop, mantenendo il volto integro e il testo a destra.
+Causa: F7b definisce una classe fotografica condivisa con limite 560px, margine automatico e bordi arrotondati. Applicarla direttamente produce l’effetto di riquadro isolato visto nello screenshot.
+Soluzione minima: F4 applicherà sotto `#chi-sono` e soltanto da 640px una geometria senza padding esterno, griglia senza gap, colonna fotografica estesa e immagine a copertura con ancoraggio alto. Il selettore con ID prevale sulle regole condivise di F7b senza modificarle.
+Istruzione atomica prevista: [141] rende F13 una composizione desktop a due metà, con fotografia sinistra strutturale e contenuto destro centrato.
+
+CHECKPOINT — STATO CONGELATO
+Repository: VDLgrg17/raffaella-pisani-sito, branch master, commit 8af5563, parità GitHub 0/0, working tree pulito.
+File congelati: index.html, mappa_blocchi.md, todo.md e debug_session.log in /tmp/raffaella-chi-sono-half-page.
+Stato esistente: F13 usa immagine a sinistra, testo a destra e classi condivise `.media-band`, `.media-band-slot`, `.section-photo` e `.fade-in`.
+Vincoli congelati: contenuto, asset, id `#chi-sono`, menu, PWA, hero, mobile, F14–F17 e F26 non vengono modificati.
+
+VEDETTA — PRE-MODIFICA
+Richiesta: fare riempire alla fotografia la metà sinistra della sola sezione Chi sono, senza modificarne altre e senza tagliare il volto.
+Blocco principale: F4, CSS Chi sono, index.html righe 426–448.
+Input: id `#chi-sono`, classi F13 e variabili F1.
+Output: geometria desktop esclusiva di Chi sono, applicata esclusivamente da 640px.
+Dipendenze dirette a monte: F1, per variabili e box model; F3, per padding comune delle sezioni; F7b, per griglia e fotografia condivise; F10b, per colonne desktop e ordine mobile; F19, per fade-in.
+Dipendenze indirette a monte: F0 attraverso F1 e F10 attraverso F19 e F10b.
+Dipendenti diretti a valle: F13, che ospita i selettori già disponibili.
+Dipendenti indiretti a valle: F11, F28 e F40 attraverso l’ancora `#chi-sono`, senza modifica dell’ancora.
+Relazioni trasversali: F14, F15, F16 e F26 condividono F7b; vengono protetti da un selettore esclusivo `#chi-sono`.
+Dipendenze nascoste rilevate: `.chi-foto` in F4 non è usata da F13 e non influenza il rendering; è sostituita dalla regola esclusiva senza effetto sulle altre sezioni.
+Dipendenze dinamiche: F19 osserva `.fade-in` presente su F13; la classe viene preservata.
+Dipendenze circolari: nessuna.
+Blocchi da modificare: F4, mappa_blocchi.md, todo.md e debug_session.log.
+Blocchi da verificare: F13, F7b, F10b, F19, F3, F1, F11, F28 e F40.
+Blocchi esclusi con prova: F2, F2b, F3 hero, F5, F6, F7, F7-ext, F8, F9, F12, F14–F18, F20–F29 e F30–F46; non ricevono selettori sotto `#chi-sono`.
+Relazioni irrisolte: nessuna.
+Chiusura ricorsiva completata: SÌ.
+Gate Vedetta: APERTURA AUTORIZZATA.
+---
+
+[Chi sono — verifica visiva intermedia — 2026-10-06]
+Primo rendering F4: la fotografia riempiva correttamente la metà sinistra, ma l’ancoraggio orizzontale centrale lasciava il volto troppo vicino al bordo destro.
+Correzione atomica nello stesso perimetro F4, istruzione [141]: `object-position` passa da `center top` a `right top` esclusivamente sotto `#chi-sono` e da 900px. Effetto ricercato: mantenere visibili testa e volto, senza toccare F7b e le altre fotografie.
+Tentativi affini: 1 di 2. Anti-Loop Guardian non attivato.
+---
+
+[Chi sono — verifica tecnica e Vedetta post-modifica — 2026-10-06]
+Modifica eseguita: F4, istruzione atomica [141]. Da 900px, `#chi-sono` annulla il solo padding della propria sezione, la propria `.media-band` diventa una griglia senza gap e alta almeno un viewport, la propria foto copre completamente la metà sinistra con bordo rettilineo e ancoraggio `right top`, mentre il testo resta centrato nella metà destra.
+Verifica desktop 1280×1100: PASS. Sezione 1265×1359, foto 633×1359 e copia 633×1359. La foto è a sinistra, occupa esattamente metà larghezza e tutta l’altezza della sezione. `object-fit: cover`, `object-position: 100% 0%`, bordo 0px, padding sezione 0px, immagine caricata e nessun overflow.
+Verifica isolamento Visione: PASS. F14 conserva `object-fit: contain`, bordo 16px e limite 560px; F7b non è stato modificato.
+Verifica mobile 390×844: PASS. Chi sono conserva padding 120px 28px, foto 334×444, `object-fit: contain`, bordo 16px e testo prima dell’immagine. Visione resta invariata e non emerge overflow.
+Verifica contratti: PASS. JavaScript invariato; un solo asset Chi sono e testi F13 invariati; F19 conserva fade-in e il contenitore fotografico è visibile dopo osservazione.
+VEDETTA — POST-MODIFICA
+Blocchi modificati: F4, mappa_blocchi.md, todo.md e debug_session.log.
+Blocchi verificati senza modifica: F1, F3, F7b, F10b, F13, F14, F19, F11, F28 e F40.
+Contratti controllati: metà sinistra desktop, fotografia estesa, ancoraggio volto, contenuto testuale destro, ordine mobile, immagine integra mobile, isolamento delle fotografie delle altre sezioni, fade-in, ancora e JavaScript.
+Nuove dipendenze rilevate: nessuna oltre alle relazioni F3, F7b e F10b esplicitate in F4.
+Mappa blocchi aggiornata: SÌ.
+Header F aggiornati: SÌ.
+Compatibilità della catena: CONFERMATA.
+Stato finale: STABLE.
+---
+
+[VALIDAZIONE CLAUDE DEFINITIVA — Chi sono fotografia strutturale — 2026-10-06]
+Modello: anthropic/claude-sonnet-4-6.
+Esito: APPROVATO.
+Motivazione: F4 contiene il solo selettore esclusivo `#chi-sono`, attivo da 900px, con specificità sufficiente a prevalere su F7b senza alterare le classi condivise. La fotografia riempie metà sezione desktop, mantiene il volto ancorato in alto a destra e conserva comportamento mobile, F13, F7b, F10b, F19, menu, hero, PWA e accordion.
+Correzioni bloccanti: nessuna.
+Osservazione facoltativa non applicata: valutare solo in un futuro task un limite di altezza qualora il contenuto testuale di Chi sono diventasse molto breve.
+Secondo revisore Cohere: non disponibile, perché COHERE_API_KEY assente; verifica deterministica completata con esito PASS.
+---

@@ -3,14 +3,14 @@
 **Fonte di verità per la numerazione project-wide univoca.**
 
 Protocollo: `blocchi-f-operativo` con sorveglianza `blocchi-f-vedetta`
-Aggiornamento: 2026-09-18
-Versione: 4.5
+Aggiornamento: 2026-10-06
+Versione: 4.6
 
 ## Stato del progetto
 
 Il sito pubblicato usa `index.html`, `pwa-action-bar.js`, `manifest.json` e `sw.js`. La pagina `blog.html` costituisce l’archivio separato. I file `hero-archivio.html` e `hero-nuova.html` sono prototipi non collegati alla navigazione pubblica; restano mappati per garantire l’unicità project-wide.
 
-La geometria laterale è predisposta su nove spazi, con fotografia e contenuto sempre collocati su lati opposti. Cinque fotografie autorizzate sono collocate in Chi sono, Visione, Servizi, Referenze e Community e mostrano l’intero fotogramma verticale senza ritaglio; gli altri quattro spazi restano vuoti. Su smartphone il testo precede la fotografia, mentre la hero conserva l’ordine approvato con pannello verde sopra e fotografia sotto.
+La geometria laterale è predisposta su nove spazi, con fotografia e contenuto sempre collocati su lati opposti. Chi sono usa su desktop una fotografia strutturale a tutta altezza nella metà sinistra, mentre Visione, Servizi, Referenze e Community conservano il fotogramma verticale integrale. Gli altri quattro spazi restano vuoti. Su smartphone il testo precede la fotografia, mentre la hero conserva l’ordine approvato con pannello verde sopra e fotografia sotto.
 
 ## Sito principale
 
@@ -21,33 +21,33 @@ La geometria laterale è predisposta su nove spazi, con fotografia e contenuto s
 | F2 | `index.html` | 111–153 | Stile della navigazione desktop | F1 | STABLE | 2026-07-31 |
 | F2b | `index.html` | 154–216 | Stile della navigazione mobile e hamburger | F1, F2 | STABLE | 2026-07-31 |
 | F3 | `index.html` | 217–426 | Stile della hero | F1 | STABLE | 2026-09-03 |
-| F4 | `index.html` | 427–449 | Stile della sezione Chi sono | F1 | STABLE | 2026-09-03 |
-| F5 | `index.html` | 450–496 | Stile della sezione Visione | F1 | STABLE | 2026-09-03 |
-| F6 | `index.html` | 497–690 | Stile della sezione Servizi e degli accordion estesi | F1 | STABLE | 2026-09-03 |
-| F8 | `index.html` | 691–845 | Stile della sezione Contatti | F1 | STABLE | 2026-09-03 |
-| F7 | `index.html` | 846–884 | Stile della sezione Collaborazioni | F1 | STABLE | 2026-07-31 |
-| F7-ext | `index.html` | 885–958 | Stile di testimonianze e Community | F1 | STABLE | 2026-07-31 |
-| F7b | `index.html` | 959–1037 | Stile della galleria fotografica, geometria laterale e fotogramma integrale | F1 | STABLE | 2026-09-18 |
-| F9 | `index.html` | 1038–1067 | Stile del footer | F1 | STABLE | 2026-09-03 |
-| F10 | `index.html` | 1068–1083 | Regole responsive e animazione fade-in | F1, F2–F9 | STABLE | 2026-07-31 |
-| F10b | `index.html` | 1084–1221 | Ordine mobile della hero e geometria laterale | F3, F4, F7b, F10 | STABLE | 2026-09-03 |
-| F20 | `index.html` | 1222–1275 | Stile della barra azioni PWA | F1, F10 | STABLE | 2026-09-02 |
-| F21 | `index.html` | 1276–1486 | Stile delle modali PWA | F1, F20 | STABLE | 2026-09-03 |
-| F21b | `index.html` | 1487–1514 | Pulsante e visibilità delle testimonianze Community | F1, F7-ext | STABLE | 2026-09-02 |
-| F11 | `index.html` | 1601–1636 | Markup del menu desktop e mobile | F2, F2b, F25 | STABLE | 2026-09-02 |
-| F12 | `index.html` | 1637–1664 | Markup della hero | F3, F10b | STABLE | 2026-09-03 |
-| F13 | `index.html` | 1665–1717 | Markup della sezione Chi sono | F3, F4, F7b, F10b, F19 | STABLE | 2026-09-18 |
-| F14 | `index.html` | 1718–1752 | Markup della sezione Visione | F5, F7b, F10b | STABLE | 2026-09-18 |
-| F15 | `index.html` | 1753–1966 | Markup della sezione Servizi | F3, F6, F7b, F10b, F19, F24 | STABLE | 2026-09-18 |
-| F16 | `index.html` | 2003–2144 | Introduzione, collaborazioni e case history della sezione Referenze | F3, F6, F7, F7b, F8, F10b, F19 | STABLE | 2026-09-18 |
-| F26 | `index.html` | 2145–2281 | Community olfattiva e testimonianze personali | F3, F6, F7-ext, F7b, F10b, F17, F19, F21b | STABLE | 2026-09-18 |
-| F17 | `index.html` | 2282–2332 | Markup della sezione Contatti | F7b, F8, F10b | STABLE | 2026-09-03 |
-| F18 | `index.html` | 2333–2344 | Markup del footer | F9 | STABLE | 2026-07-31 |
-| F19 | `index.html` | 2345–2357 | Osservatore delle animazioni fade-in | F10 | STABLE | 2026-07-31 |
-| F22 | `index.html` | 2358–2369 | Registrazione del service worker | F28, F29 | STABLE | 2026-09-02 |
-| F23 | `index.html` | 2370–2430 | Markup della barra e delle modali PWA | F20, F21, F27, F28 | STABLE | 2026-09-02 |
-| F24 | `index.html` | 2431–2456 | Comportamento degli accordion Servizi | F6, F15 | STABLE | 2026-09-03 |
-| F25 | `index.html` | 2457–2485 | Comportamento del menu hamburger | F2b, F11 | STABLE | 2026-09-02 |
+| F4 | `index.html` | 427–475 | Stile della sezione Chi sono e fotografia strutturale desktop | F1, F3, F7b, F10b | STABLE | 2026-10-06 |
+| F5 | `index.html` | 476–522 | Stile della sezione Visione | F1 | STABLE | 2026-09-03 |
+| F6 | `index.html` | 523–716 | Stile della sezione Servizi e degli accordion estesi | F1 | STABLE | 2026-09-03 |
+| F8 | `index.html` | 717–871 | Stile della sezione Contatti | F1 | STABLE | 2026-09-03 |
+| F7 | `index.html` | 872–910 | Stile della sezione Collaborazioni | F1 | STABLE | 2026-07-31 |
+| F7-ext | `index.html` | 911–984 | Stile di testimonianze e Community | F1 | STABLE | 2026-07-31 |
+| F7b | `index.html` | 985–1062 | Stile della galleria fotografica, geometria laterale e fotogramma integrale | F1 | STABLE | 2026-09-18 |
+| F9 | `index.html` | 1063–1092 | Stile del footer | F1 | STABLE | 2026-09-03 |
+| F10 | `index.html` | 1093–1108 | Regole responsive e animazione fade-in | F1, F2–F9 | STABLE | 2026-07-31 |
+| F10b | `index.html` | 1109–1246 | Ordine mobile della hero e geometria laterale | F3, F4, F7b, F10 | STABLE | 2026-09-03 |
+| F20 | `index.html` | 1247–1300 | Stile della barra azioni PWA | F1, F10 | STABLE | 2026-09-02 |
+| F21 | `index.html` | 1301–1511 | Stile delle modali PWA | F1, F20 | STABLE | 2026-09-03 |
+| F21b | `index.html` | 1512–1539 | Pulsante e visibilità delle testimonianze Community | F1, F7-ext | STABLE | 2026-09-02 |
+| F11 | `index.html` | 1626–1661 | Markup del menu desktop e mobile | F2, F2b, F25 | STABLE | 2026-09-02 |
+| F12 | `index.html` | 1662–1689 | Markup della hero | F3, F10b | STABLE | 2026-09-03 |
+| F13 | `index.html` | 1690–1742 | Markup della sezione Chi sono | F3, F4, F7b, F10b, F19 | STABLE | 2026-09-18 |
+| F14 | `index.html` | 1743–1777 | Markup della sezione Visione | F5, F7b, F10b | STABLE | 2026-09-18 |
+| F15 | `index.html` | 1778–1991 | Markup della sezione Servizi | F3, F6, F7b, F10b, F19, F24 | STABLE | 2026-09-18 |
+| F16 | `index.html` | 2028–2169 | Introduzione, collaborazioni e case history della sezione Referenze | F3, F6, F7, F7b, F8, F10b, F19 | STABLE | 2026-09-18 |
+| F26 | `index.html` | 2170–2306 | Community olfattiva e testimonianze personali | F3, F6, F7-ext, F7b, F10b, F17, F19, F21b | STABLE | 2026-09-18 |
+| F17 | `index.html` | 2307–2357 | Markup della sezione Contatti | F7b, F8, F10b | STABLE | 2026-09-03 |
+| F18 | `index.html` | 2358–2369 | Markup del footer | F9 | STABLE | 2026-07-31 |
+| F19 | `index.html` | 2370–2382 | Osservatore delle animazioni fade-in | F10 | STABLE | 2026-07-31 |
+| F22 | `index.html` | 2383–2394 | Registrazione del service worker | F28, F29 | STABLE | 2026-09-02 |
+| F23 | `index.html` | 2395–2455 | Markup della barra e delle modali PWA | F20, F21, F27, F28 | STABLE | 2026-09-02 |
+| F24 | `index.html` | 2456–2481 | Comportamento degli accordion Servizi | F6, F15 | STABLE | 2026-09-03 |
+| F25 | `index.html` | 2482–2510 | Comportamento del menu hamburger | F2b, F11 | STABLE | 2026-09-02 |
 | F27 | `pwa-action-bar.js` | 1–145 | Logica della barra azioni e delle modali PWA | F20, F21, F23, F29 | STABLE | 2026-09-02 |
 | F27.1 | `pwa-action-bar.js` | 77–103 | Ascolto degli aggiornamenti del service worker | F27, F29 | STABLE | 2026-09-02 |
 | F28 | `manifest.json` | 1–118 | Identità, icone, schermate e scorciatoie PWA | F0, F13, F15, F17 | STABLE | 2026-09-02 |
@@ -56,8 +56,8 @@ La geometria laterale è predisposta su nove spazi, con fotografia e contenuto s
 | F29.2 | `sw.js` | 31–64 | Attivazione e pulizia delle cache | F29 | STABLE | 2026-09-02 |
 | F29.3 | `sw.js` | 66–97 | Recupero network-first e fallback cache | F29 | STABLE | 2026-09-02 |
 | F29.4 | `sw.js` | 99–106 | Gestione dei messaggi del client | F29 | STABLE | 2026-09-02 |
-| F72 | `index.html` | 1504–1589 | Stile della sezione Modalità di collaborazione | F1, F3, F10 | STABLE | 2026-09-03 |
-| F73 | `index.html` | 1885–1920 | Markup della sezione Modalità di collaborazione | F3, F10, F17, F19, F72 | STABLE | 2026-09-02 |
+| F72 | `index.html` | 1540–1625 | Stile della sezione Modalità di collaborazione | F1, F3, F10 | STABLE | 2026-09-03 |
+| F73 | `index.html` | 1992–2027 | Markup della sezione Modalità di collaborazione | F3, F10, F17, F19, F72 | STABLE | 2026-09-02 |
 
 Il formato JSON non consente commenti: **F28** è identificato esclusivamente nella presente mappa.
 

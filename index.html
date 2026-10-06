@@ -425,8 +425,8 @@
 
   /* +--------------------------------------------------+
    | [F4] - CSS Chi Sono — identità, testo, foto        |
-   | Dipende da: F1                                      |
-   | Status: STABLE | Last modified: 2026-09-03      |
+   | Dipende da: F1, F3, F7b, F10b                      |
+   | Status: STABLE | Last modified: 2026-10-06         |
    +--------------------------------------------------+ */
   /* CHI SONO */
   #chi-sono { background: var(--avorio); }
@@ -444,6 +444,32 @@
     object-fit: cover;
     object-position: center top;
     border-radius: 16px;
+  }
+
+  /* [141] Trasforma esclusivamente Chi sono in due metà desktop, con fotografia strutturale a sinistra e volto ancorato in alto. */
+  @media (min-width: 900px) {
+    #chi-sono { padding: 0; }
+    #chi-sono .media-band {
+      min-height: 100svh;
+      gap: 0;
+      align-items: stretch;
+    }
+    #chi-sono .media-band-slot { align-self: stretch; }
+    #chi-sono .section-photo {
+      width: 100%;
+      max-width: none;
+      height: 100%;
+      margin: 0;
+      object-fit: cover;
+      object-position: right top;
+      border-radius: 0;
+    }
+    #chi-sono .media-band-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(72px, 8vw, 152px) clamp(52px, 7vw, 136px);
+    }
   }
 
   /* +--------------------------------------------------+
