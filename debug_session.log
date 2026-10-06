@@ -1454,3 +1454,9 @@ Anti-Loop: dopo due rilevamenti consecutivi di discrepanze nella sola verifica a
 Claude Sonnet 4.6: APPROVATO in precedenza per il diff completo. Nessuna correzione bloccante.
 Gate Vedetta: CHIUSO. F6 e F16 restano STABLE.
 ---
+[VERIFICA PUBBLICA — SOSTITUZIONE REFERENZE — 2026-10-06]
+Commit contenuto: f9d9b48.
+Netlify: HTTP 200, versione pubblica individuata al primo controllo con parametro v=f9d9b48.
+Browser pubblico: PASS. Titolo suddiviso in «Voci», «qualificate», «sul mio lavoro»; elenco completo delle sette voci; fotografia caricata; fade-in visibile; nessun contenuto precedente; nessun overflow orizzontale; Community inizia dopo Referenze.
+GitHub: HEAD e github/master coincidono su f9d9b48 prima dell’aggiornamento del presente registro.
+---
