@@ -785,6 +785,33 @@
 #credibilita { background: var(--avorio); }
   /* [1] Allinea il selettore dell’etichetta alla sezione professionale reale. */
   #credibilita .section-eyebrow { color: #1a1a1a; }
+  /* [155] Trasforma soltanto la prima fascia Referenze in due metà desktop senza modificare le fasce successive. */
+  @media (min-width: 900px) {
+    #credibilita > .media-band:first-of-type {
+      min-height: 100svh;
+      margin: -140px -72px 0;
+      gap: 0;
+      align-items: stretch;
+    }
+    /* [156] Estende la fotografia Referenze a sinistra per tutta l’altezza della fascia e preserva il soggetto. */
+    #credibilita > .media-band:first-of-type .media-band-slot { align-self: stretch; }
+    #credibilita > .media-band:first-of-type .section-photo {
+      width: 100%;
+      max-width: none;
+      height: 100%;
+      margin: 0;
+      object-fit: cover;
+      object-position: right top;
+      border-radius: 0;
+    }
+    /* [157] Allinea la colonna testuale Referenze alla fotografia strutturale senza alterarne i contenuti. */
+    #credibilita > .media-band:first-of-type .media-band-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(72px, 8vw, 152px) clamp(52px, 7vw, 136px);
+    }
+  }
   #community { background: var(--avorio); }
 
   .placeholder-box {
@@ -2102,7 +2129,7 @@
 <!-- +--------------------------------------------------+
      | [F16] - Markup REFERENZE — introduzione, progetti  |
      | Dipende da: F3, F6, F7, F7b, F8, F10b, F19         |
-     | Status: STABLE | Last modified: 2026-09-18   |
+     | Status: STABLE | Last modified: 2026-10-06         |
      +--------------------------------------------------+ -->
 <section id="credibilita">
   <!-- [74] Affianca lo spazio fotografico sinistro all’introduzione delle Referenze. -->

@@ -1137,3 +1137,35 @@ Browser pubblico: fotografia a sinistra e testo a destra su desktop, fascia cont
 Accordion pubblico: 6/6 trigger presenti; apertura singola: PASS; click esterno con pannelli aperti residui 0: PASS; console browser senza errori.
 Parità GitHub prima della registrazione pubblica: commit 9d186c0 = github/master.
 ---
+[Referenze — fotografia strutturale desktop, Vedetta pre-modifica — 2026-10-06]
+Modalità: RLM v2.0 in fallback deterministico; nessun file di progetto scritto in RLMS-Demo.
+JSON task: {"task_id":"referenze-half-page-2026-10-06","description":"Trasformare esclusivamente la fotografia introduttiva Referenze in una colonna strutturale sinistra pari a circa metà della fascia desktop, allineata al testo destro come Chi sono, Visione e Servizi.","files_involved":["index.html F6","index.html F16","mappa_blocchi.md","todo.md","debug_session.log"],"requirements":["nessun testo o asset modificato","nessuna modifica alle referenze sottostanti","mobile con testo prima della foto","fotogramma con soggetto preservato","nessuna modifica a PWA o altre sezioni"],"validation_criteria":["desktop due colonne senza gap","foto a sinistra a tutta altezza della prima fascia","assenza di overflow","F16 invariato nei testi e nell’asset","fade-in e ancora Referenze preservati"]}.
+Logic Before Code: il problema è nel percorso CSS, non in dati o runtime. La causa è che F7b assegna alla `.section-photo` `max-width: 560px`, altezza automatica, margini automatici e bordi arrotondati, mentre F6 non possiede un override strutturale confinato alla prima fascia `#credibilita`.
+VEDETTA — PRE-MODIFICA
+Richiesta: rendere strutturale la sola foto iniziale Referenze, a sinistra e per circa metà fascia desktop.
+Blocco principale: F6, `index.html`, CSS della prima fascia Referenze.
+Dipendenze dirette a monte: F1 variabili, F3 contratto `section`, F7b foto e media-band, F10b colonne responsive.
+Dipendenze indirette a monte: F10 animazione fade-in attraverso F19.
+Dipendenti diretti a valle: F16 markup con `media-band--image-left`, `media-band-slot`, `section-photo` e asset Referenze.
+Dipendenti indiretti a valle: F11 ancora `#credibilita`, F19 osservatore `.fade-in`, F26 e F17 che condividono media-band e section-photo.
+Relazioni trasversali: F28 e F29 veicolano `index.html` e non definiscono selettori o asset Referenze; F26 e F17 sono consumatori del contratto generico F7b.
+Dipendenze nascoste rilevate: F6 contiene la base `#credibilita`, sebbene il blocco sia denominato Servizi; F7b definisce realmente i limiti visivi che causano il riquadro.
+Dipendenze circolari: nessuna.
+Blocchi da modificare: F6; header di stato F16 e mappa blocchi per tracciabilità.
+Blocchi da verificare: F1, F3, F7b, F10, F10b, F11, F16, F19, F26, F17, F28, F29.
+Blocchi esclusi con prova: F2, F2b, F4, F5, F8, F9, F20, F21, F21b, F72, F73, F22, F23, F24, F25, F27 e Archivio; non riferiscono `#credibilita`, la fotografia Referenze o le classi che saranno modificate con scope `#credibilita`.
+Relazioni irrisolte: nessuna.
+Chiusura ricorsiva completata: SÌ.
+Gate Vedetta: APERTURA AUTORIZZATA.
+Istruzioni atomiche pianificate: [155] fascia Referenze desktop a due metà; [156] fotografia sinistra a piena altezza e soggetto a destra; [157] colonna testuale destra allineata; [158] stato e mappa tracciabili.
+---
+[Referenze — fotografia strutturale desktop, verifica locale — 2026-10-06]
+Modifica applicata: F6, istruzioni atomiche [155]–[157], con scope esclusivo `#credibilita > .media-band:first-of-type` a partire da 900 px. F16 non modifica testi, asset, alt text, ordine delle tre fasce o classi funzionali; aggiorna soltanto lo stato di tracciabilità.
+Controlli deterministici: PASS `git diff --check`; PASS assenza di WIP; PASS testi F16, asset e tre media-band identici alla snapshot; PASS F19, F22, F24 e F25 byte-identici alla snapshot; PASS Code Integrity Verifier senza regressioni; PASS asset 814×1299 caricato.
+Controllo desktop 1440×1100: fotografia 712.5×1137.0 px, colonna testuale 712.5×1137.0 px, fotografia a sinistra, bordi allineati, nessun gap, `object-fit: cover`, `object-position: right top`, raggio 0 px, overflow assente, contenuti Referenze presenti.
+Controllo mobile 390×844: testo prima della foto, fotografia caricata, fotogramma integrale con stile mobile preesistente, contenuti Referenze presenti, overflow assente.
+Interazione conservata: sei trigger Servizi rilevati; apertura singola e chiusura con click esterno PASS.
+Validatore primario: Claude Sonnet 4.6 via OpenRouter. VERDETTO: APPROVATO. Nessuna correzione bloccante; nota non bloccante su futura coerenza del padding `-140px` con il contratto F10b. Log completo: `/tmp/raffaella-referenze-half-page/claude_validation.json`.
+Anti-Loop: nessun fallimento del codice. La prima lettura del test strutturato ha normalizzato il titolo senza spazio attorno al `<br>`; corretto esclusivamente lo script di verifica, poi PASS al primo riesame.
+Gate Vedetta: CHIUSURA LOCALE APPROVATA.
+---
