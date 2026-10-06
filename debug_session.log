@@ -1578,3 +1578,11 @@ Riesecuzione controllata: PASS. Desktop 1440×1200 con sezione Servizi, introduz
 Mappa Blocchi F: versione 5.6. Intervalli reali certificati per 27 blocchi di `index.html`; intervalli F29 e F29.4 corretti secondo il file reale `sw.js` a 105 righe.
 Stato finale: STABLE. Pronto per commit e verifica pubblica.
 ---
+
+[2026-10-06T23:54:10+02:00] — VERIFICA PUBBLICA F6/F15
+Commit di contenuto: `17002d0` — F6 — Cut inferiore fascia Servizi desktop.
+Netlify: HTTP 200 e sorgente pubblico contenente le istruzioni atomiche [177] e [178].
+Browser pubblico: `min-height: 0px`, `padding-bottom: 0px`, fotografia e pannello terminano a y=1156, sezione successiva inizia a y=1156, nessun overflow orizzontale.
+Interazioni pubbliche: 6/6 accordion aprono e richiudono correttamente. Console pubblica: nessun errore.
+GitHub: commit locale e `github/master` allineati a `17002d0` prima dell'archiviazione della presente verifica.
+---
