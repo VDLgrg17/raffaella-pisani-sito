@@ -1129,3 +1129,11 @@ Esito: APPROVATO
 Motivazione sintetica: fascia continua robusta e indipendente da margini fissi; testi invariati; sei accordion unificati con id e ARIA invariati; tutti i selettori confinati in `#servizi`; nessuna regressione negli accordion o nelle altre sezioni. Osservazione facoltativa non bloccante: ordine convenzionale delle due dichiarazioni `display` e `flex-direction` in un selettore già esistente.
 Gate Vedetta: CHIUSO. F6 e F15 stabilizzati dopo la verifica completa della catena F1, F3, F7b, F10, F10b, F11, F16, F19, F24, F28, F29 e F40.
 ---
+[Servizi — verifica pubblica Netlify, 2026-10-06]
+Commit contenuto: 9d186c0 — `v5.0 — Compatta la sezione Servizi`.
+Endpoint pubblico: https://raffaella-pisani-sito.netlify.app/?v=9d186c0#servizi
+Netlify: HTTP 200 e markup pubblico aggiornato al primo controllo, con `servizi-separator`, `servizi-intro`, `servizi-aree` e `width: 100vw` presenti.
+Browser pubblico: fotografia a sinistra e testo a destra su desktop, fascia continua visibile, nessun overflow orizzontale.
+Accordion pubblico: 6/6 trigger presenti; apertura singola: PASS; click esterno con pannelli aperti residui 0: PASS; console browser senza errori.
+Parità GitHub prima della registrazione pubblica: commit 9d186c0 = github/master.
+---
