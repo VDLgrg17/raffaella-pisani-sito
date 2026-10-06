@@ -1348,3 +1348,51 @@ Netlify: HTTP 200 e markup con `object-position: right 68%` disponibile al primo
 Browser pubblico: PASS; fotografia sinistra e pannello destro misurano entrambi 633 px × 1100 px, sei trigger presenti, apertura e chiusura del primo accordion PASS, nessun overflow orizzontale e console senza errori.
 Repository: parità confermata con `github/master` prima della registrazione della presente evidenza.
 ---
+[VEDETTA — PRE-MODIFICA — CUT REFERENZE — 2026-10-06]
+Richiesta: rimuovere integralmente il materiale fornito dall’utente da «Puntoettore» al case history Cerasa, eliminando anche i due contenitori che creano lo spazio relativo.
+Blocco principale: F16, `index.html`, markup Referenze.
+Dipendenze dirette a monte: F3 per regole di sezione, F6 per la geometria laterale iniziale Referenze, F7 e F7b per classi e griglie ereditate, F8 per stili case history, F10b per ordine responsive, F19 per fade-in.
+Dipendenze indirette a monte: F1 tramite F3, F6, F7, F7b, F8 e F10b.
+Dipendenti diretti a valle: F26, perché inizia immediatamente dopo F16 nel DOM; menu F11 e mobile menu F11 tramite anchor `#credibilita`; blog tramite collegamento `index.html#credibilita`.
+Dipendenti indiretti a valle: F25 tramite F11; F27, F28 e F29 sono esclusi perché non riferiscono F16 o le classi rimosse.
+Relazioni trasversali: `.collab-grid`, `.collab-item`, `.case-history`, `.case-item`, `.media-band` e `.fade-in` sono condivise ma il CUT rimuove solo i loro elementi F16, senza modificare alcuna definizione CSS o script.
+Dipendenze nascoste rilevate: nessuna; l’anchor `#credibilita` è consumato da menu desktop, mobile e Archivio ma resta invariato.
+Dipendenze circolari: nessuna.
+Blocchi da modificare: F16; mappa_blocchi.md e todo.md per tracciabilità; debug_session.log.
+Blocchi da verificare: F3, F6, F7, F7b, F8, F10b, F11, F19, F25, F26, blog.html, pwa-action-bar.js, manifest.json e sw.js.
+Blocchi esclusi con prova: F15 e F24, nessun selettore, evento, ID o classe specifica Servizi è referenziato dal CUT; F17, F18, F20, F21, F22, F23, F27, F28 e F29 non consumano contenuti, classi o ID eliminati.
+Relazioni irrisolte: nessuna.
+Chiusura ricorsiva completata: SÌ.
+Gate Vedetta: APERTURA AUTORIZZATA.
+Intento Logic Before Code: eliminare soltanto i due media-band F16 e il loro contenuto autorizzato affinché la sezione Referenze termini dopo la genesi, preservando interamente anchor, introduzione e sezioni a valle.
+Piano Atomic Code: [169] rimuove il primo media-band dei sette progetti e il suo placeholder; [170] rimuove il secondo media-band dei sei progetti e il case history; [171] aggiorna l’header F16 e la mappa di responsabilità.
+---
+[VEDETTA — ESTENSIONE DEL GATE — CUT REFERENZE — 2026-10-06]
+Nuova relazione confermata nel browser: dopo la rimozione del materiale F16 resta una fascia avorio di 140 px perché la regola globale `section` conserva il padding inferiore; la fotografia termina a 1100 px e F16 termina a 1240 px.
+La dipendenza F6, già classificata DA VERIFICARE, diventa DA MODIFICARE: la regola circoscritta `#credibilita` deve annullare esclusivamente il padding inferiore affinché Community inizi al bordo inferiore della fotografia.
+Blocchi da modificare aggiornati: F6 e F16; mappa_blocchi.md, todo.md e debug_session.log per tracciabilità.
+Blocchi da verificare aggiornati: F3, F7, F7b, F8, F10b, F11, F19, F25, F26, blog.html, pwa-action-bar.js, manifest.json e sw.js.
+Relazioni irrisolte: nessuna.
+Chiusura ricorsiva completata: SÌ.
+Gate Vedetta: APERTURA AUTORIZZATA.
+Piano Atomic Code esteso: [171] annulla solo il padding inferiore residuo di Referenze dopo il CUT.
+---
+[TENTATIVO 1 — REFERENZE CUT — 2026-10-06]
+Modifica: rimosse da F16 le tredici schede progetto, il case history Cerasa e i due media-band correlati. Conservati fotografia iniziale, introduzione, loghi, genesi e anchor `#credibilita`.
+Correzione Vedetta derivata dal test: rilevato padding inferiore globale di 140 px dopo il CUT; aggiunta soltanto la regola F6 confinata `#credibilita { padding-bottom: 0; }` per allineare la fine Referenze al bordo inferiore della fotografia.
+Verifiche deterministiche: PASS. Nessuna `.collab-grid`, `.collab-item`, `.case-history`, `.case-item` o `.photo-placeholder` resta in F16. Community è il section successivo. F19 e F24 sono byte-identici rispetto al checkpoint. L’anchor e la fotografia Referenze restano presenti.
+Verifiche browser desktop: PASS. `photoBottom=1100`, `bandBottom=1100`, `refBottom=1100`, `communityTop=1100`, gap=0, overflow orizzontale assente.
+Verifiche browser mobile 390×844: PASS. `scrollWidth=390`, `innerWidth=390`, testo prima della fotografia, fotografia caricata, zero schede e case history, `communityTop=refBottom=1807`.
+Esito validatore primario Claude Sonnet 4.6: APPROVATO. Nessuna correzione bloccante. Log completo: `/tmp/raffaella-referenze-cut/claude_validation.json`.
+Nota Anti-Loop: il primo test mobile ha fallito solo per il flag DevTools `remote-allow-origins`, senza toccare il sito. Strategia cambiata al secondo tentativo; esito PASS.
+Stato finale locale: APPROVATO, pronto al controllo pre-pubblicazione.
+---
+[PRE-PUBBLICAZIONE — CUT REFERENZE — 2026-10-06]
+`git diff --check`: PASS.
+Nessun header `Status: WIP` in index.html o mappa_blocchi.md: PASS.
+Code Integrity Verifier: PASS — nessuna regressione strutturale rilevata.
+Accordion Servizi conservato: apertura e chiusura PASS.
+Console browser locale: nessun errore JavaScript.
+Mappa Blocchi F aggiornata alla versione 5.4 con F6 e F16 STABLE e range riallineati dopo il CUT.
+Gate Vedetta chiuso: tutte le dipendenze dirette, indirette, inverse, trasversali e nascoste sono verificate.
+---

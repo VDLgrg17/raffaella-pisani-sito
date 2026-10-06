@@ -72,3 +72,4 @@
 - [x] Trasformare esclusivamente la fotografia iniziale Community in metà strutturale destra della fascia desktop.
 - [x] Inserire «Sensi di Strati» sopra il nome Raffaella Pisani nel solo pannello Hero.
 - [x] Integrare i sei accordion nella fascia Servizi, con mano visibile nella fotografia e senza spazio inferiore separato.
+- [x] Eliminare il materiale Referenze autorizzato da Puntoettore al case history Cerasa e i due contenitori correlati.
