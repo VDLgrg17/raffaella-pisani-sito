@@ -591,13 +591,14 @@
   /* [148] Riduce il ritmo verticale dell’introduzione senza modificare i tre testi sorgente. */
   #servizi .servizi-lista { margin-top: 28px; }
   #servizi .servizi-lista .divider { margin: 16px 0; }
-  /* [149] Riunisce i sei servizi in un gruppo leggibile senza aggiungere elementi grafici. */
+  /* [163] Colloca il gruppo Servizi sotto l’introduzione senza creare una fascia inferiore autonoma. */
   #servizi .servizi-aree {
     margin-top: 0;
-    padding: 56px 0 0;
+    padding: 32px 0 0;
   }
+  /* [164] Mantiene compatto il gruppo dei sei comandi nel pannello testuale. */
   #servizi .servizi-aree .aree-intervento { margin-top: 0; }
-  #servizi .servizi-aree-label { margin-bottom: 18px; }
+  #servizi .servizi-aree-label { margin-bottom: 12px; }
 
   /* [154] Confina i selettori Servizi al relativo contenitore per proteggere le altre sezioni. */
   #servizi .servizio-item {
@@ -770,24 +771,32 @@
       grid-row: 1;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      padding: clamp(52px, 6vw, 112px) clamp(44px, 5vw, 96px);
+      /* [165] Allinea in alto il pannello testuale e lascia che la fotografia determini la fine della fascia. */
+      justify-content: flex-start;
+      padding: clamp(40px, 4vw, 72px) clamp(44px, 5vw, 96px);
     }
-    /* [145] Trasforma la sola fotografia introduttiva Servizi in superficie strutturale senza bordi. */
+    /* [166] Riduce le dimensioni dei sei comandi soltanto nella fascia Servizi desktop. */
+    #servizi > .servizi-intro .servizi-aree {
+      padding-top: clamp(20px, 2vw, 32px);
+    }
+    #servizi > .servizi-intro .aree-grid {
+      gap: 8px;
+      max-width: none;
+    }
+    #servizi > .servizi-intro .area-trigger {
+      min-height: 48px;
+      padding: 12px 16px;
+      font-size: clamp(0.68rem, 1vw, 0.78rem);
+    }
+    /* [168] Sposta il crop verso il basso per preservare la mano inferiore nella fotografia Servizi. */
     #servizi > .servizi-intro .section-photo {
       width: 100%;
       max-width: none;
       height: 100%;
       margin: 0;
       object-fit: cover;
-      object-position: right top;
+      object-position: right 68%;
       border-radius: 0;
-    }
-    #servizi .servizi-aree {
-      margin-right: auto;
-      margin-left: auto;
-      max-width: 1200px;
-      padding-top: 72px;
     }
   }
 
@@ -1960,6 +1969,173 @@
         <div class="divider"></div>
         <p class="servizio-desc">Ogni collaborazione nasce dall’ascolto del contesto, dell’identità del brand e del pubblico a cui si rivolge.</p>
       </div>
+
+      <!-- [167] Integra i sei accordion esistenti nel pannello testuale senza alterarne testi, ID, classi o comportamenti. -->
+      <div class="servizi-aree">
+        <div class="aree-intervento fade-in">
+          <p class="section-eyebrow servizi-aree-label">Cosa posso fare per il tuo brand</p>
+          <div class="aree-grid">
+              <!-- [87] Predispone il primo accordion per il futuro contenuto completo Ambassador. -->
+              <div class="area-item">
+                <button class="area-trigger" type="button" aria-expanded="false" aria-controls="servizio-ambassador" onclick="toggleArea(this)"><span>Ambassador olfattivo per brand</span><span class="area-icon" aria-hidden="true">+</span></button>
+                <div class="area-dropdown" id="servizio-ambassador" hidden>
+                  <!-- [90] Integra il contenuto completo Ambassador senza coinvolgere gli altri servizi. -->
+                  <div class="service-detail">
+                    <p><strong>Destinatari:</strong> brand di profumeria artistica, boutique, distributori, fiere, eventi stampa e realtà del lusso che desiderano una voce esterna autorevole per raccontare fragranze, collezioni o progetti speciali.</p>
+                    <p><strong>Problema:</strong> molti brand hanno prodotti di grande valore, ma faticano a trasformare la descrizione del profumo in un’esperienza capace di coinvolgere realmente il pubblico.</p>
+                    <p><strong>Rischio:</strong> la fragranza può essere raccontata solo attraverso note, piramidi olfattive e aggettivi generici, senza costruire una relazione più profonda con chi ascolta.</p>
+                    <p><strong>Intervento:</strong> come ambassador olfattiva, posso rappresentare il brand in momenti selezionati, presentazioni, incontri con clienti, attività stampa, eventi in boutique, fiere o lanci prodotto.</p>
+                    <p><strong>Attività comprese:</strong></p>
+                    <ul class="service-detail-list">
+                      <li>presentazioni olfattive guidate per pubblici selezionati.</li>
+                      <li>eventi per clienti, buyer, stampa o community selezionate.</li>
+                      <li>racconto culturale di fragranze, collezioni e materie prime.</li>
+                      <li>presenza come ambassador in boutique, fiere o contesti speciali.</li>
+                      <li>attività di relazione e coinvolgimento del pubblico attorno al brand.</li>
+                    </ul>
+                    <p><strong>Valore per il brand:</strong> la possibilità di affidare il racconto del profumo a una voce esterna capace di elevare la percezione del prodotto, rendere più incisiva l’esperienza e creare un legame più profondo tra fragranza, immaginario e pubblico.</p>
+                    <p class="service-detail-cta">Vuoi presentare il tuo brand attraverso un’esperienza olfattiva guidata? Parliamone e costruiamo insieme il progetto.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- [88] Predispone il secondo accordion per il futuro contenuto completo di consulenza. -->
+              <div class="area-item">
+                <button class="area-trigger" type="button" aria-expanded="false" aria-controls="servizio-consulenza" onclick="toggleArea(this)"><span>Consulenza narrativa e direzione culturale</span><span class="area-icon" aria-hidden="true">+</span></button>
+                <div class="area-dropdown" id="servizio-consulenza" hidden>
+                  <!-- [98] Integra il contenuto completo Consulenza senza coinvolgere gli altri servizi. -->
+                  <div class="service-detail">
+                    <p><strong>Destinatari:</strong> brand che desiderano rafforzare la propria identità narrativa, migliorare il racconto delle fragranze, costruire contenuti più distintivi o sviluppare concept culturali per collezioni, eventi e campagne.</p>
+                    <p><strong>Problema:</strong> nel mercato della profumeria artistica molti brand utilizzano linguaggi simili: emozione, memoria, viaggio, identità, materia, rituale.</p>
+                    <p><strong>Rischio:</strong> apparire poetici, ma non davvero differenti.</p>
+                    <p><strong>Intervento:</strong> con la consulenza narrativa aiuto il brand a rendere più preciso, riconoscibile e coerente il proprio modo di raccontarsi.</p>
+                    <p><strong>Attività comprese:</strong></p>
+                    <ul class="service-detail-list">
+                      <li>analisi del linguaggio attuale del brand;</li>
+                      <li>revisione del tono di voce;</li>
+                      <li>concept narrativi per fragranze e collezioni;</li>
+                      <li>testi editoriali e schede narrative;</li>
+                      <li>storytelling per lanci, eventi, campagne e contenuti digitali;</li>
+                      <li>supporto alla costruzione di un immaginario coerente.</li>
+                    </ul>
+                    <p><strong>Valore per il brand:</strong> la possibilità di trasformare il racconto del profumo in un linguaggio più distintivo, meno generico e più aderente alla propria identità.</p>
+                    <p class="service-detail-cta">Vuoi rendere più forte e riconoscibile il racconto del tuo brand? Possiamo lavorare insieme sul tuo racconto di brand.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- [106] Integra il contenuto completo Formazione senza coinvolgere gli altri servizi. -->
+              <div class="area-item">
+                <button class="area-trigger" type="button" aria-expanded="false" aria-controls="servizio-formazione" onclick="toggleArea(this)"><span>Formazione olfattiva per team e reti vendita</span><span class="area-icon" aria-hidden="true">+</span></button>
+                <div class="area-dropdown" id="servizio-formazione" hidden>
+                  <div class="service-detail">
+                    <p><strong>Destinatari:</strong> boutique, distributori, reti vendita, team marketing, hotel, spa e realtà del luxury retail che vogliono formare le persone incaricate di raccontare il profumo al cliente.</p>
+                    <p><strong>Problema:</strong> spesso chi vende o presenta una fragranza conosce il prodotto, ma non dispone di strumenti narrativi sufficienti per trasformare la spiegazione tecnica in esperienza.</p>
+                    <p><strong>Risultato:</strong> una comunicazione corretta, ma poco coinvolgente.</p>
+                    <p><strong>Intervento:</strong> con i percorsi di formazione olfattiva lavoro sulla capacità di raccontare il profumo con più profondità, sicurezza e coerenza, collegando prodotto, percezione, memoria, emozione e identità di marca.</p>
+                    <p><strong>Attività comprese:</strong></p>
+                    <ul class="service-detail-list">
+                      <li>workshop di cultura olfattiva;</li>
+                      <li>formazione sul racconto del profumo;</li>
+                      <li>percorsi su memoria, emozione, percezione e linguaggio olfattivo;</li>
+                      <li>strumenti narrativi per boutique e reti vendita;</li>
+                      <li>sessioni formative su fragranze o collezioni specifiche;</li>
+                      <li>supporto alla costruzione di un racconto più efficace nella relazione con il cliente.</li>
+                    </ul>
+                    <p><strong>Valore per il brand:</strong> un team più preparato, più consapevole e più capace di trasformare la vendita in esperienza.</p>
+                    <p class="service-detail-cta">Vuoi formare il tuo team a raccontare meglio il profumo? Costruiamo un percorso su misura.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- [113] Integra il contenuto completo Eventi senza coinvolgere gli altri servizi. -->
+              <div class="area-item">
+                <button class="area-trigger" type="button" aria-expanded="false" aria-controls="servizio-eventi" onclick="toggleArea(this)"><span>Eventi ed esperienze olfattive</span><span class="area-icon" aria-hidden="true">+</span></button>
+                <div class="area-dropdown" id="servizio-eventi" hidden>
+                  <div class="service-detail">
+                    <!-- [114] Esplicita i destinatari previsti dalla fonte per il quarto servizio. -->
+                    <p><strong>Destinatari:</strong> per brand, boutique, hotel, spa, gallerie, festival, istituzioni culturali e realtà dell’hospitality che vogliono creare esperienze olfattive capaci di restare nella memoria di clienti, ospiti o pubblici selezionati.</p>
+                    <!-- [115] Distingue problema e funzione dell’olfatto senza alterare la struttura del pannello. -->
+                    <p><strong>Problema:</strong> molti eventi rischiano di essere piacevoli ma poco distintivi.</p>
+                    <p><strong>Funzione dell’olfatto:</strong> l’olfatto permette di creare un’esperienza più profonda, personale e ricordabile, ma ha bisogno di essere guidato con metodo e sensibilità.</p>
+                    <!-- [116] Riporta l’intervento professionale indicato nel documento sorgente. -->
+                    <p><strong>Intervento:</strong> progetto e conduco esperienze olfattive capaci di collegare profumo, memoria, arte, botanica, territorio, identità e racconto.</p>
+                    <!-- [117] Mantiene complete e ordinate le sei attività previste dalla fonte. -->
+                    <p><strong>Attività comprese:</strong></p>
+                    <ul class="service-detail-list">
+                      <li>ideazione del concept esperienziale;</li>
+                      <li>conduzione dell’evento;</li>
+                      <li>percorsi olfattivi tematici;</li>
+                      <li>esperienze legate a memoria, arte, botanica, luogo o identità di marca;</li>
+                      <li>incontri per clienti VIP, ospiti, community o stampa;</li>
+                      <li>momenti sensoriali integrati in eventi, lanci o percorsi culturali.</li>
+                    </ul>
+                    <!-- [118] Chiude il servizio con il valore dichiarato dal documento. -->
+                    <p><strong>Valore per il brand:</strong> la possibilità di creare un momento di relazione più intenso, distintivo e più duraturo rispetto a un evento tradizionale.</p>
+                    <!-- [119] Inserisce la call to action coerente con il servizio e con la GEtichetta. -->
+                    <p class="service-detail-cta">Se vuoi creare un evento olfattivo per clienti, ospiti o stampa, raccontami il contesto.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- [120] Integra il contenuto completo editoriale senza coinvolgere gli altri servizi. -->
+              <div class="area-item">
+                <button class="area-trigger" type="button" aria-expanded="false" aria-controls="servizio-editoriale" onclick="toggleArea(this)"><span>Contenuti editoriali e culturali</span><span class="area-icon" aria-hidden="true">+</span></button>
+                <div class="area-dropdown" id="servizio-editoriale" hidden>
+                  <div class="service-detail">
+                    <!-- [121] Esplicita i destinatari previsti dalla fonte per il quinto servizio. -->
+                    <p><strong>Destinatari:</strong> per brand, magazine, editori, piattaforme culturali, hotel, spa e realtà che vogliono produrre contenuti sul profumo con un taglio più profondo, interdisciplinare e autorevole.</p>
+                    <!-- [122] Definisce il problema narrativo descritto nel documento sorgente. -->
+                    <p><strong>Problema:</strong> il profumo viene spesso raccontato con formule ripetitive o puramente promozionali. Per emergere, serve un linguaggio capace di collegare materia, memoria, cultura, arte e percezione.</p>
+                    <!-- [123] Riporta l’intervento professionale indicato nel documento sorgente. -->
+                    <p><strong>Intervento:</strong> sviluppo contenuti che trasformano il profumo in racconto culturale, mantenendo equilibrio tra sensibilità narrativa, precisione e identità del progetto.</p>
+                    <!-- [124] Mantiene complete e ordinate le sei attività previste dalla fonte. -->
+                    <p><strong>Attività comprese:</strong></p>
+                    <ul class="service-detail-list">
+                      <li>articoli editoriali;</li>
+                      <li>testi per siti, newsletter e magazine;</li>
+                      <li>contenuti culturali per campagne o progetti speciali;</li>
+                      <li>script per video, presentazioni o interventi;</li>
+                      <li>approfondimenti su materie prime, cultura olfattiva e immaginario del profumo;</li>
+                      <li>testi per eventi, percorsi o installazioni.</li>
+                    </ul>
+                    <!-- [125] Chiude il servizio con il valore dichiarato dal documento. -->
+                    <p><strong>Valore per il brand:</strong> disporre di contenuti più autorevoli e distintivi, capaci di rafforzare l’identità e creare una relazione culturale più solida con il pubblico.</p>
+                    <!-- [126] Inserisce la call to action coerente con il servizio e con la GEtichetta. -->
+                    <p class="service-detail-cta">Se vuoi sviluppare contenuti culturali sul profumo, costruiamo una linea editoriale.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- [127] Integra il contenuto completo dei progetti speciali senza coinvolgere gli altri servizi. -->
+              <div class="area-item">
+                <button class="area-trigger" type="button" aria-expanded="false" aria-controls="servizio-progetti-speciali" onclick="toggleArea(this)"><span>Progetti speciali per hospitality, spa e luoghi culturali</span><span class="area-icon" aria-hidden="true">+</span></button>
+                <div class="area-dropdown" id="servizio-progetti-speciali" hidden>
+                  <div class="service-detail">
+                    <!-- [128] Esplicita i destinatari previsti dalla fonte per il sesto servizio. -->
+                    <p><strong>Destinatari:</strong> per hotel, spa, dimore storiche, musei, gallerie, festival, luoghi culturali e realtà dell’ospitalità che vogliono integrare l’olfatto nella propria esperienza di marca o di luogo.</p>
+                    <!-- [129] Distingue problema e funzione dell’olfatto senza alterare la struttura del pannello. -->
+                    <p><strong>Problema:</strong> molti luoghi comunicano attraverso immagine, design, suono e racconto, ma non utilizzano pienamente l’olfatto come leva identitaria.</p>
+                    <p><strong>Funzione dell’olfatto:</strong> l’olfatto può rendere un luogo più riconoscibile, più evocativo e più profondamente legato all’esperienza di chi lo attraversa.</p>
+                    <!-- [130] Riporta l’intervento professionale indicato nel documento sorgente. -->
+                    <p><strong>Intervento:</strong> affianco strutture e progetti nella costruzione di percorsi olfattivi coerenti con identità, atmosfera, territorio e pubblico.</p>
+                    <!-- [131] Mantiene complete e ordinate le sei attività previste dalla fonte. -->
+                    <p><strong>Attività comprese:</strong></p>
+                    <ul class="service-detail-list">
+                      <li>concept olfattivi per luoghi e percorsi;</li>
+                      <li>esperienze sensoriali per ospiti o visitatori;</li>
+                      <li>installazioni olfattive;</li>
+                      <li>percorsi tematici legati a memoria, territorio, botanica o arte;</li>
+                      <li>consulenza narrativa per integrare l’olfatto nell’esperienza complessiva;</li>
+                      <li>collaborazioni con hotel, spa, gallerie, festival e istituzioni culturali.</li>
+                    </ul>
+                    <!-- [132] Chiude il servizio con il valore dichiarato dal documento. -->
+                    <p><strong>Valore per il brand o per il luogo:</strong> la possibilità di aggiungere una dimensione sensoriale più distintiva e capace di restare impressa alla propria esperienza.</p>
+                    <!-- [133] Inserisce la call to action coerente con il servizio e con la GEtichetta. -->
+                    <p class="service-detail-cta">Se vuoi integrare l’olfatto nell’esperienza del tuo spazio, studiamo una proposta dedicata.</p>
+                  </div>
+                </div>
+              </div>
+
+          </div>
+        </div>
+      </div>
     </div>
     <div class="media-band-slot fade-in">
       <!-- [137] Colloca la fotografia autorizzata nella fascia laterale Servizi. -->
@@ -1967,172 +2143,6 @@
     </div>
   </div>
 
-  <!-- [151] Riunisce i sei accordion esistenti in un unico gruppo senza alterarne contenuti o comportamenti. -->
-  <div class="servizi-aree">
-    <div class="aree-intervento fade-in">
-      <p class="section-eyebrow servizi-aree-label">Cosa posso fare per il tuo brand</p>
-      <div class="aree-grid">
-          <!-- [87] Predispone il primo accordion per il futuro contenuto completo Ambassador. -->
-          <div class="area-item">
-            <button class="area-trigger" type="button" aria-expanded="false" aria-controls="servizio-ambassador" onclick="toggleArea(this)"><span>Ambassador olfattivo per brand</span><span class="area-icon" aria-hidden="true">+</span></button>
-            <div class="area-dropdown" id="servizio-ambassador" hidden>
-              <!-- [90] Integra il contenuto completo Ambassador senza coinvolgere gli altri servizi. -->
-              <div class="service-detail">
-                <p><strong>Destinatari:</strong> brand di profumeria artistica, boutique, distributori, fiere, eventi stampa e realtà del lusso che desiderano una voce esterna autorevole per raccontare fragranze, collezioni o progetti speciali.</p>
-                <p><strong>Problema:</strong> molti brand hanno prodotti di grande valore, ma faticano a trasformare la descrizione del profumo in un’esperienza capace di coinvolgere realmente il pubblico.</p>
-                <p><strong>Rischio:</strong> la fragranza può essere raccontata solo attraverso note, piramidi olfattive e aggettivi generici, senza costruire una relazione più profonda con chi ascolta.</p>
-                <p><strong>Intervento:</strong> come ambassador olfattiva, posso rappresentare il brand in momenti selezionati, presentazioni, incontri con clienti, attività stampa, eventi in boutique, fiere o lanci prodotto.</p>
-                <p><strong>Attività comprese:</strong></p>
-                <ul class="service-detail-list">
-                  <li>presentazioni olfattive guidate per pubblici selezionati.</li>
-                  <li>eventi per clienti, buyer, stampa o community selezionate.</li>
-                  <li>racconto culturale di fragranze, collezioni e materie prime.</li>
-                  <li>presenza come ambassador in boutique, fiere o contesti speciali.</li>
-                  <li>attività di relazione e coinvolgimento del pubblico attorno al brand.</li>
-                </ul>
-                <p><strong>Valore per il brand:</strong> la possibilità di affidare il racconto del profumo a una voce esterna capace di elevare la percezione del prodotto, rendere più incisiva l’esperienza e creare un legame più profondo tra fragranza, immaginario e pubblico.</p>
-                <p class="service-detail-cta">Vuoi presentare il tuo brand attraverso un’esperienza olfattiva guidata? Parliamone e costruiamo insieme il progetto.</p>
-              </div>
-            </div>
-          </div>
-          <!-- [88] Predispone il secondo accordion per il futuro contenuto completo di consulenza. -->
-          <div class="area-item">
-            <button class="area-trigger" type="button" aria-expanded="false" aria-controls="servizio-consulenza" onclick="toggleArea(this)"><span>Consulenza narrativa e direzione culturale</span><span class="area-icon" aria-hidden="true">+</span></button>
-            <div class="area-dropdown" id="servizio-consulenza" hidden>
-              <!-- [98] Integra il contenuto completo Consulenza senza coinvolgere gli altri servizi. -->
-              <div class="service-detail">
-                <p><strong>Destinatari:</strong> brand che desiderano rafforzare la propria identità narrativa, migliorare il racconto delle fragranze, costruire contenuti più distintivi o sviluppare concept culturali per collezioni, eventi e campagne.</p>
-                <p><strong>Problema:</strong> nel mercato della profumeria artistica molti brand utilizzano linguaggi simili: emozione, memoria, viaggio, identità, materia, rituale.</p>
-                <p><strong>Rischio:</strong> apparire poetici, ma non davvero differenti.</p>
-                <p><strong>Intervento:</strong> con la consulenza narrativa aiuto il brand a rendere più preciso, riconoscibile e coerente il proprio modo di raccontarsi.</p>
-                <p><strong>Attività comprese:</strong></p>
-                <ul class="service-detail-list">
-                  <li>analisi del linguaggio attuale del brand;</li>
-                  <li>revisione del tono di voce;</li>
-                  <li>concept narrativi per fragranze e collezioni;</li>
-                  <li>testi editoriali e schede narrative;</li>
-                  <li>storytelling per lanci, eventi, campagne e contenuti digitali;</li>
-                  <li>supporto alla costruzione di un immaginario coerente.</li>
-                </ul>
-                <p><strong>Valore per il brand:</strong> la possibilità di trasformare il racconto del profumo in un linguaggio più distintivo, meno generico e più aderente alla propria identità.</p>
-                <p class="service-detail-cta">Vuoi rendere più forte e riconoscibile il racconto del tuo brand? Possiamo lavorare insieme sul tuo racconto di brand.</p>
-              </div>
-            </div>
-          </div>
-          <!-- [106] Integra il contenuto completo Formazione senza coinvolgere gli altri servizi. -->
-          <div class="area-item">
-            <button class="area-trigger" type="button" aria-expanded="false" aria-controls="servizio-formazione" onclick="toggleArea(this)"><span>Formazione olfattiva per team e reti vendita</span><span class="area-icon" aria-hidden="true">+</span></button>
-            <div class="area-dropdown" id="servizio-formazione" hidden>
-              <div class="service-detail">
-                <p><strong>Destinatari:</strong> boutique, distributori, reti vendita, team marketing, hotel, spa e realtà del luxury retail che vogliono formare le persone incaricate di raccontare il profumo al cliente.</p>
-                <p><strong>Problema:</strong> spesso chi vende o presenta una fragranza conosce il prodotto, ma non dispone di strumenti narrativi sufficienti per trasformare la spiegazione tecnica in esperienza.</p>
-                <p><strong>Risultato:</strong> una comunicazione corretta, ma poco coinvolgente.</p>
-                <p><strong>Intervento:</strong> con i percorsi di formazione olfattiva lavoro sulla capacità di raccontare il profumo con più profondità, sicurezza e coerenza, collegando prodotto, percezione, memoria, emozione e identità di marca.</p>
-                <p><strong>Attività comprese:</strong></p>
-                <ul class="service-detail-list">
-                  <li>workshop di cultura olfattiva;</li>
-                  <li>formazione sul racconto del profumo;</li>
-                  <li>percorsi su memoria, emozione, percezione e linguaggio olfattivo;</li>
-                  <li>strumenti narrativi per boutique e reti vendita;</li>
-                  <li>sessioni formative su fragranze o collezioni specifiche;</li>
-                  <li>supporto alla costruzione di un racconto più efficace nella relazione con il cliente.</li>
-                </ul>
-                <p><strong>Valore per il brand:</strong> un team più preparato, più consapevole e più capace di trasformare la vendita in esperienza.</p>
-                <p class="service-detail-cta">Vuoi formare il tuo team a raccontare meglio il profumo? Costruiamo un percorso su misura.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- [113] Integra il contenuto completo Eventi senza coinvolgere gli altri servizi. -->
-          <div class="area-item">
-            <button class="area-trigger" type="button" aria-expanded="false" aria-controls="servizio-eventi" onclick="toggleArea(this)"><span>Eventi ed esperienze olfattive</span><span class="area-icon" aria-hidden="true">+</span></button>
-            <div class="area-dropdown" id="servizio-eventi" hidden>
-              <div class="service-detail">
-                <!-- [114] Esplicita i destinatari previsti dalla fonte per il quarto servizio. -->
-                <p><strong>Destinatari:</strong> per brand, boutique, hotel, spa, gallerie, festival, istituzioni culturali e realtà dell’hospitality che vogliono creare esperienze olfattive capaci di restare nella memoria di clienti, ospiti o pubblici selezionati.</p>
-                <!-- [115] Distingue problema e funzione dell’olfatto senza alterare la struttura del pannello. -->
-                <p><strong>Problema:</strong> molti eventi rischiano di essere piacevoli ma poco distintivi.</p>
-                <p><strong>Funzione dell’olfatto:</strong> l’olfatto permette di creare un’esperienza più profonda, personale e ricordabile, ma ha bisogno di essere guidato con metodo e sensibilità.</p>
-                <!-- [116] Riporta l’intervento professionale indicato nel documento sorgente. -->
-                <p><strong>Intervento:</strong> progetto e conduco esperienze olfattive capaci di collegare profumo, memoria, arte, botanica, territorio, identità e racconto.</p>
-                <!-- [117] Mantiene complete e ordinate le sei attività previste dalla fonte. -->
-                <p><strong>Attività comprese:</strong></p>
-                <ul class="service-detail-list">
-                  <li>ideazione del concept esperienziale;</li>
-                  <li>conduzione dell’evento;</li>
-                  <li>percorsi olfattivi tematici;</li>
-                  <li>esperienze legate a memoria, arte, botanica, luogo o identità di marca;</li>
-                  <li>incontri per clienti VIP, ospiti, community o stampa;</li>
-                  <li>momenti sensoriali integrati in eventi, lanci o percorsi culturali.</li>
-                </ul>
-                <!-- [118] Chiude il servizio con il valore dichiarato dal documento. -->
-                <p><strong>Valore per il brand:</strong> la possibilità di creare un momento di relazione più intenso, distintivo e più duraturo rispetto a un evento tradizionale.</p>
-                <!-- [119] Inserisce la call to action coerente con il servizio e con la GEtichetta. -->
-                <p class="service-detail-cta">Se vuoi creare un evento olfattivo per clienti, ospiti o stampa, raccontami il contesto.</p>
-              </div>
-            </div>
-          </div>
-          <!-- [120] Integra il contenuto completo editoriale senza coinvolgere gli altri servizi. -->
-          <div class="area-item">
-            <button class="area-trigger" type="button" aria-expanded="false" aria-controls="servizio-editoriale" onclick="toggleArea(this)"><span>Contenuti editoriali e culturali</span><span class="area-icon" aria-hidden="true">+</span></button>
-            <div class="area-dropdown" id="servizio-editoriale" hidden>
-              <div class="service-detail">
-                <!-- [121] Esplicita i destinatari previsti dalla fonte per il quinto servizio. -->
-                <p><strong>Destinatari:</strong> per brand, magazine, editori, piattaforme culturali, hotel, spa e realtà che vogliono produrre contenuti sul profumo con un taglio più profondo, interdisciplinare e autorevole.</p>
-                <!-- [122] Definisce il problema narrativo descritto nel documento sorgente. -->
-                <p><strong>Problema:</strong> il profumo viene spesso raccontato con formule ripetitive o puramente promozionali. Per emergere, serve un linguaggio capace di collegare materia, memoria, cultura, arte e percezione.</p>
-                <!-- [123] Riporta l’intervento professionale indicato nel documento sorgente. -->
-                <p><strong>Intervento:</strong> sviluppo contenuti che trasformano il profumo in racconto culturale, mantenendo equilibrio tra sensibilità narrativa, precisione e identità del progetto.</p>
-                <!-- [124] Mantiene complete e ordinate le sei attività previste dalla fonte. -->
-                <p><strong>Attività comprese:</strong></p>
-                <ul class="service-detail-list">
-                  <li>articoli editoriali;</li>
-                  <li>testi per siti, newsletter e magazine;</li>
-                  <li>contenuti culturali per campagne o progetti speciali;</li>
-                  <li>script per video, presentazioni o interventi;</li>
-                  <li>approfondimenti su materie prime, cultura olfattiva e immaginario del profumo;</li>
-                  <li>testi per eventi, percorsi o installazioni.</li>
-                </ul>
-                <!-- [125] Chiude il servizio con il valore dichiarato dal documento. -->
-                <p><strong>Valore per il brand:</strong> disporre di contenuti più autorevoli e distintivi, capaci di rafforzare l’identità e creare una relazione culturale più solida con il pubblico.</p>
-                <!-- [126] Inserisce la call to action coerente con il servizio e con la GEtichetta. -->
-                <p class="service-detail-cta">Se vuoi sviluppare contenuti culturali sul profumo, costruiamo una linea editoriale.</p>
-              </div>
-            </div>
-          </div>
-          <!-- [127] Integra il contenuto completo dei progetti speciali senza coinvolgere gli altri servizi. -->
-          <div class="area-item">
-            <button class="area-trigger" type="button" aria-expanded="false" aria-controls="servizio-progetti-speciali" onclick="toggleArea(this)"><span>Progetti speciali per hospitality, spa e luoghi culturali</span><span class="area-icon" aria-hidden="true">+</span></button>
-            <div class="area-dropdown" id="servizio-progetti-speciali" hidden>
-              <div class="service-detail">
-                <!-- [128] Esplicita i destinatari previsti dalla fonte per il sesto servizio. -->
-                <p><strong>Destinatari:</strong> per hotel, spa, dimore storiche, musei, gallerie, festival, luoghi culturali e realtà dell’ospitalità che vogliono integrare l’olfatto nella propria esperienza di marca o di luogo.</p>
-                <!-- [129] Distingue problema e funzione dell’olfatto senza alterare la struttura del pannello. -->
-                <p><strong>Problema:</strong> molti luoghi comunicano attraverso immagine, design, suono e racconto, ma non utilizzano pienamente l’olfatto come leva identitaria.</p>
-                <p><strong>Funzione dell’olfatto:</strong> l’olfatto può rendere un luogo più riconoscibile, più evocativo e più profondamente legato all’esperienza di chi lo attraversa.</p>
-                <!-- [130] Riporta l’intervento professionale indicato nel documento sorgente. -->
-                <p><strong>Intervento:</strong> affianco strutture e progetti nella costruzione di percorsi olfattivi coerenti con identità, atmosfera, territorio e pubblico.</p>
-                <!-- [131] Mantiene complete e ordinate le sei attività previste dalla fonte. -->
-                <p><strong>Attività comprese:</strong></p>
-                <ul class="service-detail-list">
-                  <li>concept olfattivi per luoghi e percorsi;</li>
-                  <li>esperienze sensoriali per ospiti o visitatori;</li>
-                  <li>installazioni olfattive;</li>
-                  <li>percorsi tematici legati a memoria, territorio, botanica o arte;</li>
-                  <li>consulenza narrativa per integrare l’olfatto nell’esperienza complessiva;</li>
-                  <li>collaborazioni con hotel, spa, gallerie, festival e istituzioni culturali.</li>
-                </ul>
-                <!-- [132] Chiude il servizio con il valore dichiarato dal documento. -->
-                <p><strong>Valore per il brand o per il luogo:</strong> la possibilità di aggiungere una dimensione sensoriale più distintiva e capace di restare impressa alla propria esperienza.</p>
-                <!-- [133] Inserisce la call to action coerente con il servizio e con la GEtichetta. -->
-                <p class="service-detail-cta">Se vuoi integrare l’olfatto nell’esperienza del tuo spazio, studiamo una proposta dedicata.</p>
-              </div>
-            </div>
-          </div>
-
-      </div>
-    </div>
-  </div>
 </section>
 
 <!-- +--------------------------------------------------+

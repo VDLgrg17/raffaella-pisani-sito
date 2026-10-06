@@ -1283,3 +1283,62 @@ Compatibilità della catena: CONFERMATA.
 Stato finale: STABLE.
 Istruzioni atomiche generate: 2, [161] e [162].
 ---
+
+[VEDETTA — PRE-MODIFICA SERVIZI INTEGRATI — 2026-10-06]
+Richiesta: mantenere la fascia nocciola a tutta larghezza, allineare il blocco Servizi verso l’alto, compattare i sei pulsanti nella metà testuale destra, eliminare il contenitore inferiore separato e preservare la mano inferiore della fotografia spostando il crop verso il basso.
+Blocco principale: F15, `index.html`, markup della prima fascia Servizi e gruppo accordion.
+Dipendenze dirette a monte: F6, stile e layout Servizi; F7b, griglia `.media-band` e foto comune; F10b, ordine delle colonne e ordine mobile; F1 e F3, variabili, regole comuni delle sezioni e sfondo.
+Dipendenze indirette a monte: F19 applica il fade-in agli elementi già presenti; F11, F28 e F40 consumano l’ancora invariata `#servizi`.
+Dipendenti diretti a valle: F24 trova `.area-item`, `.area-trigger` e `.area-dropdown` per sincronizzare aria-expanded, visibilità e apertura singola.
+Dipendenti indiretti a valle: F19 osserva tutti gli elementi `.fade-in`; la fotografia resta caricata in modo lazy e asincrono con l’asset autorizzato.
+Relazioni trasversali: F6, F15 e F24 condividono le classi e gli attributi degli accordion; F7b e F10b condividono `.media-band`, `.media-band-copy`, `.media-band-slot` e `.section-photo`; F11, F28 e F40 condividono l’ancora `#servizi`.
+Dipendenze nascoste rilevate: il contenuto F15 è figlio diretto di `#servizi`, quindi resta soggetto all’overlay e allo z-index di F6; la prova è il selettore `#servizi > *` in F6.
+Dipendenze circolari: nessuna.
+Blocchi da modificare: F6 e F15 in `index.html`; `mappa_blocchi.md` e `todo.md` per tracciabilità; `debug_session.log` per audit.
+Blocchi da verificare: F1, F3, F7b, F10b, F11, F19, F24, F28 e F40.
+Blocchi esclusi con prova: F2, F2b, F4, F5, F7, F7-ext, F8, F9, F16, F17, F18, F20–F23, F25, F27 e F29 non selezionano gli elementi Servizi coinvolti e non devono cambiare.
+Relazioni irrisolte: nessuna.
+Chiusura ricorsiva completata: SÌ.
+Gate Vedetta: APERTURA AUTORIZZATA.
+Logic Before Code: la soluzione minima trasferisce il gruppo accordion esistente dentro `.media-band-copy`, senza riscriverne testi o contratti, poi aggiunge solo selettori F6 circoscritti per allineamento alto, compattazione desktop e protezione della mano nel crop.
+Istruzioni atomiche previste: 6, numeri [163]–[168].
+---
+[ANTI-LOOP GUARDIAN — 2026-10-06]
+Tentativo 1: il trasformatore temporaneo basato su una chiusura generica del pannello ha rilevato tre confini possibili e si è fermato prima di scrivere il sito.
+Tentativo 2: il trasformatore corretto ha intercettato il gruppo appena inserito invece del gruppo originario e si è fermato prima di scrivere il sito.
+Stato del sito: invariato salvo gli header WIP già autorizzati.
+Cambio radicale di strategia: abbandonato il trasformatore basato su marker ricercati; il trasferimento del solo intervallo F15 verrà eseguito con chirurgia per intervallo di righe, dopo conferma dei confini reali e senza rigenerare il contenuto.
+---
+[ANTI-LOOP GUARDIAN — 2026-10-06]
+Tentativo 1 della chirurgia per intervallo: il controllo puntava alla prima occorrenza CSS di `.servizi-aree` e ha impedito il salvataggio.
+Tentativo 2 della chirurgia per intervallo: il controllo cercava la prima classe `.media-band-slot` dopo il selettore CSS `.servizi-intro`, non il nodo interno alla sezione F15; anche questo controllo ha impedito il salvataggio.
+Stato del sito: invariato salvo gli header WIP già autorizzati.
+Cambio radicale di strategia: abbandonata la trasformazione in-place; verrà costruito un candidato esterno con `awk`, verificato integralmente e solo dopo sostituito mediante `mv` atomico.
+---
+[VALIDAZIONE ESTERNA — SERVIZI INTEGRATI — 2026-10-06]
+Modello: Claude Sonnet 4.6 tramite OpenRouter.
+Esito: APPROVATO.
+Motivazione: F15 integra correttamente i sei accordion nel pannello `.media-band-copy`; F6 applica la compattazione desktop e il crop verticale `object-position: right 68%`. I rilievi del validatore su ordine storico di proprietà F6, classe descrittiva `media-band--image-right`, margine negativo storico di F16 e fallback F24 sono non bloccanti e non richiedono modifiche fuori dal gate autorizzato.
+---
+[VEDETTA — POST-MODIFICA SERVIZI INTEGRATI — 2026-10-06]
+Blocchi modificati: F6 e F15.
+Blocchi verificati senza modifica: F1, F3, F7b, F10b, F11, F19, F24, F28 e F40.
+Contratti controllati: fascia nocciola continua, testi immutati, sei ID accordion, sei trigger, sei pannelli, ordine mobile testo prima della fotografia, fotografia a sinistra su desktop, assenza di contenitore inferiore autonomo, crop verticale basso e comportamento a apertura singola.
+Verifica deterministica: PASS; testo introduttivo e testo dei sei accordion coincidono semanticamente con lo snapshot, ID e aria-controls coincidono, F7b, F10b, F19 e F24 hanno impronte identiche alla baseline.
+Verifica visiva controllata desktop: PASS; fotografia e pannello destro misurano la stessa altezza, sei pulsanti misurano 48 px, il pannello risulta allineato verso l’alto e non si rileva overflow orizzontale.
+Verifica visiva controllata mobile: PASS; testo e sei accordion restano dentro `.media-band-copy`, precedono la fotografia e non si rileva overflow orizzontale a 390 px.
+Verifica accordion aperto: PASS; il pannello lungo espande la fascia e la fotografia in modo corrispondente, resta prima di Referenze e non sovrappone F16.
+Verifica console: PASS; nessun errore rilevato.
+Validazione GV: nessun testo visibile nuovo è stato introdotto. Il validatore completo segnala quattro minuscole di elenco storico dopo il punto, ma la richiesta vieta alterazioni ai testi esistenti e le voci sono rimaste identiche.
+Nuove dipendenze rilevate: nessuna. Il vincolo tra F15, F6 e F24 resta invariato.
+Mappa blocchi aggiornata: SÌ.
+Header F aggiornati: SÌ.
+Compatibilità della catena: CONFERMATA.
+Stato finale: STABLE.
+Istruzioni atomiche generate: 6, [163]–[168].
+---
+[QA AGGIUNTIVO — BREAKPOINT SERVIZI — 2026-10-06]
+Controllo desktop a 1024 px: PASS; fotografia a sinistra, pannello destro equivalente in altezza e nessun overflow orizzontale.
+Controllo soglia a 900 px: PASS; fotografia a sinistra, pannello destro equivalente in altezza e nessun overflow orizzontale.
+Controllo sotto soglia a 899 px: PASS; sequenza contenuto prima della fotografia e nessun overflow orizzontale.
+---
