@@ -38,16 +38,16 @@ La geometria laterale è predisposta su nove spazi, con fotografia e contenuto s
 | F12 | `index.html` | 1724–1751 | Markup della hero | F3, F10b | STABLE | 2026-09-03 |
 | F13 | `index.html` | 1752–1804 | Markup della sezione Chi sono | F3, F4, F7b, F10b, F19 | STABLE | 2026-10-06 |
 | F14 | `index.html` | 1805–1839 | Markup della sezione Visione | F3, F5, F7b, F10b, F19 | STABLE | 2026-10-06 |
-| F15 | `index.html` | 1840–2053 | Markup della sezione Servizi | F3, F6, F7b, F10b, F19, F24 | STABLE | 2026-10-06 |
-| F16 | `index.html` | 2090–2231 | Introduzione, collaborazioni e case history della sezione Referenze | F3, F6, F7, F7b, F8, F10b, F19 | STABLE | 2026-09-18 |
-| F26 | `index.html` | 2232–2368 | Community olfattiva e testimonianze personali | F3, F6, F7-ext, F7b, F10b, F17, F19, F21b | STABLE | 2026-09-18 |
-| F17 | `index.html` | 2369–2419 | Markup della sezione Contatti | F7b, F8, F10b | STABLE | 2026-09-03 |
-| F18 | `index.html` | 2420–2431 | Markup del footer | F9 | STABLE | 2026-07-31 |
-| F19 | `index.html` | 2432–2444 | Osservatore delle animazioni fade-in | F10 | STABLE | 2026-07-31 |
-| F22 | `index.html` | 2445–2456 | Registrazione del service worker | F28, F29 | STABLE | 2026-09-02 |
-| F23 | `index.html` | 2457–2517 | Markup della barra e delle modali PWA | F20, F21, F27, F28 | STABLE | 2026-09-02 |
-| F24 | `index.html` | 2518–2543 | Comportamento degli accordion Servizi | F6, F15 | STABLE | 2026-09-03 |
-| F25 | `index.html` | 2544–2572 | Comportamento del menu hamburger | F2b, F11 | STABLE | 2026-09-02 |
+| F15 | `index.html` | 1840–2054 | Markup della sezione Servizi | F3, F6, F7b, F10b, F19, F24 | STABLE | 2026-10-06 |
+| F16 | `index.html` | 2091–2232 | Introduzione, collaborazioni e case history della sezione Referenze | F3, F6, F7, F7b, F8, F10b, F19 | STABLE | 2026-09-18 |
+| F26 | `index.html` | 2233–2369 | Community olfattiva e testimonianze personali | F3, F6, F7-ext, F7b, F10b, F17, F19, F21b | STABLE | 2026-09-18 |
+| F17 | `index.html` | 2370–2420 | Markup della sezione Contatti | F7b, F8, F10b | STABLE | 2026-09-03 |
+| F18 | `index.html` | 2421–2432 | Markup del footer | F9 | STABLE | 2026-07-31 |
+| F19 | `index.html` | 2433–2445 | Osservatore delle animazioni fade-in | F10 | STABLE | 2026-07-31 |
+| F22 | `index.html` | 2446–2457 | Registrazione del service worker | F28, F29 | STABLE | 2026-09-02 |
+| F23 | `index.html` | 2458–2518 | Markup della barra e delle modali PWA | F20, F21, F27, F28 | STABLE | 2026-09-02 |
+| F24 | `index.html` | 2519–2544 | Comportamento degli accordion Servizi | F6, F15 | STABLE | 2026-09-03 |
+| F25 | `index.html` | 2545–2573 | Comportamento del menu hamburger | F2b, F11 | STABLE | 2026-09-02 |
 | F27 | `pwa-action-bar.js` | 1–145 | Logica della barra azioni e delle modali PWA | F20, F21, F23, F29 | STABLE | 2026-09-02 |
 | F27.1 | `pwa-action-bar.js` | 77–103 | Ascolto degli aggiornamenti del service worker | F27, F29 | STABLE | 2026-09-02 |
 | F28 | `manifest.json` | 1–118 | Identità, icone, schermate e scorciatoie PWA | F0, F13, F15, F17 | STABLE | 2026-09-02 |
@@ -57,7 +57,7 @@ La geometria laterale è predisposta su nove spazi, con fotografia e contenuto s
 | F29.3 | `sw.js` | 66–97 | Recupero network-first e fallback cache | F29 | STABLE | 2026-09-02 |
 | F29.4 | `sw.js` | 99–106 | Gestione dei messaggi del client | F29 | STABLE | 2026-09-02 |
 | F72 | `index.html` | 1602–1687 | Stile della sezione Modalità di collaborazione | F1, F3, F10 | STABLE | 2026-09-03 |
-| F73 | `index.html` | 2054–2089 | Markup della sezione Modalità di collaborazione | F3, F10, F17, F19, F72 | STABLE | 2026-09-02 |
+| F73 | `index.html` | 2055–2090 | Markup della sezione Modalità di collaborazione | F3, F10, F17, F19, F72 | STABLE | 2026-09-02 |
 
 Il formato JSON non consente commenti: **F28** è identificato esclusivamente nella presente mappa.
 

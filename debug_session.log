@@ -1039,3 +1039,43 @@ Browser pubblico desktop 1280×1100: PASS. Prima fascia Servizi 1265×1100, test
 Browser pubblico: PASS. Immagine caricata, nessun errore console rilevato e sei accordion con apertura singola e chiusura esterna.
 URL verificato: https://raffaella-pisani-sito.netlify.app/?v=64231b9#servizi
 ---
+
+[Servizi — rimozione riga del titolo, Vedetta pre-modifica — 2026-10-06]
+JSON task: {"task_id":"servizi-title-20261006","description":"rimuovere esclusivamente la riga per brand e luoghi dell’esperienza dal titolo introduttivo Servizi","files_involved":["index.html","mappa_blocchi.md","todo.md","debug_session.log"],"requirements":["conservare le prime due righe","non alterare stile o layout","non modificare altre sezioni"],"validation_criteria":["testo finale su due righe","asset e testo descrittivo invariati","accordion e mobile invariati"]}.
+Intento Logic Before Code: eliminare l’ultimo `<br>` con la sola frase richiesta in F15 affinché il titolo Servizi resti composto dalle prime due righe approvate.
+Giustificazione: la richiesta riguarda soltanto il contenuto visibile dell’intestazione, quindi non richiede CSS, asset o JavaScript aggiuntivi.
+VEDETTA — PRE-MODIFICA
+Richiesta: rimuovere esclusivamente «per brand e luoghi dell’esperienza» dal titolo introduttivo Servizi.
+Blocco principale: F15, index.html, markup Servizi.
+Dipendenze dirette a monte: F3 e F6 per geometria e stile della sezione; F7b per il fotogramma; F10b per ordine mobile; F19 per fade-in; F24 per accordion contenuto in F15.
+Dipendenze indirette a monte: F1 attraverso F3, F6, F7b e F10b.
+Dipendenti diretti a valle: F28 soltanto come collegamento documentato nel manifest; nessuna lettura dinamica del testo del titolo.
+Dipendenti indiretti a valle: nessuno pertinente.
+Relazioni trasversali: F11 e blog.html raggiungono l’ancora `#servizi`, ma non leggono il testo del titolo.
+Dipendenze nascoste rilevate: nessuna. La ricerca della frase esatta restituisce soltanto F15.
+Dipendenze circolari: nessuna.
+Blocchi da modificare: F15, più mappa_blocchi.md e todo.md per tracciabilità.
+Blocchi da verificare: F3, F6, F7b, F10b, F19, F24, F28, F11 e blog.html.
+Blocchi esclusi con prova: F7, F7-ext, F8, F9, F13, F14, F16, F17, F18, F20, F21, F21b, F22, F23, F25, F26, F27 e F29 perché non contengono la frase, non selezionano il titolo oppure non sono raggiunti dal solo markup testuale.
+Relazioni irrisolte: nessuna.
+Chiusura ricorsiva completata: SÌ.
+Gate Vedetta: APERTURA AUTORIZZATA.
+---
+
+[Servizi — rimozione riga del titolo, verifica e validazione — 2026-10-06]
+Validatore primario: Claude Sonnet 4.6 tramite OpenRouter.
+Esito: APPROVATO.
+Motivazione: F15 contiene esattamente due righe con un solo `<br>`; la frase richiesta è assente; asset, tre paragrafi introduttivi, fade-in, sei accordion e markup adiacente restano invariati. Nessuna correzione richiesta.
+Risposta completa: /tmp/raffaella-servizi-title/claude_validation.json.
+VEDETTA — POST-MODIFICA
+Blocchi modificati: F15 in index.html; mappa_blocchi.md, todo.md e debug_session.log per tracciabilità.
+Blocchi verificati senza modifica: F3, F6, F7b, F10b, F19, F24, F28, F11 e blog.html.
+Contratti controllati: titolo esattamente su due righe, frase rimossa assente, asset Servizi invariato, tre paragrafi invariati, fotografia strutturale sinistra invariata, mobile invariato, sei accordion e script invariati.
+Test o verifiche eseguiti: Git diff check, ricerca frase esatta, snapshot di integrità, browser locale, assenza overflow, controllo accordion, console e Claude Sonnet 4.6.
+Nuove dipendenze rilevate: nessuna.
+Mappa blocchi aggiornata: SÌ.
+Header F aggiornati: SÌ.
+Compatibilità della catena: CONFERMATA.
+Stato finale: STABLE.
+Istruzioni atomiche generate: 1 — [146], rimozione della terza riga dal titolo F15.
+---
