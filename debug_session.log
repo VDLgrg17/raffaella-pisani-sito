@@ -1660,3 +1660,12 @@ Console locale: PASS. Nessun errore rilevato.
 Validazione esterna: Claude Sonnet 4.6 APPROVATO.
 Stato: PRONTO PER COMMIT E VERIFICA PUBBLICA.
 ---
+
+[2026-10-07T00:19:16+02:00] — V19 VERIFICA PUBBLICA — filo dorato fotografia Servizi
+Commit di implementazione: 01d3165, pubblicato su github/master.
+Netlify: HTTP 200; sorgente pubblico aggiornato al secondo tentativo e contenente [180], pseudo-elemento Servizi e altezza 3 px.
+Browser pubblico: PASS. Il filo ha content vuoto, altezza 3 px, colore rgb(168, 137, 90), pointer-events none, bordo coincidente con la base della fotografia, fine della sezione coincidente con il pannello Servizi e nessun overflow orizzontale.
+Accordion pubblico: PASS. Sei trigger verificati, apertura singola e chiusura dell’ultimo pannello confermate.
+Console pubblica: PASS. Nessun errore rilevato.
+Stato operativo: pubblicazione corretta, attesa del commit di sola evidenza.
+---
