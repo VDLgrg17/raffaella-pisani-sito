@@ -547,8 +547,8 @@
 
   /* +--------------------------------------------------+
    | [F6] - CSS Servizi — introduzione e sei aree       |
-   | Dipende da: F1                                      |
-   | Status: STABLE | Last modified: 2026-09-03      |
+   | Dipende da: F1, F3, F7b, F10b                      |
+   | Status: STABLE | Last modified: 2026-10-06         |
    +--------------------------------------------------+ */
   /* SERVIZI */
   #servizi {
@@ -716,6 +716,42 @@
     font-size: 1rem;
     font-style: italic;
     color: #ffffff;
+  }
+
+  /* [143] Estende esclusivamente la prima fascia Servizi fino ai bordi della sezione desktop. */
+  @media (min-width: 900px) {
+    #servizi > .media-band:first-child {
+      min-height: 100svh;
+      margin-top: -140px;
+      margin-right: -72px;
+      margin-left: -72px;
+      gap: 0;
+      align-items: stretch;
+    }
+    /* [144] Inverte le colonne della prima fascia, collocando la fotografia a sinistra e il testo a destra. */
+    #servizi > .media-band:first-child > .media-band-slot {
+      grid-column: 1;
+      grid-row: 1;
+      align-self: stretch;
+    }
+    #servizi > .media-band:first-child > .media-band-copy {
+      grid-column: 2;
+      grid-row: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(72px, 8vw, 152px) clamp(52px, 7vw, 136px);
+    }
+    /* [145] Trasforma la sola fotografia introduttiva Servizi in superficie strutturale senza bordi. */
+    #servizi > .media-band:first-child .section-photo {
+      width: 100%;
+      max-width: none;
+      height: 100%;
+      margin: 0;
+      object-fit: cover;
+      object-position: right top;
+      border-radius: 0;
+    }
   }
 
   /* CREDIBILITÀ */
@@ -1803,10 +1839,10 @@
 <!-- +--------------------------------------------------+
      | [F15] - Markup SERVIZI — sei aree accordion        |
      | Dipende da: F3, F6, F7b, F10b, F19, F24            |
-     | Status: STABLE | Last modified: 2026-09-18   |
+     | Status: STABLE | Last modified: 2026-10-06         |
      +--------------------------------------------------+ -->
 <section id="servizi">
-  <!-- [71] Affianca l’introduzione dei Servizi allo spazio fotografico destro. -->
+  <!-- [71] Fornisce a F6 l’introduzione e la fotografia della prima fascia Servizi. -->
   <div class="media-band media-band--image-right">
     <div class="media-band-copy">
       <div class="fade-in">

@@ -65,3 +65,4 @@
 - [x] Correggere il ritaglio delle cinque fotografie attività mostrando il fotogramma integrale.
 - [x] Trasformare esclusivamente la fotografia di Chi sono in metà strutturale della sezione desktop.
 - [x] Trasformare esclusivamente la fotografia di Visione in metà strutturale della sezione desktop.
+- [x] Trasformare esclusivamente la prima fotografia Servizi in metà strutturale sinistra della sezione desktop.

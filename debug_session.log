@@ -966,3 +966,67 @@ Browser pubblico: PASS. Immagine caricata e nessun errore console rilevato.
 Accordion pubblici: PASS. Sei controlli disponibili, apertura singola conservata, click esterno chiude tutti i pannelli.
 URL verificato: https://raffaella-pisani-sito.netlify.app/?v=edc4b8e#visione
 ---
+
+[Servizi — prima fascia fotografica a metà pagina sinistra — Gate Vedetta pre-modifica — 2026-10-06]
+JSON MAPPING INTERNO
+{"task_id":"servizi-intro-half-page-left-2026-10-06","description":"Trasformare esclusivamente la fotografia già presente nella prima fascia di Servizi in una metà strutturale sinistra della sola sezione desktop, mantenendo l’introduzione esistente nella metà destra.","files_involved":["index.html","mappa_blocchi.md","todo.md","debug_session.log"],"requirements":["nessuna nuova immagine","foto sinistra ampia a tutta altezza su desktop da 900px","testo Servizi invariato a destra","fondo terracotta invariato","accordion e seconda fascia Servizi invariati","mobile invariato"],"validation_criteria":["F6 unico blocco CSS modificato nel sito","F15, F7b, F10b, F19 e F24 preservati","prima foto Servizi metà sinistra desktop","mobile testo prima e foto integra","nessun overflow e accordion invariati"]}
+
+LOGICA PRIMA DEL CODICE
+Obiettivo: rendere strutturale solo la fotografia già presente nella prima fascia Servizi e invertirne la composizione visiva rispetto allo screenshot, con foto a sinistra e testo invariato a destra.
+Causa: F7b limita tutte le immagini laterali a 560px con margine automatico e bordo 16px; F10b colloca il markup `.media-band--image-right` con testo a sinistra e foto a destra. La prima fascia Servizi appare quindi come testo con cartolina a destra.
+Soluzione minima: F6 applicherà da 900px solo al primo figlio `.media-band` di `#servizi` una fascia a tutta larghezza e altezza, poi invertirà le due colonne visive con selettori esclusivi. La foto coprirà la metà sinistra con ancoraggio `right top`; il testo esistente si collocherà nella metà destra. Il padding della sezione rimarrà attivo per preservare seconda e terza fascia Servizi.
+Istruzione atomica prevista: [143] trasforma esclusivamente la prima fascia Servizi in due metà desktop, con fotografia strutturale a sinistra e introduzione invariata a destra.
+
+CHECKPOINT — STATO CONGELATO
+Repository: VDLgrg17/raffaella-pisani-sito, branch master, commit 3538311, parità GitHub 0/0 e working tree pulito.
+File congelati: index.html, mappa_blocchi.md, todo.md e debug_session.log in /tmp/raffaella-servizi-half-page.
+Stato esistente: F15 usa come primo figlio la classe `.media-band--image-right`, con `media-band-copy` prima nel DOM e `media-band-slot` con l’asset autorizzato dopo nel DOM. F10b rende foto a destra e testo a sinistra da 640px. F7b definisce la foto comune. F6 definisce sfondo terracotta, overlay e contenuti Servizi.
+Vincoli congelati: asset `raffaella-servizi-formazione-olfattiva.jpeg`, testi introduttivi, sfondo terracotta, overlay, markup F15, sei accordion, seconda e terza fascia Servizi, menu, hero, PWA, mobile e tutte le altre sezioni non vengono modificati.
+
+VEDETTA — PRE-MODIFICA
+Richiesta: applicare alla sola prima fascia Servizi la fotografia strutturale a metà sezione, ma in modo invertito rispetto alla Visione, con foto a sinistra e testo a destra.
+Blocco principale: F6, CSS Servizi, index.html righe 549–742.
+Input: id `#servizi`, primo figlio `.media-band`, classi F15, variabili F1, padding comune F3, foto e banda F7b, colonne mobili e desktop F10b.
+Output: geometria desktop isolata della prima fascia Servizi con fotografia sinistra strutturale e testo destro.
+Dipendenze dirette a monte: F1 per variabili, F3 per padding comune, F7b per foto e banda laterale, F10b per i binari di griglia e l’ordine mobile.
+Dipendenze indirette a monte: F0 attraverso F1 e F10 attraverso F10b e F19.
+Dipendenti diretti a valle: F15, che fornisce il primo `media-band`, l’asset e l’introduzione senza modifiche.
+Dipendenti indiretti a valle: F11, F28 e F40 attraverso l’ancora `#servizi`, senza rinomina dell’ancora; F24 attraverso le classi accordion della stessa sezione, senza modifica del comportamento.
+Relazioni trasversali: F4, F5, F13, F14, F16 e F26 condividono F7b o F10b; F15 e F24 condividono i sei accordion. Tutti vengono protetti da selettori che raggiungono solo `#servizi > .media-band:first-child`.
+Dipendenze nascoste rilevate: il selettore `.media-band + .media-band` in F7b assegna 72px tra la prima e la seconda fascia; viene preservato. L’asset Servizi ha `loading="lazy"` e `fade-in`; vengono preservati e verificati con F19.
+Dipendenze dinamiche: F19 osserva `.fade-in`; F24 invoca `toggleArea` e gestisce la chiusura esterna. Entrambi restano invariati.
+Dipendenze circolari: nessuna.
+Blocchi da modificare: F6, mappa_blocchi.md, todo.md e debug_session.log.
+Blocchi da verificare: F1, F3, F7b, F10b, F15, F19, F24, F11, F28 e F40.
+Blocchi esclusi con prova: F2, F2b, F4, F5, F7, F7-ext, F8, F9, F12, F13, F14, F16–F18, F20–F23, F25–F29 e F30–F46; nessuno viene selezionato da `#servizi > .media-band:first-child` e nessun contratto è rinominato.
+Relazioni irrisolte: nessuna.
+Chiusura ricorsiva completata: SÌ.
+Gate Vedetta: APERTURA AUTORIZZATA.
+---
+
+[Servizi — Vedetta, aggiornamento della superficie d’impatto — 2026-10-06]
+Durante la verifica è emersa una relazione documentale in F15: il commento [71] descriveva la fotografia come collocata a destra, mentre F6 la colloca a sinistra da 900px. Il markup e la classe `.media-band--image-right` restano invariati; cambia esclusivamente la descrizione del commento e la data dell’header F15 per mantenere allineata la mappa con il comportamento reale.
+F15 passa da DA VERIFICARE a DA MODIFICARE soltanto per tracciabilità. Nessun nuovo selettore, attributo, testo visibile, asset o comportamento è introdotto. Gate Vedetta confermato aperto per F6 e F15.
+---
+
+[Servizi — Vedetta post-modifica locale — 2026-10-06]
+Blocchi modificati: F6 e F15 in index.html; mappa_blocchi.md, todo.md e debug_session.log per tracciabilità.
+Blocchi verificati senza modifica: F1, F3, F7b, F10b, F19, F24, F11, F28 e F40.
+Contratti controllati: asset Servizi unico e invariato, testo introduttivo invariato, fondo terracotta e overlay invariati, seconda fascia con margine 72px, sei accordion, ancore `#servizi`, percorso PWA, menu e Archivio.
+Test locali: formato Git, hash JavaScript invariato, caricamento dell’immagine, screenshot desktop, desktop 1280×1100, mobile 390×844, assenza overflow, interazione dei sei accordion e console browser.
+Misure desktop: band 1265×1100, foto 633×1100, testo 633×1100, foto a sinistra, metà larghezza, altezza completa, `cover`, `100% 0%`, bordo 0px, nessun overflow.
+Misure mobile: padding Servizi 120px 28px, foto 334×436, `contain`, bordo 16px, testo prima della foto, nessun overflow.
+Nuove dipendenze rilevate: nessuna dipendenza funzionale; F15 è stato aggiornato solo per descrivere correttamente l’input fornito a F6.
+Mappa blocchi aggiornata: SÌ.
+Header F aggiornati: SÌ.
+Compatibilità della catena: CONFERMATA.
+Stato finale: STABLE.
+---
+
+[Servizi — validazione esterna Claude — 2026-10-06]
+Validatore primario: Claude Sonnet 4.6 tramite OpenRouter.
+Esito: APPROVATO.
+Motivazione: F6 isola `#servizi > .media-band:first-child`, rende la fotografia sinistra a metà fascia da 900px e non tocca F7b, F10b, F24, asset, testi o script. Mobile e accordion restano compatibili.
+Osservazioni non bloccanti: monitorare solo in futuro la resa oltre 1600px e l’eventuale variazione del padding superiore F3; nessuna correzione richiesta per il codice attuale.
+Risposta completa: /tmp/raffaella-servizi-half-page/claude_validation.json.
+---
