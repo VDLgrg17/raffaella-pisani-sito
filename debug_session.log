@@ -1616,3 +1616,8 @@ Controlli browser: desktop 1280×1100 con `object-position` effettivo `100% 64%`
 Validazione esterna: Claude Sonnet 4.6, esito APPROVATO. Il validatore conferma la correttezza del selettore circoscritto, l'assenza di regressioni su F1, F7b, F10b, F15, F19, F24, Referenze e Community.
 Stato F6: STABLE. Mappa Blocchi F sincronizzata con tutti gli intervalli successivi.
 ---
+[2026-10-07T00:08:52+02:00] — VERIFICA PUBBLICA: micro-taglio bordo foto Servizi
+Commit pubblicato: d8d270b (`F6 — Micro-taglio bordo foto Servizi`). GitHub `github/master` allineato al commit locale.
+Netlify: HTTP 200 e marker `object-position: right 64%;` rilevato al primo controllo.
+Browser pubblico: `object-position` effettivo `100% 64%`, `object-fit: cover`, delta inferiore fotografia/fascia 0 px, delta inferiore fascia/sezione 0 px. Accordion pubblici: 6/6 apertura e chiusura PASS. Console browser pubblica: nessun errore.
+---
