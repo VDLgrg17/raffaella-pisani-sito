@@ -957,3 +957,12 @@ Motivazione: F5 realizza da 900px la metà strutturale destra di Visione tramite
 Nota del validatore: il solo pattern storico nei log riguarda cache e service worker di origini locali; non è un difetto del codice e sarà escluso dalla verifica Netlify pubblica.
 Risposta completa del validatore: /tmp/raffaella-visione-half-page/claude_validation.json.
 ---
+[Visione — verifica pubblica GitHub e Netlify — 2026-10-06]
+Commit pubblicato: edc4b8e — Layout — estende fotografia Visione a metà sezione.
+GitHub: master locale e github/master coincidono, working tree pulito.
+Netlify: HTTP 200 e pattern del commit rilevati nella pagina pubblica.
+Browser pubblico desktop 1280×1100: PASS. Visione 1265×1100, contenuto 633×1100, fotografia 633×1100, destra, metà larghezza, altezza completa, `cover`, `100% 0%`, bordo 0px, padding 0px, nessun overflow.
+Browser pubblico: PASS. Immagine caricata e nessun errore console rilevato.
+Accordion pubblici: PASS. Sei controlli disponibili, apertura singola conservata, click esterno chiude tutti i pannelli.
+URL verificato: https://raffaella-pisani-sito.netlify.app/?v=edc4b8e#visione
+---
