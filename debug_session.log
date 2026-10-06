@@ -1864,3 +1864,10 @@ Risposta validatore: «**approvato**», nessuna correzione richiesta per il sito
 ---
 
 Il controllo indipendente prevale sulla descrizione imprecisa del tablet e conferma che il codice del sito resta corretto. Le istruzioni atomiche aggiunte sono [185] per la foto e [186] per il testo. Non sono emerse nuove dipendenze, la mappa e gli header saranno aggiornati e la catena può tornare stabile dopo la pubblicazione.
+[2026-10-07T01:08:22+02:00] — Verifica pubblica dell'inversione Referenze
+
+Il commit di implementazione b2e69d3 è stato pubblicato su github/master. Netlify restituisce HTTP 200 e il sorgente pubblico contiene le istruzioni atomiche [185] e [186] per le due colonne desktop.
+
+Il browser pubblico conferma il testo nella metà sinistra e la fotografia di Raffaella nella metà destra. Le due colonne misurano 632,5 pixel ciascuna, mentre la fotografia e la fascia misurano 1100 pixel in altezza. La fotografia è caricata e la lista originale conserva sette collaborazioni; la Community mantiene il proprio testo a sinistra e la fotografia a destra. Non emergono overflow orizzontale o errori nella console.
+
+In browser pubblici isolati senza cache, a 820 pixel il tablet mantiene la fotografia a sinistra e il testo a destra; a 390 pixel il testo precede ancora la fotografia. Entrambe le verifiche confermano sette voci, caricamento dell'immagine, assenza di overflow e assenza di errori JavaScript. Vedetta post-modifica conferma la compatibilità della catena e lo stato stabile di F6 e F16.
