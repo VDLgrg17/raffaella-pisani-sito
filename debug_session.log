@@ -1396,3 +1396,11 @@ Console browser locale: nessun errore JavaScript.
 Mappa Blocchi F aggiornata alla versione 5.4 con F6 e F16 STABLE e range riallineati dopo il CUT.
 Gate Vedetta chiuso: tutte le dipendenze dirette, indirette, inverse, trasversali e nascoste sono verificate.
 ---
+[PUBBLICAZIONE — CUT REFERENZE — 2026-10-06]
+Commit contenuto: `3fe96c9` — F16 — Cut autorizzato contenuti Referenze.
+GitHub: branch master allineato a `github/master`.
+Netlify: HTTP 200 e contenuto del commit visibile al primo controllo.
+Browser pubblico: `photoBottom=1100`, `bandBottom=1100`, `refBottom=1100`, `communityTop=1100`, gap=0, zero `.collab-item`, zero `.case-history`, overflow orizzontale assente.
+Console pubblica: nessun errore JavaScript.
+Stato conclusivo: CUT F16 pubblicato e verificato.
+---
