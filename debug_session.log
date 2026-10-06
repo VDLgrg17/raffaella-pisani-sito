@@ -1342,3 +1342,9 @@ Controllo desktop a 1024 px: PASS; fotografia a sinistra, pannello destro equiva
 Controllo soglia a 900 px: PASS; fotografia a sinistra, pannello destro equivalente in altezza e nessun overflow orizzontale.
 Controllo sotto soglia a 899 px: PASS; sequenza contenuto prima della fotografia e nessun overflow orizzontale.
 ---
+[VERIFICA PUBBLICA — SERVIZI INTEGRATI — 2026-10-06]
+Commit di layout pubblicato: 405cac7.
+Netlify: HTTP 200 e markup con `object-position: right 68%` disponibile al primo controllo.
+Browser pubblico: PASS; fotografia sinistra e pannello destro misurano entrambi 633 px × 1100 px, sei trigger presenti, apertura e chiusura del primo accordion PASS, nessun overflow orizzontale e console senza errori.
+Repository: parità confermata con `github/master` prima della registrazione della presente evidenza.
+---
