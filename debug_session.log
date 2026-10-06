@@ -1621,3 +1621,42 @@ Commit pubblicato: d8d270b (`F6 — Micro-taglio bordo foto Servizi`). GitHub `g
 Netlify: HTTP 200 e marker `object-position: right 64%;` rilevato al primo controllo.
 Browser pubblico: `object-position` effettivo `100% 64%`, `object-fit: cover`, delta inferiore fotografia/fascia 0 px, delta inferiore fascia/sezione 0 px. Accordion pubblici: 6/6 apertura e chiusura PASS. Console browser pubblica: nessun errore.
 ---
+
+[2026-10-07T00:12:13+02:00] — V19 APERTURA GATE VEDETTA — filo dorato fotografia Servizi
+Task JSON: /tmp/raffaella-servizi-gold-frame/task_map.json
+Obiettivo autorizzato: applicare unicamente un filo dorato minimo sul bordo inferiore della fotografia Servizi desktop per mascherare i residui bianchi.
+Blocco autorizzato: F6 CSS Servizi, righe 753–805 prima della modifica.
+Dipendenze ricostruite e verificate: F1 (--oro), F7b (media-band e section-photo), F10b (geometria desktop), F15 (img Servizi), F19 (fade-in), F24 (accordion), F73 (sezione successiva adiacente).
+Esclusioni vincolanti: F15 markup, F73, F20–F23 PWA, F24 JavaScript, immagini e testi.
+Soluzione atomica: pseudo-elemento solo desktop sul media-band-slot Servizi con altezza 3 px, colore var(--oro), posizionamento assoluto e pointer-events none. Non altera il flusso né le dimensioni.
+Baseline: index.html copiato in /tmp/raffaella-servizi-gold-frame/index.before.html; snapshot deterministico salvato. RLM Engine fallback inizializzato.
+Stato: GATE APERTO — nessuna dipendenza irrisolta.
+---
+
+[2026-10-07T00:17:10+02:00] — V19 CHIUSURA GATE VEDETTA — filo dorato fotografia Servizi
+File modificati: index.html F6, mappa_blocchi.md, todo.md e debug_session.log.
+Istruzione atomica: [180]. Modifica eseguibile: pseudo-elemento ::after alto 3 px, colore var(--oro), pointer-events none, circoscritto a #servizi > .servizi-intro > .media-band-slot e soltanto nel breakpoint desktop.
+Verifica deterministica: PASS. Il diff del parser non rileva regressioni; F19, F24 e F25 sono identici alla baseline; DOM Servizi conserva una fotografia, sei accordion, ID e onclick invariati; F73 resta il fratello immediato successivo.
+Verifica browser desktop: PASS. Pseudo-elemento presente con content vuoto, altezza 3 px, rgb(168, 137, 90), z-index 1 e bordo coincidente con la base della foto. La fascia Servizi termina insieme alla fotografia e non presenta overflow orizzontale.
+Verifica browser mobile 390 px: PASS. Il pseudo-elemento è assente, il flusso mobile e l’assenza di overflow restano invariati.
+Verifica interazione: PASS. I sei accordion mantengono apertura singola e nessun errore console locale.
+Validazione Claude Sonnet 4.6: APPROVATO. Nessuna correzione obbligatoria. Log grezzo: /tmp/raffaella-servizi-gold-frame/claude_validation.log.
+Nota anti-loop: il primo test DOM ha cercato impropriamente un pseudo-elemento tramite BeautifulSoup e non ha modificato file del sito. È stato interrotto, quindi la strategia è stata corretta usando verifica testuale e DOM senza pseudo-selettori: PASS.
+Mappa blocchi aggiornata e allineata alle righe reali. Stato finale: STABLE.
+---
+
+[2026-10-07T00:17:35+02:00] — V19 RAFFINAMENTO QA
+Il primo controllo finale ha applicato in modo improprio il conteggio globale di `height: 3px` all’intero index.html. Il controllo di mappa e l’integrità deterministica erano già PASS, ma l’asserzione globale ha restituito falso negativo a causa di una proprietà omonima preesistente fuori da F6.
+Correzione: il controllo viene ristretto al solo blocco del pseudo-elemento autorizzato. Nessun file di produzione è stato modificato durante questo raffinamento.
+---
+
+[2026-10-07T00:18:10+02:00] — V19 CERTIFICAZIONE LOCALE FINALE — filo dorato fotografia Servizi
+QA statico: PASS. `git diff --check` pulito; nessuno stato WIP; mappa Blocchi F verificata automaticamente su 34 blocchi index.html.
+Integrità: PASS. Snapshot Code Integrity Verifier senza regressioni. F19, F24 e F25 identici alla baseline.
+Contratto visivo desktop: PASS. Slot e immagine terminano sullo stesso bordo; filo `::after` presente, 3 px, rgb(168, 137, 90), z-index 1, pointer-events none e nessun overflow.
+Contratto mobile 390 px: PASS. Il filo non compare fuori dal breakpoint desktop; viewport senza overflow.
+Accordion: PASS. Sei trigger verificati uno a uno; ogni apertura lascia un solo pannello aperto e il clic conclusivo richiude l’ultimo pannello.
+Console locale: PASS. Nessun errore rilevato.
+Validazione esterna: Claude Sonnet 4.6 APPROVATO.
+Stato: PRONTO PER COMMIT E VERIFICA PUBBLICA.
+---

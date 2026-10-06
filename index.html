@@ -555,10 +555,10 @@
     }
   }
 
-  /* +--------------------------------------------------+
-   | [F6] - CSS Servizi — introduzione e sei aree       |
-   | Dipende da: F1, F3, F7b, F10b                      |
-   | Status: STABLE | Last modified: 2026-10-06         |
+   /* +--------------------------------------------------+
+    | [F6] - CSS Servizi — introduzione e sei aree       |
+    | Dipende da: F1, F3, F7b, F10b                      |
+   | Status: STABLE | Last modified: 2026-10-07         |
    +--------------------------------------------------+ */
   /* SERVIZI */
   #servizi {
@@ -768,6 +768,21 @@
       grid-column: 1;
       grid-row: 1;
       align-self: stretch;
+    }
+    /* [180] Sovrappone un filo dorato minimo al solo bordo inferiore della fotografia Servizi per coprire i residui bianchi. */
+    #servizi > .servizi-intro > .media-band-slot {
+      position: relative;
+    }
+    #servizi > .servizi-intro > .media-band-slot::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      height: 3px;
+      background: var(--oro);
+      pointer-events: none;
     }
     #servizi > .servizi-intro > .media-band-copy {
       grid-column: 2;
