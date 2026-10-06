@@ -869,8 +869,13 @@
       gap: 0;
       align-items: stretch;
     }
-    /* [156] Estende la fotografia Referenze a sinistra per tutta l’altezza della fascia e preserva il soggetto. */
-    #credibilita > .media-band:first-of-type .media-band-slot { align-self: stretch; }
+    /* [185] Colloca la fotografia Referenze nella metà destra soltanto sul desktop. */
+    #credibilita > .media-band:first-of-type .media-band-slot {
+      grid-column: 2;
+      grid-row: 1;
+      align-self: stretch;
+    }
+    /* [156] Estende la fotografia Referenze a tutta l’altezza della fascia e preserva il soggetto. */
     #credibilita > .media-band:first-of-type .section-photo {
       width: 100%;
       max-width: none;
@@ -880,8 +885,11 @@
       object-position: right top;
       border-radius: 0;
     }
-    /* [157] Allinea la colonna testuale Referenze alla fotografia strutturale senza alterarne i contenuti. */
+    /* [186] Colloca il testo Referenze nella metà sinistra soltanto sul desktop. */
     #credibilita > .media-band:first-of-type .media-band-copy {
+      grid-column: 1;
+      grid-row: 1;
+      /* [157] Allinea la colonna testuale Referenze alla fotografia strutturale senza alterarne i contenuti. */
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -2269,10 +2277,10 @@
 <!-- +--------------------------------------------------+
      | [F16] - Markup REFERENZE — introduzione e genesi   |
      | Dipende da: F3, F6, F7b, F10b, F19                 |
-     | Status: STABLE | Last modified: 2026-10-06         |
+     | Status: STABLE | Last modified: 2026-10-07         |
      +--------------------------------------------------+ -->
 <section id="credibilita">
-  <!-- [74] Affianca lo spazio fotografico sinistro all’introduzione delle Referenze. -->
+  <!-- [74] Affianca la fotografia alla fascia Referenze: sul desktop il testo è a sinistra e la fotografia a destra. -->
   <div class="media-band media-band--image-left media-band--align-start">
     <div class="media-band-slot fade-in">
       <!-- [138] Colloca la fotografia autorizzata nella fascia laterale Referenze. -->

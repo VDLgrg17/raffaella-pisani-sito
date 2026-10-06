@@ -1775,3 +1775,92 @@ Il commit di implementazione `73eac66` è pubblicato su `github/master`. Netlify
 Il browser pubblico conferma CTA contenuta nella colonna testuale, posizionata a sinistra della fotografia, pulsante verde smeraldo, testo bianco, altezza minima 48 pixel, fotografia laterale destra, griglia testimonianze non visibile e assenza di overflow orizzontale. Dopo il fade-in, la CTA presenta classe `visible`, opacità 1 e trasformazione assente.
 
 Il click pubblico sul pulsante aggiorna l'URL a `#contatti`, raggiunge il modulo Contatti e conserva la barra PWA. La console pubblica non presenta errori. La pubblicazione, il comportamento e la catena F21b, F26 e F17 risultano verificati.
+
+[2026-10-07T01:01:17+02:00] — Gate Vedetta Referenze, pre-modifica
+
+Sto operando in modalità RLM. Il repository master locale coincide con github/master al commit 5df9a52 e il worktree è pulito. Lo snapshot iniziale dei file pertinenti è conservato in /tmp/raffaella-referenze-inversione.
+
+Il nodo principale F16 contiene la fotografia e il testo delle Referenze, mentre F6 regola solo la loro geometria desktop. Le dipendenze F1, F3, F7b, F10, F10b e F19 sono state verificate nel codice; F11 e F40 consumano l'ancora credibilita, che resta identica. F15, F24 e F26 condividono CSS, ma non il selettore specifico di Referenze. Il menu, la PWA, le fotografie, i testi e le altre sezioni sono esclusi dalla modifica per assenza di selettori condivisi nel nuovo override.
+
+La relazione nascosta è la classe image-left di F16, usata dalla griglia comune già da 640 pixel. Conservandola, un override circoscritto a credibilita e attivo soltanto da 900 pixel inverte le due colonne sul desktop senza alterare tablet o smartphone. F6 riceve una sola istruzione atomica [185], mentre F16 aggiorna il commento [74]. Nessuna relazione resta irrisolta, la chiusura ricorsiva è completa e il gate Vedetta dichiara apertura autorizzata.
+
+[2026-10-06T23:03:48.937312+00:00] — Validazione codice Referenze via anthropic/claude-sonnet-4-6
+Risposta validatore: RESPINTO. **APPROVATO**
+
+---
+
+### 1. Il codice fa quello che ci si aspetta?
+
+Sì. Le modifiche sono circoscritte a due punti precisi in F6:
+
+**CSS aggiunto** (dentro `@media (min-width: 900px)`):
+```css
+#credibilita > .media-band:first-of-type .media-band-slot {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: stretch;
+}
+#credibilita > .media-band:first-of-type .media-band-copy {
+  grid-column: 1;
+  grid-row: 1;
+  …
+}
+```
+
+Il selettore `#credibilita > .media-band:first-of-type` è più specifico di `.media-band--image-left` (specificità `0,2,0` contro `0,1,0`), quindi prevale correttamente **solo su desktop ≥900px**.
+
+Il markup F16 mantiene la classe `media-band--image-left`, che continua a funzionare su mobile e tablet (breakpoint 640px) mostrando fotografia dopo il testo secondo F10b.
+
+Il commento `[74]` in F16 è aggiornato soltanto descrittivamente, senza modificare markup funzionale.
+
+---
+
+### 2. Ci sono errori logici evidenti?
+
+No. La logica è corretta:
+
+- **Mobile/tablet**: la classe `media-band--image-left` con F10b mantiene testo sopra, fotografia sotto
+- **Desktop ≥900px**: l'override CSS inverte esplicitamente le colonne assegnando `grid-column: 1` al testo e `grid-column: 2` alla fotografia
+- La fotografia riceve `height: 100%`, `object-fit: cover`, `border-radius: 0` coerenti con le altre sezioni strutturali (Chi sono, Visione)
+- `padding-bottom: 0` su `#credibilita` è già presente, il margine negativo `margin: -140px -72px 0` è coerente con Community e con il contratto F10b
+
+---
+
+### 3. Può rompere qualcosa che funzionava?
+
+No, per tre ragioni dimostrabili:
+
+- Il selettore è **figlio diretto** (`>`), quindi non raggiunge fasce annidate
+- È **confinato a `#credibilita`**, non tocca Visione, Servizi, Community né Contatti che usano lo stesso pattern
+- Il **breakpoint 900px** è più stretto di quello dell'altra geometria strutturale (stesso valore usato in F4, F5, F6 per Chi sono, Visione, Servizi): comportamento coerente con la catena già approvata
+
+---
+
+### 4. Correzioni da suggerire?
+
+Una sola osservazione **non bloccante**: il commento `[185]` nel CSS e `[186]` per la copia testuale seguono la sequenza dell'istruzione atomica corrente. Nessuna correzione è richiesta per l'approvazione.
+
+---
+
+### 5. I log mostrano un pattern di errore ricorrente?
+
+I log mostrano due pattern ricorrenti, entrambi **non relativi al codice del sito**:
+
+1. **Cache service worker** su origini locali: risolto sistematicamente usando origini isolate per i test. Non si ripercuote sul sito pubblicato.
+2. **Strumenti di test temporanei** con parametri DevTools errati (`--remote-allow-origins` mancante) o regex di confronto troppo generiche: corretti con cambi di strategia. Nessun file di produzione è mai stato modificato durante questi episodi.
+
+Il codice del sito non ha mai mostrato regressioni confermate nelle verifiche pubbliche Netlify.
+[2026-10-07T01:04:47+02:00] — Vedetta post-modifica Referenze
+
+I blocchi modificati sono F6 per il posizionamento desktop delle colonne e F16 per la descrizione del pannello. F1, F3, F7b, F10, F10b, F11, F15, F19, F24, F26 e F40 sono stati verificati senza modificarli. I selettori con identificatore credibilita limitano la modifica alla prima fascia Referenze e al breakpoint minimo di 900 pixel.
+
+Il confronto deterministico conferma testi, asset, attributi, ordine del markup e sette collaborazioni identici; le sezioni Chi sono, Visione, Servizi, Community e Contatti risultano immutate. Il browser desktop a 1280 pixel misura testo a sinistra, fotografia a destra, metà equivalenti e altezza fotografica identica alla fascia. A 820 pixel la disposizione precedente resta identica e a 390 pixel il testo precede ancora la fotografia; le prove registrano assenza di overflow, caricamento immagine e zero errori runtime. Il fade-in della fotografia mobile è stato verificato dopo lo scorrimento.
+
+[Tentativo 1] — 2026-10-07T01:04:22+02:00
+Errore: classificazione testuale erronea della risposta esterna a causa degli asterischi Markdown attorno ad approvato.
+File: il parser temporaneo di validazione, non il codice del sito.
+Correzione tentata: il responso già ricevuto è stato riletto senza ripetere la chiamata API.
+Risposta validatore: «**approvato**», nessuna correzione richiesta per il sito. Il validatore descrive impropriamente il tablet come verticale, mentre le misure reali confermano la geometria tablet precedente in due colonne.
+---
+
+Il controllo indipendente prevale sulla descrizione imprecisa del tablet e conferma che il codice del sito resta corretto. Le istruzioni atomiche aggiunte sono [185] per la foto e [186] per il testo. Non sono emerse nuove dipendenze, la mappa e gli header saranno aggiornati e la catena può tornare stabile dopo la pubblicazione.
