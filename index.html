@@ -216,7 +216,7 @@
   /* +--------------------------------------------------+
    | [F3] - CSS Hero — layout split, foto, testo        |
    | Dipende da: F1                                      |
-   | Status: STABLE | Last modified: 2026-09-03      |
+   | Status: STABLE | Last modified: 2026-10-06      |
    +--------------------------------------------------+ */
   /* HERO — foto 65% + blocco testo tortora 35% */
   #hero {
@@ -268,6 +268,16 @@
   .hero-logo-svg { width: 40px; height: 40px; flex-shrink: 0; }
 
   .hero-brand-col { display: flex; flex-direction: column; gap: 3px; }
+
+  /* [161] Identifica il progetto sopra il nome personale nel pannello Hero. */
+  .hero-project-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 6vw, 2.65rem);
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    color: #ffffff;
+    line-height: 1;
+  }
 
   .hero-brand-name {
     font-family: 'Cormorant Garamond', serif;
@@ -1810,7 +1820,7 @@
 <!-- +--------------------------------------------------+
      | [F12] - Markup HERO — foto, pannello verde, claim, CTA|
      | Dipende da: F3                                     |
-     | Status: STABLE | Last modified: 2026-09-03     |
+     | Status: STABLE | Last modified: 2026-10-06     |
      +--------------------------------------------------+ -->
 <section id="hero">
   <div class="hero-foto-wrap">
@@ -1822,6 +1832,8 @@
   <div class="hero-testo">
     <div class="hero-logo-block">
       <div class="hero-brand-col">
+        <!-- [162] Inserisce il nome autorizzato del progetto prima dell’identità personale. -->
+        <span class="hero-project-name">Sensi di Strati</span>
         <span class="hero-brand-name">Raffaella Pisani</span>
         <span class="hero-brand-sub">Cultura Olfattiva</span>
       </div>

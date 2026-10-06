@@ -1237,3 +1237,49 @@ Controllo pubblico: sulla medesima URL dello screenshot `?v=8af5563#contatti`, i
 Esito: il codice pubblicato non ha perso l’immagine Contatti e non richiede un ripristino di F8 o F17.
 Rafforzamento Vedetta: ogni futura modifica in F26 deve includere una verifica visiva diretta di F17, perché la CTA Community usa l’ancora Contatti. F29 resta escluso: nessuna modifica alla cache PWA è giustificata senza una riproduzione del difetto sul sorgente pubblico corrente.
 ---
+
+[VEDETTA — PRE-MODIFICA HERO TITOLO PROGETTO — 2026-10-06]
+Richiesta: inserire il testo «Sensi di Strati» sopra «Raffaella Pisani» nel pannello Hero, con dimensione leggermente maggiore e senza modificare la navigazione.
+Blocco principale: F12, `index.html`, markup della Hero.
+Dipendenze dirette a monte: F3, stile dei selettori Hero; F1, font e variabili globali.
+Dipendenze indirette a monte: F10b, regole responsive che impongono altezza e padding del pannello `.hero-testo`.
+Dipendenti diretti a valle: nessun runtime JavaScript consuma il contenuto del blocco F12.
+Dipendenti indiretti a valle: F10b ridimensiona il pannello Hero sui breakpoint mobile e desktop.
+Relazioni trasversali: F11 contiene il marchio della navigazione, ma usa `.nav-logo-text` e resta escluso; F0, F27, F28 e F29 espongono identità globali PWA e restano esclusi, perché la richiesta riguarda soltanto il testo visivo della Hero.
+Dipendenze nascoste rilevate: F10b seleziona `.hero-testo`, pur non essendo indicato nelle dipendenze della riga F12 della mappa.
+Dipendenze circolari: nessuna.
+Blocchi da modificare: F3 e F12 in `index.html`; `mappa_blocchi.md` e `todo.md` soltanto per tracciabilità; `debug_session.log` per audit.
+Blocchi da verificare: F1, F10b, F11, F19, F0, F27, F28 e F29.
+Blocchi esclusi con prova: F11, F0, F27, F28 e F29 non usano il nuovo selettore e non devono cambiare; F19 osserva esclusivamente `.fade-in`, classe assente nella Hero.
+Relazioni irrisolte: nessuna.
+Chiusura ricorsiva completata: SÌ.
+Gate Vedetta: APERTURA AUTORIZZATA.
+Logic Before Code: una sola nuova regola CSS identifica il progetto con dimensione moderatamente superiore e una sola riga HTML la colloca prima del nome personale.
+Istruzioni atomiche previste: 2, numeri [155] e [156].
+---
+Correzione preventiva Atomic Code: gli identificativi [155] e [156] sono già presenti nel file; le due istruzioni autorizzate per questo task diventano [161] e [162], senza duplicazioni.
+---
+[TENTATIVO 1 — 2026-10-06]
+Errore: il controllo di integrità dei blocchi a valle confrontava F11 dalla sua intestazione fino alla fine del file e includeva quindi la modifica autorizzata in F12.
+File: verifica temporanea Hero, confronto F11.
+Correzione tentata: limitare ogni confronto al confine dell’intestazione F successiva, senza modificare il codice del sito.
+Risposta validatore: verifica deterministica interrotta prima dell’esito completo.
+---
+[VALIDAZIONE ESTERNA — HERO TITOLO PROGETTO — 2026-10-06]
+Modello: Claude Sonnet 4.6 tramite OpenRouter.
+Esito: APPROVATO.
+Motivazione: la modifica resta confinata a F3 e F12. Il selettore `.hero-project-name` è esclusivo della Hero, il testo compare una sola volta prima del nome personale, la dimensione è superiore e non emergono regressioni bloccanti.
+Nota non bloccante: verificare eventualmente viewport inferiori a 360 px in un task futuro se richiesto.
+
+VEDETTA — POST-MODIFICA
+Blocchi modificati: F3 e F12.
+Blocchi verificati senza modifica: F1, F10b, F11, F19, F0, F27, F28 e F29.
+Contratti controllati: ordine del titolo nella Hero, assenza del titolo nella navigazione, preservazione degli script a valle, assenza di overflow orizzontale desktop e layout mobile testo sopra fotografia.
+Test eseguiti: controllo HTML, confronto strutturale, confronto blocchi F a valle, browser desktop, console senza errori, anteprima mobile 390×844.
+Nuove dipendenze rilevate: F10b come dipendenza responsive della Hero, già tracciata nella mappa F12.
+Mappa blocchi aggiornata: SÌ.
+Header F aggiornati: SÌ.
+Compatibilità della catena: CONFERMATA.
+Stato finale: STABLE.
+Istruzioni atomiche generate: 2, [161] e [162].
+---
