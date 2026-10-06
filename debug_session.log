@@ -1586,3 +1586,33 @@ Browser pubblico: `min-height: 0px`, `padding-bottom: 0px`, fotografia e pannell
 Interazioni pubbliche: 6/6 accordion aprono e richiudono correttamente. Console pubblica: nessun errore.
 GitHub: commit locale e `github/master` allineati a `17002d0` prima dell'archiviazione della presente verifica.
 ---
+
+[2026-10-06T23:58:30+02:00] — VEDETTA PRE-MODIFICA: micro-taglio bordo foto Servizi
+Richiesta: eliminare esclusivamente i piccoli elementi bianchi visibili sul bordo inferiore della fotografia Servizi desktop, senza fascetta, filetto, variazione di quota o modifica dei contenuti.
+Plugin selezionato: Browser Manus per la verifica visiva e funzionale; nessuna generazione o modifica di asset richiesta.
+Causa identificata: il crop desktop `object-position: right 68%` mantiene visibili pochi pixel della porzione inferiore della fotografia. Livello: codice CSS F6. Correzione necessaria: ridurre la posizione verticale del crop nel solo selettore desktop della foto Servizi.
+VEDETTA — PRE-MODIFICA
+Blocco principale: F6, `index.html`, regole CSS della fascia Servizi.
+Dipendenze dirette a monte: F1 per variabili e reset, F7b per contratto `.section-photo`, F10b per geometria laterale responsive.
+Dipendenze indirette a monte: F3 definisce il padding desktop ereditato dalle sezioni.
+Dipendenti diretti a valle: F15 consuma il selettore tramite la fotografia `section-photo` della fascia Servizi.
+Dipendenti indiretti a valle: F19 osserva il fade-in della fotografia, F24 associa gli accordion alla sezione F15.
+Relazioni trasversali: F6 contiene regole per Referenze e Community, ma il selettore da modificare è `#servizi > .servizi-intro .section-photo` sotto `min-width: 900px`.
+Dipendenze nascoste rilevate: nessuna.
+Dipendenze circolari: nessuna.
+Blocchi da modificare: F6.
+Blocchi da verificare: F1, F7b, F10b, F15, F19 e F24.
+Blocchi esclusi con prova: F3, F4, F5, F16, F26, F17, F20-F29 e i file PWA perché nessun loro selettore, markup, script o asset è raggiunto dal selettore Servizi specifico.
+Relazioni irrisolte: nessuna.
+Chiusura ricorsiva completata: SÌ.
+Gate Vedetta: APERTURA AUTORIZZATA.
+Logica: la variazione da `right 68%` a `right 64%` trasla il contenuto sorgente verso il basso di circa 6-10 pixel nel contenitore desktop coperto, nascondendo il bordo inferiore senza alterare altezza o struttura.
+Istruzioni atomiche pianificate: 1, identificatore CSS [179].
+---
+[2026-10-07T00:04:35+02:00] — VALIDAZIONE E CHIUSURA: micro-taglio bordo foto Servizi
+Modifica eseguita: F6, `#servizi > .servizi-intro .section-photo`, istruzione atomica [179]. `object-position` modificato esclusivamente da `right 68%` a `right 64%` nel media query desktop `min-width: 900px`.
+Controlli deterministici: `git diff --check` PASS; F15, F19, F24 e F25 invariati rispetto al checkpoint; HTML con una sezione Servizi e sei accordion; CSS precedente `right 68%` assente; istruzione [179] unica; snapshot di integrità senza regressioni.
+Controlli browser: desktop 1280×1100 con `object-position` effettivo `100% 64%`, immagine/fascia/sezione con quota inferiore comune e delta 0 px; bordo inferiore ispezionato visivamente senza elementi bianchi. Sei accordion: 6/6 aperti e richiusi correttamente; console senza errori. Mobile in media query: `object-fit: contain`, nessun overflow orizzontale, fotografia non sottoposta al crop desktop.
+Validazione esterna: Claude Sonnet 4.6, esito APPROVATO. Il validatore conferma la correttezza del selettore circoscritto, l'assenza di regressioni su F1, F7b, F10b, F15, F19, F24, Referenze e Community.
+Stato F6: STABLE. Mappa Blocchi F sincronizzata con tutti gli intervalli successivi.
+---
