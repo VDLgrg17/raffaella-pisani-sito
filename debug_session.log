@@ -1725,3 +1725,13 @@ Tentativo 3: la fotografia Community non risulta ancora caricata nel primo contr
 Il test successivo a 390 per 844 pixel conferma fotografia caricata, ordine testo, pulsante e fotografia, pulsante unico, griglia unica, dodici card, apertura e chiusura, Contatti dopo la griglia aperta, padding mobile invariato e assenza di overflow. Il controllo desktop iniziale usa l'uguaglianza fra `scrollWidth` e `innerWidth`, che non considera la barra di scorrimento; la misura corretta `scrollWidth <= clientWidth` conferma assenza di overflow orizzontale.
 
 Gli errori riguardano soltanto gli strumenti temporanei di test, non il codice pubblicabile. Anti-Loop è rispettato attraverso il cambio di configurazione DevTools, il caricamento esplicito dell'asset e la correzione della metrica.
+
+[2026-10-07T00:39:37+02:00] — Verifica pubblica Community
+
+Il commit di implementazione `58cd530` è pubblicato su `github/master`, con parità locale e remota pari a zero. Netlify restituisce HTTP 200 e il sorgente pubblico contiene una sola istruzione [181] per il pulsante nella colonna testuale, una sola istruzione [182] per l'override desktop e nessun wrapper centrale precedente.
+
+Il browser pubblico conferma un solo pulsante e una sola griglia, dodici testimonianze, pulsante contenuto in `.media-band-copy`, allineamento centrale rimosso, `padding-bottom` Community pari a zero su desktop, bordo inferiore comune per sezione, fascia e fotografia, nessun overflow orizzontale e console senza errori.
+
+Il click pubblico apre la griglia con testo «Nascondi le testimonianze ↑», conserva dodici card e colloca Contatti dopo la griglia; il secondo click richiude la griglia, ripristina il testo «Leggi le testimonianze della community →» e colloca Contatti dopo la fascia. La fotografia viene caricata esplicitamente nella sola sessione di verifica per attendere il fade-in prima della misura, senza modificare il sito pubblicato.
+
+Stato della pubblicazione: completato e verificato.
