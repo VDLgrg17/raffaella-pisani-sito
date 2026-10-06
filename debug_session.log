@@ -1169,3 +1169,10 @@ Validatore primario: Claude Sonnet 4.6 via OpenRouter. VERDETTO: APPROVATO. Ness
 Anti-Loop: nessun fallimento del codice. La prima lettura del test strutturato ha normalizzato il titolo senza spazio attorno al `<br>`; corretto esclusivamente lo script di verifica, poi PASS al primo riesame.
 Gate Vedetta: CHIUSURA LOCALE APPROVATA.
 ---
+[Referenze — verifica pubblica Netlify — 2026-10-06]
+Commit layout pubblicato: 9709a09 (`Layout — allinea fotografia Referenze`). Endpoint verificato: https://raffaella-pisani-sito.netlify.app/?v=9709a09#credibilita.
+Netlify: HTTP 200; markup pubblico contenente la regola scoped Referenze e l’asset autorizzato al primo tentativo.
+Browser pubblico: fotografia caricata; lato sinistro rispetto al testo; larghezza pari a metà della fascia; bordi verticali allineati; `object-fit: cover`; `object-position: 100% 0%`; raggio 0 px; fade-in della prima fascia completato; overflow orizzontale assente.
+Contratti pubblici conservati: 6 trigger Servizi; prima apertura PASS; apertura singola PASS; chiusura esterna PASS; console senza errori.
+Stato: pubblicazione Referenze verificata.
+---
