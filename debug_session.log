@@ -1176,3 +1176,46 @@ Browser pubblico: fotografia caricata; lato sinistro rispetto al testo; larghezz
 Contratti pubblici conservati: 6 trigger Servizi; prima apertura PASS; apertura singola PASS; chiusura esterna PASS; console senza errori.
 Stato: pubblicazione Referenze verificata.
 ---
+[Community — fotografia strutturale desktop, pre-modifica — 2026-10-06]
+JSON task: {"task_id":"community-half-page-2026-10-06","description":"allineare soltanto la prima fotografia Community nella metà strutturale destra della fascia desktop","files_involved":["index.html:F6","index.html:F26","mappa_blocchi.md","todo.md","debug_session.log"],"requirements":["testo Community invariato a sinistra","fotografia autorizzata a destra per circa metà fascia","nessun effetto cartolina desktop","mobile con testo prima della foto","nessuna modifica a testimonianze, CTA, PWA, menu o script"],"validation_criteria":["scope CSS esclusivo Community","asset e testi invariati","assenza overflow","fade-in e CTA conservati"]}.
+Dichiarazione Logic Before Code: le nuove regole CSS devono agire soltanto sulla prima `media-band` di `#community` oltre 900 px, estendendo foto e testo su due metà senza intervenire sul markup o sui contenuti.
+VEDETTA — PRE-MODIFICA
+Richiesta: rendere strutturale la fotografia Community allineata sulla metà destra desktop, con testo invariato sulla metà sinistra.
+Blocco principale: F26, `index.html`, markup della Community e prima fascia foto-testo.
+Dipendenze dirette a monte: F3 per padding sezione, F6 per sfondo Community e CSS settoriale, F7b per `media-band`, `media-band-slot` e `section-photo`, F10b per le colonne desktop e l’ordine mobile, F19 per fade-in, F21b per pulsante testimonianze, F17 per CTA verso `#contatti`.
+Dipendenze indirette a monte: F1 per variabili cromatiche, F2/F2b/F11/F25 per ancora Community di navigazione.
+Dipendenti diretti a valle: contenuto Community, CTA e pulsante testimonianze dentro F26; osservazione fade-in in F19.
+Dipendenti indiretti a valle: F21b per la griglia testimonianze attivabile e F17 come destinazione della CTA.
+Relazioni trasversali: fotografia 1151×1600, classi condivise `media-band`, `section-photo` e `fade-in`; breakpoint a 640 px e 900 px; barra PWA esterna a F20–F23.
+Dipendenze nascoste rilevate: la prima fascia Community deve usare margini compensativi come Referenze, non `#community { padding: 0; }`, per non alterare il pulsante e la griglia testimonianze successivi.
+Dipendenze circolari: nessuna.
+Blocchi da modificare: F6 e F26.
+Blocchi da verificare: F1, F3, F7-ext, F7b, F10b, F11, F17, F19, F21b, F25, F20–F23, F27–F29.
+Blocchi esclusi con prova: F4, F5, F8, F9, F12–F16, F18, F24, F72, F73, blog.html e prototipi non condividono selettori, markup o runtime Community.
+Relazioni irrisolte: nessuna.
+Chiusura ricorsiva completata: SÌ.
+Gate Vedetta: APERTURA AUTORIZZATA.
+---
+[Community — fotografia strutturale desktop, post-modifica — 2026-10-06]
+Modifica effettiva: F6 contiene esclusivamente le istruzioni atomiche [158]–[160], con scope `#community > .media-band:first-of-type` a `min-width: 900px`. F26 modifica solo gli header di stato e la data di tracciabilità.
+Contenuti invariati: PASS. Confronto HTML fra snapshot e stato finale conferma asset, alt text, titolo, quattro paragrafi, CTA, un media-band iniziale, pulsante e 12 testimonianze identici.
+Verifica desktop controllata 1280×1100: PASS. Fascia 1265×1100, due colonne equivalenti da 632,5 px, testo in colonna 1, fotografia in colonna 2, gap zero, fotografia 632,5×1100, `cover`, `center top`, bordo 0 px e nessun overflow orizzontale.
+Verifica mobile controllata 390×844: PASS. Documento 375 px, testo prima della foto, fotografia 319×443,4375 px con rapporto sorgente 1151×1600, `contain`, bordo 16 px e nessun overflow orizzontale.
+Verifica visiva desktop: PASS. La foto dell’incontro occupa la metà destra della fascia ed è allineata al testo nella metà sinistra senza effetto cartolina.
+Verifica visiva mobile: PASS. Il testo resta prima dell’immagine e la fotografia conserva il fotogramma integrale.
+Verifica Community: PASS. Il pulsante apre le 12 testimonianze e ripristina lo stato iniziale dopo la seconda pressione.
+Verifica accordion Servizi: PASS. Sei elementi, apertura iniziale, apertura singola e chiusura al click esterno confermate; stato finale richiusa.
+Verifica console: PASS. Nessun errore JavaScript o richiesta asset fallita nel preview isolato.
+Code Integrity Verifier: output strutturale non disponibile per il solo HTML, sostituito dal confronto deterministico di asset, testi, script e contratti DOM mirati.
+Validazione Claude Sonnet 4.6: APPROVATO. Nessuna correzione obbligatoria; nota futura tracciata sul margine compensativo `-140px`, derivato dal padding desktop F10b e condiviso con Referenze.
+VEDETTA — POST-MODIFICA
+Blocchi modificati: F6, F26.
+Blocchi verificati senza modifica: F1, F3, F7-ext, F7b, F10b, F11, F17, F19, F21b, F24, F25, F20–F23, F27–F29.
+Contratti controllati: geometria desktop, fotogramma mobile integrale, contenuti invariati, asset, alt text, CTA, testimonianze, fade-in, accordion, menu, ancore, PWA e assenza di overflow.
+Nuove dipendenze documentate: il margine strutturale desktop `-140px` dipende dal padding superiore desktop di F10b; la mappa aggiornata richiede la verifica coordinata per Referenze e Community in caso di variazione futura.
+Mappa Blocchi F aggiornata: SÌ.
+Header F aggiornati: SÌ.
+Compatibilità della catena: CONFERMATA.
+Stato finale: STABLE.
+Codice validato da Claude Sonnet 4.6: tutto ok.
+---

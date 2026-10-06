@@ -69,3 +69,4 @@
 - [x] Rimuovere esclusivamente la terza riga dal titolo introduttivo Servizi.
 - [x] Compattare esclusivamente la geometria Servizi con fascia continua, testi invariati e sei pulsanti più leggibili.
 - [x] Trasformare esclusivamente la fotografia iniziale Referenze in metà strutturale sinistra della fascia desktop.
+- [x] Trasformare esclusivamente la fotografia iniziale Community in metà strutturale destra della fascia desktop.
