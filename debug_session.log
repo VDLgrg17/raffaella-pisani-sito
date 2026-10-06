@@ -1079,3 +1079,12 @@ Compatibilità della catena: CONFERMATA.
 Stato finale: STABLE.
 Istruzioni atomiche generate: 1 — [146], rimozione della terza riga dal titolo F15.
 ---
+
+[Servizi — rimozione riga del titolo, verifica pubblica — 2026-10-06]
+Commit del contenuto: 677ac8b — v4.9 — Rimuove riga titolo Servizi.
+GitHub: master locale e github/master coincidono, working tree pulito prima del registro finale.
+Netlify: HTTP 200. Titolo pubblico confermato come «Ambassador, cultura olfattiva» e «e consulenza narrativa», con un solo `<br>` e assenza della frase rimossa.
+Browser pubblico: fotografia sinistra e geometria della fascia invariate, nessun overflow, asset caricato, nessun errore console rilevato.
+Accordion pubblici: 6/6, apertura singola e chiusura al click esterno confermate.
+URL verificato: https://raffaella-pisani-sito.netlify.app/?v=677ac8b#servizi
+---
