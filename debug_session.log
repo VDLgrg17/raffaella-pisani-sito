@@ -1228,3 +1228,12 @@ Browser pubblico: PASS. Fotografia 1151×1600 caricata, pulsante Community apre 
 Console pubblica: PASS; nessun errore rilevato.
 Stato GitHub e Netlify: verificato pubblicamente senza pannelli autenticati.
 ---
+
+[DIAGNOSI VEDETTA — CONTATTI — 2026-10-06]
+Segnalazione: lo screenshot di Giorgio mostra la texture verde dei Contatti assente o ridotta a una fascia superiore.
+Controllo GitHub: HEAD e github/master coincidono sul commit da7cc43, con working tree pulito.
+Controllo storico: il commit Community 2021075 modifica F6 e F26, ma non modifica F8, F17, l’asset `assets/profumo-sfondo-verde.png`, `sw.js` o `pwa-action-bar.js`. L’impronta del markup F17 prima e dopo 2021075 è identica.
+Controllo pubblico: sulla medesima URL dello screenshot `?v=8af5563#contatti`, il browser ha misurato `background-image: url(assets/profumo-sfondo-verde.png)`, `background-size: cover`, `background-repeat: no-repeat`, un’altezza sezione di 1139,34 px e un asset disponibile senza errori console. La cattura pubblica mostra la texture verde su tutta la sezione.
+Esito: il codice pubblicato non ha perso l’immagine Contatti e non richiede un ripristino di F8 o F17.
+Rafforzamento Vedetta: ogni futura modifica in F26 deve includere una verifica visiva diretta di F17, perché la CTA Community usa l’ancora Contatti. F29 resta escluso: nessuna modifica alla cache PWA è giustificata senza una riproduzione del difetto sul sorgente pubblico corrente.
+---
