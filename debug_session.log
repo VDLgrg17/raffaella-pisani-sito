@@ -1404,3 +1404,53 @@ Browser pubblico: `photoBottom=1100`, `bandBottom=1100`, `refBottom=1100`, `comm
 Console pubblica: nessun errore JavaScript.
 Stato conclusivo: CUT F16 pubblicato e verificato.
 ---
+[VEDETTA — PRE-MODIFICA — SOSTITUZIONE REFERENZE — 2026-10-06]
+Richiesta: sostituire integralmente il pannello testuale Referenze corrente con contenuto e sequenza del secondo screenshot Word, senza reinterpretazioni.
+Blocco principale: F16 — markup Referenze in index.html, righe 2186–2230.
+Input ricevuti: secondo screenshot Word come fonte visuale e testuale vincolante.
+Output previsto: titolo «Voci qualificate / sul mio lavoro», genesi, etichetta «Collaborazioni e competenze per:» ed elenco verticale delle sette voci originali.
+Dipendenze dirette a monte: F6 per gli stili locali Referenze, F7b per media-band e fotografia, F10b per ordine mobile, F19 per fade-in.
+Dipendenze indirette a monte: F1 attraverso F3, F6, F7b e F10b.
+Dipendenti diretti a valle: F11 e blog.html consumano soltanto l’ancora #credibilita, che resta invariata.
+Dipendenti indiretti a valle: nessuno oltre l’ancora verificata.
+Relazioni trasversali: F3 fornisce section-title, section-body e section-eyebrow; F7b fornisce la geometria laterale; F10b conserva testo prima della fotografia su mobile; F19 osserva ogni elemento fade-in.
+Dipendenze nascoste rilevate: F7 e F8 sono indicate nella precedente riga di mappa F16, ma le classi collab-grid, collab-item, collab-nome e collab-desc non sono più presenti in F16 dopo il CUT. F16 non dipende da F7 o F8; la mappa sarà corretta.
+Dipendenze circolari: nessuna.
+Blocchi da modificare: F6 per le sole regole tipografiche e lista verticale circoscritte a #credibilita; F16 per la sola sostituzione del contenuto testuale.
+Blocchi da verificare: F3, F7b, F10b, F19, F11 e blog.html.
+Blocchi esclusi con prova: F15 e F24, poiché non condividono selettori o markup con F16; F26 e F17, poiché sono sezioni sibling non selezionate dalle regole #credibilita; F20–F23 e F27–F29, poiché non consumano contenuto o classi di Referenze.
+Relazioni irrisolte: nessuna.
+Chiusura ricorsiva completata: SÌ.
+Gate Vedetta: APERTURA AUTORIZZATA.
+Intento Logic Before Code: sostituire soltanto i nodi testuali di F16 e aggiungere regole F6 con prefisso #credibilita per riprodurre il secondo screenshot, mantenendo invariati struttura della sezione, fotografia, navigazione e runtime.
+Istruzioni atomiche pianificate: [172] stili locali del titolo e dell’elenco; [173] markup originale Referenze.
+---
+[VEDETTA — POST-MODIFICA — SOSTITUZIONE REFERENZE — 2026-10-06]
+Modifica eseguita: F16 sostituisce il pannello Referenze corrente con titolo originale, genesi, etichetta e lista verticale. F6 aggiunge esclusivamente stili con prefisso #credibilita.
+Istruzioni atomiche applicate: [172] gerarchia locale del documento originale; [173] sequenza markup originale.
+Test contenuto: PASS. Titolo «Voci / qualificate / sul mio lavoro», genesi, etichetta e sette voci risultano presenti e ordinate.
+Test rimozione: PASS. Non restano in F16 i tre paragrafi introduttivi, loghi-bar o collab-genesi del pannello sostituito.
+Test struttura: PASS. #credibilita, fotografia, media-band, ancore e sezione Community successiva sono preservati.
+Test runtime: PASS. Tutti gli script sono byte-identici rispetto allo snapshot; F19 resta invariato.
+Test desktop: PASS. Foto caricata, fade-in visibile, nessun overflow orizzontale, griglia del titolo conforme al riferimento.
+Test mobile 390×844: PASS. Testo prima della fotografia, foto caricata, overflow assente e Community successiva a Referenze.
+Test di integrità: PASS. snapshot.py diff non rileva regressioni.
+Validazione Claude Sonnet 4.6: APPROVATO. Nessuna correzione bloccante.
+Anti-Loop: il primo controllo mobile ha rilevato solo una discrepanza del test sulla larghezza minima del browser e sulla concatenazione degli span. Strategia cambiata una volta: emulazione esplicita 390 px e verifica dei tre span. Secondo controllo PASS.
+Mappa: F16 non dipende da F7 o F8, poiché le relative classi non sono più consumate; grafo e righe riallineati al codice reale.
+Gate Vedetta: CHIUSO. F6 e F16 riportati a STABLE dopo validazione completa.
+---
+[CERTIFICAZIONE FINALE — SOSTITUZIONE REFERENZE — 2026-10-06]
+Qualità finale: PASS.
+Contenuto F16: PASS. Titolo, genesi, etichetta e sette collaborazioni coincidono con la sequenza del documento originale.
+Contenuto rimosso: PASS. I tre paragrafi introduttivi, loghi-bar e collab-genesi non sono presenti nel pannello Referenze.
+Desktop: PASS. Fotografia caricata, fade-in visibile, nessun overflow orizzontale e griglia del titolo conforme.
+Mobile 390×844: PASS. Testo prima della fotografia, immagine caricata, overflow assente e Community avviata dopo Referenze.
+Servizi/F24: PASS. Primo accordion aperto e richiuso con aria-expanded, classe open e chiusura verificati.
+JavaScript: PASS. Script byte-identici allo snapshot.
+Integrità deterministica: PASS. snapshot.py diff senza regressioni.
+Mappa Blocchi F: PASS. Tutti i range da F6 a F25 verificati contro gli header reali. Corrette le sole discrepanze documentali F21b, F72, F73 e F16 emerse dal controllo automatico.
+Anti-Loop: dopo due rilevamenti consecutivi di discrepanze nella sola verifica automatica della mappa, strategia modificata da correzione puntuale a confronto completo header-range. Nessuna modifica di contenuto o comportamento è stata effettuata durante tali correzioni.
+Claude Sonnet 4.6: APPROVATO in precedenza per il diff completo. Nessuna correzione bloccante.
+Gate Vedetta: CHIUSO. F6 e F16 restano STABLE.
+---

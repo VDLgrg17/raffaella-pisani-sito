@@ -805,6 +805,43 @@
   #credibilita { background: var(--avorio); padding-bottom: 0; }
   /* [1] Allinea il selettore dell’etichetta alla sezione professionale reale. */
   #credibilita .section-eyebrow { color: #1a1a1a; }
+  /* [172] Ricostruisce esclusivamente nel pannello Referenze la gerarchia del documento originale. */
+  #credibilita .referenze-title {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 16px;
+    margin-bottom: 16px;
+  }
+  #credibilita .referenze-title-partner { justify-self: end; }
+  #credibilita .referenze-title-bottom { grid-column: 1 / -1; }
+  #credibilita .referenze-genesi {
+    margin: 0 0 20px;
+    font-size: 0.92rem;
+    color: var(--grigio);
+    line-height: 1.65;
+  }
+  #credibilita .referenze-collaborazioni-label {
+    margin: 0 0 14px;
+    font-size: 0.92rem;
+    color: var(--grigio);
+    line-height: 1.5;
+  }
+  #credibilita .referenze-collaborazioni-list {
+    display: grid;
+    gap: 3px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  #credibilita .referenze-collaborazioni-list li {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    line-height: 1.3;
+    text-transform: uppercase;
+    color: var(--inchiostro);
+  }
   /* [155] Trasforma soltanto la prima fascia Referenze in due metà desktop senza modificare le fasce successive. */
   @media (min-width: 900px) {
     #credibilita > .media-band:first-of-type {
@@ -2184,7 +2221,7 @@
 <!-- CREDIBILITÀ -->
 <!-- +--------------------------------------------------+
      | [F16] - Markup REFERENZE — introduzione e genesi   |
-     | Dipende da: F3, F6, F7, F7b, F8, F10b, F19         |
+     | Dipende da: F3, F6, F7b, F10b, F19                 |
      | Status: STABLE | Last modified: 2026-10-06         |
      +--------------------------------------------------+ -->
 <section id="credibilita">
@@ -2195,29 +2232,20 @@
       <img class="section-photo" src="assets/fotografie-attivita/raffaella-referenze-metodo-narrativo.jpeg" alt="Raffaella Pisani consulta materiali di progetto in una profumeria artistica." loading="lazy" decoding="async">
     </div>
     <div class="media-band-copy">
-      <div class="fade-in">
-        <!-- [24] Presenta le Referenze professionali con il testo guida validato. -->
-        <p class="section-eyebrow">Referenze</p>
-        <h2 class="section-title">Voci qualificate<br>sul mio lavoro</h2>
-        <p class="section-body">In questa sezione raccolgo le testimonianze di brand, aziende, istituzioni e professionisti che hanno collaborato con me in progetti legati alla cultura olfattiva, alla narrazione, all’esperienza sensoriale e alla valorizzazione del profumo come linguaggio.</p>
-        <p class="section-body">Non sono semplici recensioni: sono referenze professionali che raccontano il mio modo di lavorare, la qualità della relazione costruita e il valore generato nei diversi contesti di collaborazione.</p>
-        <p class="section-body">Attraverso queste voci emerge un metodo: ascoltare l’identità del brand o del progetto, trasformare il profumo in racconto e creare esperienze capaci di lasciare una traccia riconoscibile.</p>
-        <!-- [25] Riserva questo punto esclusivamente alle future referenze reali e autorizzate. -->
-      </div>
-
-      <!-- T07+T08 — Barra loghi collaborazioni -->
-      <div class="loghi-bar fade-in">
-        <div class="logo-item">Puntoettore</div>
-        <div class="logo-item">Deha — Pitti</div>
-        <div class="logo-item">Cerasa — Salone del Mobile</div>
-        <div class="logo-item">Semenzato</div>
-        <div class="logo-item">Monom</div>
-        <div class="logo-item">MCZ Group</div>
-        <div class="logo-item">Rotary</div>
-      </div>
-
-      <div class="collab-genesi fade-in">
-        <p class="collab-genesi-text">Tutto comincia dietro il bancone di una profumeria degli anni Ottanta. Figlia d'arte, arruolata sul campo prima ancora di averne l'età. Con la carta d'identità contro, ho puntato tutto sulla testa: ho iniziato a studiare come una matta per fare la differenza come ragazzina brillante. Da lì, la prima svolta: il mio negozio di profumeria artistica. Uno spazio alternativo per l'epoca — boutique di giorno e luogo d'incontro la sera, tra musica, poesia, danza e fotografia.</p>
+      <!-- [173] Sostituisce integralmente il pannello Referenze con la sequenza del documento originale. -->
+      <div class="fade-in referenze-original-copy">
+        <h2 class="section-title referenze-title"><span>Voci</span><span class="referenze-title-partner">qualificate</span><span class="referenze-title-bottom">sul mio lavoro</span></h2>
+        <p class="referenze-genesi">Tutto comincia dietro il bancone di una profumeria degli anni Ottanta. Figlia d'arte, arruolata sul campo prima ancora di averne l'età. Con la carta d'identità contro, ho puntato tutto sulla testa: ho iniziato a studiare come una matta per fare la differenza come ragazzina brillante. Da lì, la prima svolta: il mio negozio di profumeria artistica. Uno spazio alternativo per l'epoca — boutique di giorno e luogo d'incontro la sera, tra musica, poesia, danza e fotografia.</p>
+        <p class="referenze-collaborazioni-label">Collaborazioni e competenze per:</p>
+        <ul class="referenze-collaborazioni-list" aria-label="Collaborazioni e competenze">
+          <li>Puntoettore</li>
+          <li>Deha — Pitti</li>
+          <li>Cerasa — Salone del Mobile</li>
+          <li>Semenzato</li>
+          <li>Monom</li>
+          <li>MCZ Group</li>
+          <li>Rotary</li>
+        </ul>
       </div>
     </div>
   </div>
