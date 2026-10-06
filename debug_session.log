@@ -1493,3 +1493,12 @@ Compatibilità della catena: CONFERMATA.
 Stato finale: STABLE.
 Gate Vedetta: CHIUSO.
 ---
+[VERIFICA PUBBLICA — ALLINEAMENTO TITOLO REFERENZE — 2026-10-06]
+Commit sorgente: eab10cd.
+GitHub: master allineato a eab10cd.
+Netlify: HTTP 200 e CSS aggiornato disponibile al primo controllo.
+Browser pubblico: PASS. «Voci» 722–806 e «qualificate» 817–1012 condividono top 298; «sul mio lavoro» è block con top 356.
+Browser pubblico: fotografia caricata, fade-in attivo, overflow orizzontale assente e console senza errori.
+Validazione Claude Sonnet 4.6: APPROVATO.
+Stato pubblicazione: COMPLETATO.
+---
