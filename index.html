@@ -474,8 +474,8 @@
 
   /* +--------------------------------------------------+
    | [F5] - CSS Visione — tre valori, card              |
-   | Dipende da: F1                                      |
-   | Status: STABLE | Last modified: 2026-09-03      |
+   | Dipende da: F1, F3, F7b, F10b                      |
+   | Status: STABLE | Last modified: 2026-10-06         |
    +--------------------------------------------------+ */
   /* VISIONE */
   #visione { background: var(--smeraldo); }
@@ -517,6 +517,32 @@
     box-shadow: 0 0 80px 35px rgba(27, 94, 75, 1), 0 0 160px 80px rgba(27, 94, 75, 0.7), 0 0 240px 120px rgba(27, 94, 75, 0.35);
     border-radius: 16px;
     border: none;
+  }
+
+  /* [142] Trasforma esclusivamente Visione in due metà desktop, con contenuto verde a sinistra e fotografia strutturale a destra. */
+  @media (min-width: 900px) {
+    #visione { padding: 0; }
+    #visione .media-band {
+      min-height: 100svh;
+      gap: 0;
+      align-items: stretch;
+    }
+    #visione .media-band-slot { align-self: stretch; }
+    #visione .section-photo {
+      width: 100%;
+      max-width: none;
+      height: 100%;
+      margin: 0;
+      object-fit: cover;
+      object-position: right top;
+      border-radius: 0;
+    }
+    #visione .media-band-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(72px, 8vw, 152px) clamp(52px, 7vw, 136px);
+    }
   }
 
   /* +--------------------------------------------------+

@@ -891,3 +891,69 @@ Correzioni bloccanti: nessuna.
 Osservazione facoltativa non applicata: valutare solo in un futuro task un limite di altezza qualora il contenuto testuale di Chi sono diventasse molto breve.
 Secondo revisore Cohere: non disponibile, perché COHERE_API_KEY assente; verifica deterministica completata con esito PASS.
 ---
+
+[Visione — fotografia strutturale a metà pagina — Gate Vedetta pre-modifica — 2026-10-06]
+JSON MAPPING INTERNO
+{"task_id":"visione-half-page-2026-10-06","description":"Estendere esclusivamente la fotografia già presente in Visione fino a occupare la metà destra della sezione desktop, con la stessa logica strutturale usata in Chi sono.","files_involved":["index.html","mappa_blocchi.md","todo.md","debug_session.log"],"requirements":["nessuna nuova immagine","nessuna modifica a testi, sfondo, valori, menu, PWA o altre sezioni","foto a destra senza margini e angoli arrotondati soltanto da desktop 900px","mobile invariato"],"validation_criteria":["F5 unico blocco CSS modificato","F14, F7b, F10b e F19 preservati","foto metà destra desktop e nessun overflow","Visione mobile invariata","accordions, script e altre sezioni invariati"]}
+
+LOGICA PRIMA DEL CODICE
+Obiettivo: rendere la fotografia già presente in Visione una metà strutturale destra della sola sezione desktop, senza alterare immagini, contenuti o componenti esterni.
+Causa: F7b definisce per tutte le fotografie laterali un limite 560px, margine automatico e bordo 16px. Nella sola Visione questa regola mostra la foto come riquadro autonomo sopra il fondo verde.
+Soluzione minima: F5 applicherà sotto `#visione` e soltanto da 900px una griglia senza gap e senza padding esterno, con colonna fotografica estesa, immagine di copertura e ancoraggio alto a destra. Il selettore con ID prevale su F7b senza modificarlo.
+Istruzione atomica prevista: [142] trasforma esclusivamente Visione in due metà desktop, con contenuto verde a sinistra e fotografia strutturale a destra.
+
+CHECKPOINT — STATO CONGELATO
+Repository: VDLgrg17/raffaella-pisani-sito, branch master, commit 20e649a, parità GitHub 0/0 e working tree pulito.
+File congelati: index.html, mappa_blocchi.md, todo.md e debug_session.log in /tmp/raffaella-visione-half-page.
+Stato esistente: F14 ospita testo a sinistra e fotografia autorizzata a destra tramite `.media-band--image-right`, `.media-band-copy`, `.media-band-slot`, `.section-photo` e `.fade-in`.
+Vincoli congelati: asset `raffaella-visione-ascolto-olfattivo.jpeg`, testo, sfondo verde, tre valori, id `#visione`, menu, PWA, hero, mobile, F4, F13 e F15–F26 non vengono modificati.
+
+VEDETTA — PRE-MODIFICA
+Richiesta: applicare esclusivamente alla fotografia Visione le proporzioni strutturali approvate per Chi sono, sul lato destro desktop.
+Blocco principale: F5, CSS Visione, index.html righe 476–522.
+Input: id `#visione`, classi F14, variabili F1, regola comune F3, regole laterali F7b e F10b.
+Output: geometria desktop esclusiva di Visione, con fotografia destra strutturale dalla larghezza di 900px.
+Dipendenze dirette a monte: F1 per variabili e box model; F3 per il padding comune `section`; F7b per foto, griglia e limite condiviso; F10b per le colonne e l’ordine mobile; F19 per fade-in.
+Dipendenze indirette a monte: F0 attraverso F1 e F10 attraverso F10b e F19.
+Dipendenti diretti a valle: F14, che ospita l’ID, le classi e l’asset senza modificarli.
+Dipendenti indiretti a valle: F11, F28 e F40 attraverso l’ancora `#visione`, senza rinomina dell’ancora.
+Relazioni trasversali: F4, F13, F15, F16 e F26 condividono F7b e F10b; vengono protetti con selettori esclusivi `#visione`.
+Dipendenze nascoste rilevate: `.visione-foto-img` è definita in F5 ma non è assegnata all’immagine F14, quindi non influenza il rendering corrente e non viene modificata.
+Dipendenze dinamiche: F19 osserva `.fade-in` presente sulla fascia fotografica F14; la classe viene preservata.
+Dipendenze circolari: nessuna.
+Blocchi da modificare: F5, mappa_blocchi.md, todo.md e debug_session.log.
+Blocchi da verificare: F1, F3, F7b, F10b, F14, F19, F11, F28 e F40.
+Blocchi esclusi con prova: F2, F2b, F4, F6, F7, F7-ext, F8, F9, F12, F13, F15–F18, F20–F29 e F30–F46; nessuno contiene un selettore `#visione` o riceve modifiche dalla regola esclusiva.
+Relazioni irrisolte: nessuna.
+Chiusura ricorsiva completata: SÌ.
+Gate Vedetta: APERTURA AUTORIZZATA.
+---
+
+[Visione — verifica tecnica e Vedetta post-modifica — 2026-10-06]
+Modifica eseguita: F5, istruzione atomica [142]. Da 900px, `#visione` annulla il solo padding della propria sezione, la propria `.media-band` diventa una griglia senza gap e alta almeno un viewport, la propria foto copre completamente la metà destra con bordo rettilineo e ancoraggio `right top`, mentre il contenuto verde resta centrato nella metà sinistra.
+Verifica desktop 1280×1100: PASS. Sezione 1265×1100, foto 633×1100 e copia 633×1100. La foto è a destra, occupa esattamente metà larghezza e tutta l’altezza della sezione. `object-fit: cover`, `object-position: 100% 0%`, bordo 0px, padding sezione 0px, immagine caricata e nessun overflow.
+Verifica isolamento Chi sono e Servizi: PASS. Chi sono conserva `object-fit: cover` e bordo 0px. Servizi conserva `object-fit: contain`, bordo 16px e limite 560px. F7b non è stato modificato.
+Verifica mobile 390×844: PASS. Visione conserva padding 120px 28px, foto 334×400, `object-fit: contain`, bordo 16px e testo prima dell’immagine. Chi sono e Servizi restano invariati e non emerge overflow.
+Verifica contratti: PASS. JavaScript invariato; un solo asset Visione e testi F14 invariati; F19 conserva fade-in. I sei accordion mantengono apertura singola e chiusura con click esterno.
+VEDETTA — POST-MODIFICA
+Blocchi modificati: F5, mappa_blocchi.md, todo.md e debug_session.log.
+Blocchi verificati senza modifica: F1, F3, F4, F7b, F10b, F14, F19, F11, F28 e F40.
+Contratti controllati: metà destra desktop, fotografia estesa, ancoraggio volto, contenuto verde sinistro, ordine mobile, immagine integra mobile, isolamento di Chi sono e Servizi, fade-in, ancora e JavaScript.
+Nuove dipendenze rilevate: nessuna oltre alle relazioni F3, F7b e F10b esplicitate in F5.
+Mappa blocchi aggiornata: in corso.
+Header F aggiornati: SÌ.
+Compatibilità della catena: CONFERMATA.
+Stato finale: STABLE.
+---
+[Visione — chiusura documentale — 2026-10-06]
+Mappa blocchi aggiornata: SÌ.
+Mappa F14 aggiornata con F3 e F19 come dipendenze effettive del markup Visione; grafo aggiornato con F3 + F5 + F7b + F10b + F19 → F14.
+Range successivi riallineati dopo l’inserimento locale di F5. Nessun blocco codice oltre F5 è stato modificato.
+---
+[Visione — validazione esterna Claude — 2026-10-06]
+Validatore primario: Claude Sonnet 4.6 tramite OpenRouter.
+Esito: APPROVATO.
+Motivazione: F5 realizza da 900px la metà strutturale destra di Visione tramite selettori esclusivi `#visione`; la specificità supera F7b senza modificarlo. Nessun errore logico, nessuna regressione rilevata e nessuna correzione bloccante richiesta.
+Nota del validatore: il solo pattern storico nei log riguarda cache e service worker di origini locali; non è un difetto del codice e sarà escluso dalla verifica Netlify pubblica.
+Risposta completa del validatore: /tmp/raffaella-visione-half-page/claude_validation.json.
+---
