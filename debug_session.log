@@ -1669,3 +1669,59 @@ Accordion pubblico: PASS. Sei trigger verificati, apertura singola e chiusura de
 Console pubblica: PASS. Nessun errore rilevato.
 Stato operativo: pubblicazione corretta, attesa del commit di sola evidenza.
 ---
+
+[2026-10-07T00:29:34+02:00] — VEDETTA PRE-MODIFICA: spostamento pulsante testimonianze Community
+Spostare il pulsante delle testimonianze Community nella colonna testuale della fascia, sotto la call to action e senza spazio inferiore separato.
+
+La richiesta consiste nello spostamento del pulsante esistente «Leggi le testimonianze della community →» dalla posizione centrale sotto la fascia Community alla colonna testuale sinistra, subito sotto la call to action «Vuoi far parte di questa rete? Scrivimi →», allineato al contenuto testuale.
+
+L'intento logico stabilisce che il markup F26 conservi esattamente pulsante, etichetta, classe, funzione di apertura e chiusura, identificatore della griglia e dodici testimonianze, modificandone soltanto il contenitore padre e l'allineamento.
+
+Il blocco principale è F26 in `index.html`, responsabile di Community olfattiva, fotografia strutturale desktop e testimonianze personali. Gli input sono i contenuti Community, la call to action verso `#contatti`, il selettore `.btn-testimonianze`, l'identificatore `#testimonianze-nascoste`, la classe `.fade-in` e la geometria `.media-band`.
+
+Il pulsante conserva grafica, etichetta iniziale e alternata, click che aggiunge o rimuove `visible`, visibilità della griglia e collegamento della call to action. Le dipendenze dirette a monte sono F3, F6, F7-ext, F7b, F10b, F17, F19 e F21b, mentre le dipendenze indirette a monte comprendono F1 attraverso F3, F6, F7-ext, F7b e F21b, oltre a F10 attraverso F19.
+
+Nessun blocco consuma il markup interno del pulsante, mentre F26 resta raggiunto dalla navigazione F11 attraverso l'ancora `#community`. Le relazioni trasversali confermate sono l'ancora `#contatti` fornita da F17, l'osservazione del nuovo wrapper `.fade-in` eseguita da F19, l'ordine mobile testo, pulsante e fotografia conservato da F10b, la griglia desktop e la fotografia laterale conservate da F6 e lo stile con la visibilità delle testimonianze conservati da F21b.
+
+La dipendenza nascosta risiede nel toggle inline F26 che non utilizza F24 e nel fatto che F19 osserva un elemento spostato nel DOM senza alcuna variazione di classe o comportamento. Sono assenti dipendenze circolari e relazioni irrisolte, la chiusura ricorsiva è completata e il gate Vedetta ha apertura autorizzata.
+
+Il solo blocco da modificare è F26, mentre devono essere verificati F3, F6, F7-ext, F7b, F10b, F11, F17, F19 e F21b. Restano esclusi con prova F2, F2b, F8, F9, F12–F16, F18, F20, F22–F25, F27–F29, `pwa-action-bar.js`, `sw.js`, `manifest.json`, pagina Archivio e prototipi perché non condividono selettori, identificatori, eventi, asset o struttura con il pulsante Community.
+
+La soluzione minima sposta il wrapper esistente dentro `.media-band-copy` subito dopo la call to action, rimuove soltanto l'allineamento centrale e conserva invariato il pulsante con il relativo `onclick`.
+---
+[TENTATIVO 1 — 2026-10-07T00:31:10+02:00]
+Errore: il confronto statico letterale del pulsante ha rilevato una differenza causata dalla sola indentazione interna introdotta dallo spostamento del wrapper.
+File: script temporaneo di verifica, nessun file del sito coinvolto.
+Correzione tentata: confrontare attributo `onclick`, testo normalizzato, classe e numero di occorrenze, senza modificare il codice del sito.
+Risposta validatore: controllo da rieseguire con criterio strutturale.
+---
+
+[2026-10-07T00:32:20+02:00] — Gate Vedetta rifinito per Community
+
+Nel test desktop il pulsante appare correttamente nella colonna testuale, mentre lo spazio inferiore residuo deriva dal `padding-bottom` generale di 140 pixel ereditato da `section` in F3. Il margine non appartiene più al pulsante spostato e resta visibile sotto la fotografia, quindi non soddisfa il requisito della fascia che deve terminare alla base della foto e del contenuto.
+
+La dipendenza già verificata F3 → F6 → F26 richiede un'estensione circoscritta del gate. F6 viene aggiunto ai blocchi da modificare soltanto per un override desktop specifico di `#community` dentro `@media (min-width: 900px)`, con `padding-bottom: 0`; il mobile continua a usare il padding e l'ordine F10b invariati.
+
+Sono preservati contenuti, immagini, testi, pulsante, toggle, testimonianze, Contatti, PWA, Referenze, Servizi e ogni altra sezione. Restano assenti relazioni irrisolte, la chiusura ricorsiva è confermata e il gate Vedetta resta aperto per F6 e F26.
+
+[2026-10-07T00:36:50+02:00] — Vedetta post-modifica Community
+
+I blocchi modificati sono F6 e F26. F26 sposta il wrapper del pulsante esistente dentro `.media-band-copy`, immediatamente dopo la call to action, conserva classe, attributo `onclick`, etichetta iniziale e alternata, identificatore della griglia e dodici testimonianze. F6 aggiunge esclusivamente nel breakpoint desktop un `padding-bottom: 0` circoscritto a `#community`, eliminando lo spazio inferiore separato senza intervenire sul mobile.
+
+I blocchi verificati senza modifica sono F3, F7-ext, F7b, F10b, F11, F17, F19 e F21b. I contratti controllati comprendono il pulsante unico, l'identificatore unico, dodici card, call to action verso `#contatti`, ordine desktop con testo e pulsante a sinistra, fotografia a destra, ordine mobile testo, pulsante e fotografia, toggle aperto e chiuso, griglia testimonianze, contatti dopo la griglia aperta, assenza di overflow e console locale senza errori.
+
+Il controllo deterministico è superato senza simboli rimossi, `git diff --check` è pulito e il test strutturale conferma che il pulsante e l'attributo `onclick` restano invariati a meno dell'indentazione. Il browser desktop conferma `padding-bottom` pari a zero e, dopo il fade-in, bordo inferiore comune per sezione, fascia e fotografia. Il browser mobile 390 per 844 pixel conserva `padding-bottom` pari a 120 pixel, il pulsante sotto la CTA e prima della fotografia, la fotografia caricata, nessun overflow e il toggle corretto in entrambi gli stati.
+
+Claude Sonnet 4.6 ha approvato la modifica senza correzioni bloccanti. Il controllo diretto successivo esclude la regola `#community` autonoma indicata nella nota non bloccante del validatore, poiché l'unico `padding-bottom: 0` Community è confinato nel media query desktop.
+
+Le nuove istruzioni atomiche sono [181] per lo spostamento del pulsante e [182] per l'override desktop. La mappa Blocchi F e gli header sono aggiornati, la compatibilità della catena è confermata e lo stato finale torna stabile.
+
+[2026-10-07T00:38:19+02:00] — Raffinamenti della verifica Community
+
+Tentativo 2: il primo browser headless mobile rifiuta la connessione DevTools per l'assenza del parametro `--remote-allow-origins=*`. Nessun file del sito viene modificato; il browser isolato viene riavviato con il parametro richiesto e la verifica prosegue.
+
+Tentativo 3: la fotografia Community non risulta ancora caricata nel primo controllo mobile e il relativo slot misura altezza zero. Nessun file del sito viene modificato; il verificatore forza esclusivamente nella sessione isolata il caricamento eager dell'immagine e ripete la misura.
+
+Il test successivo a 390 per 844 pixel conferma fotografia caricata, ordine testo, pulsante e fotografia, pulsante unico, griglia unica, dodici card, apertura e chiusura, Contatti dopo la griglia aperta, padding mobile invariato e assenza di overflow. Il controllo desktop iniziale usa l'uguaglianza fra `scrollWidth` e `innerWidth`, che non considera la barra di scorrimento; la misura corretta `scrollWidth <= clientWidth` conferma assenza di overflow orizzontale.
+
+Gli errori riguardano soltanto gli strumenti temporanei di test, non il codice pubblicabile. Anti-Loop è rispettato attraverso il cambio di configurazione DevTools, il caricamento esplicito dell'asset e la correzione della metrica.

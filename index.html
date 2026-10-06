@@ -555,7 +555,7 @@
     }
   }
 
-   /* +--------------------------------------------------+
+  /* +--------------------------------------------------+
     | [F6] - CSS Servizi — introduzione e sei aree       |
     | Dipende da: F1, F3, F7b, F10b                      |
    | Status: STABLE | Last modified: 2026-10-07         |
@@ -891,6 +891,8 @@
   #community { background: var(--avorio); }
   /* [158] Trasforma soltanto la prima fascia Community in due metà desktop senza modificare testimonianze o CTA successive. */
   @media (min-width: 900px) {
+    /* [182] Annulla solo sul desktop il padding inferiore ereditato quando la fascia Community termina alla base della fotografia. */
+    #community { padding-bottom: 0; }
     #community > .media-band:first-of-type {
       min-height: 100svh;
       margin: -140px -72px 0;
@@ -2277,10 +2279,10 @@
 <!-- +--------------------------------------------------+
      | [F26] - Markup COMMUNITY — testimonianze personali |
      | Dipende da: F3, F6, F7-ext, F7b, F10b, F17, F19, F21b |
-     | Status: STABLE | Last modified: 2026-10-06         |
+     | Status: STABLE | Last modified: 2026-10-07         |
      +--------------------------------------------------+ -->
 <section id="community">
-<!-- Dipende da: F3, F6, F7-ext, F7b, F10b, F17, F19, F21b | Status: STABLE | Last modified: 2026-10-06 -->
+<!-- Dipende da: F3, F6, F7-ext, F7b, F10b, F17, F19, F21b | Status: STABLE | Last modified: 2026-10-07 -->
   <!-- [139] Colloca la fotografia autorizzata dell’incontro nella fascia laterale Community. -->
   <div class="media-band media-band--image-right">
     <div class="media-band-copy">
@@ -2293,20 +2295,17 @@
     <p class="section-body">Questa community rappresenta la parte più personale e relazionale del mio lavoro: uno spazio vivo, aperto e sensibile, in cui la cultura olfattiva diventa esperienza condivisa.</p>
     <div class="divider"></div>
     <p class="section-body" style="font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; opacity:0.6;">Vuoi far parte di questa rete? <a href="#contatti" style="color:var(--oro); text-decoration:none;">Scrivimi →</a></p>
-
+    <!-- [181] Colloca il pulsante delle testimonianze sotto la CTA e nella colonna testuale Community. -->
+    <div class="fade-in" style="margin-top:48px;">
+      <!-- [26] Mantiene nella Community soltanto le testimonianze personali esistenti. -->
+      <button class="btn-testimonianze" onclick="document.getElementById('testimonianze-nascoste').classList.toggle('visible'); this.textContent = this.textContent.includes('Leggi') ? 'Nascondi le testimonianze ↑' : 'Leggi le testimonianze della community →'">
+        Leggi le testimonianze della community →
+      </button>
+    </div>
     </div>
     <div class="media-band-slot fade-in">
       <img class="section-photo" src="assets/fotografie-attivita/raffaella-community-esperienza-condivisa.jpeg" alt="Raffaella Pisani dialoga con i partecipanti a un incontro della community." loading="lazy" decoding="async">
     </div>
-  </div>
-
-  <!-- [28] Prosegue con le testimonianze senza la precedente chiusura div priva di apertura. -->
-  <!-- Pulsante per testimonianze personali -->
-  <!-- [26] Mantiene nella Community soltanto le testimonianze personali esistenti. -->
-  <div style="text-align:center; margin-top:48px;" class="fade-in">
-    <button class="btn-testimonianze" onclick="document.getElementById('testimonianze-nascoste').classList.toggle('visible'); this.textContent = this.textContent.includes('Leggi') ? 'Nascondi le testimonianze ↑' : 'Leggi le testimonianze della community →'">
-      Leggi le testimonianze della community →
-    </button>
   </div>
 
   <!-- Testimonianze personali — nascoste -->
