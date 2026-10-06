@@ -1460,3 +1460,36 @@ Netlify: HTTP 200, versione pubblica individuata al primo controllo con parametr
 Browser pubblico: PASS. Titolo suddiviso in «Voci», «qualificate», «sul mio lavoro»; elenco completo delle sette voci; fotografia caricata; fade-in visibile; nessun contenuto precedente; nessun overflow orizzontale; Community inizia dopo Referenze.
 GitHub: HEAD e github/master coincidono su f9d9b48 prima dell’aggiornamento del presente registro.
 ---
+[VEDETTA — PRE-MODIFICA — ALLINEAMENTO TITOLO REFERENZE — 2026-10-06]
+Richiesta: eliminare la separazione orizzontale fra «Voci» e «qualificate» nel solo titolo Referenze, mantenendo «sul mio lavoro» nella riga inferiore.
+Blocco principale: F6, CSS Referenze in index.html, responsabile del layout del titolo.
+Dipendenze dirette a monte: F1 per font e stile base .section-title; F3 per la geometria generale della sezione; F7b per la struttura media-band; F10b per l’ordine mobile.
+Dipendenze indirette a monte: F0 per font e configurazione globale.
+Dipendenti diretti a valle: F16 consuma le classi referenze-title, referenze-title-partner e referenze-title-bottom.
+Dipendenti indiretti a valle: F19 applica solo il fade-in al contenitore; menu F11 e PWA non consumano il titolo.
+Relazioni trasversali: F7b e F10b definiscono griglia e ordine, ma non selettori del titolo; F19 verifica visibilità senza modificare geometria.
+Dipendenze nascoste rilevate: nessuna. Il selettore è circoscritto a #credibilita.
+Dipendenze circolari: nessuna.
+Blocchi da modificare: F6.
+Blocchi da verificare: F1, F7b, F10b, F16, F19.
+Blocchi esclusi con prova: F11, F24, F26, F17, F20–F29. Non consumano né producono il layout del titolo Referenze.
+Relazioni irrisolte: nessuna.
+Chiusura ricorsiva completata: SÌ.
+Logica prima del codice: una griglia a due colonne con partner giustificato a destra produce il disallineamento osservato. Il flusso testuale inline con separazione controllata conserva i testi e riallinea la prima riga.
+Istruzioni atomiche pianificate: [174] flusso tipografico naturale; [175] spaziatura fra le due parole; [176] riga inferiore invariata.
+Gate Vedetta: APERTURA AUTORIZZATA.
+---
+[VEDETTA — POST-MODIFICA — ALLINEAMENTO TITOLO REFERENZE — 2026-10-06]
+Blocchi modificati: F6.
+Blocchi verificati senza modifica: F1, F7b, F10b, F16, F19, F24 e F25.
+Contratti controllati: tre span del titolo F16; fotografia; fade-in; ordine mobile; assenza di overflow; script F19, F24 e F25 byte-identici.
+Test desktop browser: PASS. «Voci» sinistra 722–806 e «qualificate» 817–1012 condividono top 298; «sul mio lavoro» è block alla riga top 356. Fotografia caricata, fade-in attivo e overflow assente.
+Test mobile: PASS sulla regola di layout. La larghezza compositiva della prima riga è 183 px, inferiore alla larghezza utile minima di 304 px a 360 px di viewport. Non può andare a capo; il terzo span resta blocco inferiore.
+Nota test controllato: il primo browser headless ha imposto viewport minima 500 px. Strategia modificata: emulazione dispositivo a 390 px e verifica delle metriche CSS; il secondo controllo ha confermato larghezza interna 390 px, overflow assente e posizionamento corretto degli span. Il controllo di scroll della sezione non modifica il DOM e non costituisce una regressione.
+Validazione Claude Sonnet 4.6: APPROVATO. Nessuna correzione bloccante.
+Mappa Blocchi F aggiornata: SÌ, solo stato F6; range invariato.
+Header F aggiornato: SÌ.
+Compatibilità della catena: CONFERMATA.
+Stato finale: STABLE.
+Gate Vedetta: CHIUSO.
+---

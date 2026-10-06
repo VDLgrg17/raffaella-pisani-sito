@@ -74,3 +74,4 @@
 - [x] Integrare i sei accordion nella fascia Servizi, con mano visibile nella fotografia e senza spazio inferiore separato.
 - [x] Eliminare il materiale Referenze autorizzato da Puntoettore al case history Cerasa e i due contenitori correlati.
 - [x] Sostituire integralmente il testo Referenze con il contenuto e la sequenza del documento originale mostrato in Word.
+- [x] Allineare la prima riga del titolo Referenze senza modificare il testo originale.

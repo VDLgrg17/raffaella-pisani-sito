@@ -805,15 +805,15 @@
   #credibilita { background: var(--avorio); padding-bottom: 0; }
   /* [1] Allinea il selettore dell’etichetta alla sezione professionale reale. */
   #credibilita .section-eyebrow { color: #1a1a1a; }
-  /* [172] Ricostruisce esclusivamente nel pannello Referenze la gerarchia del documento originale. */
+  /* [174] Ripristina il flusso tipografico naturale per allineare la prima riga del titolo Referenze. */
   #credibilita .referenze-title {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    column-gap: 16px;
+    display: block;
     margin-bottom: 16px;
   }
-  #credibilita .referenze-title-partner { justify-self: end; }
-  #credibilita .referenze-title-bottom { grid-column: 1 / -1; }
+  /* [175] Mantiene una separazione sobria fra le due parole senza allontanarle alle estremità. */
+  #credibilita .referenze-title-partner { margin-left: 0.22em; }
+  /* [176] Conserva «sul mio lavoro» come riga inferiore del titolo originale. */
+  #credibilita .referenze-title-bottom { display: block; }
   #credibilita .referenze-genesi {
     margin: 0 0 20px;
     font-size: 0.92rem;
