@@ -1502,3 +1502,79 @@ Browser pubblico: fotografia caricata, fade-in attivo, overflow orizzontale asse
 Validazione Claude Sonnet 4.6: APPROVATO.
 Stato pubblicazione: COMPLETATO.
 ---
+
+[2026-10-06T23:42:20+02:00] — F6/F15 — APERTURA GATE VEDETTA: CUT inferiore Servizi
+Richiesta autorizzata: eliminare esclusivamente la fascia nocciola residua sotto la fotografia e gli accordion della prima fascia Servizi, facendo terminare la sezione al bordo inferiore della fotografia.
+Causa identificata: Code — in F6 la regola desktop `#servizi > .servizi-intro` impone `min-height: 100svh`; questa altezza minima è indipendente dalla composizione reale della fascia e può conservare spazio sotto i contenuti visivi.
+Fix minimo: sostituire soltanto l’altezza minima forzata con altezza minima zero, lasciando che la riga CSS termini alla quota maggiore tra fotografia e pannello testuale. La fotografia mantiene `height: 100%`, `object-fit: cover` e `object-position: right 68%`.
+Blocchi diretti autorizzati: F6.
+Blocchi verificati e preservati: F1, F3, F7b, F10b, F15, F19, F24, F11, F28 e F29.
+Catena diretta: F1 + F3 + F6 + F7b + F10b + F19 + F24 → F15.
+Vincoli: nessuna modifica a testi, markup, sei ID accordion, classi, runtime, foto, crop, PWA, menu, Referenze, Community o Contatti. Layout mobile invariato.
+Checkpoint: `/tmp/raffaella-servizi-bottom-cut/` con copia dei file e snapshot F6 pre-modifica.
+Istruzione atomica prevista: [177]. Stato: GATE APERTO.
+---
+
+[TENTATIVO 1 — 2026-10-06T23:43:56+02:00]
+Errore: il controllo deterministico ha cercato la stringa `min-height: 100svh` nell'intero file e la regola mobile con una forma letterale non corrispondente; ha quindi prodotto due falsi negativi non riferiti alla modifica F6.
+File: script temporaneo di verifica, nessun file del sito coinvolto.
+Correzione tentata: restringere il confronto al blocco F6 e alla struttura HTML interna di F15; acquisire inoltre schermate con scroll programmatico sulla sola sezione Servizi.
+Risposta validatore: non ancora richiesta; nessun rollback necessario perché il codice non ha fallito.
+---
+
+[TENTATIVO 2 — 2026-10-06T23:44:33+02:00]
+Errore: il browser temporaneo ha rifiutato la connessione DevTools con HTTP 403 per l'origine WebSocket locale.
+File: script temporaneo `/tmp/raffaella-servizi-bottom-cut/verify_services_cut.py`; nessun file del sito coinvolto.
+Correzione tentata: avviare il solo browser temporaneo con `--remote-allow-origins=*`; nessuna variazione della logica o del layout del sito.
+Risposta validatore: test non eseguito; ripetizione autorizzata una sola volta con parametro d'ambiente corretto.
+---
+
+[2026-10-06T23:45:20+02:00] — RAFFINAMENTO GATE VEDETTA F6/F15
+Il controllo DOM ha identificato la seconda causa effettiva della fascia residua: F3 assegna padding verticale generale alle sezioni e F6 annulla solo il padding superiore di `#servizi`. I 140 px inferiori ereditati restano quindi sotto la fotografia anche quando `min-height` è azzerato.
+Relazione già mappata e verificata: F3 → F6 → F15. Nessun nuovo blocco da modificare.
+Fix minimo esteso ma circoscritto a F6: aggiungere `padding-bottom: 0` a `#servizi`; nessuna modifica a F3, F15, testi, foto, crop, runtime o mobile.
+Istruzione atomica aggiunta: [178]. Gate F6/F15 resta aperto fino alle nuove verifiche.
+---
+[TENTATIVO 3 — 2026-10-06T23:45:13+02:00]
+Esito: lo script temporaneo ha confermato ID, markup F15 e click accordion, ma ha misurato l'immagine prima della conclusione del lazy loading e ha reso visibile il padding inferiore ereditato.
+File: script temporaneo di verifica; nessun file del sito coinvolto.
+Correzione tentata: scroll controllato prima della misurazione e controllo dell'altezza finale dopo l'override F6 autorizzato.
+Risposta validatore: non ancora richiesta; la causa CSS è deterministica.
+---
+
+[TENTATIVO 4 — 2026-10-06T23:46:04+02:00]
+Esito: la sezione termina correttamente alla quota dell'introduzione e la fotografia è caricata. Il controllo stretto ha rilevato una differenza di 3 px tra fondo della fotografia e fondo della fascia, causata dalla trasformazione finale di fade-in sul solo elemento `img`; la sezione F6, che conserva `overflow: hidden`, taglia quel margine esterno senza lasciare alcuna fascia residua.
+File: script temporaneo di verifica; nessun file del sito coinvolto.
+Cambio strategia Anti-Loop: misurare il requisito reale, cioè bordo inferiore della sezione coincidente con il contenitore della fascia e differenza fotografica non superiore a 4 px, senza richiedere una coincidenza subpixel incompatibile con l'animazione F19 preservata.
+Risposta validatore: nessun errore di codice rilevato; test finale aggiornato sul contratto visuale reale.
+---
+
+[2026-10-06T23:47:50+02:00] — RAFFINAMENTO DI ISOLAMENTO F6
+Il controllo a 390 px ha confermato l'assenza di overflow nel documento ma ha evidenziato che `padding-bottom: 0` applicato al selettore globale `#servizi` avrebbe modificato anche la geometria mobile, fuori dal perimetro autorizzato.
+Correzione chirurgica: mantenere la stessa proprietà esclusivamente nel media query desktop `min-width: 900px`. Il risultato desktop resta invariato e il contratto mobile di F10b resta intatto.
+Nuova dipendenza: nessuna; confermata la condizione F6 → F10b.
+---
+
+[2026-10-06T23:49:50+02:00] — F6/F15 — CHIUSURA GATE VEDETTA: CUT inferiore Servizi
+Modifica effettiva: in F6, entro `@media (min-width: 900px)`, `min-height: 100svh` è sostituito da `min-height: 0` e `#servizi` riceve esclusivamente su desktop `padding-bottom: 0`.
+Esito visuale desktop controllato 1440×1200: fotografia 720×970 e pannello testuale terminano a y=1099; la sezione termina a y=1099 e la sezione successiva inizia a y=1099. Nessuna fascia residua sotto fotografia o accordion.
+Esito mobile controllato 390×844: contratto mobile F10b invariato, foto caricata e documento senza overflow orizzontale (390/390 px). L'override del padding inferiore è confinato al desktop.
+Integrità deterministica: F15 markup e testo identici al checkpoint; sei trigger e sei dropdown invariati; F19, F24 e F25 hanno impronte identiche; verifica integrità strutturale PASS.
+Interazioni locali: 6/6 accordion aperti e richiusi con successo; console senza errori.
+Validazione esterna: Claude Sonnet 4.6 — APPROVATO. Nessuna correzione bloccante.
+Blocchi modificati: F6. Blocchi verificati senza modifica: F1, F3, F7b, F10b, F15, F19, F24, F11, F28 e F29.
+Mappa e registro task aggiornati. Stato: STABLE. Gate chiuso.
+---
+
+[TENTATIVO 5 — 2026-10-06T23:52:12+02:00]
+Errore: il controllo temporaneo della mappa ha richiesto che l'identificatore F comparisse sulla prima riga dell'intervallo, mentre gli header a riquadro collocano l'identificatore nella riga successiva.
+File: script temporaneo di certificazione; nessun file del sito coinvolto.
+Correzione tentata: verificare l'identificatore entro le prime quattro righe dell'intervallo documentato.
+Risposta validatore: non necessaria; le righe documentate restano corrette.
+---
+
+[2026-10-06T23:52:30+02:00] — CERTIFICAZIONE FINALE F6/F15
+Riesecuzione controllata: PASS. Desktop 1440×1200 con sezione Servizi, introduzione e fotografia allineate al bordo inferiore y=1099; sezione successiva a y=1099. Mobile 390×844 invariato rispetto al contratto F10b e senza overflow orizzontale.
+Mappa Blocchi F: versione 5.6. Intervalli reali certificati per 27 blocchi di `index.html`; intervalli F29 e F29.4 corretti secondo il file reale `sw.js` a 105 righe.
+Stato finale: STABLE. Pronto per commit e verifica pubblica.
+---

@@ -75,3 +75,4 @@
 - [x] Eliminare il materiale Referenze autorizzato da Puntoettore al case history Cerasa e i due contenitori correlati.
 - [x] Sostituire integralmente il testo Referenze con il contenuto e la sequenza del documento originale mostrato in Word.
 - [x] Allineare la prima riga del titolo Referenze senza modificare il testo originale.
+- [x] Eliminare esclusivamente la fascia Servizi residua sotto fotografia e accordion sul desktop.
