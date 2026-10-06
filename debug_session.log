@@ -1767,3 +1767,11 @@ Le istruzioni atomiche aggiunte sono [183] per lo stile e [184] per il markup. L
 Il primo controllo desktop ha confrontato impropriamente le quote verticali della CTA e della fotografia. Nella griglia desktop le colonne sono affiancate, quindi la fotografia inizia più in alto della CTA senza rappresentare un difetto. Nessun file del sito è stato modificato.
 
 La metrica corretta verifica che `.media-band-copy` contenga la CTA e che il suo bordo sinistro sia a sinistra del bordo della fotografia. Il browser conferma contenimento nel pannello testuale, CTA visibile, posizione laterale corretta, fotografia nella colonna destra e assenza di overflow orizzontale. La compatibilità del layout desktop resta confermata.
+
+[2026-10-07T00:54:54+02:00] — Verifica pubblica CTA Community
+
+Il commit di implementazione `73eac66` è pubblicato su `github/master`. Netlify restituisce HTTP 200 al primo controllo e il sorgente pubblico contiene una CTA Community unica, una domanda «Vuoi far parte di questa community?», un collegamento «Scrivimi →» verso `#contatti`, una griglia testimonianze nascosta e dodici card. Il sorgente pubblico non contiene `btn-testimonianze`.
+
+Il browser pubblico conferma CTA contenuta nella colonna testuale, posizionata a sinistra della fotografia, pulsante verde smeraldo, testo bianco, altezza minima 48 pixel, fotografia laterale destra, griglia testimonianze non visibile e assenza di overflow orizzontale. Dopo il fade-in, la CTA presenta classe `visible`, opacità 1 e trasformazione assente.
+
+Il click pubblico sul pulsante aggiorna l'URL a `#contatti`, raggiunge il modulo Contatti e conserva la barra PWA. La console pubblica non presenta errori. La pubblicazione, il comportamento e la catena F21b, F26 e F17 risultano verificati.
