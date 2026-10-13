@@ -2020,3 +2020,66 @@ Il commit c7460be è pubblicato su github/master. Netlify restituisce HTTP 200 e
 Nel browser pubblico desktop la fotografia è caricata nella metà sinistra, mentre testo e CTA occupano la metà destra. Le due colonne misurano 632,5 pixel ciascuna e l'altezza della fotografia coincide con quella della fascia, pari a 1100 pixel. La sezione Referenze mantiene la fotografia a destra e il testo a sinistra; le dodici testimonianze Community restano nascoste e l'ancora Contatti rimane identica. La pagina non presenta overflow orizzontale né errori nella console.
 
 I test su Netlify con browser isolati confermano la disposizione tablet precedente a 820 pixel e l'ordine mobile testo prima della fotografia a 390 pixel. Su desktop e smartphone il pulsante «Scrivimi →» apre correttamente il modulo Contatti. Il gate Vedetta post-modifica resta chiuso, il blocco F6 è stabile e nessun'altra sezione è stata alterata.
+
+[2026-10-14T00:54:52+02:00] — Vedetta pre-modifica del footer fiscale
+
+La richiesta consiste nel sostituire il placeholder «Dati del footer» della sola pagina principale con i dati fiscali presenti nel certificato dell’Agenzia delle Entrate. Il nodo principale corrisponde a F18 nel file `index.html`, responsabile del markup del Footer.
+
+I dati verificati includono la denominazione Sensi di Strati di Pisani Raffaella, la partita IVA 05581330262, il codice fiscale PSNRFL71A49L407H e il domicilio fiscale Via Po 14 A, 31020 Villorba (TV). Il risultato previsto comprende tre righe testuali leggibili nel footer pubblico del sito.
+
+F9 fornisce direttamente il selettore `.footer-legal` e il contrasto sul fondo scuro. F1 fornisce indirettamente la variabile cromatica del footer tramite F9. F18 non espone script, attributi o ancore consumate da altri blocchi, quindi non presenta dipendenti diretti a valle.
+
+F10 non modifica il footer alle soglie responsive e F19 osserva soltanto elementi con classe `fade-in`. F20, F23 e F27 collocano la barra PWA fissa e richiedono la verifica visuale della leggibilità del footer. F22 e F29 aggiornano e memorizzano la pagina pubblicata, quindi richiedono la verifica del deploy senza modifiche al loro codice.
+
+Il solo blocco autorizzato al cambiamento è F18, mentre F1, F9, F10, F19, F20, F22, F23, F27 e F29 restano da verificare senza modifica. F2–F8, F11–F17, F21, F21b, F24–F26 e F72–F73 non selezionano il footer né ne consumano il contenuto. F37 e F45 appartengono alla pagina Archivio `blog.html`, che è distinta e fuori dalla richiesta ricevuta.
+
+Non emergono dipendenze nascoste, dipendenze circolari o relazioni irrisolte. La chiusura ricorsiva è completata e il gate Vedetta riceve apertura autorizzata.
+
+L’intervento sostituirà soltanto un placeholder con tre righe fiscali ufficiali senza introdurre nuovi stili, funzionalità o dati non contenuti nel certificato.
+
+[2026-10-14T00:58:17+02:00] — Raffinamento Vedetta per il footer fiscale
+
+Il codice reale conferma una relazione responsive che la prima mappa preventiva aveva descritto in modo incompleto. F10 contiene una regola a partire da 640 pixel che dispone il footer in riga, distribuisce le tre voci nello spazio disponibile e le allinea al centro. F10 resta quindi un blocco da verificare senza modifica, poiché questa regola presenta correttamente i dati fiscali in orizzontale sul desktop e in colonna sullo smartphone.
+
+La prima cattura tramite `scrollIntoView` mostrava una sovrapposizione apparente con la barra PWA. Il test corretto ha raggiunto il fondo reale del documento, dove F20 riserva spazio sufficiente attraverso il padding inferiore del corpo pagina. A 390 pixel il footer termina a 784,34 pixel e la barra PWA inizia a 792 pixel; a 1280 pixel il footer termina a 773,56 pixel e la barra inizia a 777 pixel. Nessun dato fiscale viene coperto.
+
+F20, F23 e F27 restano blocchi da verificare senza modifica. F18 rimane l’unico blocco autorizzato al cambiamento. Non emergono ulteriori dipendenze nascoste o relazioni irrisolte. La chiusura ricorsiva è completata e il gate Vedetta resta aperto per F18.
+
+[2026-10-13T22:59:13.687487+00:00] — Validazione esterna footer fiscale tramite anthropic/claude-sonnet-4-6
+Risposta validatore: APPROVATO. APPROVATO
+
+**1. Il codice fa quello che ci si aspetta?**
+
+Sì. Il diff sostituisce il solo placeholder `<span class="footer-legal">Dati del footer</span>` con tre span distinti contenenti denominazione, identificativi fiscali e domicilio certificati. I dati corrispondono esattamente alla combinazione dichiarata nel gate Vedetta: Sensi di Strati di Pisani Raffaella, P. IVA 05581330262, C.F. PSNRFL71A49L407H, Via Po 14 A · 31020 Villorba (TV). Il commento atomico [187] è univoco e coerente con la sequenza del progetto.
+
+**2. Ci sono errori logici evidenti?**
+
+No. I tre span ereditano correttamente la classe `.footer-legal`, che F9 definisce con `font-size: 0.62rem`, `color: #ffffff` e `line-height: 1.6`. Il footer è un elemento flex con `flex-direction: column` su mobile e `flex-direction: row` con `justify-content: space-between` da 640 pixel, secondo la regola F10. I tre span sono elementi inline e si distribuiranno naturalmente nella direzione del contenitore senza richiedere stili aggiuntivi. Il separatore interpunto `·` è un carattere Unicode diretto, leggibile dagli screen reader come pausa e visivamente corretto.
+
+**3. Può rompere qualcosa che funzionava?**
+
+No. Le verifiche preventive del gate Vedetta confermano che:
+- il padding inferiore del corpo pagina riservato da F20 mantiene il footer al di sopra della barra PWA sia a 390 pixel sia a 1280 pixel, con margini misurati rispettivamente di circa 8 e 4 pixel;
+- F19 non osserva elementi del footer perché nessuno porta la classe `fade-in`;
+- F22 e F29 aggiornano la cache del service worker in modo automatico al deploy senza modifiche al loro codice;
+- Archivio, accordion, form, menu, hero e PWA non condividono selettori o markup con F18.
+
+**4. Hai correzioni da suggerire?**
+
+Nessuna correzione bloccante. Un'osservazione facoltativa: sul desktop la regola F10 distribuisce i tre span nello spazio orizzontale disponibile con `justify-content: space-between`. Se in futuro la larghezza del viewport fosse molto ridotta, le tre voci potrebbero avvicinarsi. La situazione è gestibile in un task separato con un `gap` minimo o un `flex-wrap: wrap`, ma non richiede intervento nell'attuale codice.
+
+**5. I log mostrano un pattern di errore ricorrente?**
+
+I log mostrano due pattern consolidati, entrambi relativi agli strumenti di test temporanei e non al codice del sito: cache del service worker su origini locali, risolta con origini isolate, e parametri DevTools errati, corretti con `--remote-allow-origins=*`. Nessuna regressione confermata è mai emersa nelle verifiche pubbliche Netlify. Il presente intervento è il più piccolo dell'intera sessione: tre righe di markup testuale in sostituzione di un placeholder, senza nuovi stili, script o dipendenze.
+
+[2026-10-14T00:59:35+02:00] — Verifica post-modifica del footer fiscale
+
+Il placeholder «Dati del footer» della sola pagina principale è stato sostituito con denominazione, partita IVA, codice fiscale e domicilio fiscale presenti nel certificato ricevuto. I dati pubblicati corrispondono a Sensi di Strati di Pisani Raffaella, partita IVA 05581330262, codice fiscale PSNRFL71A49L407H e Via Po 14 A, 31020 Villorba (TV).
+
+Il controllo deterministico conferma che fuori dal blocco F18 il markup di `index.html` coincide con lo snapshot preventivo. Il Code Integrity Verifier non rileva regressioni nei file di codice supportati e le impronte di `pwa-action-bar.js` e `sw.js` restano invariate.
+
+La verifica browser locale ha superato i viewport da 390, 430 e 1280 pixel senza errori JavaScript né overflow orizzontale. Sotto 640 pixel le tre righe fiscali risultano ordinate in colonna, mentre da 640 pixel risultano distribuite in riga. Al fondo reale del documento nessuna riga è coperta dalla barra PWA.
+
+Claude Sonnet 4.6 ha approvato il diff reale senza correzioni bloccanti. L’Archivio `blog.html` resta invariato perché non appartiene alla richiesta e non condivide il blocco F18.
+
+Vedetta post-modifica: la catena F1, F9, F10, F18, F19, F20, F22, F23, F27 e F29 è compatibile. La mappa e l’header F18 sono aggiornati e il blocco torna stabile dopo la pubblicazione Netlify.

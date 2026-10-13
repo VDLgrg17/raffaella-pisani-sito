@@ -3,8 +3,8 @@
 **Fonte di verità per la numerazione project-wide univoca.**
 
 Protocollo: `blocchi-f-operativo` con sorveglianza `blocchi-f-vedetta`
-Aggiornamento: 2026-10-07
-Versione: 6.1
+Aggiornamento: 2026-10-14
+Versione: 6.2
 
 ## Stato del progetto
 
@@ -44,7 +44,7 @@ La geometria laterale è predisposta su nove spazi, con fotografia e contenuto s
 | F16 | `index.html` | 2278–2313 | Pannello Referenze con titolo, genesi, lista originale delle collaborazioni e foto a destra sul desktop | F3, F6, F7b, F10b, F19 | STABLE | 2026-10-07 |
 | F26 | `index.html` | 2314–2444 | Community olfattiva, fotografia strutturale a sinistra sul desktop, CTA Contatti e testimonianze personali nascoste | F3, F6, F7-ext, F7b, F10b, F17, F19, F21b | STABLE | 2026-10-07 |
 | F17 | `index.html` | 2445–2495 | Markup della sezione Contatti | F7b, F8, F10b | STABLE | 2026-09-03 |
-| F18 | `index.html` | 2496–2507 | Markup del footer | F9 | STABLE | 2026-07-31 |
+| F18 | `index.html` | 2496–2507 | Markup del footer con dati fiscali ufficiali | F9, F10 | STABLE | 2026-10-14 |
 | F19 | `index.html` | 2508–2520 | Osservatore delle animazioni fade-in | F10 | STABLE | 2026-07-31 |
 | F22 | `index.html` | 2521–2532 | Registrazione del service worker | F28, F29 | STABLE | 2026-09-02 |
 | F23 | `index.html` | 2533–2593 | Markup della barra e delle modali PWA | F20, F21, F27, F28 | STABLE | 2026-09-02 |
@@ -127,7 +127,7 @@ F3 + F10 + F17 + F19 + F72 → F73
 F3 + F6 + F7b + F10b + F19 → F16
 F3 + F6 + F7-ext + F7b + F10b + F17 + F19 + F21b → F26
 F8 → F17
-F9 → F18
+F9 + F10 → F18
 F10 → F19
 F20 + F21 + F27 → F23
 F28 → F22, F29
