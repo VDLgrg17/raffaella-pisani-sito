@@ -2083,3 +2083,12 @@ La verifica browser locale ha superato i viewport da 390, 430 e 1280 pixel senza
 Claude Sonnet 4.6 ha approvato il diff reale senza correzioni bloccanti. L’Archivio `blog.html` resta invariato perché non appartiene alla richiesta e non condivide il blocco F18.
 
 Vedetta post-modifica: la catena F1, F9, F10, F18, F19, F20, F22, F23, F27 e F29 è compatibile. La mappa e l’header F18 sono aggiornati e il blocco torna stabile dopo la pubblicazione Netlify.
+[2026-10-14T01:01:49+02:00] — Verifica pubblica del footer fiscale
+
+Il commit `d21768e` è pubblicato su `github/master` e il repository remoto contiene il footer fiscale aggiornato. Netlify ha completato il deploy automatico restituendo HTTP 200 alla pagina pubblica con i tre dati fiscali presenti e il placeholder assente.
+
+Nel browser pubblico desktop il footer mostra la denominazione, gli identificativi fiscali e il domicilio fiscale in testo bianco. Il layout resta in riga e la barra PWA inizia dopo la fine del footer, senza coprire alcun dato.
+
+Nel browser pubblico a 390 × 844 pixel il footer mostra le tre righe in colonna, con larghezza documento pari alla viewport e senza overflow orizzontale. La barra PWA inizia dopo il footer e la console non segnala errori JavaScript.
+
+La pubblicazione Netlify, GitHub e la verifica visuale confermano l’esito stabile del task. Il footer Archivio `blog.html` resta invariato, come previsto dal perimetro autorizzato.
