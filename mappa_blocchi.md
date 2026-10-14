@@ -4,7 +4,7 @@
 
 Protocollo: `blocchi-f-operativo` con sorveglianza `blocchi-f-vedetta`
 Aggiornamento: 2026-10-14
-Versione: 6.2
+Versione: 6.3
 
 ## Stato del progetto
 
@@ -43,13 +43,13 @@ La geometria laterale è predisposta su nove spazi, con fotografia e contenuto s
 | F73 | `index.html` | 2242–2277 | Markup della sezione Modalità di collaborazione | F3, F10, F17, F19, F72 | STABLE | 2026-09-02 |
 | F16 | `index.html` | 2278–2313 | Pannello Referenze con titolo, genesi, lista originale delle collaborazioni e foto a destra sul desktop | F3, F6, F7b, F10b, F19 | STABLE | 2026-10-07 |
 | F26 | `index.html` | 2314–2444 | Community olfattiva, fotografia strutturale a sinistra sul desktop, CTA Contatti e testimonianze personali nascoste | F3, F6, F7-ext, F7b, F10b, F17, F19, F21b | STABLE | 2026-10-07 |
-| F17 | `index.html` | 2445–2495 | Markup della sezione Contatti | F7b, F8, F10b | STABLE | 2026-09-03 |
-| F18 | `index.html` | 2496–2507 | Markup del footer con dati fiscali ufficiali | F9, F10 | STABLE | 2026-10-14 |
-| F19 | `index.html` | 2508–2520 | Osservatore delle animazioni fade-in | F10 | STABLE | 2026-07-31 |
-| F22 | `index.html` | 2521–2532 | Registrazione del service worker | F28, F29 | STABLE | 2026-09-02 |
-| F23 | `index.html` | 2533–2593 | Markup della barra e delle modali PWA | F20, F21, F27, F28 | STABLE | 2026-09-02 |
-| F24 | `index.html` | 2594–2619 | Comportamento degli accordion Servizi | F6, F15 | STABLE | 2026-09-03 |
-| F25 | `index.html` | 2620–2648 | Comportamento del menu hamburger | F2b, F11 | STABLE | 2026-09-02 |
+| F17 | `index.html` | 2445–2496 | Markup della sezione Contatti e casella professionale pubblica | F7b, F8, F10b | STABLE | 2026-10-14 |
+| F18 | `index.html` | 2497–2508 | Markup del footer con dati fiscali ufficiali | F9, F10 | STABLE | 2026-10-14 |
+| F19 | `index.html` | 2509–2521 | Osservatore delle animazioni fade-in | F10 | STABLE | 2026-07-31 |
+| F22 | `index.html` | 2522–2533 | Registrazione del service worker | F28, F29 | STABLE | 2026-09-02 |
+| F23 | `index.html` | 2534–2594 | Markup della barra e delle modali PWA | F20, F21, F27, F28 | STABLE | 2026-09-02 |
+| F24 | `index.html` | 2595–2620 | Comportamento degli accordion Servizi | F6, F15 | STABLE | 2026-09-03 |
+| F25 | `index.html` | 2621–2649 | Comportamento del menu hamburger | F2b, F11 | STABLE | 2026-09-02 |
 | F27 | `pwa-action-bar.js` | 1–145 | Logica della barra azioni e delle modali PWA | F20, F21, F23, F29 | STABLE | 2026-09-02 |
 | F27.1 | `pwa-action-bar.js` | 77–103 | Ascolto degli aggiornamenti del service worker | F27, F29 | STABLE | 2026-09-02 |
 | F28 | `manifest.json` | 1–118 | Identità, icone, schermate e scorciatoie PWA | F0, F13, F15, F17 | STABLE | 2026-09-02 |
@@ -80,8 +80,8 @@ Il formato JSON non consente commenti: **F28** è identificato esclusivamente ne
 | F42 | `blog.html` | 388–398 | Markup dei filtri | F34, F46 | STABLE | 2026-09-02 |
 | F43 | `blog.html` | 399–451 | Markup della griglia articoli | F35, F46 | STABLE | 2026-09-02 |
 | F44 | `blog.html` | 452–460 | Markup della rubrica Ti Odoro | F36 | STABLE | 2026-09-02 |
-| F45 | `blog.html` | 461–485 | Markup del footer Archivio | F37 | STABLE | 2026-09-02 |
-| F46 | `blog.html` | 486–521 | Filtri e osservatore fade-in Archivio | F39, F42, F43 | STABLE | 2026-09-02 |
+| F45 | `blog.html` | 461–486 | Markup del footer Archivio e collegamento alla casella professionale | F37 | STABLE | 2026-10-14 |
+| F46 | `blog.html` | 487–522 | Filtri e osservatore fade-in Archivio | F39, F42, F43 | STABLE | 2026-09-02 |
 
 ## Prototipi non pubblicati
 

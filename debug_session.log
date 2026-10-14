@@ -2092,3 +2092,36 @@ Nel browser pubblico desktop il footer mostra la denominazione, gli identificati
 Nel browser pubblico a 390 × 844 pixel il footer mostra le tre righe in colonna, con larghezza documento pari alla viewport e senza overflow orizzontale. La barra PWA inizia dopo il footer e la console non segnala errori JavaScript.
 
 La pubblicazione Netlify, GitHub e la verifica visuale confermano l’esito stabile del task. Il footer Archivio `blog.html` resta invariato, come previsto dal perimetro autorizzato.
+[Task — email info pubblica — 2026-10-14]
+Vedetta — pre-modifica
+Richiesta: sostituire l'indirizzo pubblico `raffaellapisani71@gmail.com` con `info@raffaella-pisani-sensidistrati.it` nei soli punti pubblici che lo mostrano, senza modificare modulo Netlify, telefono, dati fiscali, stile, PWA, service worker o altri contenuti.
+Il blocco principale del sito è F17 in `index.html`, mentre il blocco principale dell'Archivio è F45 in `blog.html`.
+Input ricevuto: la nuova casella attiva è `info@raffaella-pisani-sensidistrati.it`.
+Output previsto: la sezione Contatti mostra la nuova casella e il footer Archivio usa il relativo collegamento `mailto`.
+Dipendenze dirette a monte: F8 definisce la resa della sezione Contatti, mentre F37 definisce la resa del footer Archivio.
+Dipendenze indirette a monte: F1 raggiunge F17 attraverso F8, mentre F31 raggiunge F45 attraverso F37.
+Dipendenti diretti a valle: F10 verifica la resa responsive del sito principale e F38 verifica la resa responsive dell'Archivio.
+Dipendenti indiretti a valle: non emergono dipendenti indiretti rilevanti dalla lettura del codice reale.
+Relazioni trasversali: il medesimo indirizzo storico è duplicato come testo statico in F17 e come valore di un collegamento `mailto` in F45.
+Dipendenze nascoste rilevate: F18 riguarda soltanto dati fiscali e non contiene indirizzi email, pertanto resta escluso dal cambio.
+Non emergono dipendenze circolari nel grafo verificato.
+Blocchi da modificare: F17 e F45 risultano gli unici blocchi contenenti l'indirizzo storico.
+Blocchi da verificare: F8, F10, F37 e F38 garantiscono la resa grafica e responsive dei due punti modificati.
+Blocchi esclusi con prova: F0, F9, F18, F27, F28 e F29 non contengono l'indirizzo storico né consumano il valore email, mentre il modulo Netlify interno a F17 non usa la casella pubblica.
+Non restano relazioni irrisolte dopo la lettura del codice reale.
+La chiusura ricorsiva risulta completata e verificata.
+Gate Vedetta: apertura autorizzata per il solo intervento circoscritto.
+
+---
+[Task email info pubblica — 2026-10-14]
+La sostituzione autorizzata riguarda esclusivamente il testo email della sezione Contatti in F17 e il collegamento email del footer Archivio in F45.
+L'indirizzo storico non compare più in `index.html` e `blog.html`, mentre il nuovo indirizzo `info@raffaella-pisani-sensidistrati.it` compare nei due punti pubblici previsti.
+Il modulo Netlify, il telefono, i dati fiscali, gli stili, la PWA e il service worker sono rimasti invariati, come confermano le impronte originali dei file esclusi.
+I controlli `git diff --check`, HTMLParser e Code Integrity Verifier sono risultati positivi senza regressioni.
+Il browser desktop conferma la visibilità dell'indirizzo aggiornato, l'assenza dell'indirizzo storico, l'assenza di overflow e l'integrità del modulo Contatti.
+Il browser mobile nella viewport 390×844 conferma indirizzi visibili entro la viewport senza overflow; nell'Archivio il collegamento `mailto` indirizza alla nuova casella.
+Il test Playwright predefinito non disponeva del browser in cache e un selettore temporaneo non era univoco; Chromium di sistema ha eseguito la prova finale senza modificare il codice del sito.
+Claude Sonnet 4.6 ha approvato il diff senza correzioni bloccanti e ha confermato il perimetro chirurgico dell'intervento.
+I blocchi F17 e F45 possono tornare stabili dopo l'aggiornamento della mappa e della checklist.
+
+---
