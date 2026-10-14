@@ -2125,3 +2125,12 @@ Claude Sonnet 4.6 ha approvato il diff senza correzioni bloccanti e ha confermat
 I blocchi F17 e F45 possono tornare stabili dopo l'aggiornamento della mappa e della checklist.
 
 ---
+[Verifica pubblica email info — 2026-10-14]
+Il commit `20afccd` è pubblicato su `github/master` e GitHub risulta allineato alla copia locale.
+Netlify risponde con stato HTTP 200 su `https://raffaella-pisani-sito.netlify.app/?deploy=20afccd` e pubblica il nuovo indirizzo nella sezione Contatti.
+La pagina Archivio pubblicata su Netlify mostra `info@raffaella-pisani-sensidistrati.it` e il collegamento `mailto:info@raffaella-pisani-sensidistrati.it`.
+Il browser pubblico conferma l'assenza dell'indirizzo storico, la visibilità della nuova casella, l'integrità del modulo Contatti e l'assenza di overflow orizzontale.
+La console pubblica non riporta errori dopo la verifica del sito principale e dell'Archivio.
+La pubblicazione dell'aggiornamento email risulta completata e verificata.
+
+---
