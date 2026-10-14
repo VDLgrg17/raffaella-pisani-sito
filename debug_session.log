@@ -2134,3 +2134,32 @@ La console pubblica non riporta errori dopo la verifica del sito principale e de
 La pubblicazione dell'aggiornamento email risulta completata e verificata.
 
 ---
+[Gate Vedetta aforisma — 2026-10-14]
+Richiesta: sostituire il solo placeholder “In attesa di contenuto” con la citazione e la firma fornite dall’utente, senza cambiare layout, fotografie, navigazione, PWA o altri testi.
+Blocco principale: F13 in `index.html`, perché il markup del riquadro aforisma è collocato all’interno dell’intervallo reale di F13 tra la Hero e la sezione Chi sono.
+Dipendenze dirette a monte: F3, F4, F7b, F10b e F19 sono dichiarate per F13 nella mappa e sono controllate per geometria, ordine responsive e visibilità della sezione seguente.
+Dipendenza nascosta: F8 fornisce le classi reali `.aforisma-chanel`, `.aforisma-testo` e `.aforisma-firma` che regolano il riquadro; la mappa non dichiara ancora questa relazione, quindi F8 entra nella superficie di verifica e la relazione verrà registrata.
+Dipendenza inversa: F12 precede il riquadro nel flusso DOM e richiede una verifica del passaggio Hero-aforisma, pur senza selettori o script che modifichino il riquadro.
+Dipendenze trasversali: F1 fornisce font e variabili, mentre F19 osserva esclusivamente gli elementi `.fade-in`; il riquadro non usa quella classe e non introduce comportamento dinamico.
+Blocchi da modificare: F13 per sostituire testo provvisorio con `blockquote` semantico e firma, oltre alla mappa, alla checklist e al registro tecnico.
+Blocchi da verificare: F1, F3, F4, F7b, F8, F10b, F12 e F19.
+Blocchi esclusi con prova: F11, F14-F18, F20-F29, F30-F46, `pwa-action-bar.js`, `manifest.json` e `sw.js` non referenziano classi, ID, testo o comportamento del riquadro aforisma.
+Non risultano relazioni irrisolte nell’intera catena verificata.
+La chiusura ricorsiva dell’analisi è completata.
+Il gate Vedetta consente ora l’apertura autorizzata.
+
+---
+[Certificazione post-modifica aforisma — 2026-10-14]
+Il placeholder editoriale tra Hero e Chi sono è stato sostituito con la citazione e la firma fornite dall’utente.
+F13 è l’unico blocco di produzione modificato, mentre F8 è stato verificato come dipendenza nascosta perché fornisce le classi tipografiche e la geometria del riquadro.
+Il markup ora usa `blockquote` per la citazione e `cite` per la firma, mantenendo immutati il contenitore, la texture, il font, il colore, il padding, lo z-index e il flusso della pagina.
+La regola CSS esistente applica già `margin: 0 auto 20px` alla citazione e neutralizza quindi il margine predefinito di `blockquote` senza ulteriori modifiche.
+I controlli `git diff --check`, HTMLParser e Code Integrity Verifier sono risultati positivi senza regressioni.
+La verifica locale desktop conferma citazione visibile, firma sotto il testo, larghezza massima di 700 pixel, nessun overflow e continuità Hero-aforisma-Chi sono.
+La verifica locale mobile nella viewport 390×844 conferma citazione e firma visibili, contenitore entro la viewport e assenza di overflow orizzontale.
+La console locale non riporta errori dopo il controllo visuale.
+Claude Sonnet 4.6 ha approvato il diff senza correzioni bloccanti e ha confermato il perimetro chirurgico dell’intervento.
+La mappa registra F8 come dipendenza nascosta di F13, mentre gli altri blocchi controllati rimangono invariati.
+F13 può tornare stabile dopo l’aggiornamento della mappa e della checklist.
+
+---

@@ -84,3 +84,4 @@
 - [x] Invertire soltanto la fascia desktop Community, con fotografia a sinistra e testo a destra, mantenendo invariati contenuti, tablet e smartphone.
 - [x] Inserire nel footer principale i dati fiscali ufficiali della ditta individuale Sensi di Strati di Pisani Raffaella.
 - [x] Sostituire gli indirizzi email pubblici con info@raffaella-pisani-sensidistrati.it in Contatti e Archivio.
+- [x] Sostituire il placeholder aforisma con la citazione di Patrick Suskind fornita dall’utente.

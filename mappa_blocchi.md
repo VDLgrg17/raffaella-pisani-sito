@@ -4,7 +4,7 @@
 
 Protocollo: `blocchi-f-operativo` con sorveglianza `blocchi-f-vedetta`
 Aggiornamento: 2026-10-14
-Versione: 6.3
+Versione: 6.4
 
 ## Stato del progetto
 
@@ -37,19 +37,19 @@ La geometria laterale è predisposta su nove spazi, con fotografia e contenuto s
 | F72 | `index.html` | 1801–1886 | Stile della sezione Modalità di collaborazione | F1, F3, F10 | STABLE | 2026-09-03 |
 | F11 | `index.html` | 1887–1922 | Markup del menu desktop e mobile | F2, F2b, F25 | STABLE | 2026-09-02 |
 | F12 | `index.html` | 1923–1952 | Markup della Hero e del titolo progetto | F3, F10b | STABLE | 2026-10-06 |
-| F13 | `index.html` | 1953–2005 | Markup della sezione Chi sono | F3, F4, F7b, F10b, F19 | STABLE | 2026-10-06 |
-| F14 | `index.html` | 2006–2040 | Markup della sezione Visione | F3, F5, F7b, F10b, F19 | STABLE | 2026-10-06 |
-| F15 | `index.html` | 2041–2241 | Markup della sezione Servizi con fascia continua, accordion integrati nel pannello testuale e fotografia strutturale | F3, F6, F7b, F10b, F19, F24 | STABLE | 2026-10-06 |
-| F73 | `index.html` | 2242–2277 | Markup della sezione Modalità di collaborazione | F3, F10, F17, F19, F72 | STABLE | 2026-09-02 |
-| F16 | `index.html` | 2278–2313 | Pannello Referenze con titolo, genesi, lista originale delle collaborazioni e foto a destra sul desktop | F3, F6, F7b, F10b, F19 | STABLE | 2026-10-07 |
-| F26 | `index.html` | 2314–2444 | Community olfattiva, fotografia strutturale a sinistra sul desktop, CTA Contatti e testimonianze personali nascoste | F3, F6, F7-ext, F7b, F10b, F17, F19, F21b | STABLE | 2026-10-07 |
-| F17 | `index.html` | 2445–2496 | Markup della sezione Contatti e casella professionale pubblica | F7b, F8, F10b | STABLE | 2026-10-14 |
-| F18 | `index.html` | 2497–2508 | Markup del footer con dati fiscali ufficiali | F9, F10 | STABLE | 2026-10-14 |
-| F19 | `index.html` | 2509–2521 | Osservatore delle animazioni fade-in | F10 | STABLE | 2026-07-31 |
-| F22 | `index.html` | 2522–2533 | Registrazione del service worker | F28, F29 | STABLE | 2026-09-02 |
-| F23 | `index.html` | 2534–2594 | Markup della barra e delle modali PWA | F20, F21, F27, F28 | STABLE | 2026-09-02 |
-| F24 | `index.html` | 2595–2620 | Comportamento degli accordion Servizi | F6, F15 | STABLE | 2026-09-03 |
-| F25 | `index.html` | 2621–2649 | Comportamento del menu hamburger | F2b, F11 | STABLE | 2026-09-02 |
+| F13 | `index.html` | 1953–2007 | Markup della sezione Chi sono e aforisma editoriale | F3, F4, F7b, F8, F10b, F19 | STABLE | 2026-10-14 |
+| F14 | `index.html` | 2008–2042 | Markup della sezione Visione | F3, F5, F7b, F10b, F19 | STABLE | 2026-10-06 |
+| F15 | `index.html` | 2043–2243 | Markup Servizi con fascia continua, accordion integrati nel pannello testuale e fotografia strutturale | F3, F6, F7b, F10b, F19, F24 | STABLE | 2026-10-06 |
+| F73 | `index.html` | 2244–2279 | Markup della sezione Modalità di collaborazione | F3, F10, F17, F19, F72 | STABLE | 2026-09-02 |
+| F16 | `index.html` | 2280–2315 | Pannello Referenze con titolo, genesi, lista originale delle collaborazioni e foto a destra sul desktop | F3, F6, F7b, F10b, F19 | STABLE | 2026-10-07 |
+| F26 | `index.html` | 2316–2446 | Community olfattiva, fotografia strutturale a sinistra sul desktop, CTA Contatti e testimonianze personali nascoste | F3, F6, F7-ext, F7b, F10b, F17, F19, F21b | STABLE | 2026-10-07 |
+| F17 | `index.html` | 2447–2498 | Markup della sezione Contatti e casella professionale pubblica | F7b, F8, F10b | STABLE | 2026-10-14 |
+| F18 | `index.html` | 2499–2510 | Markup del footer con dati fiscali ufficiali | F9, F10 | STABLE | 2026-10-14 |
+| F19 | `index.html` | 2511–2523 | Osservatore delle animazioni fade-in | F10 | STABLE | 2026-07-31 |
+| F22 | `index.html` | 2524–2535 | Registrazione del service worker | F28, F29 | STABLE | 2026-09-02 |
+| F23 | `index.html` | 2536–2596 | Markup della barra e delle modali PWA | F20, F21, F27, F28 | STABLE | 2026-09-02 |
+| F24 | `index.html` | 2597–2622 | Comportamento degli accordion Servizi | F6, F15 | STABLE | 2026-09-03 |
+| F25 | `index.html` | 2623–2650 | Comportamento del menu hamburger | F2b, F11 | STABLE | 2026-09-02 |
 | F27 | `pwa-action-bar.js` | 1–145 | Logica della barra azioni e delle modali PWA | F20, F21, F23, F29 | STABLE | 2026-09-02 |
 | F27.1 | `pwa-action-bar.js` | 77–103 | Ascolto degli aggiornamenti del service worker | F27, F29 | STABLE | 2026-09-02 |
 | F28 | `manifest.json` | 1–118 | Identità, icone, schermate e scorciatoie PWA | F0, F13, F15, F17 | STABLE | 2026-09-02 |
@@ -119,7 +119,7 @@ F0 → F1
 F1 → F2, F2b, F3, F4, F5, F6, F7, F7-ext, F7b, F8, F9, F10, F20, F21, F21b
 F2 + F2b + F25 → F11
 F3 + F10b → F12
-F3 + F4 + F7b + F10b + F19 → F13
+F3 + F4 + F7b + F8 + F10b + F19 → F13
 F3 + F5 + F7b + F10b + F19 → F14
 F3 + F6 + F7b + F10b + F19 + F24 → F15
 F1 + F3 + F10 → F72
@@ -146,6 +146,7 @@ F65 → F66-F71
 | Navigazione mobile | F2b, F11, F25 | Verificare visibilità, apertura, chiusura e area sicura iOS. |
 | Servizi accordion | F6, F15, F24 | Conservare classi, attributi e comportamento di apertura. |
 | Fotografie strutturali desktop | F3, F4–F6, F7b, F10b, F13–F16, F26 | A 900 px, verificare colonne equivalenti, assenza di gap e relazione fra il margine compensativo `-140px` e il padding superiore desktop di F10b. |
+| Riquadro aforisma | F8, F12, F13 | Preservare il flusso Hero-aforisma-Chi sono, le classi tipografiche e l’assenza di overflow. |
 | Barra PWA | F20, F21, F22, F23, F27, F28, F29 | Verificare desktop, modalità installata e aggiornamento cache. |
 | Animazioni | F10, F19, F39, F46, F73 | Verificare che gli elementi diventino visibili dopo il caricamento. |
 | Call to action verso Contatti | F12, F17, F26, F73 | Verificare l’ancora `#contatti` e la leggibilità sopra la barra PWA. |
