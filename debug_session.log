@@ -2163,3 +2163,12 @@ La mappa registra F8 come dipendenza nascosta di F13, mentre gli altri blocchi c
 F13 può tornare stabile dopo l’aggiornamento della mappa e della checklist.
 
 ---
+[Verifica pubblica aforisma — 2026-10-14]
+Il commit `028faa1` è pubblicato su `github/master` e GitHub risulta allineato alla copia locale.
+Netlify risponde con stato HTTP 200 e pubblica la citazione sul sottodominio di deploy.
+Il dominio pubblico `https://sensidistrati.it/?deploy=028faa1` mostra la citazione completa, la firma Patrick Suskind e nessun placeholder residuo.
+Il browser pubblico conferma la visibilità della citazione, la firma sotto il testo, l’assenza di overflow orizzontale e la correttezza del testo iniziale e finale.
+La console pubblica non riporta errori dopo la verifica del riquadro aforisma.
+La pubblicazione della citazione risulta completata e verificata.
+
+---
