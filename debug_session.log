@@ -2270,3 +2270,15 @@ La verifica smartphone a 390 pixel conferma opacità finale, posizione nel viewp
 La console locale non presenta errori e Claude Sonnet 4.6 ha approvato il diff senza correzioni bloccanti.
 I blocchi F8 e F17 tornano stabili e la mappa aggiorna intervalli, dipendenza trasversale e responsabilità del collegamento Facebook.
 ---
+Il primo controllo della prova pubblica ha segnalato la sigla https in stampatello.
+Il testo della prova ora usa la forma minuscola https e mantiene invariati dati tecnici, codice e comportamento del sito.
+[Verifica pubblica Facebook — 2026-10-16]
+
+Il commit 0172217 è pubblicato su github/master e Netlify restituisce HTTP 200 con il selettore Facebook e la destinazione verificata.
+Il dominio https://raffaella-pisani-sensidistrati.it reindirizza correttamente a https://www.raffaella-pisani-sensidistrati.it, che risponde in https con codice 200.
+Nel browser pubblico il riquadro Contatti contiene un solo collegamento Facebook, icona SVG visibile, etichetta accessibile, opacità finale e colore bianco.
+Instagram e LinkedIn non risultano presenti nel riquadro Contatti pubblicato.
+Il collegamento punta a https://www.facebook.com/raffaella.pisani/, usa una nuova scheda e applica `noopener noreferrer`.
+Il form Netlify resta presente, non si rileva overflow orizzontale e il collegamento rimane sopra la barra PWA.
+La console del dominio pubblico non presenta errori e il controllo browser pubblicato risulta superato.
+---
