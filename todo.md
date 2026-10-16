@@ -87,3 +87,4 @@
 - [x] Sostituire il placeholder aforisma con la citazione di Patrick Suskind fornita dall’utente.
 - [x] Sostituire il solo aforisma con il testo tedesco originale fornito dall’utente e senza alcun collegamento attivo alla fonte.
 - [x] Aggiungere sotto l’aforisma tedesco un pulsante per mostrare e nascondere la traduzione italiana autorizzata.
+- [x] Sostituire Instagram e LinkedIn nei Contatti con Facebook e relativa icona collegata al profilo verificato.

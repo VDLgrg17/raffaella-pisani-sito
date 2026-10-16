@@ -4,7 +4,7 @@
 
 Protocollo: `blocchi-f-operativo` con sorveglianza `blocchi-f-vedetta`
 Aggiornamento: 2026-10-16
-Versione: 6.6
+Versione: 6.7
 
 ## Stato del progetto
 
@@ -24,32 +24,32 @@ La geometria laterale è predisposta su nove spazi, con fotografia e contenuto s
 | F4 | `index.html` | 437–485 | Stile della sezione Chi sono e fotografia strutturale desktop | F1, F3, F7b, F10b | STABLE | 2026-10-06 |
 | F5 | `index.html` | 486–558 | Stile della sezione Visione e fotografia strutturale desktop | F1, F3, F7b, F10b | STABLE | 2026-10-06 |
 | F6 | `index.html` | 559–951 | Stile Servizi, compattazione della fascia integrata e regole strutturali circoscritte per Referenze e Community, incluso layout originale, CUT inferiore Referenze, inversione desktop delle colonne Referenze e Community, CUT inferiore desktop Servizi, micro-taglio fotografico e filo dorato inferiore | F1, F3, F7b, F10b | STABLE | 2026-10-07 |
-| F8 | `index.html` | 952–1145 | Stile della sezione Contatti, del riquadro aforisma e della disclosure della traduzione | F1 | STABLE | 2026-10-16 |
-| F7 | `index.html` | 1146–1258 | Stile della sezione Collaborazioni | F1 | STABLE | 2026-07-31 |
-| F7-ext | `index.html` | 1185–1258 | Stile di testimonianze e Community | F1 | STABLE | 2026-07-31 |
-| F7b | `index.html` | 1259–1336 | Stile della galleria fotografica, geometria laterale e fotogramma integrale | F1 | STABLE | 2026-09-18 |
-| F9 | `index.html` | 1337–1366 | Stile del footer | F1 | STABLE | 2026-09-03 |
-| F10 | `index.html` | 1367–1382 | Regole responsive e animazione fade-in | F1, F2–F9 | STABLE | 2026-07-31 |
-| F10b | `index.html` | 1383–1520 | Ordine mobile della hero e geometria laterale | F3, F4, F7b, F10 | STABLE | 2026-09-03 |
-| F20 | `index.html` | 1521–1574 | Stile della barra azioni PWA | F1, F10 | STABLE | 2026-09-02 |
-| F21 | `index.html` | 1575–1785 | Stile delle modali PWA | F1, F20 | STABLE | 2026-09-03 |
-| F21b | `index.html` | 1786–1839 | CTA e visibilità delle testimonianze Community | F1, F7-ext | STABLE | 2026-10-07 |
-| F72 | `index.html` | 1840–1925 | Stile della sezione Modalità di collaborazione | F1, F3, F10 | STABLE | 2026-09-03 |
-| F11 | `index.html` | 1926–1961 | Markup del menu desktop e mobile | F2, F2b, F25 | STABLE | 2026-09-02 |
-| F12 | `index.html` | 1962–1991 | Markup della Hero e del titolo progetto | F3, F10b | STABLE | 2026-10-06 |
-| F13 | `index.html` | 1992–2052 | Markup della sezione Chi sono, aforisma editoriale e traduzione attivabile | F3, F4, F7b, F8, F10b, F19 | STABLE | 2026-10-16 |
-| F14 | `index.html` | 2053–2087 | Markup della sezione Visione | F3, F5, F7b, F10b, F19 | STABLE | 2026-10-06 |
-| F15 | `index.html` | 2088–2288 | Markup Servizi con fascia continua, accordion integrati nel pannello testuale e fotografia strutturale | F3, F6, F7b, F10b, F19, F24 | STABLE | 2026-10-06 |
-| F73 | `index.html` | 2289–2324 | Markup della sezione Modalità di collaborazione | F3, F10, F17, F19, F72 | STABLE | 2026-09-02 |
-| F16 | `index.html` | 2325–2360 | Pannello Referenze con titolo, genesi, lista originale delle collaborazioni e foto a destra sul desktop | F3, F6, F7b, F10b, F19 | STABLE | 2026-10-07 |
-| F26 | `index.html` | 2361–2491 | Community olfattiva, fotografia strutturale a sinistra sul desktop, CTA Contatti e testimonianze personali nascoste | F3, F6, F7-ext, F7b, F10b, F17, F19, F21b | STABLE | 2026-10-07 |
-| F17 | `index.html` | 2492–2543 | Markup della sezione Contatti e casella professionale pubblica | F7b, F8, F10b | STABLE | 2026-10-14 |
-| F18 | `index.html` | 2544–2555 | Markup del footer con dati fiscali ufficiali | F9, F10 | STABLE | 2026-10-14 |
-| F19 | `index.html` | 2556–2568 | Osservatore delle animazioni fade-in | F10 | STABLE | 2026-07-31 |
-| F22 | `index.html` | 2569–2580 | Registrazione del service worker | F28, F29 | STABLE | 2026-09-02 |
-| F23 | `index.html` | 2581–2641 | Markup della barra e delle modali PWA | F20, F21, F27, F28 | STABLE | 2026-09-02 |
-| F24 | `index.html` | 2642–2667 | Comportamento degli accordion Servizi | F6, F15 | STABLE | 2026-09-03 |
-| F25 | `index.html` | 2668–2696 | Comportamento del menu hamburger | F2b, F11 | STABLE | 2026-09-02 |
+| F8 | `index.html` | 952–1158 | Stile della sezione Contatti, dell’icona Facebook, del riquadro aforisma e della disclosure della traduzione | F1 | STABLE | 2026-10-16 |
+| F7 | `index.html` | 1159–1271 | Stile della sezione Collaborazioni | F1 | STABLE | 2026-07-31 |
+| F7-ext | `index.html` | 1198–1271 | Stile di testimonianze e Community | F1 | STABLE | 2026-07-31 |
+| F7b | `index.html` | 1272–1349 | Stile della galleria fotografica, geometria laterale e fotogramma integrale | F1 | STABLE | 2026-09-18 |
+| F9 | `index.html` | 1350–1379 | Stile del footer | F1 | STABLE | 2026-09-03 |
+| F10 | `index.html` | 1380–1395 | Regole responsive e animazione fade-in | F1, F2–F9 | STABLE | 2026-07-31 |
+| F10b | `index.html` | 1396–1533 | Ordine mobile della hero e geometria laterale | F3, F4, F7b, F10 | STABLE | 2026-09-03 |
+| F20 | `index.html` | 1534–1587 | Stile della barra azioni PWA | F1, F10 | STABLE | 2026-09-02 |
+| F21 | `index.html` | 1588–1798 | Stile delle modali PWA | F1, F20 | STABLE | 2026-09-03 |
+| F21b | `index.html` | 1799–1852 | CTA e visibilità delle testimonianze Community | F1, F7-ext | STABLE | 2026-10-07 |
+| F72 | `index.html` | 1853–1938 | Stile della sezione Modalità di collaborazione | F1, F3, F10 | STABLE | 2026-09-03 |
+| F11 | `index.html` | 1939–1974 | Markup del menu desktop e mobile | F2, F2b, F25 | STABLE | 2026-09-02 |
+| F12 | `index.html` | 1975–2004 | Markup della Hero e del titolo progetto | F3, F10b | STABLE | 2026-10-06 |
+| F13 | `index.html` | 2005–2065 | Markup della sezione Chi sono, aforisma editoriale e traduzione attivabile | F3, F4, F7b, F8, F10b, F19 | STABLE | 2026-10-16 |
+| F14 | `index.html` | 2066–2100 | Markup della sezione Visione | F3, F5, F7b, F10b, F19 | STABLE | 2026-10-06 |
+| F15 | `index.html` | 2101–2301 | Markup Servizi con fascia continua, accordion integrati nel pannello testuale e fotografia strutturale | F3, F6, F7b, F10b, F19, F24 | STABLE | 2026-10-06 |
+| F73 | `index.html` | 2302–2337 | Markup della sezione Modalità di collaborazione | F3, F10, F17, F19, F72 | STABLE | 2026-09-02 |
+| F16 | `index.html` | 2338–2373 | Pannello Referenze con titolo, genesi, lista originale delle collaborazioni e foto a destra sul desktop | F3, F6, F7b, F10b, F19 | STABLE | 2026-10-07 |
+| F26 | `index.html` | 2374–2504 | Community olfattiva, fotografia strutturale a sinistra sul desktop, CTA Contatti e testimonianze personali nascoste | F3, F6, F7-ext, F7b, F10b, F17, F19, F21b | STABLE | 2026-10-07 |
+| F17 | `index.html` | 2505–2557 | Markup della sezione Contatti, casella professionale pubblica e collegamento Facebook diretto | F7b, F8, F10b | STABLE | 2026-10-16 |
+| F18 | `index.html` | 2558–2569 | Markup del footer con dati fiscali ufficiali | F9, F10 | STABLE | 2026-10-14 |
+| F19 | `index.html` | 2570–2582 | Osservatore delle animazioni fade-in | F10 | STABLE | 2026-07-31 |
+| F22 | `index.html` | 2583–2594 | Registrazione del service worker | F28, F29 | STABLE | 2026-09-02 |
+| F23 | `index.html` | 2595–2655 | Markup della barra e delle modali PWA | F20, F21, F27, F28 | STABLE | 2026-09-02 |
+| F24 | `index.html` | 2656–2681 | Comportamento degli accordion Servizi | F6, F15 | STABLE | 2026-09-03 |
+| F25 | `index.html` | 2682–2710 | Comportamento del menu hamburger | F2b, F11 | STABLE | 2026-09-02 |
 | F27 | `pwa-action-bar.js` | 1–145 | Logica della barra azioni e delle modali PWA | F20, F21, F23, F29 | STABLE | 2026-09-02 |
 | F27.1 | `pwa-action-bar.js` | 77–103 | Ascolto degli aggiornamenti del service worker | F27, F29 | STABLE | 2026-09-02 |
 | F28 | `manifest.json` | 1–118 | Identità, icone, schermate e scorciatoie PWA | F0, F13, F15, F17 | STABLE | 2026-09-02 |
@@ -150,6 +150,7 @@ F65 → F66-F71
 | Barra PWA | F20, F21, F22, F23, F27, F28, F29 | Verificare desktop, modalità installata e aggiornamento cache. |
 | Animazioni | F10, F19, F39, F46, F73 | Verificare che gli elementi diventino visibili dopo il caricamento. |
 | Call to action verso Contatti | F12, F17, F26, F73 | Verificare l’ancora `#contatti` e la leggibilità sopra la barra PWA. |
+| Collegamento Facebook | F8, F17, F19, F20, F23, F27 | Verificare icona inline, destinazione diretta, assenza di overflow e leggibilità sopra la barra PWA. |
 
 ## Vocabolario condiviso
 

@@ -1130,6 +1130,19 @@
     font-style: italic;
   }
   .contatti-info-val a { color: #ffffff; text-decoration: none; }
+  /* [195] Allinea l'icona Facebook al testo, mantenendo il contrasto dei Contatti e la messa a fuoco accessibile. */
+  .contatti-social-facebook {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .contatti-social-facebook svg {
+    width: 1em;
+    height: 1em;
+    flex: 0 0 1em;
+    fill: currentColor;
+  }
+  .contatti-social-facebook:focus-visible { outline: 2px solid var(--oro); outline-offset: 4px; }
   /* Cartoline globali — border-radius su tutte le immagini galleria */
   img[src*="galleria-fotografica"] {
     border-radius: 16px;
@@ -2491,7 +2504,7 @@
 <!-- +--------------------------------------------------+
      | [F17] - Markup CONTATTI — form/CTA percorso olfattivo|
      | Dipende da: F8                                     |
-     | Status: STABLE | Last modified: 2026-10-14     |
+     | Status: STABLE | Last modified: 2026-10-16     |
      +--------------------------------------------------+ -->
 <section id="contatti">
   <!-- [77] Dispone lo spazio fotografico a sinistra e i Contatti completi a destra. -->
@@ -2534,7 +2547,8 @@
         <!-- [188] Sostituisce la casella privata con l'indirizzo professionale attivo. -->
         <p class="contatti-info-val">info@raffaella-pisani-sensidistrati.it</p>
         <p class="contatti-info-label">Social</p>
-        <p class="contatti-info-val">Instagram · LinkedIn</p>
+        <!-- [196] Collega il solo profilo Facebook verificato mediante un'icona SVG accessibile. -->
+        <p class="contatti-info-val"><a class="contatti-social-facebook" href="https://www.facebook.com/raffaella.pisani/" target="_blank" rel="noopener noreferrer" aria-label="Apri il profilo Facebook di Raffaella Pisani"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13.5 21v-8h2.75l.41-3h-3.16V8.08c0-.87.24-1.46 1.5-1.46H16.6V3.94c-.28-.04-1.23-.12-2.34-.12-2.32 0-3.91 1.42-3.91 4.03V10H7.72v3h2.63v8h3.15Z"/></svg><span>Facebook</span></a></p>
       </div>
     </div>
   </div>

@@ -2234,3 +2234,39 @@ Netlify ha pubblicato il commit 07ace35 e l’endpoint del sito ha restituito ht
 Il dominio raffaella-pisani-sensidistrati.it ha restituito http 200 e ha inoltrato correttamente alla variante www protetta da https.
 Nel browser pubblico il pulsante parte chiuso, mostra la sola traduzione italiana al clic e non contiene collegamenti esterni.
 Il controllo ha confermato assenza di overflow orizzontale e console senza errori.
+
+[TASK FACEBOOK CONTATTI — 2026-10-16]
+
+[Task Facebook nei Contatti — 2026-10-16]
+
+L’intento logico consiste nel sostituire la sola riga sociale Instagram e LinkedIn con il collegamento diretto al profilo Facebook verificato, comprensivo di icona SVG accessibile e senza dipendenze esterne.
+
+Vedetta premodifica
+La richiesta prevede l’inserimento esclusivo di Facebook con icona nel riquadro Social dei Contatti.
+Il blocco principale corrisponde a F17 in index.html e produce il markup dei Contatti.
+Le dipendenze dirette a monte comprendono F8 per lo stile del collegamento, F7b per la fascia laterale e F10b per l’ordine mobile.
+La dipendenza indiretta a monte corrisponde a F1 per colori e tipografia globali.
+Il dipendente diretto a valle corrisponde a F19 per l’animazione fade-in applicata al riquadro Contatti.
+I dipendenti indiretti a valle sono F20, F23 e F27 per la barra PWA fissa, verificata soltanto come spazio visuale inferiore.
+La relazione trasversale usa un SVG inline e non introduce font, librerie, richieste di rete o JavaScript.
+La dipendenza nascosta rilevata consiste nella regola `.contatti-info-val a` di F8, che definisce già colore e assenza di sottolineatura per il collegamento.
+Non emergono dipendenze circolari nel percorso analizzato.
+I blocchi da modificare sono F8 e F17.
+I blocchi da verificare sono F1, F7b, F10b, F19, F20, F23 e F27.
+I blocchi esclusi con prova includono F18, che non contiene social; F28, che contiene esclusivamente scorciatoie PWA; F29 e il service worker, che non riferiscono social; blog.html, che non contiene la riga sociale; form e invio Netlify, che restano invariati.
+Non restano relazioni irrisolte nel perimetro esaminato.
+La chiusura ricorsiva risulta completata e confermata.
+Il gate Vedetta riceve apertura autorizzata.
+---
+[Task Facebook nei Contatti — 2026-10-16]
+
+L’intervento sostituisce esclusivamente Instagram e LinkedIn nella sezione Contatti con il collegamento diretto al profilo Facebook verificato di Raffaella Pisani.
+Il blocco F8 riceve le sole regole scoped per l’allineamento dell’icona SVG, il contrasto ereditato e il focus accessibile.
+Il blocco F17 conserva indirizzo email, form Netlify, layout e contenuti, sostituendo unicamente la riga Social con Facebook.
+Il collegamento usa un SVG inline, apre in una nuova scheda e applica `noopener noreferrer` senza introdurre librerie o richieste di rete.
+La verifica statica conferma un solo collegamento Facebook, assenza di Instagram e LinkedIn, form Netlify preservato e file PWA invariati.
+La verifica browser desktop conferma contrasto bianco, icona visibile, assenza di overflow orizzontale e posizione sopra la barra azioni.
+La verifica smartphone a 390 pixel conferma opacità finale, posizione nel viewport, assenza di overflow, icona visibile e spazio libero sopra la barra PWA.
+La console locale non presenta errori e Claude Sonnet 4.6 ha approvato il diff senza correzioni bloccanti.
+I blocchi F8 e F17 tornano stabili e la mappa aggiorna intervalli, dipendenza trasversale e responsabilità del collegamento Facebook.
+---
