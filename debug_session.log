@@ -2228,3 +2228,9 @@ La correzione circoscritta nel blocco F8 nasconde soltanto i due figli diretti d
 La verifica automatica ha confermato apertura, chiusura, testo autorizzato, assenza di link, assenza di overflow e console senza errori a 1280×800 e 390×844.
 Claude Sonnet 4.6 ha approvato la modifica finale.
 Lo stato locale è stabile e pronto per il checkpoint GitHub e la verifica Netlify.
+
+[Verifica pubblica del 2026-10-16]
+Netlify ha pubblicato il commit 07ace35 e l’endpoint del sito ha restituito http 200 con il pulsante e la traduzione autorizzata.
+Il dominio raffaella-pisani-sensidistrati.it ha restituito http 200 e ha inoltrato correttamente alla variante www protetta da https.
+Nel browser pubblico il pulsante parte chiuso, mostra la sola traduzione italiana al clic e non contiene collegamenti esterni.
+Il controllo ha confermato assenza di overflow orizzontale e console senza errori.
