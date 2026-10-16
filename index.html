@@ -949,9 +949,9 @@
   }
 
   /* +--------------------------------------------------+
-   | [F8] - CSS Contatti — form, CTA                    |
+   | [F8] - CSS Contatti e aforisma — form, CTA         |
    | Dipende da: F1                                      |
-   | Status: STABLE | Last modified: 2026-09-03      |
+   | Status: STABLE | Last modified: 2026-10-16         |
    +--------------------------------------------------+ */
   /* [F_AFORISMA] Blocco contenuto provvisorio */
   .aforisma-chanel {
@@ -993,6 +993,45 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     display: block;
+  }
+
+  /* [192] Definisce il controllo nativo della traduzione senza alterare la citazione tedesca. */
+  .aforisma-traduzione {
+    max-width: 700px;
+    margin: 24px auto 0;
+  }
+  .aforisma-traduzione-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 16px;
+    border: 1px solid var(--oro);
+    background: transparent;
+    color: var(--smeraldo);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    list-style: none;
+  }
+  .aforisma-traduzione-toggle::-webkit-details-marker { display: none; }
+  .aforisma-traduzione-toggle::after { content: '+'; font-size: 1rem; line-height: 1; }
+  .aforisma-traduzione[open] .aforisma-traduzione-toggle::after { content: '−'; }
+  .aforisma-traduzione-toggle:hover { background: var(--smeraldo); color: #ffffff; }
+  .aforisma-traduzione-toggle:focus-visible { outline: 2px solid var(--oro); outline-offset: 4px; }
+  /* [194] Mantiene nascosta la traduzione quando la regola tipografica condivisa imposta display block. */
+  .aforisma-traduzione:not([open]) > .aforisma-traduzione-testo,
+  .aforisma-traduzione:not([open]) > .aforisma-traduzione-nota { display: none; }
+  .aforisma-traduzione-testo { margin: 24px auto 16px; }
+  .aforisma-traduzione-nota {
+    margin: 0;
+    font-size: 0.74rem;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--smeraldo);
   }
 
   /* CONTATTI */
@@ -1951,8 +1990,8 @@
 
 <!-- +--------------------------------------------------+
      | [F13] - Markup CHI SONO — identità, testo, foto    |
-     | Dipende da: F3, F4, F7b, F10b, F19                 |
-     | Status: STABLE | Last modified: 2026-10-16  |
+     | Dipende da: F3, F4, F7b, F8, F10b, F19             |
+     | Status: STABLE | Last modified: 2026-10-16         |
      +--------------------------------------------------+ -->
 <!-- [F_AFORISMA] Citazione editoriale — tra hero e chi-sono -->
 <div class="aforisma-chanel">
@@ -1960,6 +1999,12 @@
   <!-- [191] Sostituisce il testo con l’originale tedesco e non introduce collegamenti esterni. -->
   <blockquote class="aforisma-testo">«Aber sie konnten sich nicht dem Duft entziehen. Denn der Duft war ein Bruder des Atems. Mit ihm ging er in die Menschen ein, sie konnten sich seiner nicht erwehren, wenn sie leben wollten. Und mitten in sie hinein ging der Duft, direkt ans Herz, und unterschied dort kategorisch über Zuneigung und Verachtung, Ekel und Lust, Liebe und Hass. Wer die Gerüche beherrschte, der beherrschte die Herzen der Menschen.»</blockquote>
   <cite class="aforisma-firma">Patrick Süskind</cite>
+  <!-- [193] Inserisce la traduzione italiana in una disclosure nativa inizialmente chiusa e senza link esterni. -->
+  <details class="aforisma-traduzione">
+    <summary class="aforisma-traduzione-toggle">Leggi la traduzione italiana</summary>
+    <blockquote class="aforisma-testo aforisma-traduzione-testo">«Ma non potevano sottrarsi al profumo. Perché il profumo era un fratello del respiro. Con il respiro penetrava negli uomini: non potevano difendersene, se volevano vivere. E il profumo penetrava nel loro intimo, direttamente nel cuore, e lì determinava categoricamente affetto e disprezzo, disgusto e piacere, amore e odio. Chi dominava gli odori dominava i cuori degli uomini.»</blockquote>
+    <p class="aforisma-traduzione-nota">Traduzione italiana del passo, non tratta da un’edizione editoriale.</p>
+  </details>
 </div>
 
 <section id="chi-sono">

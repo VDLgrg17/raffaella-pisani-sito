@@ -2203,3 +2203,28 @@ La visualizzazione smartphone nella viewport 390 × 844 conferma testo, firma, s
 La fonte esterna indicata dall’utente non è stata aggiunta al sito in forma testuale o come collegamento attivo.
 Il gate Vedetta è chiuso con F13 stabile e con compatibilità della catena confermata.
 ---
+
+[Task traduzione italiana aforisma — 2026-10-16]
+Sto operando in modalità RLM.
+Obiettivo: aggiungere sotto la citazione tedesca esistente un pulsante discreto che mostri e nasconda la traduzione italiana fornita dall’utente, senza modificare il testo tedesco, la firma Patrick Süskind, la geometria del riquadro o altri contenuti.
+Istruzioni atomiche previste: [192] e [193].
+Vedetta — pre-modifica per la traduzione richiesta.
+Blocco principale: F13 in `index.html`, perché ospita il riquadro aforisma collocato fra Hero e Chi sono.
+F8 fornisce stile, font, texture, colori e larghezza del riquadro; F1, F3, F4, F7b, F10, F10b, F12 e F19 costituiscono la catena di compatibilità verificata.
+La disclosure utilizzerà HTML nativo, resterà inizialmente chiusa e non introdurrà JavaScript, fonti o collegamenti esterni.
+F11, F28 e F40 conservano l’ancora invariata `#chi-sono`, mentre F19 non viene coinvolto perché la disclosure non riceve la classe `fade-in`.
+La barra PWA e l’area visibile inferiore saranno testate senza modificare F20-F29.
+Nessuna dipendenza nascosta, circolare o irrisolta è emersa dalla ricognizione.
+Snapshot pre-modifica: `/tmp/raffaella-traduzione-aforisma` contiene copie, impronte SHA-256 e fotografia simbolica di `index.html`.
+Gate Vedetta: apertura autorizzata dopo la chiusura della mappa d’impatto.
+---
+
+[Post-modifica del 2026-10-16]
+La traduzione italiana del passo di Patrick Süskind è disponibile sotto la citazione tedesca mediante il pulsante nativo «Leggi la traduzione italiana».
+Il blocco F8 definisce esclusivamente il controllo visivo della disclosure e conserva inalterata la grafica della citazione.
+Il blocco F13 conserva la citazione tedesca, la firma Patrick Süskind e l’assenza di collegamenti esterni, quindi aggiunge soltanto la traduzione italiana e la sua nota dichiarativa.
+Il controllo iniziale ha rilevato che la regola condivisa display block rendeva visibili la traduzione e la nota quando la disclosure era chiusa.
+La correzione circoscritta nel blocco F8 nasconde soltanto i due figli diretti della disclosure chiusa e non altera le regole condivise.
+La verifica automatica ha confermato apertura, chiusura, testo autorizzato, assenza di link, assenza di overflow e console senza errori a 1280×800 e 390×844.
+Claude Sonnet 4.6 ha approvato la modifica finale.
+Lo stato locale è stabile e pronto per il checkpoint GitHub e la verifica Netlify.
