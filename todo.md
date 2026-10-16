@@ -85,3 +85,4 @@
 - [x] Inserire nel footer principale i dati fiscali ufficiali della ditta individuale Sensi di Strati di Pisani Raffaella.
 - [x] Sostituire gli indirizzi email pubblici con info@raffaella-pisani-sensidistrati.it in Contatti e Archivio.
 - [x] Sostituire il placeholder aforisma con la citazione di Patrick Suskind fornita dall’utente.
+- [x] Sostituire il solo aforisma con il testo tedesco originale fornito dall’utente e senza alcun collegamento attivo alla fonte.

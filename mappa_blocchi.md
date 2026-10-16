@@ -3,8 +3,8 @@
 **Fonte di verità per la numerazione project-wide univoca.**
 
 Protocollo: `blocchi-f-operativo` con sorveglianza `blocchi-f-vedetta`
-Aggiornamento: 2026-10-14
-Versione: 6.4
+Aggiornamento: 2026-10-16
+Versione: 6.5
 
 ## Stato del progetto
 
@@ -37,7 +37,7 @@ La geometria laterale è predisposta su nove spazi, con fotografia e contenuto s
 | F72 | `index.html` | 1801–1886 | Stile della sezione Modalità di collaborazione | F1, F3, F10 | STABLE | 2026-09-03 |
 | F11 | `index.html` | 1887–1922 | Markup del menu desktop e mobile | F2, F2b, F25 | STABLE | 2026-09-02 |
 | F12 | `index.html` | 1923–1952 | Markup della Hero e del titolo progetto | F3, F10b | STABLE | 2026-10-06 |
-| F13 | `index.html` | 1953–2007 | Markup della sezione Chi sono e aforisma editoriale | F3, F4, F7b, F8, F10b, F19 | STABLE | 2026-10-14 |
+| F13 | `index.html` | 1953–2007 | Markup della sezione Chi sono e aforisma editoriale | F3, F4, F7b, F8, F10b, F19 | STABLE | 2026-10-16 |
 | F14 | `index.html` | 2008–2042 | Markup della sezione Visione | F3, F5, F7b, F10b, F19 | STABLE | 2026-10-06 |
 | F15 | `index.html` | 2043–2243 | Markup Servizi con fascia continua, accordion integrati nel pannello testuale e fotografia strutturale | F3, F6, F7b, F10b, F19, F24 | STABLE | 2026-10-06 |
 | F73 | `index.html` | 2244–2279 | Markup della sezione Modalità di collaborazione | F3, F10, F17, F19, F72 | STABLE | 2026-09-02 |

@@ -2172,3 +2172,25 @@ La console pubblica non riporta errori dopo la verifica del riquadro aforisma.
 La pubblicazione della citazione risulta completata e verificata.
 
 ---
+[Task citazione tedesca — 2026-10-16]
+Sto operando in modalità RLM.
+Obiettivo: sostituire esclusivamente il testo e la firma del riquadro aforisma fra Hero e Chi sono con la citazione tedesca originale e la firma Patrick Süskind, senza inserire la fonte fornita come collegamento attivo.
+Istruzione atomica prevista: [191].
+Vedetta — pre-modifica: il gate è autorizzato per F13. F8, F1, F3, F4, F7b, F10b, F12 e F19 sono verificati come superficie di compatibilità; F13 è l’unico blocco di produzione da modificare.
+Snapshot pre-modifica: `/tmp/raffaella-aforisma-tedesco` contiene copie, impronte SHA-256 e fotografia simbolica di `index.html`.
+Stato: F13 passa a WIP prima della sostituzione; nessun altro file di produzione verrà modificato.
+---
+Certificazione post-modifica della citazione tedesca del 2026-10-16.
+Il riquadro aforisma fra Hero e Chi sono contiene ora esclusivamente il testo tedesco originale fornito dall’utente e la firma corretta Patrick Süskind.
+Il markup conserva il blocco semantico della citazione e l’elemento della firma già presenti, senza introdurre tag, attributi o collegamenti esterni.
+La fonte indicata dall’utente resta esclusa dal markup, pertanto il riquadro non contiene alcun collegamento attivo o destinazione esterna.
+Il solo blocco di produzione modificato è F13, mentre F8 mantiene inalterati font, texture, colore, allineamento, margini, padding e limite di larghezza del riquadro.
+La verifica statica conferma HTML valido, testo identico alla richiesta, firma con ü, assenza della precedente traduzione italiana, assenza di collegamenti alla fonte e unicità delle tre classi del riquadro.
+Il controllo desktop nella viewport 1280 conferma citazione leggibile, larghezza massima di 700 pixel, firma sotto il testo, continuità Hero-aforisma-Chi sono e assenza di overflow orizzontale.
+Il controllo smartphone nella viewport 390 × 844 conferma il testo completo, la firma, la semantica invariata, assenza di link, assenza di overflow e flusso verticale corretto.
+La console dell’anteprima locale non riporta errori durante le verifiche desktop e mobile.
+Il Code Integrity Verifier e il controllo `git diff --check` sono risultati positivi senza regressioni deterministiche.
+Claude Sonnet 4.6 ha approvato il diff reale senza correzioni bloccanti e ha confermato la conservazione delle classi, dello stile e del flusso originale.
+La catena F1, F3, F4, F7b, F8, F10b, F12, F13 e F19 risulta compatibile, mentre gli altri blocchi esclusi restano invariati.
+F13 torna stabile e il gate Vedetta resta aperto fino alla verifica pubblica del deploy.
+---
