@@ -2282,3 +2282,58 @@ Il collegamento punta a https://www.facebook.com/raffaella.pisani/, usa una nuov
 Il form Netlify resta presente, non si rileva overflow orizzontale e il collegamento rimane sopra la barra PWA.
 La console del dominio pubblico non presenta errori e il controllo browser pubblicato risulta superato.
 ---
+Gate Vedetta per i dati strutturati dell'entità — 2026-10-19
+
+L'obiettivo autorizzato consiste nell'inserire nel solo documento principale `index.html` la dichiarazione json-ld di Schema.org per la persona Raffaella Pisani e per l'organizzazione Sensi di Strati. I metadati canonici della stessa pagina saranno aggiornati al dominio pubblico verificato.
+
+Il solo nodo di codice da modificare è f0 in `index.html`, che ospita canonical, `og:url`, `og:image` e lo script json-ld nel `head`. `mappa_blocchi.md`, `todo.md` e `debug_session.log` ricevono soltanto gli aggiornamenti di tracciabilità.
+
+Il dominio canonico verificato è `https://www.raffaella-pisani-sensidistrati.it/`, mentre la versione priva di `www` inoltra a tale indirizzo. La dichiarazione della persona usa il nome Raffaella Pisani e il ruolo pubblico di ricercatrice e narratrice di cultura olfattiva. L'organizzazione usa la denominazione Sensi di Strati di Pisani Raffaella.
+
+I dati pubblici già presenti nella pagina includono l'indirizzo `info@raffaella-pisani-sensidistrati.it`, il telefono `+39 338 573 4333` e il domicilio Via Po 14 A, 31020 Villorba, TV, IT. Gli identificativi pubblici sono la partita IVA 05581330262 e il codice fiscale PSNRFL71A49L407H. Il solo profilo esterno confermato è `https://www.facebook.com/raffaella.pisani/`.
+
+Restano esclusi date di fondazione, premi, titoli accademici, clienti, coordinate geografiche, ruoli presso terzi, LinkedIn, Instagram e altri profili non confermati. Il blocco f1 conserva il documento HTML e i metadati definiti da f0. I blocchi f12, f13, f17 e f18 espongono nella pagina l'identità, l'immagine, il contatto e i dati fiscali oggetto della dichiarazione.
+
+I blocchi f28, f29 e f27, `blog.html`, la PWA e l'archivio non richiedono modifiche poiché il loro contenuto non include canonical o dati strutturati dell'entità. Il test deve confermare un solo URL canonico, un solo `og:url`, un solo script json-ld valido e due nodi collegati denominati `Person` e `Organization`. I dati dichiarati devono coincidere con i dati visibili e verificati, mentre immagini, testi, PWA, moduli, CTA, footer e archivio devono rimanere invariati.
+
+---
+Raffinamento Vedetta dei dati strutturati — 2026-10-19
+
+Il controllo deterministico ha rilevato che il numero di telefono è presente nell'Archivio, ma non nella pagina principale. Poiché il json-ld della home deve dichiarare soltanto dati visibili nella stessa pagina, il numero viene escluso da entrambe le entità. Restano invariati canonical, email professionale, indirizzo, identificativi fiscali, profilo Facebook e collegamento tra persona e organizzazione. Non viene aggiunto alcun testo, né viene modificata la sezione Contatti.
+
+---
+Raffinamento Vedetta per l'omonimia — 2026-10-19
+
+La ricerca ha confermato che esiste un'altra Raffaella Pisani, attiva nelle costellazioni familiari, su `raffaellapisani.com`. Per eliminare ogni possibile sovrapposizione, il nodo `Person` contiene esclusivamente nome, ruolo professionale, immagine, descrizione, URL del sito e il solo Facebook autorizzato. Il nodo `Organization` contiene separatamente il contatto, l'indirizzo e gli identificativi fiscali già pubblicati nel footer.
+
+Sono rimossi dal nodo personale indirizzo, email, codice fiscale, partita IVA, collegamenti di lavoro e competenze elencate. Sono rimossi dal nodo organizzativo anche i ruoli di fondatore. Rimangono due entità distinte e circoscritte al dominio ufficiale di Sensi di Strati, senza URL, termini o attività dell'omonima.
+
+---
+Certificazione post-modifica dei dati strutturati — 2026-10-19
+
+Il blocco f0 di `index.html` contiene ora un canonical e un `og:url` identici al dominio pubblico con www. Lo stesso blocco contiene un solo script json-ld con due entità separate: una persona Raffaella Pisani e un'organizzazione Sensi di Strati.
+
+Il controllo deterministico ha confermato la sintassi JSON, la presenza dei due nodi, la coerenza del canonical e la coincidenza tra dati dichiarati e dati visibili nella home. Il telefono è escluso poiché non compare nella pagina principale. I file `manifest.json`, `pwa-action-bar.js`, `sw.js` e `blog.html` conservano l'impronta precedente.
+
+Il browser locale ha confermato canonical, `og:url`, le due entità, Hero, Contatti, collegamento Facebook, barra PWA, cinque immagini e assenza di overflow orizzontale. La console locale non presenta errori.
+
+Claude Sonnet 4.6 ha restituito l'approvazione senza correzioni bloccanti. Il validatore ha confermato che l'intervento resta nel `head`, non modifica il layout e non introduce dipendenze runtime.
+
+La ricerca ha confermato l'esistenza di un'omonima che svolge attività legate alle costellazioni familiari su un dominio distinto. Il json-ld non contiene quel dominio, né termini relativi a costellazioni, Human Design o LaHoChi. L'entità dichiarata resta ancorata al dominio canonico di Sensi di Strati, alla denominazione fiscale, al contatto professionale e al solo Facebook autorizzato.
+
+---
+Certificazione post-modifica dei dati strutturati — 2026-10-19
+
+Il blocco f0 di `index.html` contiene ora un canonical e un `og:url` identici al dominio pubblico con www. Lo stesso blocco contiene un solo script json-ld con due entità separate: una persona Raffaella Pisani e un'organizzazione Sensi di Strati.
+
+Il controllo deterministico ha confermato la sintassi JSON, la presenza dei due nodi, la coerenza del canonical e la coincidenza tra dati dichiarati e dati visibili nella home. Il telefono è escluso poiché non compare nella pagina principale. I file `manifest.json`, `pwa-action-bar.js`, `sw.js` e `blog.html` conservano l'impronta precedente.
+
+Il browser locale ha confermato canonical, `og:url`, le due entità, Hero, Contatti, collegamento Facebook, barra PWA, cinque immagini e assenza di overflow orizzontale. La console locale non presenta errori.
+
+Claude Sonnet 4.6 ha restituito l'approvazione senza correzioni bloccanti. Il validatore ha confermato che l'intervento resta nel `head`, non modifica il layout e non introduce dipendenze runtime.
+
+La ricerca ha confermato l'esistenza di un'omonima che svolge attività legate alle costellazioni familiari su un dominio distinto. Il json-ld non contiene quel dominio, né termini relativi a costellazioni, Human Design o LaHoChi. L'entità dichiarata resta ancorata al dominio canonico di Sensi di Strati, alla denominazione fiscale, al contatto professionale e al solo Facebook autorizzato.
+
+La mappa Blocchi F è stata riallineata alle intestazioni fisiche correnti di `index.html`. F0 copre le righe da 1 a 77 e tutti gli intervalli successivi derivano dagli effettivi confini di ciascun blocco.
+
+---
