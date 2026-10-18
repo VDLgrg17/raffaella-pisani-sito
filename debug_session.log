@@ -2337,3 +2337,12 @@ La ricerca ha confermato l'esistenza di un'omonima che svolge attività legate a
 La mappa Blocchi F è stata riallineata alle intestazioni fisiche correnti di `index.html`. F0 copre le righe da 1 a 77 e tutti gli intervalli successivi derivano dagli effettivi confini di ciascun blocco.
 
 ---
+Verifica pubblica dei dati strutturati — 2026-10-19
+
+Il deploy Netlify del commit 54b0a33 risponde con HTTP 200 e pubblica il canonical `https://www.raffaella-pisani-sensidistrati.it/` insieme al valore identico di `og:url`.
+
+Il dominio ufficiale espone due nodi json-ld distinti. La persona Raffaella Pisani contiene soltanto nome, ruolo professionale, immagine, descrizione, URL del sito e Facebook autorizzato. L'organizzazione Sensi di Strati contiene separatamente email, indirizzo, codice fiscale e partita IVA visibili nella home.
+
+Nel markup pubblico non risultano `raffaellapisani.com`, costellazioni, Human Design o LaHoChi. Hero, Contatti, Facebook, barra PWA e assenza di overflow orizzontale restano confermati. La console del browser non presenta errori.
+
+---
