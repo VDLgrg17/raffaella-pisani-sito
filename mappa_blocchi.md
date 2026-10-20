@@ -3,12 +3,12 @@
 **Fonte di verità per la numerazione project-wide univoca.**
 
 Protocollo: `blocchi-f-operativo` con sorveglianza `blocchi-f-vedetta`
-Aggiornamento: 2026-10-19
-Versione: 6.8
+Aggiornamento: 2026-10-20
+Versione: 6.12
 
 ## Stato del progetto
 
-Il sito pubblicato usa `index.html`, `pwa-action-bar.js`, `manifest.json` e `sw.js`. La pagina `blog.html` costituisce l’archivio separato. I file `hero-archivio.html` e `hero-nuova.html` sono prototipi non collegati alla navigazione pubblica; restano mappati per garantire l’unicità project-wide. F0 dichiara il dominio canonico pubblico e le entità Schema.org della persona Raffaella Pisani e dell’organizzazione Sensi di Strati mediante dati già visibili e verificati.
+Il sito pubblicato usa `index.html`, `pwa-action-bar.js`, `manifest.json` e `sw.js`. La pagina `blog.html` costituisce l’archivio separato. I file `hero-archivio.html` e `hero-nuova.html` sono prototipi non collegati alla navigazione pubblica, ma restano mappati poiché gli URL sono raggiungibili direttamente. `privacy.html` costituisce l’informativa privacy pubblica. F0 dichiara il dominio canonico pubblico e le entità Schema.org della persona Raffaella Pisani e dell’organizzazione Sensi di Strati mediante dati già visibili e verificati.
 
 La geometria laterale è predisposta su nove spazi, con fotografia e contenuto sempre collocati su lati opposti. Chi sono e Community usano su desktop una fotografia strutturale a tutta altezza nella metà sinistra, mentre Referenze e Visione usano la metà destra. Referenze termina dopo il pannello originale composto da titolo, genesi e lista verticale delle sette collaborazioni, poiché i progetti estesi e il case history Cerasa sono stati rimossi con CUT autorizzato. La citazione editoriale tra Hero e Chi sono conserva l’originale tedesco con firma Patrick Süskind e una traduzione italiana attivabile senza collegamenti esterni. Servizi presenta una fascia nocciola continua e una prima fascia con fotografia a sinistra, testo e sei accordion compatti a destra, che sul desktop termina al bordo inferiore della fotografia. Il bordo inferiore di questa sola fotografia riceve un filo dorato di tre pixel, sovrapposto senza modificarne geometria o ritaglio. Community conserva il fotogramma verticale integrale su smartphone. Gli altri quattro spazi restano vuoti. Su smartphone il testo precede la fotografia, mentre la hero conserva l’ordine approvato con pannello verde sopra e fotografia sotto.
 
@@ -24,11 +24,11 @@ La geometria laterale è predisposta su nove spazi, con fotografia e contenuto s
 | F4 | `index.html` | 482–530 | Stile della sezione Chi sono e fotografia strutturale desktop | F1, F3, F7b, F10b | STABLE | 2026-10-06 |
 | F5 | `index.html` | 531–603 | Stile della sezione Visione e fotografia strutturale desktop | F1, F3, F7b, F10b | STABLE | 2026-10-06 |
 | F6 | `index.html` | 604–996 | Stile Servizi, compattazione della fascia integrata e regole strutturali circoscritte per Referenze e Community, incluso layout originale, CUT inferiore Referenze, inversione desktop delle colonne Referenze e Community, CUT inferiore desktop Servizi, micro-taglio fotografico e filo dorato inferiore | F1, F3, F7b, F10b | STABLE | 2026-10-07 |
-| F8 | `index.html` | 997–1203 | Stile della sezione Contatti, dell’icona Facebook, del riquadro aforisma e della disclosure della traduzione | F1 | STABLE | 2026-10-16 |
+| F8 | `index.html` | 997–1282 | Stile della sezione Contatti, dell’icona Facebook, del riquadro aforisma, della disclosure della traduzione e del richiamo privacy | F1 | STABLE | 2026-10-20 |
 | F7 | `index.html` | 1204–1316 | Stile della sezione Collaborazioni | F1 | STABLE | 2026-07-31 |
 | F7-ext | `index.html` | 1243–1316 | Stile di testimonianze e Community | F1 | STABLE | 2026-07-31 |
 | F7b | `index.html` | 1317–1394 | Stile della galleria fotografica, geometria laterale e fotogramma integrale | F1 | STABLE | 2026-09-18 |
-| F9 | `index.html` | 1395–1424 | Stile del footer | F1 | STABLE | 2026-09-03 |
+| F9 | `index.html` | 1474–1503 | Stile del footer e del collegamento privacy | F1 | STABLE | 2026-10-20 |
 | F10 | `index.html` | 1425–1440 | Regole responsive e animazione fade-in | F1, F2–F9 | STABLE | 2026-07-31 |
 | F10b | `index.html` | 1441–1578 | Ordine mobile della hero e geometria laterale | F3, F4, F7b, F10 | STABLE | 2026-09-03 |
 | F20 | `index.html` | 1579–1632 | Stile della barra azioni PWA | F1, F10 | STABLE | 2026-09-02 |
@@ -43,8 +43,8 @@ La geometria laterale è predisposta su nove spazi, con fotografia e contenuto s
 | F73 | `index.html` | 2347–2382 | Markup della sezione Modalità di collaborazione | F3, F10, F17, F19, F72 | STABLE | 2026-09-02 |
 | F16 | `index.html` | 2383–2418 | Pannello Referenze con titolo, genesi, lista originale delle collaborazioni e foto a destra sul desktop | F3, F6, F7b, F10b, F19 | STABLE | 2026-10-07 |
 | F26 | `index.html` | 2419–2549 | Community olfattiva, fotografia strutturale a sinistra sul desktop, CTA Contatti e testimonianze personali nascoste | F3, F6, F7-ext, F7b, F10b, F17, F19, F21b | STABLE | 2026-10-07 |
-| F17 | `index.html` | 2550–2602 | Markup della sezione Contatti, casella professionale pubblica e collegamento Facebook diretto | F7b, F8, F10b | STABLE | 2026-10-16 |
-| F18 | `index.html` | 2603–2614 | Markup del footer con dati fiscali ufficiali | F9, F10 | STABLE | 2026-10-14 |
+| F17 | `index.html` | 2629–2697 | Markup della sezione Contatti, casella professionale pubblica, consenso marketing facoltativo e collegamento Facebook diretto | F7b, F8, F10b | STABLE | 2026-10-20 |
+| F18 | `index.html` | 2698–2709 | Markup del footer con dati fiscali ufficiali e collegamento privacy | F9, F10 | STABLE | 2026-10-20 |
 | F19 | `index.html` | 2615–2627 | Osservatore delle animazioni fade-in | F10 | STABLE | 2026-07-31 |
 | F22 | `index.html` | 2628–2639 | Registrazione del service worker | F28, F29 | STABLE | 2026-09-02 |
 | F23 | `index.html` | 2640–2700 | Markup della barra e delle modali PWA | F20, F21, F27, F28 | STABLE | 2026-09-02 |
@@ -72,7 +72,7 @@ Il formato JSON non consente commenti: **F28** è identificato esclusivamente ne
 | F34 | `blog.html` | 138–175 | Stile dei filtri | F31, F33 | STABLE | 2026-09-03 |
 | F35 | `blog.html` | 176–242 | Stile della griglia articoli | F31, F33 | STABLE | 2026-09-03 |
 | F36 | `blog.html` | 243–275 | Stile della rubrica Ti Odoro | F31, F33 | STABLE | 2026-09-02 |
-| F37 | `blog.html` | 276–337 | Stile del footer Archivio | F31 | STABLE | 2026-09-03 |
+| F37 | `blog.html` | 276–337 | Stile del footer Archivio e del collegamento privacy | F31 | STABLE | 2026-10-20 |
 | F38 | `blog.html` | 338–352 | Regole responsive Archivio | F32–F37 | STABLE | 2026-09-02 |
 | F39 | `blog.html` | 353–364 | Animazione fade-in Archivio | F31 | STABLE | 2026-09-02 |
 | F40 | `blog.html` | 365–378 | Markup della navigazione Archivio | F32, F11, F13–F17 | STABLE | 2026-09-02 |
@@ -80,14 +80,24 @@ Il formato JSON non consente commenti: **F28** è identificato esclusivamente ne
 | F42 | `blog.html` | 388–398 | Markup dei filtri | F34, F46 | STABLE | 2026-09-02 |
 | F43 | `blog.html` | 399–451 | Markup della griglia articoli | F35, F46 | STABLE | 2026-09-02 |
 | F44 | `blog.html` | 452–460 | Markup della rubrica Ti Odoro | F36 | STABLE | 2026-09-02 |
-| F45 | `blog.html` | 461–486 | Markup del footer Archivio e collegamento alla casella professionale | F37 | STABLE | 2026-10-14 |
+| F45 | `blog.html` | 461–486 | Markup del footer Archivio, casella professionale e collegamento privacy | F37 | STABLE | 2026-10-20 |
+
+## Informativa privacy
+
+| Blocco | File | Righe | Responsabilità | Dipende da | Status | Last modified |
+|---|---|---:|---|---|---|---|
+| F74 | `privacy.html` | 1–16 | Configurazione, metadati e font dell’informativa privacy | F0 | STABLE | 2026-10-20 |
+| F75 | `privacy.html` | 17–59 | Stile autonomo dell’informativa e del footer legale | F74 | STABLE | 2026-10-20 |
+| F76 | `privacy.html` | 60–151 | Markup dell’informativa e dei recapiti per l’esercizio dei diritti | F17, F18, F74, F75 | STABLE | 2026-10-20 |
+| F77 | `grazie.html` | 1–211 | Configurazione, palette e stile della pagina di conferma Netlify | F0, F17 | STABLE | 2026-10-20 |
+| F78 | `grazie.html` | 212–235 | Markup della pagina italiana di conferma e ritorno alla home | F17, F77 | STABLE | 2026-10-20 |
 | F46 | `blog.html` | 487–522 | Filtri e osservatore fade-in Archivio | F39, F42, F43 | STABLE | 2026-09-02 |
 
 ## Prototipi non pubblicati
 
 | Blocco | File | Righe | Responsabilità | Dipende da | Status | Last modified |
 |---|---|---:|---|---|---|---|
-| F50 | `hero-archivio.html` | 1–32 | Configurazione del prototipo Hero Archivio | nessuno | STABLE | 2026-09-02 |
+| F50 | `hero-archivio.html` | 1–32 | Configurazione del prototipo Hero Archivio | nessuno | STABLE | 2026-10-20 |
 | F51 | `hero-archivio.html` | 33–41 | Layout Hero Archivio | F50 | STABLE | 2026-09-02 |
 | F52 | `hero-archivio.html` | 42–96 | Colonna fotografica Hero Archivio | F50, F51 | STABLE | 2026-09-02 |
 | F53 | `hero-archivio.html` | 97–131 | Colonna testuale Hero Archivio | F50, F51 | STABLE | 2026-09-02 |
@@ -101,14 +111,14 @@ Il formato JSON non consente commenti: **F28** è identificato esclusivamente ne
 | F61 | `hero-archivio.html` | 288–315 | Collegamento Scrivimi Hero Archivio | F50, F53 | STABLE | 2026-09-02 |
 | F62 | `hero-archivio.html` | 316–348 | Indicatore di scorrimento Hero Archivio | F50, F53 | STABLE | 2026-09-02 |
 | F63 | `hero-archivio.html` | 349–363 | Responsive Hero Archivio | F51–F62 | STABLE | 2026-09-02 |
-| F64 | `hero-archivio.html` | 364–fine | Markup Hero Archivio | F50–F63 | STABLE | 2026-09-02 |
-| F65 | `hero-nuova.html` | 1–31 | Configurazione del prototipo Hero Nuova | nessuno | STABLE | 2026-09-02 |
+| F64 | `hero-archivio.html` | 370–468 | Markup Hero Archivio e collegamento privacy | F50–F63 | STABLE | 2026-10-20 |
+| F65 | `hero-nuova.html` | 1–31 | Configurazione del prototipo Hero Nuova | nessuno | STABLE | 2026-10-20 |
 | F66 | `hero-nuova.html` | 32–83 | Layout e colonna foto Hero Nuova | F65 | STABLE | 2026-09-02 |
 | F67 | `hero-nuova.html` | 84–118 | Colonna testo Hero Nuova | F65, F66 | STABLE | 2026-09-02 |
 | F68 | `hero-nuova.html` | 119–148 | Motivi grafici Hero Nuova | F65, F67 | STABLE | 2026-09-02 |
 | F69 | `hero-nuova.html` | 149–279 | Identità, testi e azioni Hero Nuova | F65, F67, F68 | STABLE | 2026-09-02 |
 | F70 | `hero-nuova.html` | 280–293 | Responsive Hero Nuova | F66–F69 | STABLE | 2026-09-02 |
-| F71 | `hero-nuova.html` | 294–fine | Markup Hero Nuova | F65–F70 | STABLE | 2026-09-02 |
+| F71 | `hero-nuova.html` | 300–374 | Markup Hero Nuova e collegamento privacy | F65–F70 | STABLE | 2026-10-20 |
 
 Gli identificatori **F47–F49** restano riservati a eventuali estensioni della pagina Archivio.
 

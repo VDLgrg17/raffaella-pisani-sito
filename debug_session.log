@@ -2337,6 +2337,19 @@ La ricerca ha confermato l'esistenza di un'omonima che svolge attività legate a
 La mappa Blocchi F è stata riallineata alle intestazioni fisiche correnti di `index.html`. F0 copre le righe da 1 a 77 e tutti gli intervalli successivi derivano dagli effettivi confini di ciascun blocco.
 
 ---
+Gate Vedetta per l’adeguamento privacy — 2026-10-20
+
+L’obiettivo autorizzato consiste nel pubblicare un’informativa privacy basata sulle conferme rese dalla titolare, rendere il consenso marketing separato, facoltativo e non preselezionato nel form Netlify esistente e aggiungere il collegamento permanente all’informativa in ogni pagina HTML raggiungibile.
+
+Il checkpoint è il commit 116f62f, identico a github/master e privo di modifiche locali. Il form conserva nome, email, messaggio, `data-netlify` e `form-name`. Le sole informazioni confermate dalla titolare comprendono identità e recapito del titolare, assenza di DPO, finalità delle richieste professionali, marketing opzionale mediante email e recapiti forniti spontaneamente per WhatsApp o messaggi Facebook e Instagram, conservazione rispettivamente di sei e dodici mesi, accesso limitato a Raffaella Pisani, Netlify Forms, Register.it, Google Fonts, rubrica smartphone e WhatsApp.
+
+I blocchi autorizzati sono F8, F9, F17, F18, F37, F45, F50, F64, F65, F71 e i nuovi F74, F75, F76. F8 aggiunge stili strettamente circoscritti a informativa, consenso e avvertenza. F17 aggiunge il richiamo privacy e un solo checkbox marketing facoltativo, inviato a Netlify soltanto in caso di selezione. F9, F18, F37 e F45 aggiungono il collegamento al footer. F50, F64, F65 e F71 aggiungono soltanto un footer minimale ai due prototipi raggiungibili direttamente. F74, F75 e F76 ospitano la nuova pagina autonoma.
+
+Restano congelati F0, F1-F7, F10-F16, F19-F29, F30-F36, F38-F46, manifest, service worker, barra PWA, immagini, testi editoriali, metadata, dati strutturati e collegamenti social. Non vengono introdotti cookie banner, analytics, pixel, tracker, librerie oppure chiamate di rete ulteriori. Il test deve verificare preservazione del form, consenso non selezionato inizialmente, link privacy funzionanti, assenza di overflow, assenza di errori console e assenza di regressioni PWA.
+
+Intento Logic Before Code: ogni nuova riga deve rendere trasparente il trattamento già confermato oppure registrare il consenso marketing separato, senza alterare il percorso di invio esistente e senza trattare dati ulteriori.
+
+---
 Verifica pubblica dei dati strutturati — 2026-10-19
 
 Il deploy Netlify del commit 54b0a33 risponde con HTTP 200 e pubblica il canonical `https://www.raffaella-pisani-sensidistrati.it/` insieme al valore identico di `og:url`.
@@ -2346,3 +2359,19 @@ Il dominio ufficiale espone due nodi json-ld distinti. La persona Raffaella Pisa
 Nel markup pubblico non risultano `raffaellapisani.com`, costellazioni, Human Design o LaHoChi. Hero, Contatti, Facebook, barra PWA e assenza di overflow orizzontale restano confermati. La console del browser non presenta errori.
 
 ---
+
+[Tentativo 1 - 2026-10-20]
+I file coinvolti sono index.html e grazie.html.
+L’errore riscontrato riguarda la risposta di Claude, che ha respinto il pacchetto poiché il diff generato da Git non includeva il nuovo file non tracciato grazie.html e ha segnalato un rientro incoerente nel blocco F17.
+La correzione applicata riallinea il solo rientro del markup F17 e prepara un pacchetto completo che aggiunge esplicitamente la creazione di grazie.html.
+Il validatore ha espresso un esito respinto poiché non poteva verificare il file escluso dal diff.
+
+Certificazione privacy e pagina di conferma - 2026-10-20
+
+Il modulo Contatti conserva nome, metodo POST, rilevamento Netlify, campo form-name, campi obbligatori e consenso marketing non preselezionato. Il solo attributo action indirizza la conferma verso grazie.html.
+
+La pagina grazie.html presenta una comunicazione italiana, una palette coerente con Sensi di Strati, un ritorno alla home, il collegamento all’informativa privacy e l’icona esistente del sito.
+
+Il controllo statico conferma la validità del diff e l’assenza di modifiche a service worker, manifest, barra PWA oppure funzioni JavaScript. Il test browser locale supera desktop e smartphone senza errori console, risorse HTTP anomale oppure scorrimento orizzontale. I collegamenti verso home e informativa privacy funzionano.
+
+Claude Sonnet 4.6 ha approvato il diff completo, inclusi privacy.html e grazie.html, senza correzioni bloccanti.

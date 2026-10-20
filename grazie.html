@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <!-- [F77] - Configurazione e stile pagina di conferma Netlify | Dipende da: F0, F17 | Status: STABLE | Last modified: 2026-10-20 -->
+  <!-- [210] Definisce titolo, viewport e indicizzazione della sola pagina di conferma. -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#1B5E4B">
+  <title>Messaggio ricevuto | Sensi di Strati</title>
+  <link rel="canonical" href="https://www.raffaella-pisani-sensidistrati.it/grazie.html">
+  <!-- [225] Riutilizza l’icona pubblica esistente ed evita richieste automatiche a favicon.ico assente. -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192x192.png">
+  <!-- [211] Riutilizza le famiglie tipografiche già presenti nel sito principale. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+    /* [212] Riprende i pigmenti del sito senza introdurre dipendenze esterne aggiuntive. */
+    :root {
+      --carta: #D8D2C8;
+      --smeraldo: #1B5E4B;
+      --oro: #A8895A;
+      --terracotta: #B5603A;
+      --inchiostro: #1A2420;
+      --bianco: #FFFFFF;
+    }
+
+    /* [213] Costruisce una scena cromatica responsive con contrasti stabili. */
+    * { box-sizing: border-box; }
+    html { min-height: 100%; }
+    body {
+      min-width: 320px;
+      min-height: 100vh;
+      margin: 0;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 9% 11%, rgba(196, 169, 122, 0.42) 0 1.7%, transparent 1.8%),
+        radial-gradient(circle at 89% 18%, rgba(181, 96, 58, 0.46) 0 2.5%, transparent 2.6%),
+        linear-gradient(135deg, #0E4135 0%, var(--smeraldo) 48%, #0F3B31 100%);
+      color: var(--inchiostro);
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* [214] Organizza il contenuto al centro con motivi decorativi esclusi dall’accessibilità. */
+    .thank-you-page {
+      position: relative;
+      display: grid;
+      min-height: 100vh;
+      place-items: center;
+      padding: clamp(24px, 5vw, 72px);
+      isolation: isolate;
+    }
+    .colour-orbit {
+      position: absolute;
+      z-index: -1;
+      width: clamp(180px, 28vw, 390px);
+      aspect-ratio: 1;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .colour-orbit::before,
+    .colour-orbit::after {
+      position: absolute;
+      border-radius: 50%;
+      content: '';
+    }
+    .colour-orbit::before {
+      width: 18%;
+      height: 18%;
+      background: var(--oro);
+      box-shadow: 0 0 0 14px rgba(168, 137, 90, 0.16);
+    }
+    .colour-orbit::after {
+      width: 10%;
+      height: 10%;
+      background: var(--terracotta);
+    }
+    /* [222] Mantiene i motivi cromatici entro la viewport ed elimina lo scorrimento orizzontale. */
+    .colour-orbit--one { top: -8%; left: 2%; }
+    .colour-orbit--one::before { right: 6%; bottom: 18%; }
+    .colour-orbit--one::after { top: 20%; left: 20%; }
+    .colour-orbit--two { right: 2%; bottom: -12%; }
+    .colour-orbit--two::before { top: 18%; left: 2%; }
+    .colour-orbit--two::after { right: 21%; bottom: 17%; }
+
+    /* [215] Mantiene il messaggio leggibile e riconoscibile su ogni larghezza di schermo. */
+    .thank-you-card {
+      width: min(100%, 730px);
+      padding: clamp(34px, 6vw, 78px);
+      border: 1px solid rgba(255, 255, 255, 0.62);
+      background: rgba(216, 210, 200, 0.97);
+      box-shadow: 0 28px 70px rgba(3, 22, 17, 0.35);
+      text-align: center;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--smeraldo);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .brand::before,
+    .brand::after {
+      width: 30px;
+      height: 1px;
+      background: var(--oro);
+      content: '';
+    }
+    .eyebrow {
+      margin: clamp(38px, 6vw, 62px) 0 12px;
+      color: var(--terracotta);
+      font-size: 0.67rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 560px;
+      margin: 0 auto;
+      color: var(--smeraldo);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.7rem, 7vw, 5.25rem);
+      font-weight: 500;
+      letter-spacing: -0.035em;
+      line-height: 0.94;
+    }
+    .divider {
+      width: 52px;
+      height: 2px;
+      margin: clamp(26px, 4vw, 34px) auto;
+      background: linear-gradient(90deg, var(--oro), var(--terracotta));
+    }
+    .message {
+      max-width: 480px;
+      margin: 0 auto;
+      color: #26352F;
+      font-size: clamp(0.98rem, 1.7vw, 1.08rem);
+      font-weight: 400;
+      line-height: 1.8;
+    }
+
+    /* [216] Rende chiara la via di ritorno con un’unica azione primaria. */
+    .actions {
+      display: flex;
+      justify-content: center;
+      margin-top: clamp(32px, 5vw, 46px);
+    }
+    .home-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 14px 24px;
+      border: 1px solid var(--smeraldo);
+      background: var(--smeraldo);
+      color: var(--bianco);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background-color 160ms ease-out, color 160ms ease-out, transform 160ms ease-out;
+    }
+    .home-link:hover {
+      background: transparent;
+      color: var(--smeraldo);
+    }
+    .home-link:active { transform: scale(0.97); }
+    .home-link:focus-visible,
+    .brand:focus-visible {
+      outline: 3px solid var(--terracotta);
+      outline-offset: 5px;
+    }
+    /* [223] Mantiene raggiungibile l’informativa privacy anche dopo l’invio del modulo. */
+    .legal-link {
+      margin: 24px 0 0;
+      color: #405047;
+      font-size: 0.72rem;
+      line-height: 1.5;
+    }
+    .legal-link a {
+      color: var(--smeraldo);
+      font-weight: 600;
+      text-underline-offset: 3px;
+    }
+    .legal-link a:focus-visible {
+      outline: 3px solid var(--terracotta);
+      outline-offset: 4px;
+    }
+    @media (max-width: 480px) {
+      .thank-you-page { padding: 18px; }
+      .thank-you-card { padding: 40px 26px; }
+      .brand { gap: 8px; letter-spacing: 0.1em; }
+      .brand::before,
+      .brand::after { width: 20px; }
+      .home-link { width: 100%; }
+      .colour-orbit { opacity: 0.72; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <!-- [F78] - Markup pagina di conferma Netlify | Dipende da: F77, F17 | Status: STABLE | Last modified: 2026-10-20 -->
+  <main class="thank-you-page">
+    <!-- [217] Mantiene decorativi e non interattivi gli elementi cromatici di sfondo. -->
+    <span class="colour-orbit colour-orbit--one" aria-hidden="true"></span>
+    <span class="colour-orbit colour-orbit--two" aria-hidden="true"></span>
+    <!-- [218] Presenta l’esito positivo dell’invio con una gerarchia semantica completa. -->
+    <section class="thank-you-card" aria-labelledby="thank-you-title">
+      <!-- [219] Rende disponibile il ritorno alla home senza interrompere la conferma. -->
+      <a class="brand" href="/" aria-label="Torna alla home di Sensi di Strati">Sensi di Strati</a>
+      <!-- [220] Comunica in italiano la ricezione della richiesta inviata. -->
+      <p class="eyebrow">Modulo Contatti</p>
+      <h1 id="thank-you-title">Grazie per aver scritto.</h1>
+      <div class="divider" aria-hidden="true"></div>
+      <p class="message">Il tuo messaggio è stato ricevuto. Raffaella Pisani potrà ricontattarti all’indirizzo indicato per proseguire la conversazione.</p>
+      <!-- [221] Offre una singola azione primaria per proseguire la navigazione del sito. -->
+      <div class="actions">
+        <a class="home-link" href="/">Torna al sito di Sensi di Strati</a>
+      </div>
+      <!-- [224] Collega l’informativa senza competere con l’azione principale di ritorno. -->
+      <p class="legal-link"><a href="/privacy.html">Consulta l’informativa privacy del sito</a></p>
+    </section>
+  </main>
+</body>
+</html>

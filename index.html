@@ -994,9 +994,9 @@
   }
 
   /* +--------------------------------------------------+
-   | [F8] - CSS Contatti e aforisma — form, CTA         |
+   | [F8] - CSS Contatti e aforisma — form, consenso, CTA|
    | Dipende da: F1                                      |
-   | Status: STABLE | Last modified: 2026-10-16         |
+   | Status: STABLE | Last modified: 2026-10-20         |
    +--------------------------------------------------+ */
   /* [F_AFORISMA] Blocco contenuto provvisorio */
   .aforisma-chanel {
@@ -1088,6 +1088,85 @@
   #contatti .section-body { color: #ffffff; }
 
   .form-group { margin-bottom: 16px; }
+
+  /* [199] Rende leggibile il richiamo all’informativa prima dell’invio del modulo. */
+  .form-privacy-summary {
+    margin: 24px 0 18px;
+    font-size: 0.78rem;
+    line-height: 1.65;
+    color: #ffffff;
+  }
+
+  /* [200] Mantiene evidente e accessibile il collegamento interno alla privacy policy. */
+  .form-privacy-summary a {
+    color: #ffffff;
+    font-weight: 500;
+    text-underline-offset: 3px;
+  }
+
+  /* [201] Separa visivamente il consenso marketing facoltativo dai dati necessari alla richiesta. */
+  .form-consent {
+    margin: 0 0 18px;
+    padding: 16px 0;
+    border: 0;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+  }
+
+  /* [202] Identifica senza ambiguità la preferenza facoltativa del modulo. */
+  .form-consent legend {
+    padding: 0;
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+
+  /* [203] Allinea il controllo e il testo del consenso su desktop e smartphone. */
+  .form-consent-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    margin-top: 10px;
+  }
+
+  /* [204] Ripristina le dimensioni native del checkbox senza alterare i campi del form. */
+  input.form-consent-checkbox {
+    width: 18px;
+    min-width: 18px;
+    height: 18px;
+    margin: 3px 0 0;
+    padding: 0;
+    accent-color: var(--oro);
+    cursor: pointer;
+  }
+
+  /* [205] Espone un testo completo e leggibile per il consenso non obbligatorio. */
+  .form-consent-label {
+    margin: 0;
+    color: #ffffff;
+    font-size: 0.76rem;
+    font-weight: 300;
+    line-height: 1.65;
+    letter-spacing: normal;
+    text-transform: none;
+    cursor: pointer;
+  }
+
+  /* [206] Mantiene visibile la messa a fuoco da tastiera del consenso facoltativo. */
+  input.form-consent-checkbox:focus-visible {
+    outline: 2px solid var(--oro-chiaro);
+    outline-offset: 3px;
+  }
+
+  /* [207] Avverte di non trasmettere dati particolari non necessari al contatto. */
+  .form-data-warning {
+    margin: 0 0 20px;
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-style: italic;
+    line-height: 1.55;
+  }
 
   .form-group label {
     display: block;
@@ -1392,9 +1471,9 @@
   }
 
   /* +--------------------------------------------------+
-   | [F9] - CSS Footer — logo, info, copyright          |
+   | [F9] - CSS Footer — logo, info, privacy             |
    | Dipende da: F1                                      |
-   | Status: STABLE | Last modified: 2026-09-03      |
+   | Status: STABLE | Last modified: 2026-10-20      |
    +--------------------------------------------------+ */
   /* FOOTER */
   footer {
@@ -2547,9 +2626,9 @@
 </section>
 
 <!-- +--------------------------------------------------+
-     | [F17] - Markup CONTATTI — form/CTA percorso olfattivo|
+     | [F17] - Markup CONTATTI — form, consenso e percorso |
      | Dipende da: F8                                     |
-     | Status: STABLE | Last modified: 2026-10-16     |
+     | Status: STABLE | Last modified: 2026-10-20     |
      +--------------------------------------------------+ -->
 <section id="contatti">
   <!-- [77] Dispone lo spazio fotografico a sinistra e i Contatti completi a destra. -->
@@ -2565,7 +2644,8 @@
         <p class="section-body">Sei un brand, un'istituzione culturale o uno spazio che vuole costruire un'esperienza olfattiva autentica? Scrivimi per avviare una conversazione professionale.</p>
       </div>
       <!-- [1] Dichiara il modulo statico rilevabile da Netlify senza introdurre JavaScript. -->
-      <form name="contatti" method="POST" data-netlify="true" style="margin-top:36px" class="fade-in">
+      <!-- [209] Reindirizza la conferma di Netlify verso la pagina italiana statica del sito. -->
+      <form name="contatti" action="/grazie.html" method="POST" data-netlify="true" style="margin-top:36px" class="fade-in">
         <!-- [2] Mantiene esplicita l’associazione tra il payload POST e il modulo Contatti. -->
         <input type="hidden" name="form-name" value="contatti">
         <!-- [3] Rende obbligatorio e accessibile il campo Nome. -->
@@ -2583,7 +2663,22 @@
           <label for="contatti-messaggio">Messaggio</label>
           <textarea id="contatti-messaggio" name="messaggio" placeholder="Raccontami di te e di cosa stai cercando…" required></textarea>
         </div>
-        <!-- [6] Invia il modulo mediante il comportamento HTML standard. -->
+        <!-- [6] Rende accessibile l’informativa privacy prima dell’invio del form. -->
+        <p class="form-privacy-summary">I dati inviati saranno trattati per rispondere alla richiesta secondo l’<a href="/privacy.html">informativa privacy</a>.</p>
+        <!-- [7] Distingue il consenso marketing facoltativo dalla richiesta professionale. -->
+        <fieldset class="form-consent">
+          <!-- [8] Identifica la preferenza marketing come facoltativa. -->
+          <legend>Comunicazioni promozionali facoltative</legend>
+          <div class="form-consent-row">
+            <!-- [9] Invia a Netlify una prova di consenso soltanto quando l’utente seleziona la casella. -->
+            <input id="contatti-consenso-marketing" class="form-consent-checkbox" name="consenso_marketing" type="checkbox" value="acconsento_2026-10-20">
+            <!-- [10] Specifica finalità, canali consentiti e modalità di revoca senza rendere obbligatoria la scelta. -->
+            <label class="form-consent-label" for="contatti-consenso-marketing">Acconsento a ricevere comunicazioni promozionali sulle attività di Sensi di Strati via email e, se fornisco spontaneamente i relativi recapiti, tramite WhatsApp o messaggi diretti su Facebook e Instagram. Posso revocare il consenso in qualsiasi momento.</label>
+          </div>
+        </fieldset>
+        <!-- [11] Evita l’invio di categorie particolari di dati non necessarie alla richiesta. -->
+        <p class="form-data-warning">Non inserire nel messaggio dati sanitari, giudiziari oppure altre informazioni particolari.</p>
+        <!-- [12] Invia il modulo mediante il comportamento HTML standard. -->
         <button type="submit" class="form-submit">Invia il messaggio</button>
       </form>
 
@@ -2600,15 +2695,17 @@
 </section>
 
 <!-- +--------------------------------------------------+
-     | [F18] - Markup FOOTER — dati fiscali                |
+     | [F18] - Markup FOOTER — dati fiscali e privacy      |
      | Dipende da: F9                                     |
-     | Status: STABLE | Last modified: 2026-10-14     |
+     | Status: STABLE | Last modified: 2026-10-20     |
      +--------------------------------------------------+ -->
 <footer>
   <!-- [187] Pubblica esclusivamente denominazione, identificativi fiscali e domicilio certificati. -->
   <span class="footer-legal">Sensi di Strati di Pisani Raffaella</span>
   <span class="footer-legal">P. IVA 05581330262 · C.F. PSNRFL71A49L407H</span>
   <span class="footer-legal">Domicilio fiscale: Via Po 14 A · 31020 Villorba (TV)</span>
+  <!-- [208] Rende disponibile l’informativa privacy da ogni punto della home. -->
+  <span class="footer-legal"><a class="footer-link" href="/privacy.html">Informativa privacy</a></span>
 </footer>
 
 <!-- +--------------------------------------------------+

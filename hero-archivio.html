@@ -1,4 +1,4 @@
-<!-- [F50] - Config globale Hero Archivio | Dipende da: nessuno | Status: STABLE | Last modified: 2026-09-02 -->
+<!-- [F50] - Config globale Hero Archivio | Dipende da: nessuno | Status: STABLE | Last modified: 2026-10-20 -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -358,10 +358,16 @@
       .ha-nome { font-size: 2.2rem; }
     }
   </style>
+  <style>
+    /* [1] Offre un collegamento privacy senza modificare la geometria del prototipo. */
+    .prototype-privacy-footer { padding: 14px 20px; background: #1A2420; text-align: center; }
+    /* [2] Mantiene leggibile il collegamento su sfondo scuro. */
+    .prototype-privacy-footer a { color: #ffffff; font: 0.7rem 'Cormorant Garamond', serif; text-underline-offset: 3px; }
+  </style>
 </head>
 <body>
 
-<!-- [F64] - Markup Hero Archivio | Dipende da: F50-F63 | Status: STABLE | Last modified: 2026-09-02 -->
+<!-- [F64] - Markup Hero Archivio e privacy | Dipende da: F50-F63 | Status: STABLE | Last modified: 2026-10-20 -->
 <section id="hero-archivio">
 
   <!-- SCIA GLOBALE che attraversa tutto -->
@@ -455,6 +461,8 @@
 
   </div>
 </section>
+<!-- [3] Espone l’informativa anche sull’URL del prototipo raggiungibile direttamente. -->
+<footer class="prototype-privacy-footer"><a href="/privacy.html">Informativa privacy</a></footer>
 
 </body>
 </html>

@@ -1,0 +1,151 @@
+<!-- [F74] Configurazione e metadati dell’informativa privacy | Dipende da: F0 | Status: STABLE | Last modified: 2026-10-20 -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <!-- [1] Dichiara la codifica e la visualizzazione responsiva del documento. -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <!-- [2] Descrive in modo univoco la pagina privacy per browser e motori di ricerca. -->
+  <meta name="description" content="Informativa privacy di Sensi di Strati di Pisani Raffaella.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.raffaella-pisani-sensidistrati.it/privacy.html">
+  <title>Informativa privacy — Sensi di Strati</title>
+  <!-- [3] Riutilizza le sole famiglie tipografiche esterne già presenti nel sito. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    /* [F75] Stile autonomo dell’informativa e del footer legale | Dipende da: F74 | Status: STABLE | Last modified: 2026-10-20 */
+    /* [4] Definisce la palette condivisa con il sito senza introdurre dipendenze applicative. */
+    :root { --carta: #D8D2C8; --smeraldo: #1B5E4B; --oro: #A8895A; --inchiostro: #1A2420; --linea: rgba(26,36,32,0.18); }
+    /* [5] Elimina le differenze di box model fra elementi del documento. */
+    *, *::before, *::after { box-sizing: border-box; }
+    /* [6] Imposta leggibilità, contrasto e margini della pagina. */
+    body { margin: 0; background: var(--carta); color: var(--inchiostro); font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 300; line-height: 1.7; }
+    /* [7] Mantiene la navigazione al sito principale sempre disponibile. */
+    .privacy-nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px max(24px, calc((100vw - 1120px) / 2)); background: rgba(216,210,200,0.96); border-bottom: 1px solid var(--linea); }
+    /* [8] Distingue il marchio testuale senza caricare elementi ulteriori. */
+    .privacy-brand { color: var(--smeraldo); font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.1em; text-decoration: none; text-transform: uppercase; }
+    /* [9] Mantiene visibile il ritorno alla home con una gerarchia sobria. */
+    .privacy-home { color: var(--inchiostro); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-decoration: none; text-transform: uppercase; }
+    /* [10] Evidenzia i collegamenti e la navigazione da tastiera. */
+    a { color: var(--smeraldo); text-underline-offset: 3px; }
+    a:focus-visible { outline: 2px solid var(--oro); outline-offset: 4px; }
+    /* [11] Contiene il testo in una misura leggibile su ogni schermo. */
+    main { width: min(100% - 40px, 860px); margin: 0 auto; padding: 72px 0 80px; }
+    /* [12] Separa visivamente l’intestazione dai contenuti informativi. */
+    .privacy-eyebrow { margin: 0 0 10px; color: var(--smeraldo); font-size: 0.68rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; }
+    /* [13] Usa una gerarchia editoriale coerente con l’identità del sito. */
+    h1, h2 { color: var(--smeraldo); font-family: 'Cormorant Garamond', serif; font-weight: 400; line-height: 1.12; }
+    h1 { margin: 0; font-size: clamp(2.6rem, 7vw, 4.7rem); }
+    h2 { margin: 0 0 14px; font-size: clamp(1.7rem, 4vw, 2.3rem); }
+    /* [14] Mostra la data di aggiornamento e il perimetro del documento. */
+    .privacy-meta { margin: 24px 0 0; color: #36453f; font-size: 0.82rem; }
+    /* [15] Organizza le sezioni senza alterare la leggibilità dei contenuti. */
+    .privacy-section { padding: 36px 0; border-top: 1px solid var(--linea); }
+    .privacy-section:first-of-type { margin-top: 48px; }
+    /* [16] Rende uniformi paragrafi ed elenchi del documento. */
+    p { margin: 0 0 16px; }
+    ul { margin: 0; padding-left: 22px; }
+    li + li { margin-top: 10px; }
+    /* [17] Evidenzia i dati di contatto del titolare senza crearne di nuovi. */
+    .privacy-card { margin-top: 18px; padding: 22px; background: rgba(255,255,255,0.28); border-left: 3px solid var(--oro); }
+    /* [18] Mantiene il footer compatto e sempre leggibile. */
+    .privacy-footer { padding: 26px 24px; background: var(--inchiostro); color: #ffffff; font-size: 0.75rem; text-align: center; }
+    .privacy-footer a { color: #ffffff; }
+    /* [19] Riduce spazi e dimensioni per la consultazione su smartphone. */
+    @media (max-width: 640px) { .privacy-nav { align-items: flex-start; flex-direction: column; gap: 8px; padding: 18px 20px; } main { width: min(100% - 32px, 860px); padding: 52px 0 60px; } .privacy-section { padding: 30px 0; } }
+  </style>
+</head>
+<body>
+  <!-- [F76] Markup dell’informativa e dei recapiti per l’esercizio dei diritti | Dipende da: F17, F18, F74, F75 | Status: STABLE | Last modified: 2026-10-20 -->
+  <!-- [20] Offre un ritorno esplicito alla home senza introdurre nuove destinazioni esterne. -->
+  <nav class="privacy-nav" aria-label="Navigazione informativa privacy">
+    <a class="privacy-brand" href="/">Sensi di Strati</a>
+    <a class="privacy-home" href="/#contatti">Torna ai contatti</a>
+  </nav>
+  <main>
+    <!-- [21] Identifica il documento e la sua data di aggiornamento. -->
+    <p class="privacy-eyebrow">Sensi di Strati</p>
+    <h1>Informativa privacy</h1>
+    <p class="privacy-meta">Ultimo aggiornamento: 20 ottobre 2026.</p>
+
+    <!-- [22] Inquadra il trattamento dei dati raccolti attraverso sito e contatti diretti. -->
+    <section class="privacy-section">
+      <h2>Ambito dell’informativa</h2>
+      <p>La presente informativa descrive il trattamento dei dati personali di chi visita il sito <a href="https://www.raffaella-pisani-sensidistrati.it/">www.raffaella-pisani-sensidistrati.it</a>, invia il modulo Contatti oppure scrive direttamente all’indirizzo email pubblicato.</p>
+    </section>
+
+    <!-- [23] Rende identificabile il titolare e il recapito per le richieste privacy. -->
+    <section class="privacy-section">
+      <h2>Titolare del trattamento</h2>
+      <div class="privacy-card">
+        <p><strong>Sensi di Strati di Pisani Raffaella</strong><br>Via Po 14 A, 31020 Villorba (TV)<br>Partita IVA 05581330262 e codice fiscale PSNRFL71A49L407H<br><a href="mailto:info@raffaella-pisani-sensidistrati.it">info@raffaella-pisani-sensidistrati.it</a></p>
+        <p>Non è stato designato un responsabile della protezione dei dati.</p>
+      </div>
+    </section>
+
+    <!-- [24] Limita le categorie di dati a quelle confermate dalla titolare. -->
+    <section class="privacy-section">
+      <h2>Dati trattati</h2>
+      <p>Attraverso il modulo Contatti vengono raccolti esclusivamente nome, indirizzo email e messaggio. Il modulo non richiede numero di telefono, allegati, documenti oppure dati particolari.</p>
+      <p>Per le comunicazioni promozionali possono essere utilizzati l’indirizzo email e gli eventuali recapiti forniti spontaneamente dall’interessato, inclusi WhatsApp o messaggi diretti sui profili Facebook e Instagram.</p>
+      <p>La navigazione comporta inoltre il trattamento di dati tecnici strettamente necessari al funzionamento del sito e alla sua sicurezza, quali dati di connessione e richieste alle risorse web.</p>
+      <p>Si invita a non inserire nel messaggio dati sanitari, giudiziari oppure altre categorie particolari di dati che non sono necessarie per una richiesta di collaborazione.</p>
+    </section>
+
+    <!-- [25] Separa le finalità della richiesta professionale dal consenso marketing. -->
+    <section class="privacy-section">
+      <h2>Finalità e basi giuridiche</h2>
+      <ul>
+        <li>Rispondere alle richieste e valutare possibili collaborazioni professionali: il trattamento è necessario per l’esecuzione di misure precontrattuali richieste dall’interessato, ai sensi dell’articolo 6, paragrafo 1, lettera b del GDPR.</li>
+        <li>Inviare comunicazioni promozionali relative alle attività di Sensi di Strati mediante email e, soltanto quando forniti spontaneamente, altri recapiti: il trattamento si basa sul consenso libero, specifico, informato e facoltativo dell’interessato, ai sensi dell’articolo 6, paragrafo 1, lettera a del GDPR.</li>
+        <li>Assicurare il funzionamento tecnico e la sicurezza del sito: il trattamento si basa sul legittimo interesse del titolare alla protezione del servizio, ai sensi dell’articolo 6, paragrafo 1, lettera f del GDPR.</li>
+      </ul>
+    </section>
+
+    <!-- [26] Chiarisce quali dati sono necessari e quali restano sempre opzionali. -->
+    <section class="privacy-section">
+      <h2>Conferimento dei dati</h2>
+      <p>Nome, indirizzo email e messaggio sono necessari per ricevere una risposta alla richiesta inviata. Il consenso alle comunicazioni promozionali è facoltativo, non è preselezionato e il mancato consenso non impedisce di inviare il modulo o ricevere una risposta.</p>
+    </section>
+
+    <!-- [27] Indica tempi, cancellazione periodica e diverso perimetro delle collaborazioni concluse. -->
+    <section class="privacy-section">
+      <h2>Conservazione dei dati</h2>
+      <p>Le richieste di collaborazione e le email dirette che non si trasformano in un rapporto professionale vengono conservate per sei mesi dalla ricezione, poi sono cancellate periodicamente da Netlify Forms e dalla casella email.</p>
+      <p>I dati trattati per comunicazioni promozionali vengono conservati per dodici mesi dalla prestazione del consenso oppure fino alla sua revoca, se precedente. Nel caso di una collaborazione effettivamente conclusa, saranno fornite le informazioni applicabili allo specifico rapporto.</p>
+    </section>
+
+    <!-- [28] Individua i fornitori effettivamente dichiarati e le rispettive funzioni. -->
+    <section class="privacy-section">
+      <h2>Destinatari e trasferimenti</h2>
+      <p>I dati ricevuti attraverso il modulo sono accessibili soltanto a Raffaella Pisani. Per l’erogazione tecnica del sito e della comunicazione vengono utilizzati Netlify Forms per hosting e raccolta delle submission, Register.it per la casella email e Google Fonts per la visualizzazione dei caratteri web.</p>
+      <p>WhatsApp, Facebook e Instagram sono utilizzati soltanto quando l’interessato fornisce spontaneamente il relativo recapito e presta il consenso alle comunicazioni promozionali. L’uso di tali servizi è soggetto anche alle rispettive informative privacy.</p>
+      <p>Alcuni fornitori operano a livello internazionale. Netlify dichiara che i trasferimenti verso paesi privi di decisione di adeguatezza possono essere protetti mediante clausole contrattuali standard della Commissione europea. Per informazioni sulle garanzie applicabili agli altri fornitori è possibile scrivere al titolare.</p>
+    </section>
+
+    <!-- [29] Rende esercitabili diritti, revoca e reclamo mediante un solo canale verificato. -->
+    <section class="privacy-section">
+      <h2>Diritti dell’interessato</h2>
+      <p>L’interessato può chiedere accesso, rettifica, cancellazione, limitazione, portabilità dei dati nei casi previsti, opposizione al trattamento e informazioni sul trattamento scrivendo a <a href="mailto:info@raffaella-pisani-sensidistrati.it">info@raffaella-pisani-sensidistrati.it</a>.</p>
+      <p>Il consenso alle comunicazioni promozionali può essere revocato in qualsiasi momento scrivendo allo stesso indirizzo oppure rispondendo direttamente a una comunicazione ricevuta. La revoca non pregiudica la liceità del trattamento svolto prima della richiesta.</p>
+      <p>Resta salvo il diritto di proporre reclamo al <a href="https://www.garanteprivacy.it/" rel="noopener noreferrer" target="_blank">Garante per la protezione dei dati personali</a>.</p>
+    </section>
+
+    <!-- [30] Esclude profilazione e decisioni automatizzate dal perimetro dichiarato. -->
+    <section class="privacy-section">
+      <h2>Decisioni automatizzate</h2>
+      <p>I dati raccolti attraverso il sito non sono sottoposti a decisioni basate unicamente su trattamenti automatizzati, compresa la profilazione.</p>
+    </section>
+
+    <!-- [31] Riflette l’esito tecnico corrente su cookie, font e futuri tracciatori. -->
+    <section class="privacy-section">
+      <h2>Cookie e altri strumenti di tracciamento</h2>
+      <p>Alla data di aggiornamento il sito non utilizza cookie di profilazione, pixel pubblicitari, strumenti di analisi del traffico oppure altri tracciatori non tecnici. Google Fonts dichiara di non impostare né registrare cookie attraverso la propria Web Fonts API.</p>
+      <p>Per tale configurazione non è richiesto un banner di consenso cookie. Qualora vengano introdotti strumenti non tecnici, la presente informativa sarà aggiornata e tali strumenti saranno attivati soltanto dopo il consenso richiesto dalla normativa applicabile.</p>
+    </section>
+  </main>
+  <!-- [32] Ripete il collegamento all’informativa e il ritorno al sito al termine della lettura. -->
+  <footer class="privacy-footer">© 2026 Sensi di Strati di Pisani Raffaella · <a href="/">Torna alla home</a></footer>
+</body>
+</html>

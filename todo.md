@@ -89,3 +89,5 @@
 - [x] Aggiungere sotto l’aforisma tedesco un pulsante per mostrare e nascondere la traduzione italiana autorizzata.
 - [x] Sostituire Instagram e LinkedIn nei Contatti con Facebook e relativa icona collegata al profilo verificato.
 - [x] Inserire canonical, metadati Open Graph e dati strutturati json-ld per Raffaella Pisani e Sensi di Strati.
+- [x] Pubblicare l’informativa privacy, il consenso marketing facoltativo e i collegamenti permanenti richiesti.
+- [x] Sostituire la pagina predefinita Netlify con una conferma italiana coerente con il sito.
