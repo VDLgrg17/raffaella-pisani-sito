@@ -91,3 +91,4 @@
 - [x] Inserire canonical, metadati Open Graph e dati strutturati json-ld per Raffaella Pisani e Sensi di Strati.
 - [x] Pubblicare l’informativa privacy, il consenso marketing facoltativo e i collegamenti permanenti richiesti.
 - [x] Sostituire la pagina predefinita Netlify con una conferma italiana coerente con il sito.
+- [x] Stabilizzare l’ancora Contatti del menu hamburger al primo tocco su smartphone.

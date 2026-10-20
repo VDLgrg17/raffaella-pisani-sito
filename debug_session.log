@@ -2375,3 +2375,39 @@ La pagina grazie.html presenta una comunicazione italiana, una palette coerente 
 Il controllo statico conferma la validità del diff e l’assenza di modifiche a service worker, manifest, barra PWA oppure funzioni JavaScript. Il test browser locale supera desktop e smartphone senza errori console, risorse HTTP anomale oppure scorrimento orizzontale. I collegamenti verso home e informativa privacy funzionano.
 
 Claude Sonnet 4.6 ha approvato il diff completo, inclusi privacy.html e grazie.html, senza correzioni bloccanti.
+
+Gate Vedetta per il fix del primo tocco Contatti - 2026-10-20
+
+La richiesta consiste nel far raggiungere direttamente la sezione Contatti al primo tocco sulla voce del menu hamburger.
+
+La causa identificata riguarda le cinque fotografie con caricamento differito che precedono Contatti e non dichiarano larghezza oppure altezza intrinseche. Prima del caricamento ogni fotografia ha altezza zero, l’ancora raggiunge la quota iniziale e il successivo layout sposta la sezione Contatti in basso.
+
+Il livello coinvolto comprende codice e layout runtime, mentre il blocco principale è F25, comportamento del menu hamburger in index.html.
+
+Le dipendenze dirette comprendono F2b, F11 e F17, mentre le dipendenze indirette comprendono F7b, F10 e F10b. Le relazioni trasversali verificate mostrano che F13, F14, F15, F16 e F26 definiscono le immagini lazy che modificano la quota dell’ancora. F19, F20, F23, F27, F28 e F29 restano da verificare senza modifica.
+
+I blocchi da modificare comprendono F13, F14, F15, F16 e F26 mediante i soli attributi width e height delle rispettive immagini. I blocchi esclusi con prova sono F25, che conserva listener, href e chiusura del menu, e F17, che conserva markup e form; PWA, service worker, manifest, barra azioni, testi, fotografie e stili restano invariati.
+
+L’intento Logic Before Code consiste nel riservare prima del caricamento lo spazio esatto delle immagini esistenti, affinché l’ancora Contatti calcoli subito la quota definitiva senza introdurre un secondo scorrimento artificiale.
+
+Non restano relazioni irrisolte, la chiusura ricorsiva è completata e il gate Vedetta riceve apertura autorizzata.
+
+Certificazione post-modifica del primo tocco Contatti - 2026-10-20
+
+Il fix aggiunge soltanto larghezza e altezza intrinseche alle cinque fotografie con caricamento differito delle sezioni Chi sono, Visione, Servizi, Referenze e Community. Le immagini, i ritagli, le classi, i testi, gli URL, il form Netlify, i listener del menu e la PWA restano invariati.
+
+Il controllo statico conferma che le cinque coppie width e height coincidono con le dimensioni reali dei file e che i contratti del menu hamburger, dell’ancora Contatti e del form restano presenti. Il controllo conferma inoltre che pwa-action-bar.js, sw.js e manifest.json conservano la stessa impronta.
+
+La verifica mobile a 390 pixel usa un solo tocco sul menu hamburger e un solo tocco su Contatti. Il browser raggiunge #contatti con quota iniziale e finale pari a 11563 pixel, il menu si chiude, non emerge overflow orizzontale e la console non segnala errori.
+
+La verifica desktop a 1280 pixel raggiunge #contatti con il menu invariato, senza overflow orizzontale e senza errori console. I blocchi F2b, F7b, F10, F10b, F11, F17, F19, F20, F23, F25, F27, F28 e F29 sono verificati senza modifica.
+
+La catena risulta compatibile, non emergono nuove dipendenze e i blocchi F13, F14, F15, F16 e F26 possono tornare stabili.
+
+Validazione esterna Claude Sonnet 4.6 - 2026-10-20
+
+L’esito della validazione è approvato.
+
+Claude conferma che la causa del primo tocco errato è la mancanza delle dimensioni intrinseche nelle cinque fotografie con caricamento differito. L’aggiunta di width e height reali riserva il rapporto di forma prima del caricamento e mantiene stabile l’ancora Contatti.
+
+Claude conferma inoltre che il CSS width al cento per cento e height automatico conserva il comportamento responsivo su ogni breakpoint. Menu hamburger, immagini, form Netlify e PWA non presentano regressioni identificabili, mentre il commit può procedere senza correzioni bloccanti.
